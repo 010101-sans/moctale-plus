@@ -1,17 +1,30 @@
 {
-  "manifest_version": 3,
   "name": "Moctale Plus",
   "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/logo.png",
+    "32": "icons/logo.png",
+    "48": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/logo.png",
+      "32": "icons/logo.png",
+      "48": "icons/logo.png",
+      "128": "icons/logo.png"
+    }
   },
   "permissions": [
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "content_scripts": [
     {
       "js": [
-        "assets/index.tsx-loader-Bt9aWSq9.js"
+        "assets/index.tsx-loader-DddCt5pK.js"
       ],
       "matches": [
         "https://moctale.in/*",
@@ -23,6 +36,10 @@
       ]
     }
   ],
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
   "web_accessible_resources": [
     {
       "matches": [
@@ -31,7 +48,7 @@
       ],
       "resources": [
         "assets/index-BdTgVImM.js",
-        "assets/index.tsx-BDzneTpB.js"
+        "assets/index.tsx-Dje8gdIV.js"
       ],
       "use_dynamic_url": false
     }

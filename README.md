@@ -4,31 +4,52 @@ A feature-rich Chrome extension designed to supercharge your experience on [Moct
 
 ## Features
 
-### Stats & Data
-| Feature | Description |
-| :--- | :--- |
-| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, and The Numbers directly on movie pages. |
-| **Collection Export** | One-click CSV export for your Watchlist and Custom Collections. |
-| **Smart Detection** | Automatically distinguishes between Movies and TV Shows to show relevant data. |
-
 ### Enhancements
+
 | Feature | Description |
-| :--- | :--- |
-| **Discussions** | Find what people are saying on Reddit, Twitter/X, and YouTube. |
-| **Streaming Links** | Direct shortcuts to Netflix, Prime Video, Hotstar, and more. |
-| **Linkifier** | Turns plain text URLs in comments or bios into clickable links. |
-| **Spoiler Shield** | Blurs potential spoilers in reviews until you hover over them. |
+| --- | --- |
+| **Linkifier** | Turns plain plain-text URLs in comments and posts into clickable links. |
+| **More Platforms** | Direct shortcuts to IMDB, TMDB and Letterboxd. |
+| **Reviews & Discussions** | Find what people are saying on YouTube, Reddit, Twitter / X. |
+| **Creative Corner** | View Offical Songs OSTs, Fan Edits and Behind the Scenes. |
+| **Right-Click Search** | Select text on any website and right-click to "Search on Moctale". |
+| **Keyboard Shortcuts** | Quick navigation using keys `1-6` (Explore, Schedule, Clubs, Profile, etc). |
 
 ### Visuals
 | Feature | Description |
-| :--- | :--- |
-<!-- | **Themes** | Switch between **Default**, **OLED (True Black)**, **Coffee**, and **Midnight**. | -->
-| **Creative Corner** | View Fan Art and Cosplay related to the title. |
+| --- | --- |
+| **Themes** | Switch between **Default**, **OLED (True Black)**, **Coffee**, and **Midnight**. |
 
+### Stats & Data
+
+| Feature | Description |
+| --- | --- |
+| **Collection Export** | One-click CSV export for your Watchlist and Custom Collections. |
+| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, and The Numbers directly on movie pages. |
+
+### Planned Features
+
+| Feature | Description |
+| --- | --- |
+| **Advanced Spoiler Shield** | Blurs potential spoilers (deaths, endings) in reviews until you hover over them. |
+| **Tier List Maker** | Scrape and download collection posters as a ZIP bundle for TierMaker. |
+| **Image Gallery** | View high-resolution Posters and Backdrops (powered by TMDB). |
+| **More Creative Corner** | View Fan Art and Cosplay related to the title. |
+
+### Feedback
+
+- **Have a Feature Request?** [Click Here](https://github.com/010101-sans/moctale-plus/issues/new?labels=enhancement&title=[Feature]:+)
+- **Found a Bug?** [Click Here](https://github.com/010101-sans/moctale-plus/issues/new?labels=bug&title=[Bug]:+)
+- **Have a Question?** [Click Here](https://github.com/010101-sans/moctale-plus/issues/new?labels=question&title=[Question]:+)
+
+## Disclaimer
+
+* **Moctale Plus** is a third-party browser extension and is **not affiliated with, endorsed by, or connected to Moctale.in in any way possible**.
 
 ## Installation
 
 Since this extension is in **Beta**, you can install it manually via the "Releases" tab.
+
 
 ### Option 1: The ZIP Method (Recommended)
 1.  Go to the [**Releases Page**](https://github.com/010101-sans/moctale-plus/releases).
@@ -46,9 +67,5 @@ Since this extension is in **Beta**, you can install it manually via the "Releas
     * *Note: Recent Chrome updates restrict CRX files not from the Chrome Web Store. If this fails, use Option 1.*
 
 
-## Disclaimer
-
-* **Moctale Plus** is a third-party browser extension and is **not affiliated with, endorsed by, or connected to Moctale.in in any way possible**.
-
-
 #### Made with ❤️ by <a href="https://github.com/010101-sans">010101-sans</a>
+#### Star ⭐️ this repo if you liked Moctal Plus
