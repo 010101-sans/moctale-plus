@@ -1,71 +1,120 @@
+<p align="start">
+  <img src="./public/icons/logo.png" width="180" alt="Moctale Plus logo" />
+</p>
+
 # Moctale Plus
 
-A feature-rich Chrome extension designed to supercharge your experience on [Moctale.in](https://www.moctale.in/explore)
+A feature-rich Chrome Extension designed to supercharge your experience on [Moctale.in](https://www.moctale.in/explore).
+
+[![Release](https://img.shields.io/github/v/release/010101-sans/moctale-plus?label=release)](https://github.com/010101-sans/moctale-plus/releases)
+[![Status](https://img.shields.io/badge/status-beta-blue)]()
+<!-- 
+[![Stars](https://img.shields.io/github/stars/010101-sans/moctale-plus?style=social)](https://github.com/010101-sans/moctale-plus/stargazers)
+[![License](https://img.shields.io/badge/license-Custom%20(Restricted)-blue)](./LICENSE)
+[![Open Issues](https://img.shields.io/github/issues/010101-sans/moctale-plus)](https://github.com/010101-sans/moctale-plus/issues) 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/EXTENSION_ID)]()
+-->
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Feedback & Help](#feedback--help)
+
 
 ## Features
 
-### Enhancements
+<!-- ### 1. Enhancements -->
+**1. Enhancements**
 
 | Feature | Description |
-| --- | --- |
-| **Linkifier** | Turns plain plain-text URLs in comments and posts into clickable links. |
-| **More Platforms** | Direct shortcuts to IMDB, TMDB and Letterboxd. |
-| **Reviews & Discussions** | Find what people are saying on YouTube, Reddit, Twitter / X. |
-| **Creative Corner** | View Offical Songs OSTs, Fan Edits and Behind the Scenes. |
-| **Right-Click Search** | Select text on any website and right-click to "Search on Moctale". |
-| **Keyboard Shortcuts** | Quick navigation using keys `1-6` (Explore, Schedule, Clubs, Profile, etc). |
+|:-------|:-----------|
+| **Linkifier**             | Converts plain-text URLs in posts and comments into clickable links |
+| **More Platforms**        | Quick access to IMDB, TMDB, and Letterboxd |
+| **Reviews & Discussions** | Jump to YouTube, Reddit, and Twitter/X content & conversations |
+| **Creative Corner**       | Official songs & OSTs, fan edits, and behind-the-scenes content |
+| **Right-Click Search**    | Select text anywhere → Right Click → “Search on Moctale” |
+| **Keyboard Shortcuts**    | Fast navigation using cyclical keyboard shortcuts `1–6` (Explore, Schedule, Clubs, Profile, etc.) |
 
-### Visuals
+
+<!-- ### 2. Visual Features -->
+**2. Visual Features**
 | Feature | Description |
-| --- | --- |
-| **Themes** | Switch between **Default**, **OLED (True Black)**, **Coffee**, and **Midnight**. |
+|:-------|:-----------|
+| **Themes** | Default(Dark), Light Mode |
 
-### Stats & Data
-
-| Feature | Description |
-| --- | --- |
-| **Collection Export** | One-click CSV export for your Watchlist and Custom Collections. |
-| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, and The Numbers directly on movie pages. |
-
-### Planned Features
+<!-- ### 3. Stats & Data -->
+**3. Stats & Data**
 
 | Feature | Description |
-| --- | --- |
-| **Advanced Spoiler Shield** | Blurs potential spoilers (deaths, endings) in reviews until you hover over them. |
-| **Tier List Maker** | Scrape and download collection posters as a ZIP bundle for TierMaker. |
-| **Image Gallery** | View high-resolution Posters and Backdrops (powered by TMDB). |
-| **More Creative Corner** | View Fan Art and Cosplay related to the title. |
+|:-------|:-----------|
+| **Collection Export**  | One-click CSV export for your watchlist and collections |
+| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, etc. |
+| **Tier List Maker**    | Make Tier Lists of your collections with TierMaker.com |
 
-### Feedback
+### 4. Planned Features
 
-- **Have a Feature Request?** [Click Here](https://github.com/010101-sans/moctale-plus/issues/new?labels=enhancement&title=[Feature]:+)
-- **Found a Bug?** [Click Here](https://github.com/010101-sans/moctale-plus/issues/new?labels=bug&title=[Bug]:+)
-- **Have a Question?** [Click Here](https://github.com/010101-sans/moctale-plus/issues/new?labels=question&title=[Question]:+)
+| Feature | Description |
+|:-------|:-----------|
+| **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content until hover |
+| **Image Gallery**            | High-resolution posters and backdrops (TMDB-powered) |
+| **Expanded Creative Corner** | Fan art and cosplay discovery |
 
-## Disclaimer
-
-* **Moctale Plus** is a third-party browser extension and is **not affiliated with, endorsed by, or connected to Moctale.in in any way possible**.
 
 ## Installation
 
-Since this extension is in **Beta**, you can install it manually via the "Releases" tab.
+> **Note** : Moctale Plus is currently in beta and will soon be available on the Chrome Web Store. Until then, use one of the following methods.
+
+**Option 1: ZIP Method (Recommended)**
+
+1. Visit the [**Releases**](https://github.com/010101-sans/moctale-plus/releases) page.  
+2. Download `moctale-plus-vX.X.X.zip` and extract it.  
+3. Open your browser and go to [`chrome://extensions`](chrome://extensions).  
+4. Enable **Developer Mode**.  
+5. Click **Load Unpacked** and select the extracted folder.
+
+<!-- <p align="start">
+    <video src="[PASTE_THE_GENERATED_URL_HERE]" controls muted loop playsinline></video>
+</p> -->
+
+**Option 2: CRX Method (Legacy)**
+
+1. Download `moctale-plus-vX.X.X.crx`.  
+2. Open your browser and go to [`chrome://extensions`](chrome://extensions).  
+3. Enable **Developer Mode**.  
+4. Drag and drop the CRX file onto the extensions page.
+
+<!-- <p align="start">
+    <video src="[PASTE_THE_GENERATED_URL_HERE]" controls muted loop playsinline></video>
+</p> -->
+
+<!-- > **Note:** Recent Chrome versions restrict CRX installs outside the Web Store. Use Option 1 if this fails. -->
+
+**Supported Browsers** : Every Chromium-based browser
+- Google Chrome  
+- Microsoft Edge  
+- Brave  
+- Opera  
+- Vivaldi  
+- And many more...
+
+<!-- > Note: Non-chromium based browsers like Firefox and Safari are not supported yet. -->
+
+## Disclaimer
+
+Moctale Plus is an independent, third-party browser extension and is **not affiliated with, endorsed by, or connected to Moctale.in**
+
+## Feedback & Help
+
+- **Have a feature request?** [Submit here](https://github.com/010101-sans/moctale-plus/issues/new?labels=enhancement&title=[Feature]+)  
+- **Found an error / bug?** [Report here](https://github.com/010101-sans/moctale-plus/issues/new?labels=bug&title=[Bug]+)  
+- **Have a questions?** [Ask here](https://github.com/010101-sans/moctale-plus/issues/new?labels=question&title=[Question]+)
 
 
-### Option 1: The ZIP Method (Recommended)
-1.  Go to the [**Releases Page**](https://github.com/010101-sans/moctale-plus/releases).
-2.  Download the `moctale-plus-vX.X.zip` file from the latest version.
-3.  Unzip the file into a folder.
-4.  Open Chrome and go to `chrome://extensions`.
-5.  Toggle **Developer Mode** (top right corner) to **ON**.
-6.  Click **Load Unpacked**.
-7.  Select the folder you just unzipped.
+## License
 
-### Option 2: The CRX Method
-1.  Download `moctale-plus-vX.X.crx` from Releases.
-2.  Go to `chrome://extensions`.
-3.  Drag and drop the `.crx` file onto the page.
-    * *Note: Recent Chrome updates restrict CRX files not from the Chrome Web Store. If this fails, use Option 1.*
+Moctale Plus is distributed under a **custom proprietary license**. For full terms, see the [LICENSE](./LICENSE) file.
 
 
-#### Made with ❤️ by <a href="https://github.com/010101-sans">010101-sans</a>
-#### Star ⭐️ this repo if you liked Moctal Plus
+**Made with ❤️ by [010101-sans](https://github.com/010101-sans)**  
+**Star ⭐ this project repository if you liked Moctale Plus.** 
