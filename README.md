@@ -4,7 +4,7 @@
 
 # Moctale Plus
 
-A feature-rich Chrome Extension designed to supercharge your experience on [Moctale.in](https://www.moctale.in/explore).
+A feature-rich Chrome Extension designed to supercharge your experience on [Moctale.in](https://www.moctale.in/explore)
 
 [![Release](https://img.shields.io/github/v/release/010101-sans/moctale-plus?label=release)](https://github.com/010101-sans/moctale-plus/releases)
 [![Status](https://img.shields.io/badge/status-beta-blue)]()
@@ -54,7 +54,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Random Picker**      | Picks random content from currently opened | 
 
 
-### 4. Planned Features
+**4. Planned Features**
 
 | Feature | Description |
 |:-------|:-----------|
