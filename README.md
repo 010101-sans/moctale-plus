@@ -32,7 +32,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Linkifier**             | Converts plain-text URLs in posts and comments into clickable links |
 | **More Platforms**        | Quick access to IMDB, TMDB, and Letterboxd |
 | **Reviews & Discussions** | Jump to YouTube, Reddit, and Twitter/X content & conversations |
-| **Creative Corner**       | Official songs & OSTs, fan edits, and behind-the-scenes content |
+| **Creative Corner**       | Official Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
 | **Right-Click Search**    | Select text anywhere → Right Click → “Search on Moctale” |
 | **Keyboard Shortcuts**    | Fast navigation using cyclical keyboard shortcuts `1–6` (Explore, Schedule, Clubs, Profile, etc.) |
 
@@ -50,7 +50,9 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 |:-------|:-----------|
 | **Collection Export**  | One-click CSV export for your watchlist and collections |
 | **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, etc. |
-| **Tier List Maker**    | Make Tier Lists of your collections with TierMaker.com |
+| **Tier List Maker**    | Make Tier Lists of from currently opened collections with TierMaker.com |
+| **Random Picker**      | Picks random content from currently opened | 
+
 
 ### 4. Planned Features
 
@@ -58,7 +60,6 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 |:-------|:-----------|
 | **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content until hover |
 | **Image Gallery**            | High-resolution posters and backdrops (TMDB-powered) |
-| **Expanded Creative Corner** | Fan art and cosplay discovery |
 
 
 ## Installation

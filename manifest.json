@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.tsx-loader-829x50OV.js"
+        "assets/index.tsx-loader-DAripXYb.js"
       ],
       "matches": [
         "https://moctale.in/*",
@@ -36,7 +36,7 @@
       ],
       "run_at": "document_end",
       "css": [
-        "assets/index-_rDlUPz4.css"
+        "assets/index-DGV9RdrN.css"
       ]
     }
   ],
@@ -52,7 +52,7 @@
       ],
       "resources": [
         "assets/index-D_Ii-jDN.js",
-        "assets/index.tsx-mOKYForO.js"
+        "assets/index.tsx-cawi-c5y.js"
       ],
       "use_dynamic_url": false
     }
