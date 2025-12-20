@@ -1,5 +1,5 @@
 <p align="start">
-  <img src="./public/icons/logo.png" width="180" alt="Moctale Plus logo" />
+  <img src="./icons/logo.png" width="180" alt="Moctale Plus logo" />
 </p>
 
 # Moctale Plus
