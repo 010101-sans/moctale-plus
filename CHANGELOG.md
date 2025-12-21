@@ -7,6 +7,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+
+
+## v1.6.0 - 21/12/2025
+
+### Added
+- **Save Scroll Postion:** On page refresh, scroll to the exact position the a page was refreshed. 
+- **Advanced Spoiler Shield:** Blurs out text with potential spoilers. Users can add their own risky words to consider as spoilers.
+
+### Fixed
+- **Search on Moctale:** This feature used to stop working at certain times
+- **Random Picker opening titles in same tab for My Collections:** 
+    - This was happeneing because the "My Collections" page uses JavaScript-driven <div> cards (role="link") instead of standard anchor tags (<a href="...">) used in other Collections. 
+    - When we simply `.click()` them, the Single Page Application (SPA) router handles it internally, keeping the user in the same tab.
+    - To force a New Tab, the solution is to reconstruct the URL manually by scraping the Title and Year from the card, since the href attribute is missing.
+
+
+
+
+
+
+
+
 ## v1.5.0 - 20/12/2025
 *Changes currently in the main branch, pending the next tag.*
 
