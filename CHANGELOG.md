@@ -8,6 +8,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+## v1.6.5 - 22/12/2025
+
+### Added
+- **Added Poster Grid Layout:** Default, List View (1 Column), and 2-8 columns on `explore`, `explore/collection`, `/my-collections`, and `/schedule` pages.
+
+### Improvement
+- **Repositioned the Public Collection Titles:** To avoid the title text being aggressively wrapped, I've placed the title on a seperate line below the buttons. 
+
+### Chore
+- **Tier List Maker:** Stopptd this service (temporarily) as it was resulting in heavy operation cost.
+- **Scroll Saver:** Stopped this service (temporarily) as it was resulting in heavy operation cost.
+
+
+
+
+
+
 
 ## v1.6.0 - 21/12/2025
 
@@ -18,7 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - **Search on Moctale:** This feature used to stop working at certain times
 - **Random Picker opening titles in same tab for My Collections:** 
-    - This was happeneing because the "My Collections" page uses JavaScript-driven <div> cards (role="link") instead of standard anchor tags (<a href="...">) used in other Collections. 
+    - This was happeneing because the "My Collections" page uses JavaScript-driven `<div>` cards (role="link") instead of standard anchor tags `<a href="...">` used in other Collections. 
     - When we simply `.click()` them, the Single Page Application (SPA) router handles it internally, keeping the user in the same tab.
     - To force a New Tab, the solution is to reconstruct the URL manually by scraping the Title and Year from the card, since the href attribute is missing.
 
@@ -30,7 +47,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 ## v1.5.0 - 20/12/2025
-*Changes currently in the main branch, pending the next tag.*
 
 ### Added
 - **Custom UPI donation amounts:** Allow users to financially support the development of Moctal Plus by choosing their own donation amount while making UPI contributions.

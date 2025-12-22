@@ -35,6 +35,9 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Creative Corner**       | Official Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
 | **Right-Click Search**    | Select text anywhere → Right Click → “Search on Moctale” |
 | **Keyboard Shortcuts**    | Fast navigation using cyclical keyboard shortcuts `1–6` (Explore, Schedule, Clubs, Profile, etc.) |
+| **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content until hover |
+| **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
+
 
 
 <!-- ### 2. Visual Features -->
@@ -58,8 +61,12 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 
 | Feature | Description |
 |:-------|:-----------|
-| **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content until hover |
-| **Image Gallery**            | High-resolution posters and backdrops (TMDB-powered) |
+| **Image Gallery**   | High-resolution posters and backdrops (TMDB-powered) |
+| **Spinning Wheel**  | Picks random title in currently opened collection with a beautifully animated roulette |
+| **More Keyboard Shortcuts**  | Toggle Watched, Review, and many more |
+| **Episode Tracker for TV shows**  | Locally track watched episodes |
+| **Review Templates**  | Adds many templates for writing reviews |
+| **More Platform**  | More Platform integration in "More Platform" Section |
 
 
 ## Installation
