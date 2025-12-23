@@ -30,13 +30,14 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | Feature | Description |
 |:-------|:-----------|
 | **Linkifier**             | Converts plain-text URLs in posts and comments into clickable links |
-| **More Platforms**        | Quick access to IMDB, TMDB, and Letterboxd |
+| **More Platforms**        | Quick access to IMDB, TMDB, Letterboxd and many more including Anime Platforms like AniList and MAL |
 | **Reviews & Discussions** | Jump to YouTube, Reddit, and Twitter/X content & conversations |
 | **Creative Corner**       | Official Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
 | **Right-Click Search**    | Select text anywhere → Right Click → “Search on Moctale” |
-| **Keyboard Shortcuts**    | Fast navigation using cyclical keyboard shortcuts `1–6` (Explore, Schedule, Clubs, Profile, etc.) |
+| **Keyboard Shortcuts**    | Shortcuts for fast navigation and toggeling feature. Access Shortcut Guide with `Shift + /` |
 | **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content until hover |
 | **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
+| **Review Templates** | Provides a set of pre-built templates for writing reviews for Movies, Shows and Anime. Users can add your own templates as well |
 
 
 
@@ -45,6 +46,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | Feature | Description |
 |:-------|:-----------|
 | **Themes** | Default(Dark), Light Mode |
+| **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
 
 <!-- ### 3. Stats & Data -->
 **3. Stats & Data**
@@ -55,6 +57,8 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, etc. |
 | **Tier List Maker**    | Make Tier Lists of from currently opened collections with TierMaker.com |
 | **Random Picker**      | Picks random content from currently opened | 
+| **Episode tracker** | Adds persistant episode progress tracking for individual seasons of TV Shows. |
+| **Import/Export Backup** | To preserve user's setting preference and Episode Tracker's data via a json file. |
 
 
 **4. Planned Features**
@@ -66,8 +70,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **More Keyboard Shortcuts**  | Toggle Watched, Review, and many more |
 | **Episode Tracker for TV shows**  | Locally track watched episodes |
 | **Review Templates**  | Adds many templates for writing reviews |
-| **More Platform**  | More Platform integration in "More Platform" Section |
-
+ 
 
 ## Installation
 

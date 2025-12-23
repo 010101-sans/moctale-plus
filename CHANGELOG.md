@@ -4,6 +4,35 @@ All notable changes to the **Moctale Plus** extension will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+<!-- 
+## Unreleased - xx/xx/2025 
+
+### Added
+- **Spinning Wheel:** To pick random title from currently opened collection.
+-->
+
+
+## v1.7.0 - 23/12/2025
+
+### Added
+- **Import/Export Backup:** To preserve user's setting preference and Episode Tracker's data via a `Moctale_Plus_Backup_<datetime>.json` file.
+- **Episode tracker:** Adds persistant episode progress tracking for individual seasons of TV Shows.
+- **Review Templates:** Provides a set of pre-built templates for writing reviews for Movies, Shows and Anime. Users can add your own templates as well.
+
+### Fixed
+- **Obfuscation of Service-loader:** Fixed this critical bug for release versions that used to crash the service immediately after loading resulting in service-loader related erros.
+- **isAnime Evaluation:** Now checks for Anime related genres on the Genre Section (Still needs better implementation).
+
+### Improved
+- **Keyboard Shortcts V2:**
+    - Added many more Keyboard Shortcuts
+    - A shortcuts guide can be accessed with `Shift + /`
+    - Added a new shortcut `Alt + M` to access Moctale Plus.
+- **More Platform V2:** 
+    - Added many more platforms in the "More Platform" section. 
+    - Added Anime Platforms like AniList, MAL, and Kitsu.
+- **Pick Random:** Now appears only on one of the two types of collection paths.
+
 
 
 
