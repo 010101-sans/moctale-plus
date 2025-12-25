@@ -1,3 +1,6 @@
+function getDefaultExportFromCjs(x) {
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production = {};
 var hasRequiredReactJsxRuntime_production;
@@ -747,7 +750,7 @@ var hasRequiredReactDom_production;
 function requireReactDom_production() {
   if (hasRequiredReactDom_production) return reactDom_production;
   hasRequiredReactDom_production = 1;
-  var React = requireReact();
+  var React2 = requireReact();
   function formatProdErrorMessage(code) {
     var url = "https://react.dev/errors/" + code;
     if (1 < arguments.length) {
@@ -786,7 +789,7 @@ function requireReactDom_production() {
       implementation
     };
   }
-  var ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+  var ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
   function getCrossOriginStringAs(as, input) {
     if ("font" === as) return "";
     if ("string" === typeof input)
@@ -914,7 +917,7 @@ var hasRequiredReactDomClient_production;
 function requireReactDomClient_production() {
   if (hasRequiredReactDomClient_production) return reactDomClient_production;
   hasRequiredReactDomClient_production = 1;
-  var Scheduler = requireScheduler(), React = requireReact(), ReactDOM = requireReactDom();
+  var Scheduler = requireScheduler(), React2 = requireReact(), ReactDOM = requireReactDom();
   function formatProdErrorMessage(code) {
     var url = "https://react.dev/errors/" + code;
     if (1 < arguments.length) {
@@ -1090,7 +1093,7 @@ function requireReactDomClient_production() {
       }
     return null;
   }
-  var isArrayImpl = Array.isArray, ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, sharedNotPendingObject = {
+  var isArrayImpl = Array.isArray, ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, sharedNotPendingObject = {
     pending: false,
     data: null,
     method: null,
@@ -12330,7 +12333,7 @@ function requireReactDomClient_production() {
       0 === i && attemptExplicitHydrationTarget(target);
     }
   };
-  var isomorphicReactPackageVersion$jscomp$inline_1840 = React.version;
+  var isomorphicReactPackageVersion$jscomp$inline_1840 = React2.version;
   if ("19.2.3" !== isomorphicReactPackageVersion$jscomp$inline_1840)
     throw Error(
       formatProdErrorMessage(
@@ -12449,8 +12452,2665 @@ function requireClient() {
 }
 var clientExports = requireClient();
 var reactExports = requireReact();
+const React = /* @__PURE__ */ getDefaultExportFromCjs(reactExports);
+function _extends() {
+  _extends = Object.assign || function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+var propTypes = { exports: {} };
+var ReactPropTypesSecret_1;
+var hasRequiredReactPropTypesSecret;
+function requireReactPropTypesSecret() {
+  if (hasRequiredReactPropTypesSecret) return ReactPropTypesSecret_1;
+  hasRequiredReactPropTypesSecret = 1;
+  var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+  ReactPropTypesSecret_1 = ReactPropTypesSecret;
+  return ReactPropTypesSecret_1;
+}
+var factoryWithThrowingShims;
+var hasRequiredFactoryWithThrowingShims;
+function requireFactoryWithThrowingShims() {
+  if (hasRequiredFactoryWithThrowingShims) return factoryWithThrowingShims;
+  hasRequiredFactoryWithThrowingShims = 1;
+  var ReactPropTypesSecret = /* @__PURE__ */ requireReactPropTypesSecret();
+  function emptyFunction() {
+  }
+  function emptyFunctionWithReset() {
+  }
+  emptyFunctionWithReset.resetWarningCache = emptyFunction;
+  factoryWithThrowingShims = function() {
+    function shim(props, propName, componentName, location, propFullName, secret) {
+      if (secret === ReactPropTypesSecret) {
+        return;
+      }
+      var err = new Error(
+        "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types"
+      );
+      err.name = "Invariant Violation";
+      throw err;
+    }
+    shim.isRequired = shim;
+    function getShim() {
+      return shim;
+    }
+    var ReactPropTypes = {
+      array: shim,
+      bigint: shim,
+      bool: shim,
+      func: shim,
+      number: shim,
+      object: shim,
+      string: shim,
+      symbol: shim,
+      any: shim,
+      arrayOf: getShim,
+      element: shim,
+      elementType: shim,
+      instanceOf: getShim,
+      node: shim,
+      objectOf: getShim,
+      oneOf: getShim,
+      oneOfType: getShim,
+      shape: getShim,
+      exact: getShim,
+      checkPropTypes: emptyFunctionWithReset,
+      resetWarningCache: emptyFunction
+    };
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+  };
+  return factoryWithThrowingShims;
+}
+var hasRequiredPropTypes;
+function requirePropTypes() {
+  if (hasRequiredPropTypes) return propTypes.exports;
+  hasRequiredPropTypes = 1;
+  {
+    propTypes.exports = /* @__PURE__ */ requireFactoryWithThrowingShims()();
+  }
+  return propTypes.exports;
+}
+var propTypesExports = /* @__PURE__ */ requirePropTypes();
+const PropTypes = /* @__PURE__ */ getDefaultExportFromCjs(propTypesExports);
+var _excluded$i = ["variant", "color", "size"];
+var Bold$i = function Bold(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M17.919 8.18H6.079c-.96 0-1.44 1.16-.76 1.84l5.18 5.18c.83.83 2.18.83 3.01 0l1.97-1.97 3.21-3.21c.67-.68.19-1.84-.77-1.84z"
+  }));
+};
+var Broken$i = function Broken(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M16.01 12.85l-2.62 2.62c-.77.77-2.03.77-2.8 0L4.08 8.95M19.92 8.95l-1.04 1.04"
+  }));
+};
+var Bulk$i = function Bulk(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M15.48 13.23l-3.79-5.05H6.08c-.96 0-1.44 1.16-.76 1.84l5.18 5.18c.83.83 2.18.83 3.01 0l1.97-1.97z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M17.92 8.18h-6.23l3.79 5.05 3.21-3.21c.67-.68.19-1.84-.77-1.84z"
+  }));
+};
+var Linear$i = function Linear(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M19.92 8.95l-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
+  }));
+};
+var Outline$i = function Outline(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 16.8c-.7 0-1.4-.27-1.93-.8L3.55 9.48a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l6.52 6.52c.48.48 1.26.48 1.74 0l6.52-6.52c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06L13.93 16c-.53.53-1.23.8-1.93.8z"
+  }));
+};
+var TwoTone$i = function TwoTone(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M19.92 8.95l-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
+  }));
+};
+var chooseVariant$i = function chooseVariant(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$i, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$i, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$i, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$i, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$i, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$i, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$i, {
+        color
+      });
+  }
+};
+var ArrowDown2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$i);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$i(variant, color));
+});
+ArrowDown2.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+ArrowDown2.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+ArrowDown2.displayName = "ArrowDown2";
+var _excluded$h = ["variant", "color", "size"];
+var Bold$h = function Bold2(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M21.14 9.898h-8.39v5.48c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5.48H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.11 10-10c0-.48-.38-.86-.86-.86z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12.748 5.8l1.56 1.56c.29.29.77.29 1.06 0 .29-.29.29-.77 0-1.06l-2.85-2.84a.754.754 0 00-1.06 0l-2.84 2.85c-.14.15-.22.34-.22.53s.07.38.22.53c.29.29.77.29 1.06 0l1.56-1.56V9.9h1.5V5.8h.01z"
+  }));
+};
+var Broken$h = function Broken2(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M17.52 18.01C16.16 19.25 14.29 20 12 20c-5 0-8-3.58-8-8M20 12c0 1.05-.17 2.05-.49 2.97M9.44 6.47L12 3.91l2.56 2.56M12 9.15V3.98M12 14.15v-1.96"
+  }));
+};
+var Bulk$h = function Bulk2(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M22 10.76a.86.86 0 00-.86-.86H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.12 10-10z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12.53 3.46l2.85 2.84c.29.29.29.77 0 1.06-.29.29-.77.29-1.06 0L12.75 5.8v9.57c0 .41-.34.75-.75.75s-.75-.34-.75-.75V5.8L9.69 7.37c-.29.29-.77.29-1.06 0a.753.753 0 01-.23-.53c0-.19.07-.38.22-.53l2.85-2.84c.29-.3.77-.3 1.06-.01z"
+  }));
+};
+var Linear$h = function Linear2(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 6.5l2.56-2.56 2.56 2.56M11.88 14.18V4.01M4 12c0 4.42 3 8 8 8s8-3.58 8-8"
+  }));
+};
+var Outline$h = function Outline2(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M14.44 7.25c-.19 0-.38-.07-.53-.22L11.88 5 9.85 7.03c-.29.29-.77.29-1.06 0a.754.754 0 010-1.06l2.56-2.56c.29-.29.77-.29 1.06 0l2.56 2.56c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.88 14.93c-.41 0-.75-.34-.75-.75V4.01c0-.41.34-.75.75-.75s.75.34.75.75v10.17c0 .42-.34.75-.75.75z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 20.75c-5.15 0-8.75-3.6-8.75-8.75 0-.41.34-.75.75-.75s.75.34.75.75c0 4.27 2.98 7.25 7.25 7.25s7.25-2.98 7.25-7.25c0-.41.34-.75.75-.75s.75.34.75.75c0 5.15-3.6 8.75-8.75 8.75z"
+  }));
+};
+var TwoTone$h = function TwoTone2(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 6.5l2.56-2.56 2.56 2.56M11.88 14.18V4.01"
+  })), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M4 12c0 4.42 3 8 8 8s8-3.58 8-8"
+  }));
+};
+var chooseVariant$h = function chooseVariant2(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$h, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$h, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$h, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$h, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$h, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$h, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$h, {
+        color
+      });
+  }
+};
+var Export = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$h);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$h(variant, color));
+});
+Export.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Export.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Export.displayName = "Export";
+var _excluded$g = ["variant", "color", "size"];
+var Bold$g = function Bold3(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M21.14 9.898h-8.46v3.67l1.57-1.57c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.85 2.84c-.29.29-.77.29-1.06 0l-2.85-2.84a.742.742 0 01-.22-.53c0-.19.08-.38.23-.53.29-.29.77-.29 1.06 0l1.56 1.56v-3.66H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.11 10-10c0-.48-.38-.86-.86-.86zM12.68 3.988c0-.41-.34-.75-.75-.75s-.75.34-.75.75v5.9h1.5v-5.9z"
+  }));
+};
+var Broken$g = function Broken3(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.44 11.68L12 14.24l2.56-2.56M12 9v5.17M12 4v1.96M17.52 18.01C16.16 19.25 14.29 20 12 20c-5 0-8-3.58-8-8M20 12c0 1.05-.17 2.05-.49 2.97"
+  }));
+};
+var Bulk$g = function Bulk3(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M22 10.76a.86.86 0 00-.86-.86H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.12 10-10z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12.46 15.9l2.85-2.84c.29-.29.29-.77 0-1.06a.754.754 0 00-1.06 0l-1.56 1.56V3.99c0-.41-.34-.75-.75-.75s-.75.34-.75.75v9.57L9.62 12a.754.754 0 00-1.06 0c-.15.15-.22.34-.22.53s.07.38.22.53l2.85 2.84c.29.3.76.3 1.05 0z"
+  }));
+};
+var Linear$g = function Linear3(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 11.68l2.56 2.56 2.56-2.56M11.88 4v10.17"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M20 12.18c0 4.42-3 8-8 8s-8-3.58-8-8"
+  }));
+};
+var Outline$g = function Outline3(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.88 14.99c-.19 0-.38-.07-.53-.22l-2.56-2.56a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l2.03 2.03 2.03-2.03c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.56 2.56c-.15.15-.34.22-.53.22z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.88 14.92c-.41 0-.75-.34-.75-.75V4c0-.41.34-.75.75-.75s.75.34.75.75v10.17c0 .41-.34.75-.75.75z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 20.93c-5.15 0-8.75-3.6-8.75-8.75 0-.41.34-.75.75-.75s.75.34.75.75c0 4.27 2.98 7.25 7.25 7.25s7.25-2.98 7.25-7.25c0-.41.34-.75.75-.75s.75.34.75.75c0 5.15-3.6 8.75-8.75 8.75z"
+  }));
+};
+var TwoTone$g = function TwoTone3(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 11.68l2.56 2.56 2.56-2.56M11.88 4v10.17"
+  })), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M20 12.18c0 4.42-3 8-8 8s-8-3.58-8-8"
+  }));
+};
+var chooseVariant$g = function chooseVariant3(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$g, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$g, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$g, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$g, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$g, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$g, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$g, {
+        color
+      });
+  }
+};
+var Import = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$g);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$g(variant, color));
+});
+Import.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Import.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Import.displayName = "Import";
+var _excluded$f = ["variant", "color", "size"];
+var Bold$f = function Bold4(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M7.878 12.07c0-.41.34-.75.75-.75h5.48V2.86a.869.869 0 00-.87-.86c-5.89 0-10 4.11-10 10s4.11 10 10 10c.47 0 .86-.38.86-.86v-8.33h-5.47a.734.734 0 01-.75-.74z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M20.542 11.54l-2.84-2.85a.754.754 0 00-1.06 0c-.29.29-.29.77 0 1.06l1.56 1.56h-4.1v1.5h4.09l-1.56 1.56c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.84-2.85c.3-.28.3-.75.01-1.04z"
+  }));
+};
+var Broken$f = function Broken4(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M6.56 14.56L4 12l2.56-2.56M9.24 12H4.07M14.24 12h-1.96M18.01 6.48C19.25 7.84 20 9.71 20 12c0 5-3.58 8-8 8M12 4c1.05 0 2.05.17 2.97.49"
+  }));
+};
+var Bulk$f = function Bulk4(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M13.24 2c.47 0 .86.38.86.86v18.29c0 .47-.38.86-.86.86-5.89 0-10-4.11-10-10S7.36 2 13.24 2z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M20.54 11.54L17.7 8.69a.754.754 0 00-1.06 0c-.29.29-.29.77 0 1.06l1.56 1.56H8.63c-.41 0-.75.34-.75.75s.34.75.75.75h9.57l-1.56 1.56c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.84-2.85a.73.73 0 000-1.04z"
+  }));
+};
+var Linear$f = function Linear4(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M17.44 14.62L20 12.06 17.44 9.5M9.76 12.06h10.17M11.76 20c-4.42 0-8-3-8-8s3.58-8 8-8"
+  }));
+};
+var Outline$f = function Outline4(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M17.44 15.37c-.19 0-.38-.07-.53-.22a.754.754 0 010-1.06l2.03-2.03-2.03-2.03a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l2.56 2.56c.29.29.29.77 0 1.06l-2.56 2.56c-.15.15-.34.22-.53.22z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M19.93 12.81H9.76c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h10.17c.41 0 .75.34.75.75s-.34.75-.75.75z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.76 20.75c-5.15 0-8.75-3.6-8.75-8.75s3.6-8.75 8.75-8.75c.41 0 .75.34.75.75s-.34.75-.75.75c-4.27 0-7.25 2.98-7.25 7.25s2.98 7.25 7.25 7.25c.41 0 .75.34.75.75s-.34.75-.75.75z"
+  }));
+};
+var TwoTone$f = function TwoTone4(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M17.44 14.62L20 12.06 17.44 9.5M9.76 12.06h10.17"
+  })), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M11.76 20c-4.42 0-8-3-8-8s3.58-8 8-8"
+  }));
+};
+var chooseVariant$f = function chooseVariant4(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$f, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$f, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$f, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$f, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$f, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$f, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$f, {
+        color
+      });
+  }
+};
+var Logout = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$f);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$f(variant, color));
+});
+Logout.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Logout.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Logout.displayName = "Logout";
+var _excluded$e = ["variant", "color", "size"];
+var Bold$e = function Bold5(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-5.4 9.23c.17-1.19.7-2.26 1.53-3.1 2-1.99 5.15-2.1 7.29-.36v-.95c0-.41.34-.75.75-.75s.75.34.75.75v2.67c0 .41-.34.75-.75.75H13.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.75a3.965 3.965 0 00-5.07.45c-.6.6-.98 1.38-1.11 2.25-.05.37-.37.64-.74.64-.04 0-.07 0-.11-.01a.739.739 0 01-.62-.84zm9.27 4.64a5.45 5.45 0 01-3.87 1.6c-1.22 0-2.43-.43-3.43-1.24v.94c0 .41-.34.75-.75.75s-.75-.34-.75-.75V14.5c0-.41.34-.75.75-.75h2.67c.41 0 .75.34.75.75s-.34.75-.75.75h-.75c1.55 1.08 3.69.93 5.07-.45.6-.6.98-1.38 1.11-2.25.06-.41.43-.7.85-.64.41.06.69.44.64.85-.18 1.21-.71 2.28-1.54 3.11z"
+  }));
+};
+var Broken$e = function Broken5(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M4 6c-1.25 1.67-2 3.75-2 6 0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2c-1.43 0-2.8.3-4.03.85"
+  }));
+};
+var Bulk$e = function Bulk5(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M16.759 11.93a.741.741 0 00-.85.64c-.12.87-.51 1.65-1.11 2.25-1.38 1.38-3.52 1.52-5.07.45h.75c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-2.67c-.41 0-.75.34-.75.75v2.67c0 .41.34.75.75.75s.75-.34.75-.75v-.94c1 .81 2.21 1.24 3.43 1.24 1.4 0 2.8-.53 3.87-1.6.83-.83 1.36-1.9 1.53-3.1a.734.734 0 00-.63-.86zM7.34 12.08c.37 0 .69-.27.74-.64.12-.87.51-1.65 1.11-2.25 1.38-1.38 3.52-1.52 5.07-.45h-.75c-.41 0-.75.34-.75.75s.34.75.75.75h2.67c.41 0 .75-.34.75-.75V6.82c0-.41-.34-.75-.75-.75s-.75.34-.75.75v.94c-2.15-1.74-5.3-1.63-7.29.36-.83.83-1.36 1.9-1.53 3.1-.06.41.23.79.64.85.02.01.06.01.09.01z"
+  }));
+};
+var Linear$e = function Linear5(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
+  }));
+};
+var Outline$e = function Outline5(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 17.47c-1.4 0-2.8-.53-3.87-1.6-.28-.28-.53-.59-.76-.96a.747.747 0 111.27-.79c.17.28.35.5.55.7a3.977 3.977 0 005.62 0c.6-.6.98-1.38 1.11-2.25.06-.41.44-.71.85-.64.41.06.69.44.64.85-.17 1.19-.7 2.26-1.53 3.1A5.522 5.522 0 0112 17.47zM7.34 12.08c-.04 0-.07 0-.11-.01a.754.754 0 01-.64-.85c.17-1.19.7-2.26 1.53-3.1 2.13-2.13 5.6-2.13 7.74 0 .28.28.53.59.76.97a.747.747 0 11-1.27.79c-.17-.27-.35-.5-.55-.7a3.977 3.977 0 00-5.62 0c-.6.6-.98 1.38-1.11 2.25-.04.38-.36.65-.73.65z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M7.82 17.93c-.41 0-.75-.34-.75-.75v-2.67c0-.41.34-.75.75-.75h2.67c.41 0 .75.34.75.75s-.34.75-.75.75H8.57v1.92c0 .41-.33.75-.75.75zM16.18 10.24h-2.67c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h1.92V6.82c0-.41.34-.75.75-.75s.75.34.75.75v2.67c0 .42-.34.75-.75.75z"
+  }));
+};
+var TwoTone$e = function TwoTone5(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+  }), /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
+  })));
+};
+var chooseVariant$e = function chooseVariant5(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$e, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$e, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$e, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$e, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$e, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$e, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$e, {
+        color
+      });
+  }
+};
+var RefreshCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$e);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$e(variant, color));
+});
+RefreshCircle.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+RefreshCircle.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+RefreshCircle.displayName = "RefreshCircle";
+var _excluded$d = ["variant", "color", "size"];
+var Bold$d = function Bold6(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zM12 18.25c-1.79 0-3.19-.89-4.14-1.77v.71c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-2.75c0-.41.34-.75.75-.75h2.48c.41 0 .75.34.75.75s-.34.75-.75.75h-.9c.74.74 1.89 1.56 3.31 1.56 2.62 0 4.75-2.13 4.75-4.75 0-.41.34-.75.75-.75s.75.34.75.75c0 3.45-2.8 6.25-6.25 6.25zm6.25-8.71v.08a.75.75 0 01-.3.54c-.07.05-.15.09-.24.12-.07.02-.14.03-.21.03h-2.43c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.83c-.8-.74-2.09-1.56-3.88-1.56-2.62 0-4.75 2.13-4.75 4.75 0 .41-.34.75-.75.75s-.77-.34-.77-.75c0-3.45 2.8-6.25 6.25-6.25 2.15 0 3.73.93 4.75 1.82v-.76c0-.41.34-.75.75-.75s.75.34.75.75v2.73z"
+  }));
+};
+var Broken$d = function Broken6(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M18.01 19.99A9.964 9.964 0 0112 22c-5.52 0-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M22 12c0 1.82-.49 3.53-1.34 5M6.03 3.97A9.921 9.921 0 0112 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44M2 12c0-1.82.48-3.53 1.33-5"
+  }));
+};
+var Bulk$d = function Bulk6(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M22 7.81v8.37c0 3.64-2.17 5.81-5.81 5.81H7.81C4.17 22 2 19.83 2 16.19V7.81C2 4.17 4.17 2 7.81 2h8.37C19.83 2 22 4.17 22 7.81z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 18.25c-1.79 0-3.19-.89-4.14-1.77v.71c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-2.75c0-.41.34-.75.75-.75h2.48c.41 0 .75.34.75.75s-.34.75-.75.75h-.9c.74.74 1.89 1.56 3.31 1.56 2.62 0 4.75-2.13 4.75-4.75 0-.41.34-.75.75-.75s.75.34.75.75c0 3.45-2.8 6.25-6.25 6.25zm-5.5-5.5c-.41 0-.75-.34-.75-.75 0-3.45 2.8-6.25 6.25-6.25 2.15 0 3.73.93 4.75 1.82v-.76c0-.41.34-.75.75-.75s.75.34.75.75V9.63a.75.75 0 01-.3.54c-.07.05-.15.09-.24.12-.07.02-.14.03-.21.03h-2.43c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.83c-.8-.74-2.09-1.56-3.88-1.56-2.62 0-4.75 2.13-4.75 4.75-.02.4-.36.74-.77.74z"
+  }));
+};
+var Linear$d = function Linear6(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M22 12c0 5.52-4.48 10-10 10s-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
+  }));
+};
+var Outline$d = function Outline6(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M22 12c0 5.52-4.48 10-10 10s-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
+  }));
+};
+var TwoTone$d = function TwoTone6(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M21.89 12c0 5.52-4.48 10-10 10S3 16.44 3 16.44m0 0h4.52m-4.52 0v5",
+    opacity: ".4"
+  }));
+};
+var chooseVariant$d = function chooseVariant6(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$d, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$d, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$d, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$d, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$d, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$d, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$d, {
+        color
+      });
+  }
+};
+var Refresh = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$d);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$d(variant, color));
+});
+Refresh.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Refresh.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Refresh.displayName = "Refresh";
+var _excluded$c = ["variant", "color", "size"];
+var Bold$c = function Bold7(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87M9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.14-.23.39-.38.66-.38 4.27 0 7.75 3.48 7.75 7.75 0 .41-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var Broken$c = function Broken7(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M15.288 9.98c-.93-5.64-9.08-3.5-7.15 1.87M8.11 11.852c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84.77-.67 1.08-1.6 1.02-2.5",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$c = function Bulk7(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.13-.24.38-.38.65-.38 4.27 0 7.75 3.48 7.75 7.75a.74.74 0 0 1-.74.75Z",
+    fill: color
+  }));
+};
+var Linear$c = function Linear7(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$c = function Outline7(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M14.81 17.102h-6.7c-1.98-.14-2.86-1.65-2.86-3 0-1.13.62-2.37 1.95-2.83-.3-1.5.07-2.9 1.06-3.94 1.19-1.25 3.1-1.74 4.74-1.24 1.46.45 2.51 1.62 2.92 3.25 1.25.35 2.24 1.33 2.65 2.66.46 1.52.04 3.08-1.1 4.07-.72.66-1.67 1.03-2.66 1.03Zm-6.67-4.5c-1.02.09-1.39.86-1.39 1.5 0 .65.37 1.43 1.41 1.5h6.62c.65 0 1.22-.22 1.68-.65.84-.73.89-1.78.67-2.52-.22-.74-.85-1.58-1.94-1.71a.753.753 0 0 1-.65-.62c-.22-1.33-.93-2.24-1.99-2.57-1.09-.34-2.42.01-3.21.84-.78.81-.95 1.96-.5 3.23a.75.75 0 0 1-.45.96c-.08.03-.21.05-.25.04ZM9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.13-.24.38-.38.65-.38 4.27 0 7.75 3.48 7.75 7.75a.74.74 0 0 1-.74.75Z",
+    fill: color
+  }));
+};
+var TwoTone$c = function TwoTone7(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /* @__PURE__ */ React.createElement("path", {
+    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75"
+  })));
+};
+var chooseVariant$c = function chooseVariant7(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$c, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$c, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$c, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$c, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$c, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$c, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$c, {
+        color
+      });
+  }
+};
+var CloudChange = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$c);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$c(variant, color));
+});
+CloudChange.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+CloudChange.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+CloudChange.displayName = "CloudChange";
+var _excluded$b = ["variant", "color", "size"];
+var Bold$b = function Bold8(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm-5.7 14.72c-.34.34-.79.57-1.34.64l-1.35.15c-.74.08-1.37-.55-1.29-1.3l.15-1.36c.13-1.21 1.14-1.98 2.21-2 .1-.01.22 0 .33.01.47.06.92.28 1.3.65.37.37.58.81.64 1.26.01.11.02.22.02.32 0 .62-.23 1.19-.67 1.63Zm6.95-9.17c-.72 1.8-2.37 4.16-3.94 5.7a3.3 3.3 0 0 0-2.8-2.74c1.54-1.58 3.92-3.25 5.73-3.98.32-.12.64-.03.84.17.2.22.3.53.17.85Z",
+    fill: color
+  }));
+};
+var Broken$b = function Broken8(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M1.97 12.941v2.06c0 5 2 7 7 7h6c5 0 7-2 7-7v-2M10.97 2h-2c-5 0-7 2-7 7",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M18.51 3c.66-.37 1.3-.68 1.9-.92.47-.18.93-.04 1.22.25.3.3.45.76.26 1.23-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c1.07-1.34 2.72-2.82 4.49-4.11",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.78 14.489c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 0 1-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46ZM15.82 11.981c0-2.09-1.69-3.79-3.79-3.79",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$b = function Bulk8(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M14.19 0H5.81C2.17 0 0 2.17 0 5.81v8.37C0 17.83 2.17 20 5.81 20h8.37c3.64 0 5.81-2.17 5.81-5.81V5.81C20 2.17 17.83 0 14.19 0Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M19.83 1.55c-1.05 2.61-3.43 6.02-5.71 8.25a4.763 4.763 0 0 0-4.05-3.96c2.24-2.28 5.67-4.7 8.29-5.76.46-.18.93-.04 1.21.25.31.3.45.76.26 1.22Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M14.12 9.792c-.4.39-.8.75-1.18 1.05l-1.57 1.26c-.2.14-.4.26-.62.36 0-.15-.02-.3-.03-.46-.09-.66-.39-1.29-.93-1.83a3.31 3.31 0 0 0-1.88-.94c-.16-.02-.33-.02-.48-.02.09-.25.22-.48.39-.67l1.25-1.57c.3-.38.64-.76 1.01-1.14 2.07.29 3.72 1.91 4.04 3.96Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.75 12.47c0 .88-.34 1.72-.97 2.35-.49.49-1.14.83-1.94.93l-1.96.22c-1.07.12-1.99-.8-1.87-1.88l.22-1.96c.19-1.75 1.65-2.87 3.2-2.9.15-.01.32 0 .48.02.68.09 1.33.4 1.88.94.53.53.84 1.17.93 1.83.01.15.03.3.03.45Z",
+    fill: color
+  }));
+};
+var Linear$b = function Linear8(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M10.97 2h-2c-5 0-7 2-7 7v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M21.88 3.56c-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c2.07-2.58 6.26-5.69 9.32-6.92.47-.18.93-.04 1.22.25.3.3.44.76.25 1.23z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M12.78 14.49c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 01-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46zM15.82 11.98c0-2.09-1.69-3.79-3.79-3.79"
+  }));
+};
+var Outline$b = function Outline8(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M14.97 22.75h-6c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h2c.41 0 .75.34.75.75s-.34.75-.75.75h-2C4.36 2.75 2.72 4.39 2.72 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25v-2c0-.41.34-.75.75-.75s.75.34.75.75v2c0 5.43-2.31 7.75-7.75 7.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.78 15.24c-.15 0-.29-.04-.42-.13a.738.738 0 0 1-.33-.62c0-.11-.01-.23-.03-.35-.07-.53-.31-1-.71-1.41-.41-.41-.91-.67-1.46-.74-.08-.01-.21-.02-.33-.01-.25.02-.5-.09-.65-.29a.78.78 0 0 1-.11-.71c.12-.34.31-.66.53-.91l1.23-1.54c2.14-2.67 6.45-5.87 9.63-7.14.73-.28 1.5-.12 2.03.41.55.55.71 1.33.42 2.04-1.27 3.17-4.47 7.49-7.13 9.62l-1.57 1.26c-.31.22-.56.37-.82.47-.09.03-.19.05-.28.05Zm-2.06-4.57c.61.2 1.16.54 1.63 1 .46.46.79.99.98 1.56l1.18-.95c2.49-2 5.49-6.04 6.68-9.01.08-.19-.01-.33-.09-.42-.05-.05-.19-.16-.42-.07-2.96 1.19-7 4.19-9 6.68l-.96 1.21Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M7.701 18.75c-.64 0-1.25-.25-1.71-.71-.53-.53-.79-1.26-.7-2.01l.21-1.96c.22-2.03 1.87-3.53 3.94-3.57.16-.01.36 0 .55.01a4 4 0 0 1 2.36 1.17c.64.64 1.03 1.4 1.14 2.26a4.061 4.061 0 0 1-1.15 3.45c-.63.63-1.45 1.02-2.38 1.14l-1.98.21c-.1.01-.19.01-.28.01Zm1.9-6.76h-.1c-1.15.03-2.36.8-2.51 2.24l-.21 1.97c-.03.29.07.58.27.78.2.2.48.3.76.27l1.97-.21c.58-.07 1.1-.32 1.49-.71.48-.49.75-1.13.75-1.83 0-.11-.01-.23-.03-.35-.07-.53-.31-1-.71-1.41-.41-.41-.91-.67-1.46-.74-.05-.01-.13-.01-.22-.01ZM15.82 12.731c-.41 0-.75-.34-.75-.75 0-1.67-1.36-3.04-3.04-3.04-.41 0-.75-.34-.75-.75s.34-.75.75-.75c2.5 0 4.54 2.03 4.54 4.54 0 .41-.33.75-.75.75Z",
+    fill: color
+  }));
+};
+var TwoTone$b = function TwoTone8(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M10.97 2h-2c-5 0-7 2-7 7v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M21.88 3.56c-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c2.07-2.58 6.26-5.69 9.32-6.92.47-.18.93-.04 1.22.25.3.3.44.76.25 1.23Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.78 14.489c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 0 1-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M15.82 11.981c0-2.09-1.69-3.79-3.79-3.79",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$b = function chooseVariant8(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$b, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$b, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$b, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$b, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$b, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$b, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$b, {
+        color
+      });
+  }
+};
+var BrushSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$b);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$b(variant, color));
+});
+BrushSquare.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+BrushSquare.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+BrushSquare.displayName = "BrushSquare";
+var _excluded$a = ["variant", "color", "size"];
+var Bold$a = function Bold9(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM18 12.75h-5.25V18c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5.25H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h5.25V6c0-.41.34-.75.75-.75s.75.34.75.75v5.25H18c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var Broken$a = function Broken9(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 18V6M16 12h2M6 12h5.66M12 18V6",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$a = function Bulk9(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M18 11.25h-5.25V6c0-.41-.34-.75-.75-.75s-.75.34-.75.75v5.25H6c-.41 0-.75.34-.75.75s.34.75.75.75h5.25V18c0 .41.34.75.75.75s.75-.34.75-.75v-5.25H18c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z",
+    fill: color
+  }));
+};
+var Linear$a = function Linear9(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M6 12h12M12 18V6",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$a = function Outline9(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12 18.75c-.41 0-.75-.34-.75-.75V6c0-.41.34-.75.75-.75s.75.34.75.75v12c0 .41-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var TwoTone$a = function TwoTone9(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M6 12h12",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12 18V6",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$a = function chooseVariant9(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$a, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$a, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$a, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$a, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$a, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$a, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$a, {
+        color
+      });
+  }
+};
+var Add = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$a);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$a(variant, color));
+});
+Add.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Add.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Add.displayName = "Add";
+var _excluded$9 = ["variant", "color", "size"];
+var Bold$9 = function Bold10(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm-.83 12.3c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22l-2.3-2.3-2.3 2.3c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l2.3-2.3-2.3-2.3a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 2.3-2.3c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.3 2.3 2.3 2.3Z",
+    fill: color
+  }));
+};
+var Broken$9 = function Broken10(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m13.99 10.012.84-.84M9.17 14.828l2.75-2.75M14.83 14.832l-5.66-5.66M2 12.96V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$9 = function Bulk10(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "m13.06 12 2.3-2.3c.29-.29.29-.77 0-1.06a.754.754 0 0 0-1.06 0l-2.3 2.3-2.3-2.3a.754.754 0 0 0-1.06 0c-.29.29-.29.77 0 1.06l2.3 2.3-2.3 2.3c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.3-2.3 2.3 2.3c.15.15.34.22.53.22s.38-.07.53-.22c.29-.29.29-.77 0-1.06l-2.3-2.3Z",
+    fill: color
+  }));
+};
+var Linear$9 = function Linear10(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m9.17 14.83 5.66-5.66M14.83 14.83 9.17 9.17M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$9 = function Outline10(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M9.17 15.58c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l5.66-5.66c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06L9.7 15.36c-.14.15-.34.22-.53.22Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M14.83 15.58c-.19 0-.38-.07-.53-.22L8.64 9.7a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l5.66 5.66c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
+    fill: color
+  }));
+};
+var TwoTone$9 = function TwoTone10(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /* @__PURE__ */ React.createElement("path", {
+    d: "m9.17 14.832 5.66-5.66M14.83 14.832l-5.66-5.66"
+  })), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$9 = function chooseVariant10(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$9, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$9, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$9, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$9, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$9, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$9, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$9, {
+        color
+      });
+  }
+};
+var CloseSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$9);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$9(variant, color));
+});
+CloseSquare.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+CloseSquare.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+CloseSquare.displayName = "CloseSquare";
+var _excluded$8 = ["variant", "color", "size"];
+var Bold$8 = function Bold11(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var Broken$8 = function Broken11(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16 12h2M6 12h5.66",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$8 = function Bulk11(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var Linear$8 = function Linear11(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M6 12h12",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$8 = function Outline11(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var TwoTone$8 = function TwoTone11(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M6 12h12",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$8 = function chooseVariant11(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$8, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$8, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$8, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$8, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$8, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$8, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$8, {
+        color
+      });
+  }
+};
+var Minus = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$8);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$8(variant, color));
+});
+Minus.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Minus.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Minus.displayName = "Minus";
+var _excluded$7 = ["variant", "color", "size"];
+var Bold$7 = function Bold12(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z",
+    fill: color
+  }));
+};
+var Broken$7 = function Broken12(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M4 6c-1.25 1.67-2 3.75-2 6 0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2c-1.43 0-2.8.3-4.03.85M15 10.38l1.12-1.13",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "m7.88 12 2.74 2.75 2.55-2.54",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$7 = function Bulk12(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
+    fill: color
+  }));
+};
+var Linear$7 = function Linear12(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "m7.75 12 2.83 2.83 5.67-5.66",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$7 = function Outline12(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75Zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
+    fill: color
+  }));
+};
+var TwoTone$7 = function TwoTone12(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".34",
+    d: "m7.75 12.002 2.83 2.83 5.67-5.66",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$7 = function chooseVariant12(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$7, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$7, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$7, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$7, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$7, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$7, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$7, {
+        color
+      });
+  }
+};
+var TickCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$7);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$7(variant, color));
+});
+TickCircle.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+TickCircle.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+TickCircle.displayName = "TickCircle";
+var _excluded$6 = ["variant", "color", "size"];
+var Bold$6 = function Bold13(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM9.11 16.9c0 .28-.22.5-.5.5H5.82c-.28 0-.5-.22-.5-.5v-4.62c0-.63.51-1.14 1.14-1.14h2.15c.28 0 .5.22.5.5v5.26Zm4.78 0c0 .28-.22.5-.5.5H10.6c-.28 0-.5-.22-.5-.5V7.74c0-.63.51-1.14 1.14-1.14h1.52c.63 0 1.14.51 1.14 1.14v9.16h-.01Zm4.79 0c0 .28-.22.5-.5.5h-2.79c-.28 0-.5-.22-.5-.5v-3.55c0-.28.22-.5.5-.5h2.15c.63 0 1.14.51 1.14 1.14v2.91Z",
+    fill: color
+  }));
+};
+var Broken$6 = function Broken13(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M2 12.83V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.11 11.152H7.46c-.63 0-1.14.51-1.14 1.14v5.12h3.79v-6.26 0Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.762 6.602h-1.52c-.63 0-1.14.51-1.14 1.14v9.66h3.79v-9.66c0-.63-.5-1.14-1.13-1.14ZM16.548 12.852h-2.65v4.55h3.79v-3.41c-.01-.63-.52-1.14-1.14-1.14Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$6 = function Bulk13(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M16.192 2h-8.37c-3.64 0-5.81 2.17-5.81 5.81v8.37c0 3.64 2.17 5.81 5.81 5.81h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81c0-3.64-2.17-5.81-5.81-5.81Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.11 11.152H7.46c-.63 0-1.14.51-1.14 1.14v5.12h3.79v-6.26Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M12.762 6.602h-1.52c-.63 0-1.14.51-1.14 1.14v9.66h3.79v-9.66c0-.63-.5-1.14-1.13-1.14Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M16.548 12.852h-2.65v4.55h3.79v-3.41c-.01-.63-.52-1.14-1.14-1.14Z",
+    fill: color
+  }));
+};
+var Linear$6 = function Linear13(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M10.11 11.15H7.46c-.63 0-1.14.51-1.14 1.14v5.12h3.79v-6.26 0Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.761 6.6h-1.52c-.63 0-1.14.51-1.14 1.14v9.66h3.79V7.74c0-.63-.5-1.14-1.13-1.14ZM16.548 12.85h-2.65v4.55h3.79v-3.41c-.01-.63-.52-1.14-1.14-1.14Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$6 = function Outline13(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M10.11 18.15H6.32c-.41 0-.75-.34-.75-.75v-5.12c0-1.04.85-1.89 1.89-1.89h2.65c.41 0 .75.34.75.75v6.25c0 .42-.34.76-.75.76Zm-3.04-1.5h2.29V11.9h-1.9a.39.39 0 0 0-.39.39v4.36Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M13.892 18.152h-3.79c-.41 0-.75-.34-.75-.75v-9.66c0-1.04.85-1.89 1.89-1.89h1.52c1.04 0 1.89.85 1.89 1.89v9.66c-.01.41-.34.75-.76.75Zm-3.03-1.5h2.29v-8.91a.39.39 0 0 0-.39-.39h-1.52a.39.39 0 0 0-.39.39v8.91h.01Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M17.68 18.152h-3.79c-.41 0-.75-.34-.75-.75v-4.55c0-.41.34-.75.75-.75h2.65c1.04 0 1.89.85 1.89 1.89v3.41c0 .41-.33.75-.75.75Zm-3.04-1.5h2.29v-2.66a.39.39 0 0 0-.39-.39h-1.9v3.05Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
+    fill: color
+  }));
+};
+var TwoTone$6 = function TwoTone13(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /* @__PURE__ */ React.createElement("path", {
+    d: "M10.11 11.152H7.46c-.63 0-1.14.51-1.14 1.14v5.12h3.79v-6.26 0Z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.762 6.602h-1.52c-.63 0-1.14.51-1.14 1.14v9.66h3.79v-9.66c0-.63-.5-1.14-1.13-1.14ZM16.548 12.852h-2.65v4.55h3.79v-3.41c-.01-.63-.52-1.14-1.14-1.14Z"
+  })), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$6 = function chooseVariant13(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$6, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$6, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$6, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$6, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$6, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$6, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$6, {
+        color
+      });
+  }
+};
+var ChartSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$6);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$6(variant, color));
+});
+ChartSquare.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+ChartSquare.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+ChartSquare.displayName = "ChartSquare";
+var _excluded$5 = ["variant", "color", "size"];
+var Bold$5 = function Bold14(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M21 10H3c-.55 0-1 .45-1 1v5.19c0 .2.01.4.03.6.2 3.08 2.1 4.98 5.18 5.18.2.02.4.03.6.03h8.38c.2 0 .4-.01.6-.03 3.08-.2 4.98-2.1 5.18-5.18.02-.2.03-.4.03-.6V11c0-.55-.45-1-1-1ZM8 16.15c.34.5.8.91 1.33 1.18.38.18.53.63.34 1.01-.13.26-.4.41-.67.41-.11 0-.23-.03-.33-.08-.78-.38-1.44-.97-1.91-1.68-.4-.6-.4-1.38 0-1.98.47-.71 1.13-1.3 1.91-1.68.37-.19.82-.04 1 .33.19.38.04.83-.34 1.01-.53.27-.99.68-1.33 1.18-.06.09-.06.21 0 .3Zm9.45.84c-.48.71-1.14 1.3-1.91 1.68a.742.742 0 0 1-1-.33.745.745 0 0 1 .33-1.01c.54-.27 1-.68 1.33-1.18a.24.24 0 0 0 0-.3c-.33-.5-.79-.91-1.33-1.18a.745.745 0 0 1-.33-1.01c.18-.37.63-.52 1-.33.77.38 1.43.97 1.91 1.68.4.6.4 1.38 0 1.98ZM22 7.81V8c0 .55-.45 1-1 1L3 9.01c-.55 0-1-.45-1-1v-.2c0-.2.01-.4.03-.6.2-3.08 2.1-4.98 5.18-5.18.2-.02.4-.03.6-.03h8.38c.2 0 .4.01.6.03 3.08.2 4.98 2.1 5.18 5.18.02.2.03.4.03.6Z",
+    fill: color
+  }));
+};
+var Broken$5 = function Broken14(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M9 13c-.66.33-1.21.82-1.62 1.43-.23.35-.23.79 0 1.14.41.61.96 1.1 1.62 1.43M15.21 13c.66.33 1.21.82 1.62 1.43.23.35.23.79 0 1.14-.41.61-.96 1.1-1.62 1.43",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 13v2c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9M2.23 8.01 21.45 8",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$5 = function Bulk14(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M6.89 15.749c-.28 0-.54-.15-.67-.41a.745.745 0 0 1 .34-1.01c.87-.43 1.61-1.09 2.14-1.89.18-.27.18-.61 0-.88-.54-.8-1.28-1.46-2.14-1.89a.74.74 0 0 1-.34-1.01c.18-.37.63-.52 1-.33 1.1.55 2.04 1.38 2.72 2.4a2.3 2.3 0 0 1 0 2.54 7.077 7.077 0 0 1-2.72 2.4c-.1.05-.22.08-.33.08ZM17 15.75h-4c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h4c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var Linear$5 = function Linear14(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M9 13c-.66.33-1.21.82-1.62 1.43-.23.35-.23.79 0 1.14.41.61.96 1.1 1.62 1.43M15.21 13c.66.33 1.21.82 1.62 1.43.23.35.23.79 0 1.14-.41.61-.96 1.1-1.62 1.43",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7ZM2.23 8.01 21.45 8",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$5 = function Outline14(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M6.89 15.749c-.28 0-.54-.15-.67-.41a.745.745 0 0 1 .34-1.01c.87-.43 1.61-1.09 2.14-1.89.18-.27.18-.61 0-.88-.54-.8-1.28-1.46-2.14-1.89a.74.74 0 0 1-.34-1.01c.18-.37.63-.52 1-.33 1.1.55 2.04 1.38 2.72 2.4a2.3 2.3 0 0 1 0 2.54 7.077 7.077 0 0 1-2.72 2.4c-.1.05-.22.08-.33.08ZM17 15.75h-4c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h4c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
+    fill: color
+  }));
+};
+var TwoTone$5 = function TwoTone14(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M9 13c-.66.33-1.21.82-1.62 1.43-.23.35-.23.79 0 1.14.41.61.96 1.1 1.62 1.43M15.21 13c.66.33 1.21.82 1.62 1.43.23.35.23.79 0 1.14-.41.61-.96 1.1-1.62 1.43",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M2.23 8.01 21.45 8",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$5 = function chooseVariant14(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$5, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$5, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$5, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$5, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$5, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$5, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$5, {
+        color
+      });
+  }
+};
+var Code = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$5);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$5(variant, color));
+});
+Code.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Code.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Code.displayName = "Code";
+var _excluded$4 = ["variant", "color", "size"];
+var Bold$4 = function Bold15(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M20.1 9.221c-1.81 0-2.55-1.28-1.65-2.85.52-.91.21-2.07-.7-2.59l-1.73-.99c-.79-.47-1.81-.19-2.28.6l-.11.19c-.9 1.57-2.38 1.57-3.29 0l-.11-.19a1.641 1.641 0 0 0-2.26-.6l-1.73.99c-.91.52-1.22 1.69-.7 2.6.91 1.56.17 2.84-1.64 2.84-1.04 0-1.9.85-1.9 1.9v1.76c0 1.04.85 1.9 1.9 1.9 1.81 0 2.55 1.28 1.64 2.85-.52.91-.21 2.07.7 2.59l1.73.99c.79.47 1.81.19 2.28-.6l.11-.19c.9-1.57 2.38-1.57 3.29 0l.11.19c.47.79 1.49 1.07 2.28.6l1.73-.99c.91-.52 1.22-1.69.7-2.59-.91-1.57-.17-2.85 1.64-2.85 1.04 0 1.9-.85 1.9-1.9v-1.76a1.92 1.92 0 0 0-1.91-1.9Zm-8.1 6.03c-1.79 0-3.25-1.46-3.25-3.25s1.46-3.25 3.25-3.25 3.25 1.46 3.25 3.25-1.46 3.25-3.25 3.25Z",
+    fill: color
+  }));
+};
+var Broken$4 = function Broken15(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M15 12c0-1.66-1.34-3-3-3s-3 1.34-3 3a2.996 2.996 0 0 0 4.17 2.76",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "m6.88 20.58 1.09.63c.79.47 1.81.19 2.28-.6l.11-.19c.9-1.57 2.38-1.57 3.29 0l.11.19c.47.79 1.49 1.07 2.28.6l1.73-.99c.91-.52 1.22-1.69.7-2.59-.91-1.57-.17-2.85 1.64-2.85 1.04 0 1.9-.85 1.9-1.9v-1.76c0-1.04-.85-1.9-1.9-1.9-1.01 0-1.69-.4-1.93-1.03-.19-.49-.11-1.13.29-1.82.52-.91.21-2.07-.7-2.59l-.81-.46M13.64 3.581c-.9 1.57-2.38 1.57-3.29 0l-.11-.19a1.655 1.655 0 0 0-2.27-.6l-1.73.99c-.91.52-1.22 1.69-.7 2.6.91 1.56.17 2.84-1.64 2.84-1.04 0-1.9.85-1.9 1.9v1.76c0 1.04.85 1.9 1.9 1.9 1.81 0 2.55 1.28 1.64 2.85",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$4 = function Bulk15(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M2 12.881v-1.76c0-1.04.85-1.9 1.9-1.9 1.81 0 2.55-1.28 1.64-2.85-.52-.9-.21-2.07.7-2.59l1.73-.99c.79-.47 1.81-.19 2.28.6l.11.19c.9 1.57 2.38 1.57 3.29 0l.11-.19c.47-.79 1.49-1.07 2.28-.6l1.73.99c.91.52 1.22 1.69.7 2.59-.91 1.57-.17 2.85 1.64 2.85 1.04 0 1.9.85 1.9 1.9v1.76c0 1.04-.85 1.9-1.9 1.9-1.81 0-2.55 1.28-1.64 2.85.52.91.21 2.07-.7 2.59l-1.73.99c-.79.47-1.81.19-2.28-.6l-.11-.19c-.9-1.57-2.38-1.57-3.29 0l-.11.19c-.47.79-1.49 1.07-2.28.6l-1.73-.99a1.899 1.899 0 0 1-.7-2.59c.91-1.57.17-2.85-1.64-2.85-1.05 0-1.9-.86-1.9-1.9Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12 15.25a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Z",
+    fill: color
+  }));
+};
+var Linear$4 = function Linear15(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 12.88v-1.76c0-1.04.85-1.9 1.9-1.9 1.81 0 2.55-1.28 1.64-2.85-.52-.9-.21-2.07.7-2.59l1.73-.99c.79-.47 1.81-.19 2.28.6l.11.19c.9 1.57 2.38 1.57 3.29 0l.11-.19c.47-.79 1.49-1.07 2.28-.6l1.73.99c.91.52 1.22 1.69.7 2.59-.91 1.57-.17 2.85 1.64 2.85 1.04 0 1.9.85 1.9 1.9v1.76c0 1.04-.85 1.9-1.9 1.9-1.81 0-2.55 1.28-1.64 2.85.52.91.21 2.07-.7 2.59l-1.73.99c-.79.47-1.81.19-2.28-.6l-.11-.19c-.9-1.57-2.38-1.57-3.29 0l-.11.19c-.47.79-1.49 1.07-2.28.6l-1.73-.99a1.899 1.899 0 0 1-.7-2.59c.91-1.57.17-2.85-1.64-2.85-1.05 0-1.9-.86-1.9-1.9Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$4 = function Outline15(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 15.75c-2.07 0-3.75-1.68-3.75-3.75 0-2.07 1.68-3.75 3.75-3.75 2.07 0 3.75 1.68 3.75 3.75 0 2.07-1.68 3.75-3.75 3.75Zm0-6c-1.24 0-2.25 1.01-2.25 2.25s1.01 2.25 2.25 2.25 2.25-1.01 2.25-2.25S13.24 9.75 12 9.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M15.21 22.19c-.21 0-.42-.03-.63-.08-.62-.17-1.14-.56-1.47-1.11l-.12-.2c-.59-1.02-1.4-1.02-1.99 0l-.11.19c-.33.56-.85.96-1.47 1.12-.63.17-1.28.08-1.83-.25l-1.72-.99a2.65 2.65 0 0 1-.98-3.62c.29-.51.37-.97.2-1.26-.17-.29-.6-.46-1.19-.46-1.46 0-2.65-1.19-2.65-2.65v-1.76c0-1.46 1.19-2.65 2.65-2.65.59 0 1.02-.17 1.19-.46.17-.29.1-.75-.2-1.26-.35-.61-.44-1.33-.26-2.01.18-.69.62-1.26 1.24-1.61l1.73-.99c1.13-.67 2.62-.28 3.3.87l.12.2c.59 1.02 1.4 1.02 1.99 0l.11-.19c.68-1.16 2.17-1.55 3.31-.87l1.72.99a2.65 2.65 0 0 1 .98 3.62c-.29.51-.37.97-.2 1.26.17.29.6.46 1.19.46 1.46 0 2.65 1.19 2.65 2.65v1.76c0 1.46-1.19 2.65-2.65 2.65-.59 0-1.02.17-1.19.46-.17.29-.1.75.2 1.26.35.61.45 1.33.26 2.01a2.58 2.58 0 0 1-1.24 1.61l-1.73.99c-.38.21-.79.32-1.21.32ZM12 18.49c.89 0 1.72.56 2.29 1.55l.11.19c.12.21.32.36.56.42.24.06.48.03.68-.09l1.73-1a1.157 1.157 0 0 0 .43-1.57c-.57-.98-.64-1.99-.2-2.76.44-.77 1.35-1.21 2.49-1.21.64 0 1.15-.51 1.15-1.15v-1.76c0-.63-.51-1.15-1.15-1.15-1.14 0-2.05-.44-2.49-1.21-.44-.77-.37-1.78.2-2.76.15-.26.19-.57.11-.87-.08-.3-.27-.54-.53-.7l-1.73-.99a.92.92 0 0 0-1.26.33l-.11.19c-.57.99-1.4 1.55-2.29 1.55-.89 0-1.72-.56-2.29-1.55l-.11-.2a.918.918 0 0 0-1.24-.32l-1.73 1A1.157 1.157 0 0 0 6.19 6c.57.98.64 1.99.2 2.76-.44.77-1.35 1.21-2.49 1.21-.64 0-1.15.51-1.15 1.15v1.76c0 .63.51 1.15 1.15 1.15 1.14 0 2.05.44 2.49 1.21.44.77.37 1.78-.2 2.76-.15.26-.19.57-.11.87.08.3.27.54.53.7l1.73.99c.21.13.46.16.69.1.24-.06.44-.22.57-.43l.11-.19c.57-.98 1.4-1.55 2.29-1.55Z",
+    fill: color
+  }));
+};
+var TwoTone$4 = function TwoTone15(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".34",
+    d: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 12.881v-1.76c0-1.04.85-1.9 1.9-1.9 1.81 0 2.55-1.28 1.64-2.85-.52-.9-.21-2.07.7-2.59l1.73-.99c.79-.47 1.81-.19 2.28.6l.11.19c.9 1.57 2.38 1.57 3.29 0l.11-.19c.47-.79 1.49-1.07 2.28-.6l1.73.99c.91.52 1.22 1.69.7 2.59-.91 1.57-.17 2.85 1.64 2.85 1.04 0 1.9.85 1.9 1.9v1.76c0 1.04-.85 1.9-1.9 1.9-1.81 0-2.55 1.28-1.64 2.85.52.91.21 2.07-.7 2.59l-1.73.99c-.79.47-1.81.19-2.28-.6l-.11-.19c-.9-1.57-2.38-1.57-3.29 0l-.11.19c-.47.79-1.49 1.07-2.28.6l-1.73-.99a1.899 1.899 0 0 1-.7-2.59c.91-1.57.17-2.85-1.64-2.85-1.05 0-1.9-.86-1.9-1.9Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$4 = function chooseVariant15(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$4, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$4, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$4, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$4, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$4, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$4, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$4, {
+        color
+      });
+  }
+};
+var Setting2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$4);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$4(variant, color));
+});
+Setting2.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Setting2.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Setting2.displayName = "Setting2";
+var _excluded$3 = ["variant", "color", "size"];
+var Bold$3 = function Bold16(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M16.44 3.102c-1.81 0-3.43.88-4.44 2.23a5.549 5.549 0 0 0-4.44-2.23c-3.07 0-5.56 2.5-5.56 5.59 0 1.19.19 2.29.52 3.31 1.58 5 6.45 7.99 8.86 8.81.34.12.9.12 1.24 0 2.41-.82 7.28-3.81 8.86-8.81.33-1.02.52-2.12.52-3.31 0-3.09-2.49-5.59-5.56-5.59Z",
+    fill: color
+  }));
+};
+var Broken$3 = function Broken16(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M20.59 4.972c.88.99 1.41 2.29 1.41 3.72 0 7-6.48 11.13-9.38 12.13-.34.12-.9.12-1.24 0-2.9-1-9.38-5.13-9.38-12.13 0-3.09 2.49-5.59 5.56-5.59 1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$3 = function Bulk16(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M22 8.692c0 1.19-.19 2.29-.52 3.31H2.52c-.33-1.02-.52-2.12-.52-3.31 0-3.09 2.49-5.59 5.56-5.59 1.81 0 3.43.88 4.44 2.23a5.549 5.549 0 0 1 4.44-2.23c3.07 0 5.56 2.5 5.56 5.59Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M21.48 12c-1.58 5-6.45 7.99-8.86 8.81-.34.12-.9.12-1.24 0C8.97 19.99 4.1 17 2.52 12h18.96Z",
+    fill: color
+  }));
+};
+var Linear$3 = function Linear16(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$3 = function Outline16(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 21.652c-.31 0-.61-.04-.86-.13-3.82-1.31-9.89-5.96-9.89-12.83 0-3.5 2.83-6.34 6.31-6.34 1.69 0 3.27.66 4.44 1.84a6.214 6.214 0 0 1 4.44-1.84c3.48 0 6.31 2.85 6.31 6.34 0 6.88-6.07 11.52-9.89 12.83-.25.09-.55.13-.86.13Zm-4.44-17.8c-2.65 0-4.81 2.17-4.81 4.84 0 6.83 6.57 10.63 8.88 11.42.18.06.57.06.75 0 2.3-.79 8.88-4.58 8.88-11.42 0-2.67-2.16-4.84-4.81-4.84-1.52 0-2.93.71-3.84 1.94-.28.38-.92.38-1.2 0a4.77 4.77 0 0 0-3.85-1.94Z",
+    fill: color
+  }));
+};
+var TwoTone$3 = function TwoTone16(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12.62 20.812c-.34.12-.9.12-1.24 0-2.9-.99-9.38-5.12-9.38-12.12 0-3.09 2.49-5.59 5.56-5.59 1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24c3.07 0 5.56 2.5 5.56 5.59 0 7-6.48 11.13-9.38 12.12Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$3 = function chooseVariant16(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$3, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$3, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$3, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$3, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$3, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$3, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$3, {
+        color
+      });
+  }
+};
+var Heart = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$3);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$3(variant, color));
+});
+Heart.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Heart.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Heart.displayName = "Heart";
+var _excluded$2 = ["variant", "color", "size"];
+var Bold$2 = function Bold17(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 4.648c-4.78 0-8.67 3.89-8.67 8.67 0 4.78 3.89 8.68 8.67 8.68 4.78 0 8.67-3.89 8.67-8.67 0-4.78-3.89-8.68-8.67-8.68Zm.75 8.35c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5c0-.41.34-.75.75-.75s.75.34.75.75v5ZM14.89 3.45H9.11c-.4 0-.72-.32-.72-.72 0-.4.32-.73.72-.73h5.78c.4 0 .72.32.72.72 0 .4-.32.73-.72.73Z",
+    fill: color
+  }));
+};
+var Broken$2 = function Broken17(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 8v5",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 2h6",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M5 8a8.696 8.696 0 0 0-1.75 5.25C3.25 18.08 7.17 22 12 22s8.75-3.92 8.75-8.75S16.83 4.5 12 4.5c-1.26 0-2.45.26-3.53.74",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$2 = function Bulk17(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M12 22a8.67 8.67 0 1 0 0-17.34A8.67 8.67 0 0 0 12 22Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12 13.75c-.41 0-.75-.34-.75-.75V8c0-.41.34-.75.75-.75s.75.34.75.75v5c0 .41-.34.75-.75.75ZM14.89 3.45H9.11c-.4 0-.72-.32-.72-.72 0-.4.32-.73.72-.73h5.78c.4 0 .72.32.72.72 0 .4-.32.73-.72.73Z",
+    fill: color
+  }));
+};
+var Linear$2 = function Linear17(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M20.75 13.25c0 4.83-3.92 8.75-8.75 8.75s-8.75-3.92-8.75-8.75S7.17 4.5 12 4.5s8.75 3.92 8.75 8.75ZM12 8v5",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 2h6",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$2 = function Outline17(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12 22.75c-5.24 0-9.5-4.26-9.5-9.5s4.26-9.5 9.5-9.5 9.5 4.26 9.5 9.5-4.26 9.5-9.5 9.5Zm0-17.5c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12 13.75c-.41 0-.75-.34-.75-.75V8c0-.41.34-.75.75-.75s.75.34.75.75v5c0 .41-.34.75-.75.75ZM15 2.75H9c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h6c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
+  }));
+};
+var TwoTone$2 = function TwoTone17(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M20.75 13.25c0 4.83-3.92 8.75-8.75 8.75s-8.75-3.92-8.75-8.75S7.17 4.5 12 4.5s8.75 3.92 8.75 8.75Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M12 8v5",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M9 2h6",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$2 = function chooseVariant17(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$2, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$2, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$2, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$2, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$2, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$2, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$2, {
+        color
+      });
+  }
+};
+var Timer1 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$2);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$2(variant, color));
+});
+Timer1.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Timer1.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Timer1.displayName = "Timer1";
+var _excluded$1 = ["variant", "color", "size"];
+var Bold$1 = function Bold18(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m22.019 16.82-3.13-7.32c-.57-1.34-1.42-2.1-2.39-2.15-.96-.05-1.89.62-2.6 1.9l-1.9 3.41c-.4.72-.97 1.15-1.59 1.2-.63.06-1.26-.27-1.77-.92l-.22-.28c-.71-.89-1.59-1.32-2.49-1.23-.9.09-1.67.71-2.18 1.72l-1.73 3.45c-.62 1.25-.56 2.7.17 3.88.73 1.18 2 1.89 3.39 1.89h12.76c1.34 0 2.59-.67 3.33-1.79.76-1.12.88-2.53.35-3.76ZM6.97 8.381a3.38 3.38 0 1 0 0-6.76 3.38 3.38 0 0 0 0 6.76Z",
+    fill: color
+  }));
+};
+var Broken$1 = function Broken18(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M12.332 12.84c-.96 1.73-2.75 1.88-3.99.33l-.22-.28c-1.29-1.62-3.11-1.42-4.04.43l-1.72 3.45c-1.2 2.4.55 5.23 3.23 5.23h12.76c2.59 0 4.34-2.65 3.32-5.04l-3.13-7.31c-1.06-2.48-3.01-2.58-4.32-.22M9.969 5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3c.36 0 .7.06 1.01.18",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk$1 = function Bulk18(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "m22.019 16.82-3.13-7.32c-.57-1.34-1.42-2.1-2.39-2.15-.96-.05-1.89.62-2.6 1.9l-1.9 3.41c-.4.72-.97 1.15-1.59 1.2-.63.06-1.26-.27-1.77-.92l-.22-.28c-.71-.89-1.59-1.32-2.49-1.23-.9.09-1.67.71-2.18 1.72l-1.73 3.45c-.62 1.25-.56 2.7.17 3.88.73 1.18 2 1.89 3.39 1.89h12.76c1.34 0 2.59-.67 3.33-1.79.76-1.12.88-2.53.35-3.76Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M6.97 8.381a3.38 3.38 0 1 0 0-6.76 3.38 3.38 0 0 0 0 6.76Z",
+    fill: color
+  }));
+};
+var Linear$1 = function Linear18(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m21.68 16.96-3.13-7.31c-1.06-2.48-3.01-2.58-4.32-.22l-1.89 3.41c-.96 1.73-2.75 1.88-3.99.33l-.22-.28c-1.29-1.62-3.11-1.42-4.04.43l-1.72 3.45C1.16 19.17 2.91 22 5.59 22h12.76c2.6 0 4.35-2.65 3.33-5.04ZM6.97 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline$1 = function Outline18(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M18.36 22.75H5.59c-1.52 0-2.91-.77-3.71-2.07a4.35 4.35 0 0 1-.19-4.25l1.72-3.45c.56-1.12 1.46-1.82 2.47-1.93 1.01-.11 2.04.39 2.82 1.36l.22.28c.44.54.95.83 1.45.78.5-.04.96-.4 1.3-1.01l1.89-3.41c.78-1.41 1.82-2.14 2.95-2.09 1.12.06 2.08.9 2.72 2.38l3.13 7.31a4.35 4.35 0 0 1-.37 4.12 4.284 4.284 0 0 1-3.63 1.98Zm-12.2-10.2c-.04 0-.08 0-.12.01-.5.05-.96.45-1.29 1.1l-1.72 3.45c-.45.89-.4 1.94.12 2.79.52.85 1.44 1.36 2.44 1.36h12.76c.98 0 1.85-.47 2.39-1.29.54-.82.63-1.8.24-2.7l-3.13-7.31c-.38-.9-.91-1.45-1.42-1.47-.47-.03-1.08.47-1.56 1.32l-1.89 3.41c-.58 1.04-1.49 1.69-2.48 1.78-.99.08-2-.4-2.75-1.34l-.22-.28c-.42-.55-.9-.83-1.37-.83ZM6.969 8.75c-2.06 0-3.75-1.68-3.75-3.75 0-2.07 1.68-3.75 3.75-3.75 2.07 0 3.75 1.68 3.75 3.75 0 2.07-1.68 3.75-3.75 3.75Zm0-6c-1.24 0-2.25 1.01-2.25 2.25s1.01 2.25 2.25 2.25S9.219 6.24 9.219 5s-1.01-2.25-2.25-2.25Z",
+    fill: color
+  }));
+};
+var TwoTone$1 = function TwoTone18(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m21.68 16.96-3.13-7.31c-1.06-2.48-3.01-2.58-4.32-.22l-1.89 3.41c-.96 1.73-2.75 1.88-3.99.33l-.22-.28c-1.29-1.62-3.11-1.42-4.04.43l-1.72 3.45C1.16 19.17 2.91 22 5.59 22h12.76c2.6 0 4.35-2.65 3.33-5.04Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M6.969 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant$1 = function chooseVariant18(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$1, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$1, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$1, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$1, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$1, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$1, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$1, {
+        color
+      });
+  }
+};
+var Image = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$1);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$1(variant, color));
+});
+Image.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Image.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Image.displayName = "Image";
+var _excluded = ["variant", "color", "size"];
+var Bold19 = function Bold20(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M21.75 17.98c0-.02-.01-.04-.01-.06-.01-.08-.02-.16-.05-.23a.913.913 0 0 0-.15-.23s0-.01-.01-.01a.776.776 0 0 0-.53-.22l-4.67.02h-.01c-.6 0-1.18-.28-1.54-.76l-1.22-1.57a.738.738 0 0 0-1.05-.13.74.74 0 0 0-.13 1.05l1.22 1.57c.65.84 1.67 1.34 2.73 1.34h.01l2.85-.01-.71.71c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2-2c.07-.07.12-.15.16-.24.03-.1.05-.2.05-.29ZM8.42 6.692a3.45 3.45 0 0 0-2.8-1.43H5.6l-2.6.01c-.41 0-.75.34-.75.75s.34.75.75.75l2.61-.01h.01c.63 0 1.22.3 1.58.81l1.08 1.5c.15.2.38.31.61.31.15 0 .31-.05.44-.14.34-.25.41-.72.17-1.05l-1.08-1.5ZM21.74 6.079c0-.02.01-.04.01-.05a.776.776 0 0 0-.22-.53l-2-2a.754.754 0 0 0-1.06 0c-.29.29-.29.77 0 1.06l.71.71-2.73-.01h-.02c-1.15 0-2.23.57-2.87 1.54l-6.39 9.58c-.36.54-.97.87-1.62.87h-.01L3 17.229a.749.749 0 1 0 0 1.5l2.55.01h.02c1.16 0 2.23-.57 2.87-1.54l6.39-9.58c.36-.54.97-.87 1.62-.87h.01l4.54.02a.753.753 0 0 0 .53-.22s0-.01.01-.01a.704.704 0 0 0 .2-.46Z",
+    fill: color
+  }));
+};
+var Broken19 = function Broken20(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m16.45 6 4.55.02M3 17.98l2.55.01c.91 0 1.76-.45 2.26-1.2l1.18-1.77.76-1.14L13.67 8M19 19.98l2-2M8.89 8.62l-1.08-1.5A2.675 2.675 0 0 0 5.61 6L3 6.01M12.969 15.379l1.22 1.57c.51.66 1.31 1.05 2.15 1.05l4.67-.02M21 6.02l-2-2",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Bulk19 = function Bulk20(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M21.75 17.98c0-.02-.01-.04-.01-.06-.01-.08-.02-.16-.05-.23a.913.913 0 0 0-.15-.23s0-.01-.01-.01a.776.776 0 0 0-.53-.22l-4.67.02h-.01c-.6 0-1.18-.28-1.54-.76l-1.22-1.57a.738.738 0 0 0-1.05-.13.74.74 0 0 0-.13 1.05l1.22 1.57c.65.84 1.67 1.34 2.73 1.34h.01l2.85-.01-.71.71c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2-2c.07-.07.12-.15.16-.24.03-.1.05-.2.05-.29ZM8.418 6.692a3.45 3.45 0 0 0-2.8-1.43h-.02l-2.61.01c-.41 0-.75.34-.75.75s.34.75.75.75l2.61-.01h.01c.63 0 1.22.3 1.58.81l1.08 1.5c.15.2.38.31.61.31.15 0 .31-.05.44-.14.34-.24.41-.71.17-1.05l-1.07-1.5Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M21.738 6.079c0-.02.01-.04.01-.05a.776.776 0 0 0-.22-.53l-2-2a.754.754 0 0 0-1.06 0c-.29.29-.29.77 0 1.06l.71.71-2.73-.01h-.02c-1.15 0-2.23.57-2.87 1.54l-6.39 9.58c-.36.54-.97.87-1.62.87h-.01l-2.55-.01a.749.749 0 1 0 0 1.5l2.55.01h.02c1.16 0 2.23-.57 2.87-1.54l6.39-9.58c.36-.54.97-.87 1.62-.87h.01l4.55.02a.753.753 0 0 0 .53-.22s0-.01.01-.01c.06-.07.12-.14.15-.23.03-.08.04-.16.05-.24Z",
+    fill: color
+  }));
+};
+var Linear19 = function Linear20(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m3 17.98 2.55.01c.91 0 1.76-.45 2.26-1.2l6.39-9.58a2.69 2.69 0 0 1 2.26-1.2l4.55.02M19 19.98l2-2M8.89 8.62l-1.08-1.5A2.675 2.675 0 0 0 5.61 6L3 6.01M12.97 15.38l1.22 1.57c.51.66 1.31 1.05 2.15 1.05l4.67-.02M21 6.02l-2-2",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var Outline19 = function Outline20(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M5.562 18.74h-.02l-2.55-.01c-.41 0-.75-.34-.75-.75s.34-.75.75-.75l2.55.01h.01c.65 0 1.26-.32 1.62-.87l6.39-9.58c.64-.96 1.71-1.54 2.87-1.54h.02l4.55.02c.41 0 .75.34.75.75s-.34.75-.75.75l-4.55-.02h-.01c-.65 0-1.26.32-1.62.87l-6.39 9.58a3.42 3.42 0 0 1-2.87 1.54ZM19.001 20.732c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l2-2c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2 2c-.15.15-.34.22-.53.22ZM8.89 9.382c-.23 0-.46-.11-.61-.31l-1.08-1.5a1.99 1.99 0 0 0-1.59-.81L3 6.772c-.46-.01-.75-.33-.75-.75 0-.41.33-.75.75-.75l2.61-.01h.02c1.11 0 2.15.54 2.8 1.43l1.08 1.5c.24.34.17.8-.17 1.05-.14.09-.29.14-.45.14Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M16.32 18.751c-1.06 0-2.08-.5-2.73-1.34l-1.22-1.57c-.25-.33-.19-.8.13-1.05.33-.25.8-.19 1.05.13l1.22 1.57c.37.48.96.72 1.55.76l4.67-.02a.749.749 0 1 1 0 1.5l-4.67.02c.01 0 0 0 0 0ZM21.001 6.771c-.19 0-.38-.07-.53-.22l-2-2a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2 2c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22Z",
+    fill: color
+  }));
+};
+var TwoTone19 = function TwoTone20(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m3 17.982 2.55.01c.91 0 1.76-.45 2.26-1.2l6.39-9.58a2.69 2.69 0 0 1 2.26-1.2l4.55.02",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "m8.89 8.62-1.08-1.5A2.675 2.675 0 0 0 5.61 6L3 6.01",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /* @__PURE__ */ React.createElement("path", {
+    d: "m19 19.98 2-2M12.969 15.379l1.22 1.57c.51.66 1.31 1.05 2.15 1.05l4.67-.02"
+  })), /* @__PURE__ */ React.createElement("path", {
+    d: "m21 6.02-2-2",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
+};
+var chooseVariant19 = function chooseVariant20(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold19, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken19, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk19, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear19, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline19, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone19, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear19, {
+        color
+      });
+  }
+};
+var Shuffle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant19(variant, color));
+});
+Shuffle.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Shuffle.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Shuffle.displayName = "Shuffle";
 export {
+  ArrowDown2 as A,
+  BrushSquare as B,
+  ChartSquare as C,
+  Export as E,
+  Heart as H,
+  Image as I,
+  Logout as L,
+  Minus as M,
+  RefreshCircle as R,
+  Shuffle as S,
+  Timer1 as T,
+  Refresh as a,
+  Setting2 as b,
   clientExports as c,
+  TickCircle as d,
+  CloudChange as e,
+  Import as f,
+  Code as g,
+  CloseSquare as h,
+  Add as i,
   jsxRuntimeExports as j,
   reactExports as r
 };

@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, c as clientExports, r as reactExports } from "./vendor-ycAf6xIx.js";
+import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, T as Timer1 } from "./vendor-DtlszSME.js";
 const getIcon = (name) => {
   const iconClass = "w-6 h-6 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300";
   if (name === "tvtropes") {
@@ -84,10 +84,7 @@ const PlatformSection = ({ title, isAnime }) => {
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-3 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[#252833] rounded-2xl", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[#E2E2E2] w-full border-b border-[#252833] pl-2 pb-3 tracking-[0.1px]", children: "More Platforms" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 w-full gap-2", children: links.map((link, i) => (
-      // REMOVED: subtext prop
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LinkButton, { ...link }, i)
-    )) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 w-full gap-2.5", children: links.map((link, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(LinkButton, { ...link }, i)) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] });
 };
@@ -965,7 +962,8 @@ const showHelpModal = () => {
         { k: "E", d: "Export Collection", setting: "enableCollectionExport" },
         { k: "B", d: "Box Office", setting: "enableBoxOffice" },
         { k: "X", d: "Pick Random", setting: "enablePickRandom" },
-        { k: "M", d: "Review Templates", setting: "enableReviewTemplates" }
+        { k: "M", d: "Review Templates", setting: "enableReviewTemplates" },
+        { k: "F", d: "Search Plus", setting: "enableSearchPlus" }
       ]
     }
   ];
@@ -1030,7 +1028,7 @@ const showHelpModal = () => {
       </div>
 
       <div class="px-6 py-3 bg-[#121212] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
-        <span>Moctale Plus v1.7.0</span>
+        <span>Moctale Plus v1.7.5</span>
         <div class="flex gap-4">
             <span>Press <kbd class="font-mono text-white/50">Esc</kbd> to close</span>
             <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[#8b5cf6] transition-colors">GitHub</a>
@@ -1098,6 +1096,10 @@ const initKeyboardShortcuts = (isEnabled) => {
         case "m":
           e.preventDefault();
           toggleSetting("enableReviewTemplates", "Review Templates");
+          return;
+        case "f":
+          e.preventDefault();
+          toggleSetting("enableSearchPlus", "Search Plus");
           return;
       }
     }
@@ -1168,14 +1170,6 @@ const initKeyboardShortcuts = (isEnabled) => {
     }
   }, { capture: true });
 };
-const ShuffleIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 7h4c1.5 0 2.9.7 3.8 1.9l6.4 8.2" }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 17h4c1.5 0 2.9-.7 3.8-1.9l6.4-8.2" }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 7h4" }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 17h4" }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21 7l-2.5-2.5" }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21 17l-2.5 2.5" })
-] });
 const LoaderIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "animate-spin", xmlns: "http://www.w3.org/2000/svg", width: "18", height: "18", fill: "none", viewBox: "0 0 24 24", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
   /* @__PURE__ */ jsxRuntimeExports.jsx("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })
@@ -1209,6 +1203,17 @@ const generateUrlFromCard = (element) => {
   } catch (error) {
     return null;
   }
+};
+const extractAllTitles = () => {
+  let candidates = Array.from(document.querySelectorAll('a[href^="/content/"]'));
+  if (candidates.length === 0) {
+    candidates = Array.from(document.querySelectorAll('div[role="link"]'));
+  }
+  const titles = candidates.map((el) => {
+    const h3 = el.querySelector("h3");
+    return h3?.textContent?.trim() || el.getAttribute("aria-label") || "";
+  }).filter((t) => t.length > 0);
+  return [...new Set(titles)];
 };
 const fixCollectionLayout = (buttonContainer) => {
   if (!self.location.pathname.includes("/explore/collection/")) return;
@@ -1273,9 +1278,50 @@ const PickRandomButton = () => {
             `,
       title: "Pick a random item & open in new tab",
       children: [
-        loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderIcon, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffleIcon, {}),
+        loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderIcon, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffle, { size: 20, color: "currentColor", variant: "Outline" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start justify-center gap-1", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white leading-none", children: label }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(PoweredBySubtext, {})
+        ] })
+      ]
+    }
+  );
+};
+const SpinWheelButton = () => {
+  const [status, setStatus] = reactExports.useState("idle");
+  const handleSpin = () => {
+    if (status === "loading") return;
+    setStatus("loading");
+    const titles = extractAllTitles();
+    if (titles.length === 0) {
+      alert("[Moctale+] No titles found. Please scroll down to load items first.");
+      setStatus("idle");
+      return;
+    }
+    const commaSeparated = titles.join(", ");
+    navigator.clipboard.writeText(commaSeparated).then(() => {
+      const win = self.open(
+        "https://ahaslides.com/features/spinner-wheel/food-spinner-wheel/",
+        "_blank"
+      );
+      win?.focus();
+    }).catch(() => {
+      alert("[Moctale+] Failed to copy titles to clipboard.");
+    }).finally(() => {
+      setStatus("idle");
+    });
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      type: "button",
+      onClick: handleSpin,
+      className: "\n                h-10 px-3 ml-4 rounded-md\n                inline-flex items-center justify-center gap-2\n                transition-colors duration-200\n                focus:outline-none focus:ring-1\n                bg-[#1A1A1A] hover:bg-[#252525] focus:ring-[#404040]\n                cursor-pointer shadow-sm group\n            ",
+      title: "Open Spin Wheel on this page",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `transition-transform duration-500 group-hover:rotate-180`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCircle, { size: 20, color: "currentColor", variant: "Outline" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start justify-center gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white leading-none", children: "Spin Wheel" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(PoweredBySubtext, {})
         ] })
       ]
@@ -1304,9 +1350,17 @@ const injectPickRandom = () => {
     if (container.querySelector(".moctale-plus-export-wrapper") || container.querySelector(".moctale-plus-tier-wrapper")) {
       rootEl.style.marginLeft = "4px";
     }
-    container.prepend(rootEl);
+    const exportWrapper = container.querySelector("#moctale-plus-my-export-btn");
+    if (exportWrapper) {
+      exportWrapper.insertAdjacentElement("afterend", rootEl);
+    } else {
+      container.appendChild(rootEl);
+    }
     clientExports.createRoot(rootEl).render(
-      /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(PickRandomButton, {}) })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(PickRandomButton, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(SpinWheelButton, {})
+      ] })
     );
   });
 };
@@ -1356,7 +1410,7 @@ const TARGET_SELECTORS = [
   '.relative [class*="text-[#C6C6C6]"]'
 ];
 let activeKeywords = [];
-let observer$1 = null;
+let observer$2 = null;
 let scanTimeout = null;
 const getRiskPattern = () => {
   const safeKeywords = activeKeywords.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
@@ -1462,17 +1516,17 @@ const initSpoilerShield = (customKeywords) => {
   if (activeKeywords.length === 0) activeKeywords = DEFAULT_RISK_KEYWORDS;
   console.log(`[Moctale+] Spoiler Shield: ACTIVE (${activeKeywords.length} keywords) 🛡️`);
   scanTargetZones();
-  if (observer$1) observer$1.disconnect();
-  observer$1 = new MutationObserver((mutations) => {
+  if (observer$2) observer$2.disconnect();
+  observer$2 = new MutationObserver((mutations) => {
     if (!mutations.some((m) => m.addedNodes.length > 0)) return;
     if (scanTimeout) clearTimeout(scanTimeout);
     scanTimeout = setTimeout(scanTargetZones, 800);
   });
-  observer$1.observe(document.body, { childList: true, subtree: true });
+  observer$2.observe(document.body, { childList: true, subtree: true });
 };
 const stopSpoilerShield = () => {
-  if (observer$1) observer$1.disconnect();
-  observer$1 = null;
+  if (observer$2) observer$2.disconnect();
+  observer$2 = null;
   document.querySelectorAll(".moctale-spoiler-blur").forEach((el) => el.classList.remove("moctale-spoiler-blur"));
   document.querySelectorAll(".moctale-spoiler-badge").forEach((el) => el.remove());
   document.querySelectorAll(".moctale-redacted-word").forEach((el) => el.classList.add("revealed"));
@@ -1492,6 +1546,16 @@ const isSchedulePath = () => {
   } catch {
     return false;
   }
+};
+const isPosterContentGrid = (grid) => {
+  const contentLink = grid.querySelector(
+    'a[href^="/content/"]'
+  );
+  if (!contentLink) return false;
+  const aspect = contentLink.querySelector('div[class*="aspect-"]');
+  if (!aspect) return false;
+  if (aspect.className.includes("aspect-video")) return false;
+  return true;
 };
 const injectGridStyles = () => {
   if (document.getElementById("moctale-grid-css")) return;
@@ -1576,20 +1640,22 @@ const injectGridStyles = () => {
 };
 const identifyGrids = (isListView) => {
   const candidates = document.querySelectorAll("div.grid");
-  candidates.forEach((el) => {
-    const cls = el.className;
+  candidates.forEach((grid) => {
+    if (!isPosterContentGrid(grid)) return;
+    const cls = grid.className;
     if ((cls.includes("lg:grid-cols-") || cls.includes("xl:grid-cols-") || cls.includes("sm:grid-cols-")) && !cls.includes("grid-cols-[280px")) {
-      el.setAttribute("data-moctale-content-grid", "true");
+      grid.setAttribute("data-moctale-content-grid", "true");
       if (isListView) {
-        el.setAttribute("data-moctale-list-view", "true");
+        grid.setAttribute("data-moctale-list-view", "true");
       } else {
-        el.removeAttribute("data-moctale-list-view");
+        grid.removeAttribute("data-moctale-list-view");
       }
     }
   });
 };
 const identifyGridsSchedule = (isListView) => {
   document.querySelectorAll("div.grid").forEach((grid) => {
+    if (!isPosterContentGrid(grid)) return;
     const parent = grid.parentElement;
     if (!parent) return;
     const hasDate = parent.querySelector('[aria-label^="Date:"]');
@@ -1660,7 +1726,8 @@ const defaultSettings = {
   gridColumns: 0,
   enableReviewTemplates: true,
   reviewTemplates: [],
-  enableEpisodeTracker: true
+  enableEpisodeTracker: true,
+  enableSearchPlus: true
 };
 const useSettings = () => {
   const [settings, setSettings] = reactExports.useState(defaultSettings);
@@ -2296,12 +2363,316 @@ const initEpisodeTracker = () => {
     observer2.observe(document.body, { childList: true, subtree: true });
   });
 };
+class StickerOverlay {
+  container;
+  stickers = [];
+  isDragging = false;
+  isResizing = false;
+  currentElement = null;
+  offset = { x: 0, y: 0 };
+  startResize = { x: 0, y: 0, width: 0, height: 0 };
+  constructor() {
+    this.container = document.createElement("div");
+    this.container.id = "moctale-plus-sticker-layer";
+    Object.assign(this.container.style, {
+      position: "fixed",
+      top: "0",
+      left: "0",
+      width: "100vw",
+      height: "100vh",
+      zIndex: "10000",
+      pointerEvents: "none",
+      overflow: "hidden"
+    });
+    document.body.appendChild(this.container);
+    this.loadStickers();
+    this.initGlobalListeners();
+    this.initDropZone();
+  }
+  addSticker(src) {
+    const sticker = {
+      id: `sticker_${Date.now()}`,
+      src,
+      x: 100,
+      y: 100,
+      width: 150,
+      height: 150
+      // Initial aspect ratio might adjust
+    };
+    this.stickers.push(sticker);
+    this.renderSticker(sticker);
+    this.save();
+  }
+  clearAll() {
+    this.stickers = [];
+    this.container.innerHTML = "";
+    this.save();
+  }
+  renderSticker(data) {
+    const wrapper = document.createElement("div");
+    wrapper.id = data.id;
+    wrapper.className = "sticker-wrapper";
+    Object.assign(wrapper.style, {
+      position: "absolute",
+      left: `${data.x}px`,
+      top: `${data.y}px`,
+      width: `${data.width}px`,
+      height: "auto",
+      // Auto height preserves aspect ratio initially
+      cursor: "grab",
+      pointerEvents: "auto",
+      userSelect: "none",
+      display: "inline-block"
+    });
+    const img = document.createElement("img");
+    img.src = data.src;
+    img.draggable = false;
+    Object.assign(img.style, {
+      width: "100%",
+      height: "100%",
+      display: "block",
+      pointerEvents: "none",
+      // Pass clicks to wrapper
+      filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.3))"
+    });
+    const handle = document.createElement("div");
+    Object.assign(handle.style, {
+      position: "absolute",
+      bottom: "0",
+      right: "0",
+      width: "15px",
+      height: "15px",
+      cursor: "nwse-resize",
+      backgroundColor: "rgba(255, 255, 255, 0.5)",
+      borderRadius: "50% 0 0 0",
+      opacity: "0",
+      // Hidden until hover
+      transition: "opacity 0.2s"
+    });
+    wrapper.addEventListener("mouseenter", () => handle.style.opacity = "1");
+    wrapper.addEventListener("mouseleave", () => handle.style.opacity = "0");
+    wrapper.addEventListener("mousedown", (e) => {
+      if (e.target === handle) return;
+      if (e.button !== 0) return;
+      this.isDragging = true;
+      this.currentElement = wrapper;
+      const rect = wrapper.getBoundingClientRect();
+      this.offset.x = e.clientX - rect.left;
+      this.offset.y = e.clientY - rect.top;
+      wrapper.style.cursor = "grabbing";
+      wrapper.style.zIndex = "10001";
+    });
+    handle.addEventListener("mousedown", (e) => {
+      e.stopPropagation();
+      this.isResizing = true;
+      this.currentElement = wrapper;
+      this.startResize = {
+        x: e.clientX,
+        y: e.clientY,
+        width: wrapper.offsetWidth,
+        height: wrapper.offsetHeight
+      };
+    });
+    wrapper.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      if (confirm("Remove sticker?")) {
+        wrapper.remove();
+        this.stickers = this.stickers.filter((s) => s.id !== data.id);
+        this.save();
+      }
+    });
+    wrapper.appendChild(img);
+    wrapper.appendChild(handle);
+    this.container.appendChild(wrapper);
+  }
+  initGlobalListeners() {
+    self.addEventListener("mousemove", (e) => {
+      if (!this.currentElement) return;
+      if (this.isDragging) {
+        e.preventDefault();
+        const x = e.clientX - this.offset.x;
+        const y = e.clientY - this.offset.y;
+        this.currentElement.style.left = `${x}px`;
+        this.currentElement.style.top = `${y}px`;
+      }
+      if (this.isResizing) {
+        e.preventDefault();
+        const dx = e.clientX - this.startResize.x;
+        const newWidth = Math.max(50, this.startResize.width + dx);
+        this.currentElement.style.width = `${newWidth}px`;
+      }
+    });
+    self.addEventListener("mouseup", () => {
+      if ((this.isDragging || this.isResizing) && this.currentElement) {
+        this.saveState(this.currentElement);
+      }
+      this.isDragging = false;
+      this.isResizing = false;
+      if (this.currentElement) {
+        this.currentElement.style.cursor = "grab";
+        this.currentElement.style.zIndex = "";
+        this.currentElement = null;
+      }
+    });
+  }
+  // --- DRAG & DROP FROM DESKTOP ---
+  initDropZone() {
+    ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+      document.body.addEventListener(eventName, (e) => e.preventDefault(), false);
+    });
+    document.body.addEventListener("drop", (e) => {
+      e.preventDefault();
+      const dt = e.dataTransfer;
+      if (!dt) return;
+      if (dt.files && dt.files.length > 0) {
+        Array.from(dt.files).forEach((file) => {
+          if (file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = () => this.addSticker(reader.result);
+            reader.readAsDataURL(file);
+          }
+        });
+      } else {
+        const html = dt.getData("text/html");
+        if (html) {
+          const match = html.match(/src="?([^"\s]+)"?\s*/);
+          if (match && match[1]) {
+            this.addSticker(match[1]);
+          }
+        } else {
+          const url = dt.getData("text/uri-list");
+          if (url) this.addSticker(url);
+        }
+      }
+    });
+  }
+  saveState(el) {
+    const sticker = this.stickers.find((s) => s.id === el.id);
+    if (sticker) {
+      sticker.x = parseInt(el.style.left || "0");
+      sticker.y = parseInt(el.style.top || "0");
+      sticker.width = parseInt(el.style.width || "150");
+      this.save();
+    }
+  }
+  save() {
+    localStorage.setItem("moctale_plus_stickers", JSON.stringify(this.stickers));
+  }
+  loadStickers() {
+    const data = localStorage.getItem("moctale_plus_stickers");
+    if (data) {
+      try {
+        this.stickers = JSON.parse(data);
+        this.stickers.forEach((s) => this.renderSticker(s));
+      } catch (e) {
+        console.error("Sticker load error", e);
+      }
+    }
+  }
+}
+const SEARCH_PLATFORMS = [
+  { label: "Google", id: "google", url: "https://www.google.com/search?q=" },
+  { label: "IMDb", id: "imdb", url: "https://www.imdb.com/find/?q=" },
+  { label: "TMDB", id: "themoviedatabase", url: "https://www.themoviedb.org/search?query=" },
+  { label: "Letterboxd", id: "letterboxd", url: "https://letterboxd.com/search/" },
+  { label: "Rotten Tomatoes", id: "rottentomatoes", url: "https://www.rottentomatoes.com/search?search=" },
+  { label: "Metacritic", id: "metacritic", url: "https://www.metacritic.com/search/" },
+  { label: "MyAnimeList", id: "myanimelist", url: "https://myanimelist.net/search/all?q=" },
+  { label: "AniList", id: "anilist", url: "https://anilist.co/search/anime?search=" },
+  { label: "Kitsu", id: "kitsu", url: "https://kitsu.io/anime?text=" },
+  { label: "Wikipedia", id: "wikipedia", url: "https://en.wikipedia.org/w/index.php?search=" },
+  { label: "Fandom", id: "fandom", url: "https://community.fandom.com/wiki/Special:Search?query=" },
+  { label: "TV Tropes", id: "tvtropes", url: "https://tvtropes.org/pmwiki/search_result.php?q=" }
+];
+let observer$1 = null;
+const initSearchPlus = () => {
+  if (observer$1) return;
+  console.log("[SearchPlus] Initializing...");
+  observer$1 = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.addedNodes.length) {
+        const overlay = document.querySelector('div[data-search-overlay="true"]');
+        if (overlay && !overlay.getAttribute("data-moctale-plus-init")) {
+          overlay.setAttribute("data-moctale-plus-init", "true");
+          setTimeout(() => safeInject(overlay), 50);
+        }
+      }
+    }
+  });
+  observer$1.observe(document.body, { childList: true });
+  const existing = document.querySelector('div[data-search-overlay="true"]');
+  if (existing && !existing.getAttribute("data-moctale-plus-init")) {
+    existing.setAttribute("data-moctale-plus-init", "true");
+    safeInject(existing);
+  }
+};
+const stopSearchPlus = () => {
+  if (observer$1) {
+    observer$1.disconnect();
+    observer$1 = null;
+  }
+  document.querySelectorAll(".moctale-plus-search-element").forEach((el) => el.remove());
+  const overlay = document.querySelector('div[data-search-overlay="true"]');
+  if (overlay) {
+    overlay.removeAttribute("data-moctale-plus-init");
+  }
+};
+const safeInject = (overlay) => {
+  try {
+    const input = overlay.querySelector('input[type="text"]');
+    if (!input) return;
+    injectPlatformBar(input);
+  } catch (err) {
+    console.error("[SearchPlus] Injection failed:", err);
+  }
+};
+const injectPlatformBar = (input) => {
+  const headerContainer = input.parentElement?.parentElement;
+  if (!headerContainer) return;
+  const bar = document.createElement("div");
+  bar.className = "moctale-plus-search-element grid grid-cols-6 gap-2 mt-3 animate-fade-in px-0 w-full";
+  bar.style.animation = "fadeIn 0.3s ease-out";
+  SEARCH_PLATFORMS.forEach((p) => {
+    const btn = document.createElement("button");
+    btn.className = "flex items-center gap-2 px-2 py-2 bg-[#171717] hover:bg-[#252833] border border-[#353945] hover:border-[#E2E2E2] rounded-lg transition-all group w-full overflow-hidden";
+    btn.title = `Search on ${p.label}`;
+    const iconSpan = document.createElement("span");
+    iconSpan.className = "flex-shrink-0 flex items-center justify-center text-[#A0A0A0] group-hover:text-white transition-colors";
+    const root = clientExports.createRoot(iconSpan);
+    root.render(getIcon(p.id));
+    const labelSpan = document.createElement("span");
+    labelSpan.className = "text-[12px] font-medium text-[#A0A0A0] group-hover:text-white truncate";
+    labelSpan.innerText = p.label;
+    btn.appendChild(iconSpan);
+    btn.appendChild(labelSpan);
+    btn.onclick = () => {
+      const query = input.value.trim();
+      if (!query) {
+        input.focus();
+        return;
+      }
+      self.open(`${p.url}${encodeURIComponent(query)}`, "_blank");
+    };
+    bar.appendChild(btn);
+  });
+  const footer = document.createElement("div");
+  footer.className = "moctale-plus-search-element w-full pt-3 mt-1 text-right";
+  footer.innerHTML = `
+    <p class="text-[11px] text-[#555]">
+      Powered by 
+      <a href="https://github.com/010101-sans/moctale-plus" target="_blank" rel="noreferrer" class="hover:text-[#888] underline decoration-dotted transition-colors">Moctale Plus</a>
+      by 
+      <a href="https://github.com/010101-sans" target="_blank" rel="noreferrer" class="hover:text-[#888] underline decoration-dotted transition-colors">010101-sans</a>
+    </p>
+  `;
+  headerContainer.appendChild(bar);
+  headerContainer.appendChild(footer);
+};
 if (self.self !== self.top) {
   throw new Error("[Moctale+] Blocked execution in iframe");
 }
 console.log("%c[Moctale+] Loaded", "color: #bada55");
 let sidebarRoot = null;
-let sidebarTimeouts = [];
 const getSettings = async () => {
   return new Promise((resolve) => {
     const defaults = {
@@ -2318,13 +2689,13 @@ const getSettings = async () => {
       enableSpoilerShield: false,
       spoilerKeywords: DEFAULT_RISK_KEYWORDS.join(", "),
       enableScrollSaver: true,
-      gridColumns: 0
+      gridColumns: 0,
+      enableSearchPlus: true
     };
     if (typeof chrome !== "undefined" && chrome.storage) {
       chrome.storage.local.get(null, (items) => {
         let finalSettings = { ...defaults, ...items };
         if (items.settings && typeof items.settings === "object") {
-          console.log("[Moctale+] Found nested settings object, merging...");
           finalSettings = { ...finalSettings, ...items.settings };
         }
         resolve(finalSettings);
@@ -2334,6 +2705,17 @@ const getSettings = async () => {
     }
   });
 };
+const stickerSystem = new StickerOverlay();
+self.MoctaleStickerSystem = stickerSystem;
+if (typeof chrome !== "undefined" && chrome.runtime) {
+  chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
+    if (request.type === "ADD_STICKER" && request.payload) {
+      stickerSystem.addSticker(request.payload);
+      sendResponse({ success: true });
+    }
+    return true;
+  });
+}
 const injectSidebarFeatures = (settings) => {
   const mediaInfo = getPageMediaInfo();
   if (!mediaInfo) return;
@@ -2350,7 +2732,7 @@ const injectSidebarFeatures = (settings) => {
   if (!appHost) {
     appHost = document.createElement("div");
     appHost.id = "moctale-plus-root";
-    appHost.className = "w-full";
+    appHost.className = "w-full moctale-plus-injected";
     sidebarContainer.appendChild(appHost);
     sidebarRoot = clientExports.createRoot(appHost);
   }
@@ -2360,9 +2742,7 @@ const injectSidebarFeatures = (settings) => {
 };
 const runGlobalFeatures = async () => {
   const settings = await getSettings();
-  console.log("[Moctale+] Applying Configuration:", settings);
-  sidebarTimeouts.forEach(clearTimeout);
-  sidebarTimeouts = [];
+  console.log("[Moctale+] Applying Configuration");
   document.body.classList.remove("theme-oled", "theme-coffee", "theme-midnight", "theme-light");
   if (settings.activeTheme && settings.activeTheme !== "default") {
     document.body.classList.add(`theme-${settings.activeTheme}`);
@@ -2371,8 +2751,6 @@ const runGlobalFeatures = async () => {
   else removeLinkifier();
   if (self.location.pathname.includes("/content/") || self.location.pathname.includes("/title/")) {
     injectSidebarFeatures(settings);
-    sidebarTimeouts.push(setTimeout(() => injectSidebarFeatures(settings), 1e3));
-    sidebarTimeouts.push(setTimeout(() => injectSidebarFeatures(settings), 3e3));
   }
   if (settings.enableCollectionExport) {
     if (self.location.pathname.includes("/explore/collection/")) {
@@ -2408,6 +2786,12 @@ const runGlobalFeatures = async () => {
     initReviewTemplates();
   }
   initEpisodeTracker();
+  initSearchPlus();
+  if (settings.enableSearchPlus) {
+    initSearchPlus();
+  } else {
+    stopSearchPlus();
+  }
 };
 function debounce(func, wait) {
   let timeout;
@@ -2416,9 +2800,13 @@ function debounce(func, wait) {
     timeout = setTimeout(() => func(...args), wait);
   };
 }
-const onDomChange = debounce(() => runGlobalFeatures(), 500);
+const onDomChange = debounce(() => runGlobalFeatures(), 750);
 if (typeof chrome !== "undefined" && chrome.storage) {
-  chrome.storage.onChanged.addListener((_) => {
+  chrome.storage.onChanged.addListener((changes) => {
+    const changedKeys = Object.keys(changes);
+    const ignoredKeys = ["episodeTracker", "lastSyncedAt", "backupData"];
+    const isDataOnlyUpdate = changedKeys.every((key) => ignoredKeys.includes(key));
+    if (isDataOnlyUpdate) return;
     onDomChange();
   });
 }
@@ -2427,14 +2815,29 @@ const observer = new MutationObserver((mutations) => {
   if (location.href !== lastUrl) {
     lastUrl = location.href;
     console.log("[Moctale+] URL Changed");
-    setTimeout(runGlobalFeatures, 1500);
+    setTimeout(runGlobalFeatures, 500);
     return;
   }
-  if (mutations.some((m) => m.addedNodes.length > 0)) onDomChange();
+  const isRelevantMutation = mutations.some((mutation) => {
+    const target2 = mutation.target;
+    if (target2.id === "moctale-plus-root" || target2.closest("#moctale-plus-root")) {
+      return false;
+    }
+    return Array.from(mutation.addedNodes).some((node) => {
+      const el = node;
+      if (el.id === "moctale-plus-root") return false;
+      if (el.classList && el.classList.contains("moctale-plus-injected")) return false;
+      if (el.classList && el.classList.contains("moctale-plus-export-wrapper")) return false;
+      return true;
+    });
+  });
+  if (isRelevantMutation) {
+    onDomChange();
+  }
 });
 const target = document.getElementById("root") || document.body;
 if (target) observer.observe(target, { subtree: true, childList: true });
-setTimeout(runGlobalFeatures, 1e3);
+setTimeout(runGlobalFeatures, 500);
 const exportBackup = () => {
   if (typeof chrome === "undefined" || !chrome.storage) {
     console.error("Storage API not available");
@@ -2444,14 +2847,32 @@ const exportBackup = () => {
     const date = /* @__PURE__ */ new Date();
     const timestamp = date.toISOString().replace(/[:.]/g, "-").slice(0, 19);
     const filename = `Moctale_Plus_Backup_${timestamp}.json`;
+    let { episodeTracker, ...otherItems } = items;
+    let formattedTracker = {};
+    if (episodeTracker) {
+      const tracker = episodeTracker;
+      Object.keys(tracker).forEach((key) => {
+        let val = tracker[key];
+        if (typeof val === "string") {
+          val = val.replace(/\n/g, ", ").trim();
+        }
+        formattedTracker[key] = val;
+      });
+    }
+    const orderedData = {
+      ...otherItems,
+      // Only add if it exists, and force it to be the last key
+      ...episodeTracker ? { episodeTracker: formattedTracker } : {}
+    };
     const backupData = {
       meta: {
-        version: "1.7.0",
+        version: "1.7.5",
         exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
         author: "010101-sans",
         type: "MoctalePlus_Backup"
       },
-      data: items
+      data: orderedData
+      // Use the ordered object
     };
     const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -2493,7 +2914,119 @@ const importBackup = (file) => {
     reader.readAsText(file);
   });
 };
+const AutoBackupSettings = () => {
+  const [isOpen, setIsOpen] = reactExports.useState(false);
+  const [frequency, setFrequency] = reactExports.useState("none");
+  const menuRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    chrome.storage.local.get(["backupFrequency"], (result) => {
+      if (result.backupFrequency) {
+        setFrequency(result.backupFrequency);
+      }
+    });
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+  const handleSelect = (freq) => {
+    setFrequency(freq);
+    setIsOpen(false);
+    chrome.storage.local.set({ backupFrequency: freq });
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-full", ref: menuRef, style: { height: "100%", position: "relative" }, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        onClick: () => setIsOpen(!isOpen),
+        className: "footer-btn auto-backup-btn",
+        style: {
+          width: "48px",
+          height: "100%",
+          padding: 0,
+          // Remove inline background to let CSS handle hover states properly
+          borderColor: isOpen ? "#22d3ee" : void 0,
+          color: isOpen ? "#22d3ee" : void 0
+        },
+        title: `Auto Backup: ${frequency === "none" ? "Off" : frequency}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Timer1,
+            {
+              size: "20",
+              variant: frequency !== "none" ? "Bold" : "Linear",
+              color: frequency !== "none" || isOpen ? "#22d3ee" : "currentColor"
+            }
+          ),
+          frequency !== "none" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: {
+            position: "absolute",
+            top: "8px",
+            right: "10px",
+            width: "6px",
+            height: "6px",
+            borderRadius: "50%",
+            background: "#22d3ee",
+            boxShadow: "0 0 6px #22d3ee"
+          } })
+        ]
+      }
+    ),
+    isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: {
+      position: "absolute",
+      bottom: "130%",
+      // Push it up slightly more
+      left: 0,
+      width: "140px",
+      background: "#18181b",
+      border: "1px solid rgba(255,255,255,0.1)",
+      borderRadius: "8px",
+      boxShadow: "0 10px 20px rgba(0,0,0,0.6)",
+      zIndex: 9999,
+      // Max z-index
+      overflow: "hidden",
+      animation: "fadeIn 0.2s ease",
+      display: "flex",
+      flexDirection: "column"
+    }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.05)", fontSize: "10px", color: "#71717a", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", background: "#202023" }, children: "Backup Frequency" }),
+      ["none", "daily", "weekly"].map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          onClick: () => handleSelect(opt),
+          type: "button",
+          style: {
+            width: "100%",
+            textAlign: "left",
+            padding: "10px 12px",
+            fontSize: "12px",
+            color: frequency === opt ? "#fff" : "#a1a1aa",
+            background: frequency === opt ? "rgba(34, 211, 238, 0.1)" : "transparent",
+            // Cyan tint for active
+            border: "none",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            transition: "all 0.2s",
+            outline: "none"
+          },
+          onMouseEnter: (e) => e.currentTarget.style.background = frequency === opt ? "rgba(34, 211, 238, 0.15)" : "rgba(255,255,255,0.05)",
+          onMouseLeave: (e) => e.currentTarget.style.background = frequency === opt ? "rgba(34, 211, 238, 0.1)" : "transparent",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { textTransform: "capitalize" }, children: opt }),
+            frequency === opt && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: 6, height: 6, borderRadius: "50%", background: "#22d3ee", boxShadow: "0 0 8px #22d3ee" } })
+          ]
+        },
+        opt
+      ))
+    ] })
+  ] });
+};
 export {
+  AutoBackupSettings as A,
   exportBackup as e,
   importBackup as i,
   useSettings as u

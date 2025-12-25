@@ -8,8 +8,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased - xx/xx/2025 
 
 ### Added
-- **Spinning Wheel:** To pick random title from currently opened collection.
+
+### Improved
+
+### Fixed
+
 -->
+
+
+
+## v1.7.5 - 25/12/2025
+
+### Added
+
+- **Spinning Wheel:** To pick random title from currently opened collection.
+- **Search Plus:** Adds buttons under Search Bar to directly search other 12 platforms like Google, IMDB, AniList, etc.
+- **Sticker Studio:** Adds Images as resizeable and repositionable stickers anywhere in the website.
+- **Backup Frequency:** Automatically triggers cloud sync at user-defined intervals (None, Daily or Weekly).
+- **Cloud Sync:** Save user's setting preference and Episode Tracker's data with Google Drive API.
+
+### Improved
+- **Poster Layout:** Only changes grid layout for the grids containg Movie/Series and not grids with Collections.
+- **Footer Section UI:** To acommodate for the new buttons.
+
+### Fixed
+
+- **More Platform Section:** It used to try squezzing too many elements in a single row, now it strictly uses 2 columns.
+- **Re-applying all extension settings:** A critical bug that used to directly harm the performace of the website.
+
+
+
 
 
 ## v1.7.0 - 23/12/2025

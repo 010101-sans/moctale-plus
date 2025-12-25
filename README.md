@@ -1,6 +1,6 @@
 <p align="start">
   <img src="./icons/logo.png" width="180" alt="Moctale Plus logo" />
-</p>
+</p> 
 
 # Moctale Plus
 
@@ -47,6 +47,8 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 |:-------|:-----------|
 | **Themes** | Default(Dark), Light Mode |
 | **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
+| **Sticker Studio** | Add persistant images in the website's UI |
+
 
 <!-- ### 3. Stats & Data -->
 **3. Stats & Data**
@@ -54,22 +56,16 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | Feature | Description |
 |:-------|:-----------|
 | **Collection Export**  | One-click CSV export for your watchlist and collections |
-| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, etc. |
+| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, etc |
 | **Tier List Maker**    | Make Tier Lists of from currently opened collections with TierMaker.com |
 | **Random Picker**      | Picks random content from currently opened | 
-| **Episode tracker** | Adds persistant episode progress tracking for individual seasons of TV Shows. |
-| **Import/Export Backup** | To preserve user's setting preference and Episode Tracker's data via a json file. |
-
-
-**4. Planned Features**
-
-| Feature | Description |
-|:-------|:-----------|
-| **Image Gallery**   | High-resolution posters and backdrops (TMDB-powered) |
 | **Spinning Wheel**  | Picks random title in currently opened collection with a beautifully animated roulette |
-| **More Keyboard Shortcuts**  | Toggle Watched, Review, and many more |
-| **Episode Tracker for TV shows**  | Locally track watched episodes |
-| **Review Templates**  | Adds many templates for writing reviews |
+| **Episode tracker** | Adds persistant episode progress tracking for individual seasons of TV Shows |
+| **Import/Export Backup** | To preserve user's setting preference and Episode Tracker's data via a json file |
+| **Cloud Sync** | Save user's setting preference and Episode Tracker's data with Google Drive API |
+| **Search Plus** | Adds search buttons for other platforms in the search section |
+
+
  
 
 ## Installation
