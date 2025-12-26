@@ -64,6 +64,9 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Import/Export Backup** | To preserve user's setting preference and Episode Tracker's data via a json file |
 | **Cloud Sync** | Save user's setting preference and Episode Tracker's data with Google Drive API |
 | **Search Plus** | Adds search buttons for other platforms in the search section |
+| **Private Notes** | Write privates notes for every Title |
+| **Image Preview** | Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview |
+| **Watch Status** | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
 
 
  

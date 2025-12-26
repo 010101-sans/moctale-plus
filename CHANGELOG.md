@@ -17,6 +17,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+## v1.8.0 - 26/12/2025
+
+### Added
+- **Watch Status Indicator:** 
+    - Shows a watch status indicator on Posters with a watch status toggle appearing on hovering poster. 
+    - Three states shown on Title Posters: Unwatched, In Progress, Watched
+- **Image Preview:** Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview.
+- **Private Notes:** Write encrypted privates notes for every title.
+
+### Improved
+- **Episode Tracker:** Small tweaks in Episode Tracker's UI.
+
+### Fixed
+- **Poster Layout:** 
+    - Small issues for List View in different grids were not affected. 
+    - Now Poster Layout is applied universally to all grids containing Movies/Series on page.
+- **Episode Tracker:** 
+    - Some seasons were not recongnized due to abscense of the word "Season". 
+    - Now a unique id for each season is used to maintain episode tracking regardless of Season sort order.
+
+
+
 ## v1.7.5 - 25/12/2025
 
 ### Added

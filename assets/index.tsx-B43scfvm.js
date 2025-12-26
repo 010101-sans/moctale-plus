@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, T as Timer1 } from "./vendor-DtlszSME.js";
+import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as Eye, C as Clock, e as Timer1 } from "./vendor-rGln_nN_.js";
 const getIcon = (name) => {
   const iconClass = "w-6 h-6 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300";
   if (name === "tvtropes") {
@@ -947,7 +947,7 @@ const showHelpModal = () => {
       items: [
         { k: "R", d: "Pick Random" },
         { k: "T", d: "Scroll Top" },
-        { k: "Shift + /", d: "Show Guide" }
+        { k: "Shift + /", d: "Show Shortcuts Guide" }
       ]
     },
     {
@@ -963,7 +963,10 @@ const showHelpModal = () => {
         { k: "B", d: "Box Office", setting: "enableBoxOffice" },
         { k: "X", d: "Pick Random", setting: "enablePickRandom" },
         { k: "M", d: "Review Templates", setting: "enableReviewTemplates" },
-        { k: "F", d: "Search Plus", setting: "enableSearchPlus" }
+        { k: "F", d: "Search Plus", setting: "enableSearchPlus" },
+        { k: "Q", d: "Private Notes", setting: "enablePrivateNotes" },
+        { k: "I", d: "Image Preview", setting: "enableImagePreview" },
+        { k: "W", d: "Watch Status", setting: "enableWatchStatus" }
       ]
     }
   ];
@@ -1028,7 +1031,7 @@ const showHelpModal = () => {
       </div>
 
       <div class="px-6 py-3 bg-[#121212] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
-        <span>Moctale Plus v1.7.5</span>
+        <span>Moctale Plus v1.8.0</span>
         <div class="flex gap-4">
             <span>Press <kbd class="font-mono text-white/50">Esc</kbd> to close</span>
             <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[#8b5cf6] transition-colors">GitHub</a>
@@ -1100,6 +1103,18 @@ const initKeyboardShortcuts = (isEnabled) => {
         case "f":
           e.preventDefault();
           toggleSetting("enableSearchPlus", "Search Plus");
+          return;
+        case "q":
+          e.preventDefault();
+          toggleSetting("enablePrivateNotes", "Private Notes");
+          return;
+        case "i":
+          e.preventDefault();
+          toggleSetting("enableImagePreview", "Image Preview");
+          return;
+        case "w":
+          e.preventDefault();
+          toggleSetting("enableWatchStatus", "Watch Status");
           return;
       }
     }
@@ -1410,7 +1425,7 @@ const TARGET_SELECTORS = [
   '.relative [class*="text-[#C6C6C6]"]'
 ];
 let activeKeywords = [];
-let observer$2 = null;
+let observer$4 = null;
 let scanTimeout = null;
 const getRiskPattern = () => {
   const safeKeywords = activeKeywords.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
@@ -1516,17 +1531,17 @@ const initSpoilerShield = (customKeywords) => {
   if (activeKeywords.length === 0) activeKeywords = DEFAULT_RISK_KEYWORDS;
   console.log(`[Moctale+] Spoiler Shield: ACTIVE (${activeKeywords.length} keywords) 🛡️`);
   scanTargetZones();
-  if (observer$2) observer$2.disconnect();
-  observer$2 = new MutationObserver((mutations) => {
+  if (observer$4) observer$4.disconnect();
+  observer$4 = new MutationObserver((mutations) => {
     if (!mutations.some((m) => m.addedNodes.length > 0)) return;
     if (scanTimeout) clearTimeout(scanTimeout);
     scanTimeout = setTimeout(scanTargetZones, 800);
   });
-  observer$2.observe(document.body, { childList: true, subtree: true });
+  observer$4.observe(document.body, { childList: true, subtree: true });
 };
 const stopSpoilerShield = () => {
-  if (observer$2) observer$2.disconnect();
-  observer$2 = null;
+  if (observer$4) observer$4.disconnect();
+  observer$4 = null;
   document.querySelectorAll(".moctale-spoiler-blur").forEach((el) => el.classList.remove("moctale-spoiler-blur"));
   document.querySelectorAll(".moctale-spoiler-badge").forEach((el) => el.remove());
   document.querySelectorAll(".moctale-redacted-word").forEach((el) => el.classList.add("revealed"));
@@ -1535,7 +1550,7 @@ const stopSpoilerShield = () => {
 const isAllowedGridRoute = () => {
   try {
     const path = location.pathname;
-    return path === "/explore" || path.startsWith("/explore/collection") || path.startsWith("/my-collections") || path.startsWith("/schedule");
+    return path === "/explore" || path.startsWith("/explore/collection") || path.startsWith("/my-collections") || path.startsWith("/schedule") || location.href.includes("watchlist");
   } catch {
     return false;
   }
@@ -1548,11 +1563,16 @@ const isSchedulePath = () => {
   }
 };
 const isPosterContentGrid = (grid) => {
-  const contentLink = grid.querySelector(
-    'a[href^="/content/"]'
-  );
-  if (!contentLink) return false;
-  const aspect = contentLink.querySelector('div[class*="aspect-"]');
+  let contentItem = grid.querySelector('a[href^="/content/"]');
+  if (!contentItem) {
+    contentItem = grid.querySelector('div[role="link"][aria-label]');
+  }
+  if (!contentItem) return false;
+  const aspect = contentItem.querySelector('div[class*="aspect-"]');
+  if (location.pathname.startsWith("/my-collections")) {
+    if (aspect && aspect.className.includes("aspect-video")) return false;
+    return true;
+  }
   if (!aspect) return false;
   if (aspect.className.includes("aspect-video")) return false;
   return true;
@@ -1565,41 +1585,71 @@ const injectGridStyles = () => {
         @media (min-width: 1024px) {
 
             /* ===============================
-               GENERIC GRID (NON-LIST)
+               1. GRID COLUMNS (Non-List Mode)
             =============================== */
             [data-moctale-content-grid="true"]:not([data-moctale-list-view="true"]) {
                 grid-template-columns: repeat(var(--moctale-cols, 5), minmax(0, 1fr)) !important;
             }
 
-            /* ===============================
-               STANDARD LIST VIEW (NON-SCHEDULE)
-            =============================== */
-            [data-moctale-content-grid="true"][data-moctale-list-view="true"] {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 8px !important;
+            [data-moctale-schedule-grid="true"]:not([data-moctale-list-view="true"]) {
+                 grid-template-columns: repeat(var(--moctale-cols, 5), minmax(0, 1fr)) !important;
             }
 
-            [data-moctale-content-grid="true"][data-moctale-list-view="true"] > * > div {
+            /* ===============================
+               2. LIST VIEW (Universal Fix)
+            =============================== */
+            
+            /* A. The Main Grid Container */
+            [data-moctale-list-view="true"] {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+
+            /* B. The Card Styling & Flex Layout */
+            [data-moctale-list-view="true"] .group {
                 display: flex !important;
                 flex-direction: row !important;
                 align-items: center !important;
-                gap: 16px !important;
-                padding: 8px 12px !important;
+                justify-content: flex-start !important; /* FORCE LEFT ALIGNMENT */
+                gap: 20px !important;
+                padding: 12px 16px !important;
                 background-color: #171717 !important;
                 border: 1px solid rgba(255,255,255,0.08) !important;
                 border-radius: 12px !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
 
-            [data-moctale-content-grid="true"][data-moctale-list-view="true"] div[class*="aspect-"] {
-                width: 133px !important;
-                min-width: 133px !important;
-                height: 200px !important;
+            /* C. INNER WRAPPER FIX (Crucial for Collections) */
+            /* Force the inner div that holds content to take full width and align left */
+            [data-moctale-list-view="true"] .group > div:has(div[class*="aspect-"]) {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: flex-start !important; /* FORCE LEFT ALIGNMENT */
+                gap: 20px !important;
+                width: 100% !important;
+                padding: 0 !important;
+            }
+
+            /* D. POSTER SIZING & MARGIN RESET */
+            [data-moctale-list-view="true"] .group div[class*="aspect-"] {
+                width: 100px !important; 
+                min-width: 100px !important;
+                height: 150px !important;
                 position: relative !important;
                 overflow: hidden !important;
+                flex-shrink: 0 !important; 
+                border-radius: 8px !important;
+                
+                /* CRITICAL FIX: Override 'mx-auto' from original CSS */
+                margin: 0 !important; 
+                margin-right: 0 !important;
             }
 
-            [data-moctale-content-grid="true"][data-moctale-list-view="true"] img {
+            /* Ensure Image Fills Poster Container */
+            [data-moctale-list-view="true"] .group img {
                 position: absolute !important;
                 inset: 0 !important;
                 width: 100% !important;
@@ -1607,32 +1657,28 @@ const injectGridStyles = () => {
                 object-fit: cover !important;
             }
 
-            /* ===============================
-               SCHEDULE LIST VIEW (ISOLATED)
-            =============================== */
-            [data-moctale-schedule-grid="true"][data-moctale-list-view="true"] {
+            /* E. TEXT ALIGNMENT */
+            /* Target text containers that are NOT the poster */
+            [data-moctale-list-view="true"] .group > div:not([class*="aspect-"]),
+            [data-moctale-list-view="true"] .group > div > div:not([class*="aspect-"]) {
                 display: flex !important;
                 flex-direction: column !important;
-                gap: 8px !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+                text-align: left !important;
+                width: auto !important;
+                margin: 0 !important; /* Reset margins */
             }
 
-            [data-moctale-schedule-grid="true"][data-moctale-list-view="true"] > * > a.group {
-                display: flex !important;
-                flex-direction: row !important;
-                align-items: center !important;
-                gap: 16px !important;
-                padding: 8px 12px !important;
-                background-color: #171717 !important;
-                border: 1px solid rgba(255,255,255,0.08) !important;
-                border-radius: 12px !important;
+            [data-moctale-list-view="true"] h3,
+            [data-moctale-list-view="true"] p {
+                text-align: left !important;
+                width: 100% !important;
             }
-
-            [data-moctale-schedule-grid="true"][data-moctale-list-view="true"] div[class*="aspect-"] {
-                width: 133px !important;
-                min-width: 133px !important;
-                height: 200px !important;
-                position: relative !important;
-                overflow: hidden !important;
+            
+            [data-moctale-list-view="true"] h3 {
+                font-size: 18px !important;
+                margin-bottom: 6px !important;
             }
         }
     `;
@@ -1641,6 +1687,9 @@ const injectGridStyles = () => {
 const identifyGrids = (isListView) => {
   const candidates = document.querySelectorAll("div.grid");
   candidates.forEach((grid) => {
+    const isProcessed = grid.getAttribute("data-moctale-content-grid") === "true";
+    const currentListState = grid.getAttribute("data-moctale-list-view") === "true";
+    if (isProcessed && currentListState === isListView) return;
     if (!isPosterContentGrid(grid)) return;
     const cls = grid.className;
     if ((cls.includes("lg:grid-cols-") || cls.includes("xl:grid-cols-") || cls.includes("sm:grid-cols-")) && !cls.includes("grid-cols-[280px")) {
@@ -1655,11 +1704,10 @@ const identifyGrids = (isListView) => {
 };
 const identifyGridsSchedule = (isListView) => {
   document.querySelectorAll("div.grid").forEach((grid) => {
+    const isProcessed = grid.getAttribute("data-moctale-content-grid") === "true";
+    const currentListState = grid.getAttribute("data-moctale-list-view") === "true";
+    if (isProcessed && currentListState === isListView) return;
     if (!isPosterContentGrid(grid)) return;
-    const parent = grid.parentElement;
-    if (!parent) return;
-    const hasDate = parent.querySelector('[aria-label^="Date:"]');
-    if (!hasDate) return;
     grid.setAttribute("data-moctale-content-grid", "true");
     grid.setAttribute("data-moctale-schedule-grid", "true");
     if (isListView) {
@@ -1669,8 +1717,10 @@ const identifyGridsSchedule = (isListView) => {
     }
   });
 };
+let currentColumns = 0;
 const updateGridDensity = (columns) => {
   if (!isAllowedGridRoute()) return;
+  currentColumns = columns;
   injectGridStyles();
   if (!columns || columns === 0) {
     document.documentElement.style.removeProperty("--moctale-cols");
@@ -1682,31 +1732,42 @@ const updateGridDensity = (columns) => {
     return;
   }
   const isListView = columns === 1;
+  if (!isListView) {
+    document.documentElement.style.setProperty(
+      "--moctale-cols",
+      columns.toString()
+    );
+  } else {
+    document.documentElement.style.removeProperty("--moctale-cols");
+  }
   if (isSchedulePath()) {
     identifyGridsSchedule(isListView);
   } else {
-    if (!isListView) {
-      document.documentElement.style.setProperty(
-        "--moctale-cols",
-        columns.toString()
-      );
-    }
     identifyGrids(isListView);
   }
 };
 const initGridDensity = (initialColumns) => {
   if (!isAllowedGridRoute()) return;
+  currentColumns = initialColumns;
   updateGridDensity(initialColumns);
   const observer2 = new MutationObserver((mutations) => {
-    if (!mutations.some((m) => m.addedNodes.length > 0)) return;
-    const isListView = initialColumns === 1;
+    const shouldUpdate = mutations.some(
+      (m) => m.addedNodes.length > 0 || m.type === "attributes" && m.target instanceof Element && m.target.classList.contains("grid")
+    );
+    if (!shouldUpdate) return;
+    const isListView = currentColumns === 1;
     if (isSchedulePath()) {
       identifyGridsSchedule(isListView);
     } else {
       identifyGrids(isListView);
     }
   });
-  observer2.observe(document.body, { childList: true, subtree: true });
+  observer2.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class"]
+  });
 };
 const defaultSettings = {
   activeTheme: "default",
@@ -1727,7 +1788,10 @@ const defaultSettings = {
   enableReviewTemplates: true,
   reviewTemplates: [],
   enableEpisodeTracker: true,
-  enableSearchPlus: true
+  enableSearchPlus: true,
+  enablePrivateNotes: true,
+  enableImagePreview: true,
+  enableWatchStatus: true
 };
 const useSettings = () => {
   const [settings, setSettings] = reactExports.useState(defaultSettings);
@@ -2194,53 +2258,116 @@ const SeasonTracker = ({
   totalEpisodes
 }) => {
   const [watched, setWatched] = reactExports.useState([]);
-  const [progress, setProgress] = reactExports.useState(0);
+  const progress = reactExports.useMemo(() => {
+    return totalEpisodes > 0 ? Math.round(watched.length / totalEpisodes * 100) : 0;
+  }, [watched, totalEpisodes]);
+  const storageCacheRef = reactExports.useRef({});
+  const isMountedRef = reactExports.useRef(false);
+  const longPressTimerRef = reactExports.useRef(null);
+  const longPressFiredRef = reactExports.useRef(false);
+  const LONG_PRESS_DURATION = 300;
   reactExports.useEffect(() => {
+    isMountedRef.current = true;
     chrome.storage.local.get(["episodeTracker"], (result) => {
       const data = result.episodeTracker || {};
+      storageCacheRef.current = data;
       if (data[showId] && data[showId][seasonIndex]) {
-        const saved = data[showId][seasonIndex];
-        setWatched(saved);
-        setProgress(Math.round(saved.length / totalEpisodes * 100));
+        setWatched(data[showId][seasonIndex]);
       }
     });
-  }, [showId, seasonIndex, totalEpisodes]);
+    const onChange = (changes, areaName) => {
+      if (areaName === "local" && changes.episodeTracker) {
+        const newVal = changes.episodeTracker.newValue || {};
+        storageCacheRef.current = newVal;
+        if (newVal[showId] && newVal[showId][seasonIndex]) {
+          setWatched(newVal[showId][seasonIndex]);
+        } else {
+          setWatched([]);
+        }
+      }
+    };
+    chrome.storage.onChanged?.addListener(onChange);
+    return () => {
+      isMountedRef.current = false;
+      chrome.storage.onChanged?.removeListener(onChange);
+      if (longPressTimerRef.current) self.clearTimeout(longPressTimerRef.current);
+    };
+  }, [showId, seasonIndex]);
+  const persist = (newWatched) => {
+    const data = storageCacheRef.current || {};
+    if (!data[showId]) data[showId] = {};
+    data[showId][seasonIndex] = newWatched;
+    storageCacheRef.current = data;
+    chrome.storage.local.set({ episodeTracker: data });
+  };
   const toggleEpisode = (epNum) => {
     const isWatched = watched.includes(epNum);
-    let newWatched;
-    if (isWatched) {
-      newWatched = watched.filter((e) => e !== epNum);
-    } else {
-      newWatched = [...watched, epNum];
-    }
+    const newWatched = isWatched ? watched.filter((e) => e !== epNum) : [...watched, epNum];
     setWatched(newWatched);
-    setProgress(Math.round(newWatched.length / totalEpisodes * 100));
-    chrome.storage.local.get(["episodeTracker"], (result) => {
-      const data = result.episodeTracker || {};
-      if (!data[showId]) data[showId] = {};
-      data[showId][seasonIndex] = newWatched;
-      chrome.storage.local.set({ episodeTracker: data });
-    });
+    persist(newWatched);
   };
   const toggleAll = () => {
     if (watched.length === totalEpisodes) {
       setWatched([]);
-      setProgress(0);
-      saveBatch([]);
+      persist([]);
     } else {
       const all = Array.from({ length: totalEpisodes }, (_, i) => i + 1);
       setWatched(all);
-      setProgress(100);
-      saveBatch(all);
+      persist(all);
     }
   };
-  const saveBatch = (newWatched) => {
-    chrome.storage.local.get(["episodeTracker"], (result) => {
-      const data = result.episodeTracker || {};
-      if (!data[showId]) data[showId] = {};
-      data[showId][seasonIndex] = newWatched;
-      chrome.storage.local.set({ episodeTracker: data });
-    });
+  const handleEpisodeMouseDown = (ep) => (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    longPressFiredRef.current = false;
+    if (longPressTimerRef.current) self.clearTimeout(longPressTimerRef.current);
+    longPressTimerRef.current = self.setTimeout(() => {
+      const range = Array.from({ length: ep }, (_, i) => i + 1);
+      setWatched(range);
+      persist(range);
+      longPressFiredRef.current = true;
+      longPressTimerRef.current = null;
+    }, LONG_PRESS_DURATION);
+  };
+  const handleEpisodeMouseUp = (ep) => (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (longPressTimerRef.current) {
+      self.clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+    if (!longPressFiredRef.current) {
+      toggleEpisode(ep);
+    }
+    longPressFiredRef.current = false;
+  };
+  const handleEpisodeMouseLeave = () => {
+    if (longPressTimerRef.current) {
+      self.clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+    longPressFiredRef.current = false;
+  };
+  const handleEpisodeTouchStart = (ep) => (e) => {
+    e.stopPropagation();
+    longPressFiredRef.current = false;
+    if (longPressTimerRef.current) self.clearTimeout(longPressTimerRef.current);
+    longPressTimerRef.current = self.setTimeout(() => {
+      const range = Array.from({ length: ep }, (_, i) => i + 1);
+      setWatched(range);
+      persist(range);
+      longPressFiredRef.current = true;
+      longPressTimerRef.current = null;
+    }, LONG_PRESS_DURATION);
+  };
+  const handleEpisodeTouchEnd = (ep) => (e) => {
+    e.stopPropagation();
+    if (longPressTimerRef.current) {
+      self.clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+    if (!longPressFiredRef.current) toggleEpisode(ep);
+    longPressFiredRef.current = false;
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
@@ -2248,7 +2375,7 @@ const SeasonTracker = ({
       className: "mt-3 mb-2 w-full animate-in fade-in slide-in-from-top-2 duration-300 border-t border-white/5 pt-3 cursor-default",
       onClick: (e) => e.stopPropagation(),
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", style: { paddingInline: "2px" }, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[12px] font-bold uppercase tracking-wider text-[#E2E2E2]", children: "Tracker" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
@@ -2257,8 +2384,15 @@ const SeasonTracker = ({
                 e.stopPropagation();
                 toggleAll();
               },
-              className: "text-[10px] font-medium text-white/30 hover:text-white transition-colors underline decoration-dotted decoration-white/20 hover:decoration-white",
-              children: watched.length === totalEpisodes ? "Reset" : "Mark All"
+              className: "inline-flex items-center gap-2 px-2 py-1 rounded-md text-[10px] font-medium bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-all",
+              title: watched.length === totalEpisodes ? "Reset" : "Mark All",
+              children: watched.length === totalEpisodes ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshLeftSquare, { size: "16", color: "#ffffff", variant: "Linear" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Reset" })
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TickSquare, { size: "16", color: "#ffffff", variant: "Linear" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Mark All" })
+              ] })
             }
           )
         ] }),
@@ -2285,17 +2419,16 @@ const SeasonTracker = ({
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "grid gap-1.5",
-            style: {
-              gridTemplateColumns: "repeat(10, minmax(0, 1fr))"
-            },
+            className: "grid gap-1.5 mb-5",
+            style: { gridTemplateColumns: "repeat(10, minmax(0, 1fr))" },
             children: Array.from({ length: totalEpisodes }, (_, i) => i + 1).map((ep) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               "button",
               {
-                onClick: (e) => {
-                  e.stopPropagation();
-                  toggleEpisode(ep);
-                },
+                onMouseDown: handleEpisodeMouseDown(ep),
+                onMouseUp: handleEpisodeMouseUp(ep),
+                onMouseLeave: handleEpisodeMouseLeave,
+                onTouchStart: handleEpisodeTouchStart(ep),
+                onTouchEnd: handleEpisodeTouchEnd(ep),
                 className: `
                             h-6 w-full rounded md:rounded-md flex items-center justify-center text-[10px] font-bold font-mono
                             transition-all duration-200 border select-none
@@ -2321,10 +2454,22 @@ const initEpisodeTracker = () => {
     const observer2 = new MutationObserver(() => {
       if (timeoutId) clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        const seasonCards = document.querySelectorAll('div[role="button"][aria-label*="View details for Season"]');
+        const seasonCards = document.querySelectorAll(
+          'div[role="button"][aria-label^="View details for"]'
+        );
         seasonCards.forEach((card) => {
           if (card.querySelector(".moctale-episode-tracker")) return;
+          let totalEpisodes = 0;
+          const episodeTextNode = Array.from(card.querySelectorAll("span")).find(
+            (span) => span.textContent?.includes("Episodes")
+          );
+          if (episodeTextNode) {
+            const epMatch = episodeTextNode.textContent?.match(/(\d+)\s*Episodes/);
+            if (epMatch) totalEpisodes = parseInt(epMatch[1]);
+          }
+          if (totalEpisodes === 0) return;
           const cardEl = card;
+          cardEl.style.alignSelf = "flex-start";
           cardEl.style.height = "auto";
           cardEl.style.minHeight = "auto";
           cardEl.classList.remove("h-[156px]", "min-w-[300px]", "max-w-[300px]");
@@ -2334,28 +2479,36 @@ const initEpisodeTracker = () => {
           const pathParts = self.location.pathname.split("/");
           const showId = pathParts[pathParts.length - 1];
           const ariaLabel = card.getAttribute("aria-label") || "";
-          const seasonMatch = ariaLabel.match(/Season (\d+)/);
-          const seasonIndex = seasonMatch ? seasonMatch[1] : "1";
-          let totalEpisodes = 0;
-          const episodeTextNode = Array.from(card.querySelectorAll("span")).find((span) => span.textContent?.includes("Episodes"));
-          if (episodeTextNode) {
-            const epMatch = episodeTextNode.textContent?.match(/(\d+)\s*Episodes/);
-            if (epMatch) totalEpisodes = parseInt(epMatch[1]);
+          let seasonIndex = "";
+          const actionBtn = card.querySelector('button[aria-label*="season"]');
+          if (actionBtn) {
+            const btnLabel = actionBtn.getAttribute("aria-label") || "";
+            const btnMatch = btnLabel.match(/season (\d+)/i);
+            if (btnMatch) seasonIndex = btnMatch[1];
           }
-          if (totalEpisodes === 0) totalEpisodes = 10;
+          if (!seasonIndex) {
+            const mainMatch = ariaLabel.match(/Season (\d+)/i);
+            if (mainMatch) seasonIndex = mainMatch[1];
+          }
+          if (!seasonIndex) {
+            const titleEl = card.querySelector(".text-lg.font-semibold");
+            if (titleEl && titleEl.textContent) {
+              const text = titleEl.textContent.trim();
+              const titleMatch = text.match(/Season (\d+)/i);
+              if (titleMatch) {
+                seasonIndex = titleMatch[1];
+              } else {
+                seasonIndex = text;
+              }
+            }
+          }
+          if (!seasonIndex) seasonIndex = `unknown_${Math.random().toString(36).substr(2, 5)}`;
           const container = document.createElement("div");
           container.className = "moctale-episode-tracker w-full px-1 pb-1";
           card.appendChild(container);
           const root = clientExports.createRoot(container);
           root.render(
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              SeasonTracker,
-              {
-                showId,
-                seasonIndex,
-                totalEpisodes
-              }
-            )
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SeasonTracker, { showId, seasonIndex, totalEpisodes })
           );
         });
       }, 500);
@@ -2584,11 +2737,11 @@ const SEARCH_PLATFORMS = [
   { label: "Fandom", id: "fandom", url: "https://community.fandom.com/wiki/Special:Search?query=" },
   { label: "TV Tropes", id: "tvtropes", url: "https://tvtropes.org/pmwiki/search_result.php?q=" }
 ];
-let observer$1 = null;
+let observer$3 = null;
 const initSearchPlus = () => {
-  if (observer$1) return;
+  if (observer$3) return;
   console.log("[SearchPlus] Initializing...");
-  observer$1 = new MutationObserver((mutations) => {
+  observer$3 = new MutationObserver((mutations) => {
     for (const m of mutations) {
       if (m.addedNodes.length) {
         const overlay = document.querySelector('div[data-search-overlay="true"]');
@@ -2599,7 +2752,7 @@ const initSearchPlus = () => {
       }
     }
   });
-  observer$1.observe(document.body, { childList: true });
+  observer$3.observe(document.body, { childList: true });
   const existing = document.querySelector('div[data-search-overlay="true"]');
   if (existing && !existing.getAttribute("data-moctale-plus-init")) {
     existing.setAttribute("data-moctale-plus-init", "true");
@@ -2607,9 +2760,9 @@ const initSearchPlus = () => {
   }
 };
 const stopSearchPlus = () => {
-  if (observer$1) {
-    observer$1.disconnect();
-    observer$1 = null;
+  if (observer$3) {
+    observer$3.disconnect();
+    observer$3 = null;
   }
   document.querySelectorAll(".moctale-plus-search-element").forEach((el) => el.remove());
   const overlay = document.querySelector('div[data-search-overlay="true"]');
@@ -2668,6 +2821,625 @@ const injectPlatformBar = (input) => {
   headerContainer.appendChild(bar);
   headerContainer.appendChild(footer);
 };
+const INJECTED_STYLES = `
+  .mn-container {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    animation: mn-fade-in 0.3s ease-out;
+    font-family: 'Inter', sans-serif;
+  }
+  .mn-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 0 4px;
+  }
+  .mn-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .mn-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(199, 118, 255, 0.1);
+    border: 1px solid rgba(199, 118, 255, 0.2);
+    box-shadow: 0 0 10px rgba(199, 118, 255, 0.1);
+  }
+  .mn-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #E2E2E2;
+    margin: 0;
+    line-height: 1;
+  }
+  .mn-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .mn-badge-text {
+    font-size: 9px;
+    color: #71717a;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .mn-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 99px;
+    background: #121212;
+    border: 1px solid #252833;
+    transition: all 0.3s ease;
+  }
+  .mn-status-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .mn-editor-wrapper {
+    position: relative;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .mn-textarea {
+    width: 100%;
+    min-height: 140px;
+    background-color: #171717;
+    color: #E2E2E2;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #252833;
+    outline: none;
+    resize: vertical;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: block;
+  }
+  .mn-textarea:hover {
+    background-color: #1a1a1a;
+    border-color: #353945;
+  }
+  .mn-textarea:focus {
+    background-color: #121212;
+    border-color: #C776FF;
+    box-shadow: 0 0 0 1px rgba(199, 118, 255, 0.2);
+  }
+  .mn-textarea::placeholder {
+    color: #555;
+  }
+  .mn-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    padding-right: 4px;
+  }
+  .mn-footer-text {
+    font-size: 10px;
+    color: #444;
+    font-weight: 500;
+  }
+  .mn-link {
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px dotted #666;
+    transition: color 0.2s;
+  }
+  .mn-link:hover {
+    color: #C776FF;
+    border-bottom-style: solid;
+  }
+  @keyframes mn-fade-in {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes mn-spin {
+    to { transform: rotate(360deg); }
+  }
+  .mn-spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(234, 179, 8, 0.3);
+    border-top-color: #eab308;
+    border-radius: 50%;
+    animation: mn-spin 1s linear infinite;
+  }
+`;
+const PrivateNotesEditor = ({ contentId }) => {
+  const [note, setNote] = reactExports.useState("");
+  const [status, setStatus] = reactExports.useState("idle");
+  const timeoutRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    if (!document.getElementById("moctale-notes-css")) {
+      const style = document.createElement("style");
+      style.id = "moctale-notes-css";
+      style.textContent = INJECTED_STYLES;
+      document.head.appendChild(style);
+    }
+    const storageKey = `note_${contentId}`;
+    chrome.storage.local.get([storageKey], (result) => {
+      if (result[storageKey]) {
+        setNote(result[storageKey]);
+      }
+    });
+  }, [contentId]);
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setNote(newValue);
+    setStatus("saving");
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      const storageKey = `note_${contentId}`;
+      chrome.storage.local.set({ [storageKey]: newValue }, () => {
+        setStatus("saved");
+        setTimeout(() => setStatus("idle"), 2e3);
+      });
+    }, 1e3);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mn-container", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mn-header", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mn-title-group", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mn-icon-box", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Edit2, { size: "18", color: "#C776FF", variant: "Bold" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "10px" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mn-title", children: "Private Notes" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mn-badge", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: "10", color: "#71717a", variant: "Bold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mn-badge-text", children: "Encrypted Local Storage" })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mn-status", style: { opacity: status === "idle" ? 0 : 1 }, children: [
+        status === "saved" ? /* @__PURE__ */ jsxRuntimeExports.jsx(TickCircle, { size: "14", color: "#4ade80", variant: "Bold" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mn-spinner" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mn-status-text", style: { color: status === "saving" ? "#eab308" : "#4ade80" }, children: status === "saving" ? "SAVING..." : "SAVED" })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mn-editor-wrapper", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "textarea",
+      {
+        value: note,
+        onChange: handleChange,
+        placeholder: "Write your thoughts, reviews, or track specific details here...",
+        className: "mn-textarea",
+        spellCheck: false
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mn-footer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mn-footer-text", children: [
+      "Powered by",
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans/moctale-plus", target: "_blank", rel: "noreferrer", className: "mn-link", children: "Moctale Plus" }),
+      " ",
+      "by",
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans", target: "_blank", rel: "noreferrer", className: "mn-link", children: "010101-sans" })
+    ] }) })
+  ] });
+};
+let observer$2 = null;
+let pollInterval = null;
+const initPrivateNotes = () => {
+  if (observer$2) return;
+  if (!location.pathname.startsWith("/content/")) return;
+  const contentId = location.pathname.split("/").pop() || "unknown";
+  console.log(`[PrivateNotes] Initializing for: ${contentId}`);
+  const scanAndInject = () => {
+    if (document.querySelector(".mn-container")) return;
+    const headings = document.querySelectorAll("h2");
+    for (const h2 of headings) {
+      if (h2.textContent?.trim() === "Overview") {
+        const overviewContainer = h2.parentElement;
+        if (overviewContainer && overviewContainer.tagName === "DIV") {
+          if (!overviewContainer.getAttribute("data-moctale-notes-processed")) {
+            console.log("[PrivateNotes] Target found. Injecting...");
+            overviewContainer.setAttribute("data-moctale-notes-processed", "true");
+            injectNotesAfter(overviewContainer, contentId);
+          }
+          return;
+        }
+      }
+    }
+  };
+  observer$2 = new MutationObserver(() => scanAndInject());
+  observer$2.observe(document.body, { childList: true, subtree: true });
+  if (pollInterval) clearInterval(pollInterval);
+  pollInterval = setInterval(() => {
+    if (document.querySelector(".mn-container")) {
+      if (pollInterval) clearInterval(pollInterval);
+    } else {
+      scanAndInject();
+    }
+  }, 1e3);
+  scanAndInject();
+};
+const stopPrivateNotes = () => {
+  if (observer$2) {
+    observer$2.disconnect();
+    observer$2 = null;
+  }
+  if (pollInterval) {
+    clearInterval(pollInterval);
+    pollInterval = null;
+  }
+  const notesUI = document.querySelector(".mn-container");
+  if (notesUI && notesUI.parentElement) {
+    notesUI.parentElement.remove();
+  }
+  const headings = document.querySelectorAll("h2");
+  for (const h2 of headings) {
+    if (h2.textContent?.trim() === "Overview") {
+      const overviewContainer = h2.parentElement;
+      if (overviewContainer) {
+        overviewContainer.removeAttribute("data-moctale-notes-processed");
+      }
+    }
+  }
+};
+const injectNotesAfter = (overviewElement, contentId) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "w-full border-b border-[#252833] pb-6 mb-6 moctale-notes-wrapper";
+  overviewElement.insertAdjacentElement("afterend", wrapper);
+  const root = clientExports.createRoot(wrapper);
+  root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(PrivateNotesEditor, { contentId }));
+};
+const PREVIEW_STYLES = `
+  body.moctale-hide-cursor, 
+  body.moctale-hide-cursor * {
+    cursor: none !important;
+  }
+  
+  .moctale-preview-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+`;
+const PreviewOverlay = () => {
+  const [src, setSrc] = reactExports.useState(null);
+  const [rect, setRect] = reactExports.useState(null);
+  const [visible, setVisible] = reactExports.useState(false);
+  const [naturalSize, setNaturalSize] = reactExports.useState({ width: 0, height: 0 });
+  reactExports.useEffect(() => {
+    if (!document.getElementById("moctale-preview-css")) {
+      const style = document.createElement("style");
+      style.id = "moctale-preview-css";
+      style.textContent = PREVIEW_STYLES;
+      document.head.appendChild(style);
+    }
+    const findImageUnderCursor = (x, y) => {
+      const elements = document.elementsFromPoint(x, y);
+      const img = elements.find((el) => el.tagName === "IMG");
+      if (!img) return null;
+      if (img.width < 50 || img.height < 50) return null;
+      if (img.src.includes("data:image/svg")) return null;
+      return img;
+    };
+    const updatePreviewState = (x, y, isCombo) => {
+      if (!isCombo) {
+        setVisible(false);
+        setSrc(null);
+        return;
+      }
+      const img = findImageUnderCursor(x, y);
+      if (img) {
+        if (img.src !== src) {
+          setSrc(img.src);
+          setRect(img.getBoundingClientRect());
+          setNaturalSize({ width: img.naturalWidth, height: img.naturalHeight });
+        }
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+    const globalMouseMove = (e) => {
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+      const isCombo = e.ctrlKey && e.shiftKey;
+      updatePreviewState(lastMouseX, lastMouseY, isCombo);
+    };
+    const globalKeyChange = (e) => {
+      const isCombo = e.ctrlKey && e.shiftKey;
+      updatePreviewState(lastMouseX, lastMouseY, isCombo);
+    };
+    document.addEventListener("mousemove", globalMouseMove);
+    document.addEventListener("keydown", globalKeyChange);
+    document.addEventListener("keyup", globalKeyChange);
+    document.addEventListener("scroll", () => setVisible(false), { capture: true });
+    return () => {
+      document.removeEventListener("mousemove", globalMouseMove);
+      document.removeEventListener("keydown", globalKeyChange);
+      document.removeEventListener("keyup", globalKeyChange);
+      document.removeEventListener("scroll", () => setVisible(false));
+      document.body.classList.remove("moctale-hide-cursor");
+    };
+  }, [src]);
+  reactExports.useEffect(() => {
+    if (visible) {
+      document.body.classList.add("moctale-hide-cursor");
+    } else {
+      document.body.classList.remove("moctale-hide-cursor");
+    }
+  }, [visible]);
+  if (!visible || !src) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "fixed z-[100000] pointer-events-none flex items-center justify-center animate-in fade-in duration-150",
+      style: {
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "rgba(0,0,0,0.6)",
+        backdropFilter: "blur(4px)"
+        // removed cursor: none from here since we handle it globally now
+      },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "relative flex flex-col items-center bg-[#121212] p-2 rounded-2xl border border-[#353945] shadow-2xl",
+          style: {
+            maxWidth: "90vw",
+            maxHeight: "95vh"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
+              {
+                src,
+                alt: "Preview",
+                className: "rounded-lg object-contain bg-black/20",
+                style: {
+                  maxHeight: "85vh",
+                  maxWidth: "85vw",
+                  minWidth: "200px",
+                  display: "block"
+                }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "moctale-preview-footer", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-[#555] font-medium tracking-wide", children: [
+                "Powered by ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#C776FF]", children: "Moctale Plus" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-[#555] font-mono tracking-wide", children: [
+                naturalSize.width,
+                " × ",
+                naturalSize.height,
+                " px"
+              ] })
+            ] })
+          ]
+        }
+      )
+    }
+  );
+};
+let rootDiv = null;
+const initImagePreview = () => {
+  if (document.getElementById("moctale-img-preview-root")) return;
+  rootDiv = document.createElement("div");
+  rootDiv.id = "moctale-img-preview-root";
+  document.documentElement.appendChild(rootDiv);
+  const root = clientExports.createRoot(rootDiv);
+  root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(PreviewOverlay, {}));
+};
+const stopImagePreview = () => {
+  if (rootDiv) {
+    rootDiv.remove();
+    rootDiv = null;
+  }
+  document.body.classList.remove("moctale-hide-cursor");
+};
+const WATCH_STYLES = `
+  /* --- TOGGLE BUTTON --- */
+  .mp-watch-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 70;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+    /* Sleek Dark Glass */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  /* Show on Hover (works for both grid .group and title page .group) */
+  .group:hover .mp-watch-btn {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .mp-watch-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+
+  /* --- STATUS ICONS --- */
+  .mp-icon-partial {
+    color: #facc15;
+    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.6));
+  }
+
+  .mp-icon-watched {
+    color: #4ade80;
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.6));
+  }
+
+  /* --- STATUS BAR --- */
+  .mp-status-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-bottom-left-radius: 6px; 
+    border-bottom-right-radius: 6px;
+  }
+
+  .mp-status-bar.is-partial {
+    opacity: 1;
+    background: #facc15;
+    box-shadow: 0 -2px 10px rgba(250, 204, 21, 0.5);
+  }
+
+  .mp-status-bar.is-watched {
+    opacity: 1;
+    background: #4ade80;
+    box-shadow: 0 -2px 10px rgba(74, 222, 128, 0.5);
+  }
+`;
+const useWatchState = (contentId) => {
+  const [status, setStatus] = reactExports.useState(0);
+  reactExports.useEffect(() => {
+    chrome.storage.local.get(["watchedItems"], (result) => {
+      const data = result.watchedItems || {};
+      const val = data[contentId];
+      if (val === true) setStatus(2);
+      else if (typeof val === "number") setStatus(val);
+      else setStatus(0);
+    });
+    const listener = (changes, area) => {
+      if (area === "local" && changes.watchedItems) {
+        const newData = changes.watchedItems.newValue || {};
+        const val = newData[contentId];
+        if (val === true) setStatus(2);
+        else if (typeof val === "number") setStatus(val);
+        else setStatus(0);
+      }
+    };
+    chrome.storage.onChanged.addListener(listener);
+    return () => chrome.storage.onChanged.removeListener(listener);
+  }, [contentId]);
+  return status;
+};
+const StatusBar = ({ contentId }) => {
+  const status = useWatchState(contentId);
+  let className = "mp-status-bar";
+  if (status === 1) className += " is-partial";
+  if (status === 2) className += " is-watched";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className });
+};
+const WatchButton = ({ contentId }) => {
+  const status = useWatchState(contentId);
+  const cycleStatus = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const nextStatus = status + 1 > 2 ? 0 : status + 1;
+    chrome.storage.local.get(["watchedItems"], (result) => {
+      const data = result.watchedItems || {};
+      if (nextStatus === 0) {
+        delete data[contentId];
+      } else {
+        data[contentId] = nextStatus;
+      }
+      chrome.storage.local.set({ watchedItems: data });
+    });
+  };
+  const renderIcon = () => {
+    switch (status) {
+      case 1:
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { size: "18", variant: "Bold", className: "mp-icon-partial" });
+      case 2:
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(TickCircle, { size: "18", variant: "Bold", className: "mp-icon-watched" });
+      default:
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { size: "18", variant: "Linear" });
+    }
+  };
+  const getTitle = () => {
+    if (status === 0) return "Mark as In Progress";
+    if (status === 1) return "Mark as Watched";
+    return "Mark as Unwatched";
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: cycleStatus, title: getTitle(), className: "mp-watch-btn", children: renderIcon() });
+};
+let observer$1 = null;
+const initWatchStatus = () => {
+  if (!document.getElementById("moctale-watch-css")) {
+    const style = document.createElement("style");
+    style.id = "moctale-watch-css";
+    style.textContent = WATCH_STYLES;
+    document.head.appendChild(style);
+  }
+  const processNodes = () => {
+    const containers = document.querySelectorAll("div.relative.aspect-\\[2\\/3\\]");
+    containers.forEach((container) => {
+      if (container.getAttribute("data-moctale-watch-init")) return;
+      const img = container.querySelector("img");
+      if (!img) return;
+      const match = img.src.match(/\/images\/([a-f0-9-]+)\./);
+      if (!match) return;
+      const contentId = match[1];
+      container.setAttribute("data-moctale-watch-init", "true");
+      const barWrapper = document.createElement("div");
+      container.appendChild(barWrapper);
+      clientExports.createRoot(barWrapper).render(/* @__PURE__ */ jsxRuntimeExports.jsx(StatusBar, { contentId }));
+      const btnWrapper = document.createElement("div");
+      container.appendChild(btnWrapper);
+      clientExports.createRoot(btnWrapper).render(/* @__PURE__ */ jsxRuntimeExports.jsx(WatchButton, { contentId }));
+    });
+  };
+  processNodes();
+  observer$1 = new MutationObserver((_mutations) => {
+    if (document.body.getAttribute("data-processing-watch")) return;
+    document.body.setAttribute("data-processing-watch", "true");
+    requestAnimationFrame(() => {
+      processNodes();
+      setTimeout(() => document.body.removeAttribute("data-processing-watch"), 200);
+    });
+  });
+  observer$1.observe(document.body, { childList: true, subtree: true });
+};
+const stopWatchStatus = () => {
+  if (observer$1) {
+    observer$1.disconnect();
+    observer$1 = null;
+  }
+  const style = document.getElementById("moctale-watch-css");
+  if (style) style.remove();
+};
 if (self.self !== self.top) {
   throw new Error("[Moctale+] Blocked execution in iframe");
 }
@@ -2690,7 +3462,10 @@ const getSettings = async () => {
       spoilerKeywords: DEFAULT_RISK_KEYWORDS.join(", "),
       enableScrollSaver: true,
       gridColumns: 0,
-      enableSearchPlus: true
+      enableSearchPlus: true,
+      enablePrivateNotes: true,
+      enableImagePreview: true,
+      enableWatchStatus: true
     };
     if (typeof chrome !== "undefined" && chrome.storage) {
       chrome.storage.local.get(null, (items) => {
@@ -2792,6 +3567,21 @@ const runGlobalFeatures = async () => {
   } else {
     stopSearchPlus();
   }
+  if (settings.enablePrivateNotes) {
+    initPrivateNotes();
+  } else {
+    stopPrivateNotes();
+  }
+  if (settings.enableImagePreview) {
+    initImagePreview();
+  } else {
+    stopImagePreview();
+  }
+  if (settings.enableWatchStatus) {
+    initWatchStatus();
+  } else {
+    stopWatchStatus();
+  }
 };
 function debounce(func, wait) {
   let timeout;
@@ -2866,7 +3656,7 @@ const exportBackup = () => {
     };
     const backupData = {
       meta: {
-        version: "1.7.5",
+        version: "1.8.0",
         exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
         author: "010101-sans",
         type: "MoctalePlus_Backup"

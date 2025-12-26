@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, L as Logout, a as Refresh, b as Setting2, I as Image, B as BrushSquare, C as ChartSquare, d as TickCircle, e as CloudChange, f as Import, E as Export, g as Code, H as Heart, h as CloseSquare, A as ArrowDown2, M as Minus, i as Add, c as clientExports } from "./vendor-DtlszSME.js";
-import { u as useSettings, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-BkVHeWoo.js";
+import { r as reactExports, j as jsxRuntimeExports, f as Logout, g as Refresh, h as Setting2, I as Image, B as BrushSquare, i as ChartSquare, b as TickCircle, k as CloudChange, l as Import, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-rGln_nN_.js";
+import { u as useSettings, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-B43scfvm.js";
 import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -30,7 +30,7 @@ import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
     fetch(link.href, fetchOpts);
   }
 })();
-const CURRENT_VERSION = "1.7.5";
+const CURRENT_VERSION = "1.8.0";
 const REPO_OWNER = "010101-sans";
 const REPO_NAME = "moctale-plus";
 const DEFAULT_KEYWORDS = "die, died, death, killed, kill, murder, murdered, ending, climax, twist, reveal, spoiler, cameo, post-credit, dead, alive, survive, betray, traitor, plot hole, sacrifice, villain, killer, secret, finale";
@@ -664,6 +664,33 @@ function App() {
                 desc: "External search buttons",
                 checked: settings.enableSearchPlus,
                 onChange: (val) => updateSetting("enableSearchPlus", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                label: "Private Notes",
+                desc: "Local text editor for content",
+                checked: settings.enablePrivateNotes,
+                onChange: (val) => updateSetting("enablePrivateNotes", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                label: "Image Preview",
+                desc: "Hover images to enlarge",
+                checked: settings.enableImagePreview,
+                onChange: (val) => updateSetting("enableImagePreview", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                label: "Watch Status",
+                desc: "Show watched indicator on posters",
+                checked: settings.enableWatchStatus,
+                onChange: (val) => updateSetting("enableWatchStatus", val)
               }
             )
           ]
