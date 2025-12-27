@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as Eye, C as Clock, e as Timer1 } from "./vendor-rGln_nN_.js";
+import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as Timer1 } from "./vendor-Bpg3Sy_q.js";
 const getIcon = (name) => {
   const iconClass = "w-6 h-6 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300";
   if (name === "tvtropes") {
@@ -947,6 +947,7 @@ const showHelpModal = () => {
       items: [
         { k: "R", d: "Pick Random" },
         { k: "T", d: "Scroll Top" },
+        { k: "Ctrl + Shift", d: "Preview Images with Mouse" },
         { k: "Shift + /", d: "Show Shortcuts Guide" }
       ]
     },
@@ -1031,7 +1032,7 @@ const showHelpModal = () => {
       </div>
 
       <div class="px-6 py-3 bg-[#121212] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
-        <span>Moctale Plus v1.8.0</span>
+        <span>Moctale Plus v1.8.5</span>
         <div class="flex gap-4">
             <span>Press <kbd class="font-mono text-white/50">Esc</kbd> to close</span>
             <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[#8b5cf6] transition-colors">GitHub</a>
@@ -1769,70 +1770,9 @@ const initGridDensity = (initialColumns) => {
     attributeFilter: ["class"]
   });
 };
-const defaultSettings = {
-  activeTheme: "default",
-  enableLinkifier: true,
-  enableDiscussions: true,
-  enablePlatforms: true,
-  enableCreative: true,
-  enableCollectionExport: true,
-  enableBoxOffice: true,
-  enableContextMenu: true,
-  enableShortcuts: true,
-  enableTierList: true,
-  enablePickRandom: true,
-  enableSpoilerShield: false,
-  spoilerKeywords: "",
-  enableScrollSaver: true,
-  gridColumns: 0,
-  enableReviewTemplates: true,
-  reviewTemplates: [],
-  enableEpisodeTracker: true,
-  enableSearchPlus: true,
-  enablePrivateNotes: true,
-  enableImagePreview: true,
-  enableWatchStatus: true
-};
-const useSettings = () => {
-  const [settings, setSettings] = reactExports.useState(defaultSettings);
-  const [loading, setLoading] = reactExports.useState(true);
-  reactExports.useEffect(() => {
-    const loadData = () => {
-      if (typeof chrome !== "undefined" && chrome.storage) {
-        chrome.storage.local.get(null, (items) => {
-          let rawStored = { ...items };
-          if (items.settings) {
-            rawStored = { ...items, ...items.settings };
-          }
-          const stored = rawStored;
-          const needsUpdate = !stored.reviewTemplates || stored.reviewTemplates.length === 0 || stored.reviewTemplates.length <= 3 && stored.reviewTemplates[0].id === "t1";
-          if (needsUpdate) {
-            stored.reviewTemplates = DEFAULT_TEMPLATES;
-            stored.enableReviewTemplates = true;
-            chrome.storage.local.set({
-              reviewTemplates: DEFAULT_TEMPLATES,
-              enableReviewTemplates: true
-            });
-          }
-          setSettings((prev) => ({ ...prev, ...stored }));
-          setLoading(false);
-        });
-      } else {
-        setSettings({ ...defaultSettings, reviewTemplates: DEFAULT_TEMPLATES });
-        setLoading(false);
-      }
-    };
-    loadData();
-  }, []);
-  const updateSetting = (key, value) => {
-    const newSettings = { ...settings, [key]: value };
-    setSettings(newSettings);
-    if (typeof chrome !== "undefined" && chrome.storage) {
-      chrome.storage.local.set({ [key]: value });
-    }
-  };
-  return { settings, updateSetting, loading };
-};
+const CURRENT_VERSION = "1.8.5";
+const REPO_OWNER = "010101-sans";
+const REPO_NAME = "moctale-plus";
 const DEFAULT_TEMPLATES = [
   {
     id: "t1",
@@ -1985,6 +1925,70 @@ const DEFAULT_TEMPLATES = [
     content: "Context at release (year, reception): \nHow it aged: \nInfluence on genre/industry: \nShould it be rediscovered? \nLegacy Score: /10"
   }
 ];
+const defaultSettings = {
+  activeTheme: "default",
+  enableLinkifier: true,
+  enableDiscussions: true,
+  enablePlatforms: true,
+  enableCreative: true,
+  enableCollectionExport: true,
+  enableBoxOffice: true,
+  enableContextMenu: true,
+  enableShortcuts: true,
+  enableTierList: true,
+  enablePickRandom: true,
+  enableSpoilerShield: false,
+  spoilerKeywords: "",
+  enableScrollSaver: true,
+  gridColumns: 0,
+  enableReviewTemplates: true,
+  reviewTemplates: [],
+  enableEpisodeTracker: true,
+  enableSearchPlus: true,
+  enablePrivateNotes: true,
+  enableImagePreview: true,
+  enableWatchStatus: true
+};
+const useSettings = () => {
+  const [settings, setSettings] = reactExports.useState(defaultSettings);
+  const [loading, setLoading] = reactExports.useState(true);
+  reactExports.useEffect(() => {
+    const loadData = () => {
+      if (typeof chrome !== "undefined" && chrome.storage) {
+        chrome.storage.local.get(null, (items) => {
+          let rawStored = { ...items };
+          if (items.settings) {
+            rawStored = { ...items, ...items.settings };
+          }
+          const stored = rawStored;
+          const needsUpdate = !stored.reviewTemplates || stored.reviewTemplates.length === 0 || stored.reviewTemplates.length <= 3 && stored.reviewTemplates[0].id === "t1";
+          if (needsUpdate) {
+            stored.reviewTemplates = DEFAULT_TEMPLATES;
+            stored.enableReviewTemplates = true;
+            chrome.storage.local.set({
+              reviewTemplates: DEFAULT_TEMPLATES,
+              enableReviewTemplates: true
+            });
+          }
+          setSettings((prev) => ({ ...prev, ...stored }));
+          setLoading(false);
+        });
+      } else {
+        setSettings({ ...defaultSettings, reviewTemplates: DEFAULT_TEMPLATES });
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
+  const updateSetting = (key, value) => {
+    const newSettings = { ...settings, [key]: value };
+    setSettings(newSettings);
+    if (typeof chrome !== "undefined" && chrome.storage) {
+      chrome.storage.local.set({ [key]: value });
+    }
+  };
+  return { settings, updateSetting, loading };
+};
 const TemplateIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: "text-[#8b5cf6]", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" }),
   /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "14 2 14 8 20 8" }),
@@ -3280,7 +3284,7 @@ const WATCH_STYLES = `
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
-  /* Show on Hover (works for both grid .group and title page .group) */
+  /* Show on Hover */
   .group:hover .mp-watch-btn {
     opacity: 1;
     transform: scale(1);
@@ -3293,7 +3297,7 @@ const WATCH_STYLES = `
     transform: scale(1.1);
   }
 
-  /* --- STATUS ICONS --- */
+  /* --- STATUS ICONS (SVG Strings injected via JS) --- */
   .mp-icon-partial {
     color: #facc15;
     filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.6));
@@ -3331,103 +3335,116 @@ const WATCH_STYLES = `
     box-shadow: 0 -2px 10px rgba(74, 222, 128, 0.5);
   }
 `;
-const useWatchState = (contentId) => {
-  const [status, setStatus] = reactExports.useState(0);
-  reactExports.useEffect(() => {
-    chrome.storage.local.get(["watchedItems"], (result) => {
-      const data = result.watchedItems || {};
-      const val = data[contentId];
-      if (val === true) setStatus(2);
-      else if (typeof val === "number") setStatus(val);
-      else setStatus(0);
-    });
-    const listener = (changes, area) => {
-      if (area === "local" && changes.watchedItems) {
-        const newData = changes.watchedItems.newValue || {};
-        const val = newData[contentId];
-        if (val === true) setStatus(2);
-        else if (typeof val === "number") setStatus(val);
-        else setStatus(0);
-      }
-    };
-    chrome.storage.onChanged.addListener(listener);
-    return () => chrome.storage.onChanged.removeListener(listener);
-  }, [contentId]);
-  return status;
+const ICONS = {
+  eye: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>`,
+  clock: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mp-icon-partial"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  tick: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mp-icon-watched"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`
 };
-const StatusBar = ({ contentId }) => {
-  const status = useWatchState(contentId);
-  let className = "mp-status-bar";
-  if (status === 1) className += " is-partial";
-  if (status === 2) className += " is-watched";
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className });
+let GLOBAL_WATCH_CACHE = {};
+const updateUI = (container, contentId, status) => {
+  const btn = container.querySelector(".mp-watch-btn");
+  const bar = container.querySelector(".mp-status-bar");
+  if (!btn || !bar) return;
+  bar.className = "mp-status-bar";
+  if (status === 1) {
+    btn.innerHTML = ICONS.clock;
+    btn.title = "Mark as Watched";
+    bar.classList.add("is-partial");
+  } else if (status === 2) {
+    btn.innerHTML = ICONS.tick;
+    btn.title = "Mark as Unwatched";
+    bar.classList.add("is-watched");
+  } else {
+    btn.innerHTML = ICONS.eye;
+    btn.title = "Mark as In Progress";
+  }
 };
-const WatchButton = ({ contentId }) => {
-  const status = useWatchState(contentId);
-  const cycleStatus = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const nextStatus = status + 1 > 2 ? 0 : status + 1;
-    chrome.storage.local.get(["watchedItems"], (result) => {
-      const data = result.watchedItems || {};
-      if (nextStatus === 0) {
-        delete data[contentId];
-      } else {
-        data[contentId] = nextStatus;
-      }
-      chrome.storage.local.set({ watchedItems: data });
-    });
-  };
-  const renderIcon = () => {
-    switch (status) {
-      case 1:
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { size: "18", variant: "Bold", className: "mp-icon-partial" });
-      case 2:
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(TickCircle, { size: "18", variant: "Bold", className: "mp-icon-watched" });
-      default:
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { size: "18", variant: "Linear" });
-    }
-  };
-  const getTitle = () => {
-    if (status === 0) return "Mark as In Progress";
-    if (status === 1) return "Mark as Watched";
-    return "Mark as Unwatched";
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: cycleStatus, title: getTitle(), className: "mp-watch-btn", children: renderIcon() });
+const handleToggle = (e, contentId) => {
+  e.preventDefault();
+  e.stopPropagation();
+  const currentStatus = (GLOBAL_WATCH_CACHE[contentId] === true ? 2 : GLOBAL_WATCH_CACHE[contentId]) || 0;
+  const nextStatus = currentStatus + 1 > 2 ? 0 : currentStatus + 1;
+  if (nextStatus === 0) delete GLOBAL_WATCH_CACHE[contentId];
+  else GLOBAL_WATCH_CACHE[contentId] = nextStatus;
+  document.querySelectorAll(`[data-mp-content-id="${contentId}"]`).forEach((el) => {
+    updateUI(el, contentId, nextStatus);
+  });
+  chrome.storage.local.get(["watchedItems"], (result) => {
+    const data = result.watchedItems || {};
+    if (nextStatus === 0) delete data[contentId];
+    else data[contentId] = nextStatus;
+    chrome.storage.local.set({ watchedItems: data });
+  });
+};
+const injectWidget = (container, contentId) => {
+  const bar = document.createElement("div");
+  bar.className = "mp-status-bar";
+  const btn = document.createElement("button");
+  btn.className = "mp-watch-btn";
+  btn.onclick = (e) => handleToggle(e, contentId);
+  container.setAttribute("data-mp-content-id", contentId);
+  container.setAttribute("data-moctale-watch-init", "true");
+  container.appendChild(bar);
+  container.appendChild(btn);
+  const val = GLOBAL_WATCH_CACHE[contentId];
+  const status = (val === true ? 2 : val) || 0;
+  updateUI(container, contentId, status);
 };
 let observer$1 = null;
+let isInitialized = false;
+const loadCache = (callback) => {
+  chrome.storage.local.get(["watchedItems"], (result) => {
+    GLOBAL_WATCH_CACHE = result.watchedItems || {};
+    callback();
+  });
+};
 const initWatchStatus = () => {
+  if (isInitialized) return;
+  isInitialized = true;
   if (!document.getElementById("moctale-watch-css")) {
     const style = document.createElement("style");
     style.id = "moctale-watch-css";
     style.textContent = WATCH_STYLES;
     document.head.appendChild(style);
   }
-  const processNodes = () => {
-    const containers = document.querySelectorAll("div.relative.aspect-\\[2\\/3\\]");
-    containers.forEach((container) => {
-      if (container.getAttribute("data-moctale-watch-init")) return;
-      const img = container.querySelector("img");
-      if (!img) return;
-      const match = img.src.match(/\/images\/([a-f0-9-]+)\./);
-      if (!match) return;
-      const contentId = match[1];
-      container.setAttribute("data-moctale-watch-init", "true");
-      const barWrapper = document.createElement("div");
-      container.appendChild(barWrapper);
-      clientExports.createRoot(barWrapper).render(/* @__PURE__ */ jsxRuntimeExports.jsx(StatusBar, { contentId }));
-      const btnWrapper = document.createElement("div");
-      container.appendChild(btnWrapper);
-      clientExports.createRoot(btnWrapper).render(/* @__PURE__ */ jsxRuntimeExports.jsx(WatchButton, { contentId }));
-    });
-  };
-  processNodes();
-  observer$1 = new MutationObserver((_mutations) => {
-    if (document.body.getAttribute("data-processing-watch")) return;
-    document.body.setAttribute("data-processing-watch", "true");
-    requestAnimationFrame(() => {
-      processNodes();
-      setTimeout(() => document.body.removeAttribute("data-processing-watch"), 200);
+  loadCache(() => {
+    runProcessor();
+    startObserver();
+  });
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === "local" && changes.watchedItems) {
+      GLOBAL_WATCH_CACHE = changes.watchedItems.newValue || {};
+      document.querySelectorAll('[data-moctale-watch-init="true"]').forEach((container) => {
+        const id = container.getAttribute("data-mp-content-id");
+        if (id) {
+          const val = GLOBAL_WATCH_CACHE[id];
+          const status = (val === true ? 2 : val) || 0;
+          updateUI(container, id, status);
+        }
+      });
+    }
+  });
+};
+const runProcessor = () => {
+  const containers = document.querySelectorAll("div.relative.aspect-\\[2\\/3\\]:not([data-moctale-watch-init])");
+  for (let i = 0; i < containers.length; i++) {
+    const container = containers[i];
+    const img = container.querySelector("img");
+    if (!img) continue;
+    const match = img.src.match(/\/images\/([a-f0-9-]+)\./);
+    if (match) {
+      injectWidget(container, match[1]);
+    }
+  }
+};
+const startObserver = () => {
+  let pending = false;
+  observer$1 = new MutationObserver(() => {
+    if (pending) return;
+    pending = true;
+    queueMicrotask(() => {
+      runProcessor();
+      pending = false;
     });
   });
   observer$1.observe(document.body, { childList: true, subtree: true });
@@ -3437,8 +3454,17 @@ const stopWatchStatus = () => {
     observer$1.disconnect();
     observer$1 = null;
   }
+  isInitialized = false;
   const style = document.getElementById("moctale-watch-css");
   if (style) style.remove();
+  document.querySelectorAll("[data-moctale-watch-init]").forEach((el) => {
+    el.removeAttribute("data-moctale-watch-init");
+    el.removeAttribute("data-mp-content-id");
+    const bar = el.querySelector(".mp-status-bar");
+    const btn = el.querySelector(".mp-watch-btn");
+    if (bar) bar.remove();
+    if (btn) btn.remove();
+  });
 };
 if (self.self !== self.top) {
   throw new Error("[Moctale+] Blocked execution in iframe");
@@ -3656,7 +3682,7 @@ const exportBackup = () => {
     };
     const backupData = {
       meta: {
-        version: "1.8.0",
+        version: "1.8.5",
         exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
         author: "010101-sans",
         type: "MoctalePlus_Backup"
@@ -3817,6 +3843,9 @@ const AutoBackupSettings = () => {
 };
 export {
   AutoBackupSettings as A,
+  CURRENT_VERSION as C,
+  REPO_OWNER as R,
+  REPO_NAME as a,
   exportBackup as e,
   importBackup as i,
   useSettings as u

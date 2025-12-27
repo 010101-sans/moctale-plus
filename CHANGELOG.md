@@ -17,6 +17,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+
+
+## v1.8.5 - 27/12/2025
+
+### Improved
+
+- **Watch Status Indicator Extreme Optimization:** 
+    - The problem :
+        - Layout Thrashing by repeativie call for querySelectorAll.
+        - React Overhead by creating individual root for each title in a collection. For example, a collection with 600 Tites would mean "600 roots = 600 separate React Instances" resulting in 15-20 seconds pause before watch status loads and taking a tool on hardware & performance.
+    - The solution :
+        - Vanilla JS Rendering: Ditched React createRoot for these tiny icons. Now using raw DOM elements (document.createElement) which is 100x faster and uses zero memory overhead per item compared to a React Fiber tree.
+        - Intersection Observer: Only process and render icons for posters that are actually visible on screen. Resulting in watch status to load instantly.
+        - Batch Processing: Instead of processing the entire DOM on every mutation, now we process only added nodes.
+
+
+
+
+
+
 ## v1.8.0 - 26/12/2025
 
 ### Added
@@ -24,7 +44,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Shows a watch status indicator on Posters with a watch status toggle appearing on hovering poster. 
     - Three states shown on Title Posters: Unwatched, In Progress, Watched
 - **Image Preview:** Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview.
-- **Private Notes:** Write encrypted privates notes for every title.
+- **Private Notes:** Write encrypted private notes for every title.
 
 ### Improved
 - **Episode Tracker:** Small tweaks in Episode Tracker's UI.

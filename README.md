@@ -29,15 +29,15 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 
 | Feature | Description |
 |:-------|:-----------|
-| **Linkifier**             | Converts plain-text URLs in posts and comments into clickable links |
-| **More Platforms**        | Quick access to IMDB, TMDB, Letterboxd and many more including Anime Platforms like AniList and MAL |
+| **Linkifier**             | Converts plain-text URLs into clickable links |
+| **More Platforms**        | Quick access to IMDB, TMDB, Letterboxd and Anime Platforms |
 | **Reviews & Discussions** | Jump to YouTube, Reddit, and Twitter/X content & conversations |
-| **Creative Corner**       | Official Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
-| **Right-Click Search**    | Select text anywhere → Right Click → “Search on Moctale” |
-| **Keyboard Shortcuts**    | Shortcuts for fast navigation and toggeling feature. Access Shortcut Guide with `Shift + /` |
-| **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content until hover |
+| **Creative Corner**       | Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
+| **Right-Click Search**    | Select text anywhere -> Right Click -> Search on Moctale |
+| **Keyboard Shortcuts**    | For fast navigation, quick actions and toggeling feature. Access the shortcuts guide with `Shift + /` |
+| **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content |
 | **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
-| **Review Templates** | Provides a set of pre-built templates for writing reviews for Movies, Shows and Anime. Users can add your own templates as well |
+| **Review Templates** | Provides a set of pre-built templates for writing reviews, with ability to add custom templates |
 
 
 
@@ -53,20 +53,20 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 <!-- ### 3. Stats & Data -->
 **3. Stats & Data**
 
-| Feature | Description |
-|:-------|:-----------|
-| **Collection Export**  | One-click CSV export for your watchlist and collections |
-| **Box Office Tracker** | Instant access to Box Office Mojo, Sacnilk, etc |
-| **Tier List Maker**    | Make Tier Lists of from currently opened collections with TierMaker.com |
-| **Random Picker**      | Picks random content from currently opened | 
-| **Spinning Wheel**  | Picks random title in currently opened collection with a beautifully animated roulette |
-| **Episode tracker** | Adds persistant episode progress tracking for individual seasons of TV Shows |
+|          Feature         |         Description                                     |
+|:-------------------------|:--------------------------------------------------------|
+| **Collection Export**    | One-click CSV export for your watchlist and collections |
+| **Box Office Tracker**   | Instant access to Box Office Mojo, Sacnilk, etc |
+| **Tier List Maker**      | Make Tier Lists of from currently opened collections with TierMaker.com |
+| **Random Picker**        | Picks random title from currently opened | 
+| **Spinning Wheel**       | Picks random title from currently opened collection with a beautifully animated spinning wheel |
+| **Episode tracker**      | Track episode progress of TV Shows |
 | **Import/Export Backup** | To preserve user's setting preference and Episode Tracker's data via a json file |
-| **Cloud Sync** | Save user's setting preference and Episode Tracker's data with Google Drive API |
-| **Search Plus** | Adds search buttons for other platforms in the search section |
-| **Private Notes** | Write privates notes for every Title |
-| **Image Preview** | Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview |
-| **Watch Status** | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
+| **Cloud Sync**           | Save user's settings and Episode Trackering data with Google Drive |
+| **Search Plus**          | Adds search buttons for other platforms in the search section |
+| **Private Notes**        | Write privates notes for under all Titles |
+| **Image Preview**        | Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview |
+| **Watch Status**         | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
 
 
  
@@ -100,31 +100,28 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 
 <!-- > **Note:** Recent Chrome versions restrict CRX installs outside the Web Store. Use Option 1 if this fails. -->
 
-**Supported Browsers** : Every Chromium-based browser
-- Google Chrome  
-- Microsoft Edge  
-- Brave  
-- Opera  
-- Vivaldi  
-- And many more...
-
-<!-- > Note: Non-chromium based browsers like Firefox and Safari are not supported yet. -->
-
-## Disclaimer
-
-Moctale Plus is an independent, third-party browser extension and is **not affiliated with, endorsed by, or connected to Moctale.in**
-
 ## Feedback & Help
 
 - **Have a feature request?** [Submit here](https://github.com/010101-sans/moctale-plus/issues/new?labels=enhancement&title=[Feature]+)  
 - **Found an error / bug?** [Report here](https://github.com/010101-sans/moctale-plus/issues/new?labels=bug&title=[Bug]+)  
 - **Have a questions?** [Ask here](https://github.com/010101-sans/moctale-plus/issues/new?labels=question&title=[Question]+)
+- **Supported Browsers** : Every Chromium-based browser
+  - Google Chrome  
+  - Microsoft Edge  
+  - Brave  
+  - Opera  
+  - Vivaldi  
+  - And many more...
 
+<!-- Note: Non-chromium based browsers like Firefox and Safari are not supported yet. -->
+
+**Made with ❤️ by [010101-sans](https://github.com/010101-sans)**  
+**Star ⭐ this project repository if you liked Moctale Plus.** 
+
+## Disclaimer
+
+Moctale Plus is an independent, third-party browser extension and is **not affiliated with, endorsed by, or connected to Moctale.in**
 
 ## License
 
 Moctale Plus is distributed under a **custom proprietary license**. For full terms, see the [LICENSE](./LICENSE) file.
-
-
-**Made with ❤️ by [010101-sans](https://github.com/010101-sans)**  
-**Star ⭐ this project repository if you liked Moctale Plus.** 

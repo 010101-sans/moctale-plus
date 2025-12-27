@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, f as Logout, g as Refresh, h as Setting2, I as Image, B as BrushSquare, i as ChartSquare, b as TickCircle, k as CloudChange, l as Import, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-rGln_nN_.js";
-import { u as useSettings, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-B43scfvm.js";
+import { r as reactExports, j as jsxRuntimeExports, e as Logout, f as Refresh, g as Setting2, I as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, h as CloudChange, i as Import, k as Export, l as Code, H as Heart, m as CloseSquare, A as ArrowDown2, M as Minus, n as Add, c as clientExports } from "./vendor-Bpg3Sy_q.js";
+import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-D29Ye1Hf.js";
 import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -30,9 +30,6 @@ import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
     fetch(link.href, fetchOpts);
   }
 })();
-const CURRENT_VERSION = "1.8.0";
-const REPO_OWNER = "010101-sans";
-const REPO_NAME = "moctale-plus";
 const DEFAULT_KEYWORDS = "die, died, death, killed, kill, murder, murdered, ending, climax, twist, reveal, spoiler, cameo, post-credit, dead, alive, survive, betray, traitor, plot hole, sacrifice, villain, killer, secret, finale";
 const ToolIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Setting2, { size: "18", color: "currentColor", variant: "Linear" });
 const PaintIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(BrushSquare, { size: "18", color: "currentColor", variant: "Linear" });
