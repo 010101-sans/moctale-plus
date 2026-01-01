@@ -1,0 +1,1011 @@
+/* =========================================
+   THEME ENGINE: CORE VARIABLES
+   ========================================= */
+
+/* 1. DEFAULT VARIABLES (The "Native" Dark Mode) */
+/* These match the hardcoded HTML classes so variables work even without a theme class */
+:root {
+  --mp-bg-base: #080808;
+  --mp-bg-surface: #1B1B1B;
+  --mp-bg-layer: #2A2A2A;
+  --mp-border: #252833;
+
+  --mp-text-main: #ffffff;
+  --mp-text-muted: #9CA3AF;
+
+  --mp-accent: #B048FF;
+  /* Your Purple */
+  --mp-filter-icon: none;
+
+  /* Gradients */
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #080808);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #080808);
+}
+
+/* =========================================
+   THEME DEFINITIONS
+   ========================================= */
+
+/* 2. OLED DARK (The Pitch Black Mode) */
+body.theme-oled {
+  --mp-bg-base: #000000;
+  --mp-bg-surface: #000000;
+  --mp-bg-layer: #121212;
+  --mp-border: rgba(255, 255, 255, 0.1);
+
+  --mp-text-main: #e2e2e2;
+  --mp-text-muted: #737373;
+
+  --mp-filter-icon: none;
+}
+
+/* 3. MIDNIGHT BLUE (Example of how easy it is to add new themes now) */
+body.theme-midnight {
+  --mp-bg-base: #020617;
+  /* Slate-950 */
+  --mp-bg-surface: #0f172a;
+  /* Slate-900 */
+  --mp-bg-layer: #1e293b;
+  /* Slate-800 */
+  --mp-border: rgba(255, 255, 255, 0.1);
+
+  --mp-text-main: #f8fafc;
+  --mp-text-muted: #94a3b8;
+
+  --mp-filter-icon: none;
+}
+
+/* =========================================
+   COMMUNITY THEME PACK (VS Code Inspired)
+   ========================================= */
+
+/* 4. DRACULA (The Vampire Theme) */
+body.theme-dracula {
+  --mp-bg-base: #282a36;
+  --mp-bg-surface: #44475a;
+  --mp-bg-layer: #6272a4;
+  --mp-border: rgba(255, 255, 255, 0.1);
+
+  --mp-text-main: #f8f8f2;
+  --mp-text-muted: #bd93f9;
+  /* Using purple for muted text gives it that vibe */
+
+  --mp-accent: #ff79c6;
+  /* Dracula Pink */
+  --mp-filter-icon: none;
+
+  /* Gradients: Fade to Dracula Dark */
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #282a36);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #282a36);
+}
+
+/* 5. NORD (Arctic Blue-Grey) */
+body.theme-nord {
+  --mp-bg-base: #2e3440;
+  --mp-bg-surface: #3b4252;
+  --mp-bg-layer: #434c5e;
+  --mp-border: rgba(255, 255, 255, 0.1);
+
+  --mp-text-main: #eceff4;
+  --mp-text-muted: #d8dee9;
+
+  --mp-accent: #88c0d0;
+  /* Nord Cyan */
+  --mp-filter-icon: none;
+
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #2e3440);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #2e3440);
+}
+
+/* 6. MONOKAI PRO (The Classic) */
+body.theme-monokai {
+  --mp-bg-base: #2d2a2e;
+  --mp-bg-surface: #403e41;
+  --mp-bg-layer: #5b595c;
+  --mp-border: rgba(255, 255, 255, 0.1);
+
+  --mp-text-main: #fcfcfa;
+  --mp-text-muted: #939293;
+
+  --mp-accent: #ffd866;
+  /* Monokai Yellow */
+  --mp-filter-icon: none;
+
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #2d2a2e);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #2d2a2e);
+}
+
+/* 7. GITHUB DARK (Developer Standard) */
+body.theme-github-dark {
+  --mp-bg-base: #0d1117;
+  --mp-bg-surface: #161b22;
+  --mp-bg-layer: #21262d;
+  --mp-border: rgba(255, 255, 255, 0.1);
+
+  --mp-text-main: #c9d1d9;
+  --mp-text-muted: #8b949e;
+
+  --mp-accent: #58a6ff;
+  /* GitHub Blue */
+  --mp-filter-icon: none;
+
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #0d1117);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #0d1117);
+}
+
+/* 8. SYNTHWAVE '84 (Cyberpunk Neon) */
+body.theme-synthwave {
+  --mp-bg-base: #2b213a;
+  /* Deep Purple */
+  --mp-bg-surface: #241b2f;
+  /* Darker Purple */
+  --mp-bg-layer: #45225e;
+  /* Bright Purple Layer */
+  --mp-border: rgba(255, 255, 255, 0.1);
+  /* Neon Pink Border! */
+
+  --mp-text-main: #fffb96;
+  /* Pale Yellow */
+  --mp-text-muted: #b6b1b1;
+
+  --mp-accent: #01cdfe;
+  /* Neon Blue */
+  --mp-filter-icon: drop-shadow(0 0 5px rgba(255, 113, 206, 0.8));
+  /* Neon Glow effect */
+
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #2b213a);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #2b213a);
+}
+
+/* ========================================================================
+   THEME MEGA-PACK (Themes 9+)
+   ======================================================================== */
+
+/* --- CATEGORY: LEGENDARY CODE EDITORS --- */
+
+/* 9. ONE DARK PRO (Atom/React Standard) */
+body.theme-onedark {
+  --mp-bg-base: #282c34;
+  --mp-bg-surface: #21252b;
+  --mp-bg-layer: #3a404d;
+  --mp-border: #4b5263;
+  --mp-text-main: #abb2bf;
+  --mp-text-muted: #5c6370;
+  --mp-accent: #61afef; /* React Blue */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #282c34);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #282c34);
+}
+
+/* 10. GRUVBOX DARK (Retro/Warm) */
+body.theme-gruvbox {
+  --mp-bg-base: #282828;
+  --mp-bg-surface: #3c3836;
+  --mp-bg-layer: #504945;
+  --mp-border: #665c54;
+  --mp-text-main: #ebdbb2;
+  --mp-text-muted: #a89984;
+  --mp-accent: #fb4934; /* Retro Red/Orange */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #282828);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #282828);
+}
+
+/* 11. AYU MIRAGE (Deep Warm Navy) */
+body.theme-ayu {
+  --mp-bg-base: #1f2430;
+  --mp-bg-surface: #272d3d;
+  --mp-bg-layer: #333a4d;
+  --mp-border: #404860;
+  --mp-text-main: #cbccc6;
+  --mp-text-muted: #707a8c;
+  --mp-accent: #ffcc66; /* Ayu Orange/Yellow */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #1f2430);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #1f2430);
+}
+
+/* 12. NIGHT OWL (Sarah Drasner's Famous Theme) */
+body.theme-nightowl {
+  --mp-bg-base: #011627;
+  --mp-bg-surface: #0b253a;
+  --mp-bg-layer: #1d3b53;
+  --mp-border: #234d70;
+  --mp-text-main: #d6deeb;
+  --mp-text-muted: #637777;
+  --mp-accent: #82aaff; /* Soft Blue */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #011627);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #011627);
+}
+
+/* 13. MATERIAL PALENIGHT */
+body.theme-palenight {
+  --mp-bg-base: #292d3e;
+  --mp-bg-surface: #32374d;
+  --mp-bg-layer: #444267;
+  --mp-border: #676e95;
+  --mp-text-main: #a6accd;
+  --mp-text-muted: #676e95;
+  --mp-accent: #c792ea; /* Material Purple */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #292d3e);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #292d3e);
+}
+
+/* --- CATEGORY: SOCIAL GIANTS --- */
+
+/* 14. TWITTER DIM (Dark Blue) */
+body.theme-twitter-dim {
+  --mp-bg-base: #15202b;
+  --mp-bg-surface: #1e2732;
+  --mp-bg-layer: #273340;
+  --mp-border: #38444d;
+  --mp-text-main: #ffffff;
+  --mp-text-muted: #8899a6;
+  --mp-accent: #1d9bf0; /* Twitter Blue */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #15202b);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #15202b);
+}
+
+/* 15. DISCORD (Blurple & Gray) */
+body.theme-discord {
+  --mp-bg-base: #313338;
+  --mp-bg-surface: #2b2d31;
+  --mp-bg-layer: #1e1f22;
+  --mp-border: #1e1f22;
+  --mp-text-main: #dbdee1;
+  --mp-text-muted: #949ba4;
+  --mp-accent: #5865f2; /* Blurple */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #313338);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #313338);
+}
+
+/* 16. WHATSAPP DARK (Teal & Deep Green) */
+body.theme-whatsapp {
+  --mp-bg-base: #0b141a;
+  --mp-bg-surface: #202c33;
+  --mp-bg-layer: #2a3942;
+  --mp-border: #374045;
+  --mp-text-main: #e9edef;
+  --mp-text-muted: #8696a0;
+  --mp-accent: #00a884; /* WhatsApp Green */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #0b141a);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #0b141a);
+}
+
+/* 17. INSTAGRAM DARK (OLED + Gray) */
+body.theme-instagram {
+  --mp-bg-base: #000000;
+  --mp-bg-surface: #121212;
+  --mp-bg-layer: #262626;
+  --mp-border: #363636;
+  --mp-text-main: #f5f5f5;
+  --mp-text-muted: #a8a8a8;
+  --mp-accent: #0095f6; /* Insta Blue */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #000000);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #000000);
+}
+
+/* --- CATEGORY: ANIME & CARTOONS --- */
+
+/* 18. UNIT-01 (Neon Genesis Evangelion) */
+body.theme-eva {
+  --mp-bg-base: #2d1d4c; /* Deep Purple */
+  --mp-bg-surface: #3e2d5e;
+  --mp-bg-layer: #4f3b75;
+  --mp-border: #6b4c9a;
+  --mp-text-main: #ffffff;
+  --mp-text-muted: #b8a3d4;
+  --mp-accent: #49e472; /* Neon Green */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #2d1d4c);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #2d1d4c);
+}
+
+/* 19. GOKU (Dragon Ball Orange/Blue) */
+body.theme-goku {
+  --mp-bg-base: #0f1c2e; /* Turtle School Navy */
+  --mp-bg-surface: #192a40;
+  --mp-bg-layer: #223652;
+  --mp-border: #e66b22; /* Gi Orange Border */
+  --mp-text-main: #ffcc00; /* Super Saiyan Gold */
+  --mp-text-muted: #8fa6c4;
+  --mp-accent: #e66b22; /* Gi Orange */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #0f1c2e);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #0f1c2e);
+}
+
+/* 20. AKATSUKI (Naruto - Clouds & Blood) */
+body.theme-akatsuki {
+  --mp-bg-base: #0a0a0a;
+  --mp-bg-surface: #140505; /* Very subtle red tint */
+  --mp-bg-layer: #2b0b0b;
+  --mp-border: #800000;
+  --mp-text-main: #e0e0e0;
+  --mp-text-muted: #8a6a6a;
+  --mp-accent: #e60000; /* Cloud Red */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #0a0a0a);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #0a0a0a);
+}
+
+/* --- CATEGORY: GENRE & MOOD --- */
+
+/* 21. HORROR (The "Slasher" Theme) */
+body.theme-horror {
+  --mp-bg-base: #050000;
+  --mp-bg-surface: #1a0505;
+  --mp-bg-layer: #2b0000; /* Dried Blood */
+  --mp-border: #4a0000;
+  --mp-text-main: #d4d4d4;
+  --mp-text-muted: #733b3b;
+  --mp-accent: #ff0000; /* Bright Fresh Blood */
+  --mp-filter-icon: sepia(1) saturate(100) hue-rotate(-50deg); /* Turn white icons red */
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #050000);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #050000);
+}
+
+/* 22. MYSTERY / NOIR (Deep Fog) */
+body.theme-mystery {
+  --mp-bg-base: #121214;
+  --mp-bg-surface: #1c1c21;
+  --mp-bg-layer: #2a2a30;
+  --mp-border: #3f3f4a;
+  --mp-text-main: #d1d1e0;
+  --mp-text-muted: #6e6e80;
+  --mp-accent: #a3a3c2; /* Desaturated Lavender */
+  --mp-filter-icon: grayscale(100%); /* Make icons B&W */
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #121214);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #121214);
+}
+
+/* 23. SCI-FI (Matrix) */
+body.theme-matrix {
+  --mp-bg-base: #000500;
+  --mp-bg-surface: #001400;
+  --mp-bg-layer: #002600;
+  --mp-border: #003b00;
+  --mp-text-main: #00ff00; /* Terminal Green */
+  --mp-text-muted: #008f00;
+  --mp-accent: #00ff41;
+  --mp-filter-icon: sepia(1) saturate(5) hue-rotate(60deg); /* Green filter */
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #000500);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #000500);
+}
+
+/* --- CATEGORY: ORIGINAL & NATURE --- */
+
+/* 24. COFFEE (Warm Brown/Mocha) */
+body.theme-coffee {
+  --mp-bg-base: #1c1614;
+  --mp-bg-surface: #2b221e;
+  --mp-bg-layer: #3d302a;
+  --mp-border: #54433a;
+  --mp-text-main: #e6dace; /* Foam White */
+  --mp-text-muted: #9c8a7e;
+  --mp-accent: #d2a679; /* Latte Art Color */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #1c1614);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #1c1614);
+}
+
+/* 25. OCEAN DEPTHS (Abyssal Blue) */
+body.theme-ocean {
+  --mp-bg-base: #001219;
+  --mp-bg-surface: #002533;
+  --mp-bg-layer: #00384d;
+  --mp-border: #004d66;
+  --mp-text-main: #e0f7fa;
+  --mp-text-muted: #5c8a99;
+  --mp-accent: #00d4ff; /* Bioluminescent Blue */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #001219);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #001219);
+}
+
+/* 26. FOREST (Night in the Woods) */
+body.theme-forest {
+  --mp-bg-base: #0a140a;
+  --mp-bg-surface: #142114;
+  --mp-bg-layer: #1f331f;
+  --mp-border: #2e4d2e;
+  --mp-text-main: #d9f2d9;
+  --mp-text-muted: #739973;
+  --mp-accent: #4caf50; /* Leaf Green */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #0a140a);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #0a140a);
+}
+
+/* 27. LUXURY (Gold & Black) */
+body.theme-luxury {
+  --mp-bg-base: #080808;
+  --mp-bg-surface: #141414;
+  --mp-bg-layer: #1f1f1f;
+  --mp-border: #daa520; /* Solid Gold Border */
+  --mp-text-main: #f5f5f5;
+  --mp-text-muted: #888888;
+  --mp-accent: #ffd700; /* Pure Gold */
+  --mp-filter-icon: none;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, #080808);
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, #080808);
+}
+
+/* =========================================
+   THE INTERCEPTOR LAYER
+   ========================================= */
+
+/* -----------------------------
+   1. GLOBAL BACKGROUND RESET
+   ----------------------------- */
+/* Target ALL hardcoded dark backgrounds and route them to variables */
+body[class*="theme-"] [class*="bg-[#080808]"],
+body[class*="theme-"] [class*="bg-[#050505]"],
+body[class*="theme-"] [class*="bg-[#111111]"],
+body[class*="theme-"] nav[class*="bg-[rgba(8,8,8"],
+body[class*="theme-"] header[class*="bg-[rgba(8,8,8"],
+body[class*="theme-"] aside {
+  background-color: var(--mp-bg-base) !important;
+  border-color: var(--mp-border) !important;
+}
+
+/* Cards & Surfaces (The #171717 / #1B1B1B grays) */
+body[class*="theme-"] [class*="bg-[#171717]"],
+body[class*="theme-"] [class*="bg-[#1B1B1B]"],
+body[class*="theme-"] [class*="bg-[#1F1F1F]"],
+body[class*="theme-"] [class*="bg-[#202020]"],
+body[class*="theme-"] [class*="bg-[#2C2C2C]"] {
+  background-color: var(--mp-bg-surface) !important;
+  border-color: var(--mp-border) !important;
+}
+
+/* CATCH-ALL FOR DARK BACKGROUNDS */
+/* This targets almost any dark gray utility Tailwind might use */
+body[class*="theme-"] [class*="bg-neutral-900"],
+body[class*="theme-"] [class*="bg-slate-900"],
+body[class*="theme-"] [class*="bg-gray-900"],
+body[class*="theme-"] [class*="bg-zinc-900"],
+body[class*="theme-"] [class*="bg-[#0a0a0a]"],
+body[class*="theme-"] [class*="bg-[#121212]"] {
+    background-color: var(--mp-bg-base) !important;
+}
+
+/* -----------------------------
+   2. TEXT INVERSION
+   ----------------------------- */
+/* Force White Text -> Variable Primary */
+body[class*="theme-"] [class*="text-white"],
+body[class*="theme-"] [class*="text-[#E2E2E2]"],
+body[class*="text-[#F5F5F5]"] {
+  color: var(--mp-text-main) !important;
+}
+
+/* Force Gray Text -> Variable Muted */
+body[class*="theme-"] [class*="text-[#A0A0A0]"],
+body[class*="theme-"] [class*="text-gray-400"],
+body[class*="theme-"] [class*="text-[#919191]"] {
+  color: var(--mp-text-muted) !important;
+}
+
+/* -----------------------------
+   3. ICON FILTERING
+   ----------------------------- */
+/* The magic switch for icons */
+body[class*="theme-"] nav img[alt="Moctale Logo"],
+body[class*="theme-"] nav svg,
+body[class*="theme-"] img[src*="cdn.simpleicons.org"],
+body[class*="theme-"] button[class*="bg-white/20"] svg {
+  filter: var(--mp-filter-icon) !important;
+}
+
+/* Safety: Protect Content Images */
+body[class*="theme-"] img[src*="media.moctale.in"],
+body[class*="theme-"] img[alt*="Profile"] {
+  filter: none !important;
+}
+
+
+/* -----------------------------
+   4. INPUTS & TEXT AREAS
+   ----------------------------- */
+
+/* Text Fields & Search Bars */
+body[class*="theme-"] input[type="text"],
+body[class*="theme-"] div[class*="bg-[#2A2A2A]"] input,
+body[class*="theme-"] div[class*="bg-[#2C2C2C]"] input {
+  background-color: var(--mp-bg-layer) !important;
+  color: var(--mp-text-main) !important;
+  /* Only add border if the variable is defined, otherwise let it blend */
+  border: 1px solid var(--mp-border) !important;
+}
+
+/* Textareas (Comments/Reviews) */
+body[class*="theme-"] textarea,
+body[class*="theme-"] div[contenteditable="true"] {
+  background-color: transparent !important;
+  /* Often sits inside a container */
+  border: none !important;
+  color: var(--mp-text-main) !important;
+  outline: none !important;
+}
+
+body[class*="theme-"] textarea::placeholder {
+  color: var(--mp-text-muted) !important;
+}
+
+/* Input Containers (The box wrapping the input) */
+body[class*="theme-"] div[class*="bg-[#1A1A1A]"][class*="border-[#252833]"],
+body[class*="theme-"] div[class*="bg-[#2C2C2C]"] {
+  background-color: var(--mp-bg-surface) !important;
+  border: 1px solid var(--mp-border) !important;
+}
+
+/* -----------------------------
+   5. TABS & NAVIGATION PILLS
+   ----------------------------- */
+
+/* The Tab Track (Container) */
+body[class*="theme-"] [role="tablist"] {
+  background-color: var(--mp-bg-layer) !important;
+  border: 1px solid var(--mp-border) !important;
+}
+
+/* Inactive Tabs */
+body[class*="theme-"] button[role="tab"][data-state="inactive"] {
+  background-color: transparent !important;
+  color: var(--mp-text-muted) !important;
+}
+
+/* Active Tabs */
+body[class*="theme-"] button[role="tab"][data-state="active"] {
+  background-color: var(--mp-bg-surface) !important;
+  color: var(--mp-text-main) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* "Browse By" Grid Cards (Category Cards) */
+body[class*="theme-"] a[class*="bg-gradient-to-br"] {
+  background-image: none !important;
+  background-color: var(--mp-bg-surface) !important;
+  border: 1px solid var(--mp-border) !important;
+}
+
+body[class*="theme-"] a[class*="bg-gradient-to-br"]:hover {
+  background-color: var(--mp-bg-layer) !important;
+}
+
+/* -----------------------------
+   6. OVERLAYS (MODALS & MENUS)
+   ----------------------------- */
+
+/* Dropdowns, Popovers, and Dialogs */
+body[class*="theme-"] [data-radix-menu-content],
+body[class*="theme-"] [role="dialog"],
+body[class*="theme-"] [role="menu"],
+body[class*="theme-"] [role="listbox"],
+body[class*="theme-"] [data-radix-popper-content-wrapper] {
+  background-color: var(--mp-bg-surface) !important;
+  border: 1px solid var(--mp-border) !important;
+  color: var(--mp-text-main) !important;
+  /* Generic shadow for depth in light/mid themes */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dropdown Items */
+body[class*="theme-"] [role="option"],
+body[class*="theme-"] [role="menuitem"] {
+  color: var(--mp-text-main) !important;
+}
+
+body[class*="theme-"] [role="option"]:hover,
+body[class*="theme-"] [role="menuitem"]:hover {
+  background-color: var(--mp-bg-layer) !important;
+}
+
+/* -----------------------------
+   7. SPECIFIC COMPONENT FIXES
+   ----------------------------- */
+
+/* "Unwatch" Dialog - Destructive Action */
+/* Keep the red tint, but ensure text is readable */
+body[class*="theme-"] div[role="dialog"] button[class*="bg-red-500/20"] {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #dc2626 !important;
+  /* Force readable red */
+}
+
+/* Review Cards */
+body[class*="theme-"] div.rounded-2xl.p-3 {
+  background-color: var(--mp-bg-layer) !important;
+  border: 1px solid var(--mp-border) !important;
+}
+
+/* Emoji Picker (The 3rd party plugin) */
+body[class*="theme-"] [class*="emoji-picker"],
+body[class*="theme-"] aside[class*="emoji"] {
+  background-color: var(--mp-bg-surface) !important;
+  border-color: var(--mp-border) !important;
+  --emoji-font-color: var(--mp-text-main) !important;
+}
+
+/* Gradients that need to vanish (Shadows over videos) */
+body[class*="theme-"] .relative>video+div[class*="bg-gradient-to-b"] {
+  display: none !important;
+}
+
+
+/* =========================================
+THEME-AWARE GRADIENTS (The Smooth Fix)
+========================================= */
+
+/* 1. Bottom-Up Fades (Hero Sections, Page Bottoms) */
+/* Finds any gradient starting from black/dark and forces it to the theme color */
+body[class*="theme-"] [class*="bg-gradient-to-t"][class*="from-[#080808]"],
+body[class*="theme-"] [class*="bg-gradient-to-t"][class*="from-black"],
+body[class*="theme-"] [class*="bg-gradient-to-t"][class*="from-background"] {
+  --tw-gradient-from: var(--mp-bg-base) !important;
+  --tw-gradient-to: transparent !important;
+  --tw-gradient-stops: var(--mp-bg-base), transparent !important;
+}
+
+/* 2. Side Fades (Carousels, Lists) */
+body[class*="theme-"] [class*="bg-gradient-to-r"][class*="from-[#080808]"] {
+  --tw-gradient-from: var(--mp-bg-base) !important;
+  --tw-gradient-to: transparent !important;
+  --tw-gradient-stops: var(--mp-bg-base), transparent !important;
+}
+
+body[class*="theme-"] [class*="bg-gradient-to-l"][class*="to-[#080808]"] {
+  --tw-gradient-to: var(--mp-bg-base) !important;
+  --tw-gradient-stops: transparent, var(--mp-bg-base) !important;
+}
+
+/* 3. The "Hard Cut" Fix */
+/* Sometimes Tailwind uses background-image instead of gradient stops. This forces it. */
+body[class*="theme-"] [class*="bg-gradient-to-t"] {
+  background-image: linear-gradient(to top, var(--mp-bg-base), transparent) !important;
+}
+
+
+/* ========================================================================
+   THE FINAL POLISH: DARK THEME OVERRIDES
+   Targeting specific hardcoded classes provided by user
+   ======================================================================== */
+
+/* --------------------------------------
+   GROUP 1: THE GRADIENTS (Fixing the Black Fades)
+   -------------------------------------- */
+/* Problem: Gradients with 'via-[#080808]/40' create a muddy black stripe 
+   in colorful themes.
+   Fix: We wipe the complex 3-stop gradient and replace it with a clean 
+   2-stop fade (Transparent -> Theme Base).
+*/
+
+/* Vertical Fades (Bottom of Hero, Image Overlays) */
+body[class*="theme-"] [class*="bg-gradient-to-b"][class*="to-[#080808]"],
+body[class*="theme-"] [class*="bg-gradient-to-b"][class*="via-[#080808]"],
+body[class*="theme-"] [style*="rgb(8, 8, 8)"] { 
+    /* Fixes items: 1, 5, 13, 14, 20 */
+    background-image: linear-gradient(to bottom, transparent, var(--mp-bg-base)) !important;
+    --tw-gradient-stops: transparent, var(--mp-bg-base) !important;
+}
+
+/* Horizontal Fades (Side shadows) */
+body[class*="theme-"] [class*="bg-gradient-to-r"][class*="to-[#080808]"] {
+    /* Fixes item: 2 */
+    background-image: linear-gradient(to right, transparent, var(--mp-bg-base)) !important;
+}
+
+/* Complex Button/Pill Gradients */
+/* Fixes item: 3 (The gradient button with #1A1A1A) */
+body[class*="theme-"] [class*="bg-gradient-to-r"][class*="from-[#1A1A1A]"] {
+    background-image: none !important;
+    background-color: var(--mp-bg-surface) !important;
+    border-color: var(--mp-border) !important;
+}
+
+
+/* --------------------------------------
+   GROUP 2: GLASS & SURFACES (The RGBA Backgrounds)
+   -------------------------------------- */
+/* Problem: 'bg-[rgba(8,8,8,0.8)]' forces a black tint. 
+   Fix: Map to your theme's surface color.
+   Note: We use 'bg-surface' which might be opaque in some themes. 
+   If you want transparency, we rely on the variable having alpha.
+*/
+
+body[class*="theme-"] [class*="bg-[rgba(8,8,8"],
+body[class*="theme-"] [class*="bg-black"],
+body[class*="theme-"] [class*="bg-[#131313]"] {
+    /* Fixes items: 6, 7, 8, 10, 11, 15, 21 */
+    background-color: var(--mp-bg-surface) !important;
+    backdrop-filter: blur(12px) !important; /* Ensure blur stays even if we change color */
+    border-color: var(--mp-border) !important;
+    box-shadow: none !important; /* Optional: cleans up muddy shadows */
+}
+
+
+/* --------------------------------------
+   GROUP 3: TEXT & INPUTS
+   -------------------------------------- */
+/* Fixes items: 12, 16 */
+
+body[class*="theme-"] [class*="text-[#E2E2E2]"] {
+    color: var(--mp-text-main) !important;
+}
+
+body[class*="theme-"] [class*="placeholder-[#C6C6C6]"]::placeholder {
+    color: var(--mp-text-muted) !important;
+}
+
+/* Fix specific transparent input backgrounds */
+body[class*="theme-"] input[class*="bg-transparent"] {
+    /* Keeps bg transparent but ensures text is visible */
+    background-color: transparent !important;
+    color: var(--mp-text-main) !important;
+}
+
+
+/* --------------------------------------
+   GROUP 4: BORDERS & ACCENTS
+   -------------------------------------- */
+/* Fixes item: 4 (The h-8 rounded button with white border) */
+
+body[class*="theme-"] [class*="border-white/30"] {
+    border-color: var(--mp-border) !important;
+}
+
+/* Fixes item: 9 (Group container padding/margins) */
+/* Ensuring the hover effect uses theme vars */
+body[class*="theme-"] [class*="group"]:hover {
+    /* If the group has a hover bg, force it to theme hover */
+    --tw-bg-opacity: 1;
+}
+
+/* ========================================================================
+   FIX: TRANSPARENCIES & INPUT CLEANUP
+   ======================================================================== */
+
+/* 1. FORCE TRANSPARENT BACKGROUNDS 
+   Targeting the specific layout containers you listed to ensure they don't 
+   inherit a solid background color.
+*/
+
+/* "hidden min-h-screen w-full bg-background" */
+body[class*="theme-"] [class*="min-h-screen"][class*="bg-background"] {
+    background-color: transparent !important;
+}
+
+/* "relative -mx-2 lg:-mx-4 px-4 lg:px-4 py-5 transition-colors duration-200 rounded-lg group" */
+body[class*="theme-"] [class*="-mx-2"][class*="rounded-lg"][class*="group"] {
+    background-color: transparent !important;
+}
+
+/* "w-full space-y-6 mt-6 lg:mt-0 mt-6" */
+body[class*="theme-"] [class*="space-y-6"][class*="lg:mt-0"] {
+    background-color: transparent !important;
+}
+
+/* "flex w-full max-w-full overflow-x-hidden" */
+body[class*="theme-"] [class*="flex"][class*="max-w-full"][class*="overflow-x-hidden"] {
+    background-color: transparent !important;
+}
+
+
+/* 2. INPUT BOX CLEANUP (Search Bars) 
+   The issue was that our previous "Global Input Rule" was forcing a border 
+   and background onto the *inner* typing area. This removes it so it 
+   blends perfectly into the pill container.
+*/
+
+/* Target inputs inside the #2A2A2A (Search Country/Franchise) container */
+body[class*="theme-"] div[class*="bg-[#2A2A2A]"] input {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Target inputs inside the #2C2C2C (Search Collections) container */
+body[class*="theme-"] div[class*="bg-[#2C2C2C]"] input {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Optional: Ensure the outer "Pill" container itself is themed 
+   (Uncomment if you want the gray pill to change color with your theme) */
+
+body[class*="theme-"] div[class*="bg-[#2A2A2A]"],
+body[class*="theme-"] div[class*="bg-[#2C2C2C]"] {
+    background-color: var(--mp-bg-layer) !important;
+    border: 1px solid var(--mp-border) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------ CURRENT THEME PROGRESS */
+
+/* ========================================================================
+   FIX: TRANSPARENCY & ACCORDION CLEANUP
+   ======================================================================== */
+
+/* 1. MAKE ELEMENTS TRANSPARENT 
+   Targeting the specific Sticky Header and Rules/Card containers provided.
+*/
+
+/* Sticky Header & Glass Cards */
+/* Targets: bg-[rgba(8,8,8,0.95)] and bg-[rgba(8,8,8,0.8)] */
+body[class*="theme-"] [class*="bg-[rgba(8,8,8,0.95)]"],
+body[class*="theme-"] [class*="bg-[rgba(8,8,8,0.8)]"] {
+    background-color: transparent !important;
+    backdrop-filter: none !important; /* Removes the blur if background is gone */
+    box-shadow: none !important;      /* Removes the shadow for a cleaner look */
+    border: none !important;
+}
+
+
+/* 2. FIX THE RULES ACCORDION BORDERS (Bonus)
+   The Rules list HTML had "border-b-[#252833]". This forces those lines 
+   to match your active theme's border color.
+*/
+body[class*="theme-"] [class*="border-b-[#252833]"] {
+    border-color: var(--mp-border) !important;
+}
+/* Fix the text color inside the accordion headers (was #E1E6F0) */
+body[class*="theme-"] [class*="text-[#E1E6F0]"] {
+    color: var(--mp-text-main) !important;
+}
+
+
+/* 3. FIX THE RIGHT-SIDE FADE GRADIENT 
+   The inline style was fading to black. We override it to fade to the 
+   Theme's Base color, so it looks like the content is fading into the page background.
+*/
+
+/* Target the specific inline style pattern provided */
+body[class*="theme-"] [style*="linear-gradient(to left"][style*="rgb(8, 8, 8)"] {
+    background: linear-gradient(to left, 
+        var(--mp-bg-base) 0%, 
+        rgba(0,0,0,0) 100%
+    ) !important;
+    
+    /* Ensure opacity is handled if the element uses it */
+    opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------------------------------------------ CURRENT THEME PROGRESS *//* --- LEVEL 1: CONTAINER BLUR (The Shield) --- */
+.moctale-spoiler-blur {
+    color: transparent !important;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.4); 
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    position: relative;
+    user-select: none !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease;
+    display: inline-block; /* Fixes badges inside spans */
+    width: 100%;
+}
+
+/* Hovering the container triggers the button effect */
+.moctale-spoiler-blur:hover .moctale-spoiler-badge {
+    background-color: #222; /* Lighter dark */
+    border-color: #444;
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+}
+
+/* --- THE BADGE (Reveal Button) --- */
+/* --- THE BADGE (Refined Reveal Button) --- */
+.moctale-spoiler-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+
+    background-color: #161616;
+    border: 1px solid #2f2f2f;
+    border-radius: 10px;
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+
+    pointer-events: none;
+    min-width: max-content;
+
+    transition:
+        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+/* Icon (Optically Centered) */
+.moctale-spoiler-icon {
+    color: #a855f7;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-0.5px); /* optical centering */
+}
+
+/* Text Column */
+.moctale-spoiler-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* Main Text (Title) */
+.moctale-spoiler-title {
+    color: #F3F4F6;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+
+    text-shadow: none;
+    white-space: nowrap;
+}
+
+/* Subtext (Improved Clarity) */
+.moctale-spoiler-sub {
+    color: #9CA3AF;
+    font-size: 9.5px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    text-shadow: none;
+    opacity: 0.9;
+}
+
+/* --- LEVEL 2: REDACTED WORD (The Spoiler Word) --- */
+.moctale-redacted-word {
+    color: transparent !important;
+    /* Heavy blur, NO blue block */
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8); 
+    background: rgba(168, 85, 247, 0.1); 
+    
+    border-radius: 4px;
+    padding: 0 2px;
+    
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.moctale-redacted-word:hover {
+    background: rgba(168, 85, 247, 0.2);
+    text-shadow: 0 0 7px rgba(168, 85, 247, 1);
+}
+
+.moctale-redacted-word.revealed {
+    color: inherit !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    cursor: text;
+    user-select: text;
+    padding: 0;
+}

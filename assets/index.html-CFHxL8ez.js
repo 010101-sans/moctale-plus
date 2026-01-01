@@ -1,5 +1,5 @@
 import { r as reactExports, f as confetti, j as jsxRuntimeExports, G as Global, F as Flash, I as Import, g as Logout, h as Refresh, i as Setting2, k as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, l as CloudChange, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-DWMKswWr.js";
-import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-CnPgU7hK.js";
+import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-czPMP3As.js";
 import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -871,10 +871,32 @@ function App() {
                 onChange: (val) => updateSetting("activeTheme", val),
                 options: [
                   { value: "default", label: "Default (Dark)" },
-                  { value: "light", label: "Light Mode" },
-                  { value: "oled", label: "OLED (True Black)" },
-                  { value: "coffee", label: "Coffee (Sepia)" },
-                  { value: "midnight", label: "Midnight (Deep Blue)" }
+                  { value: "oled", label: "OLED (Black)" },
+                  { value: "midnight", label: "Midnight (Deep Blue)" },
+                  { value: "dracula", label: "Dracula" },
+                  { value: "nord", label: "Nord" },
+                  { value: "monokai", label: "Monokai" },
+                  { value: "github-dark", label: "Github Dark" },
+                  { value: "synthwave", label: "Synthwave" },
+                  { value: "onedark", label: "Onedark" },
+                  { value: "gruvbox", label: "Gruvbox" },
+                  { value: "ayu", label: "Ayu" },
+                  { value: "nightowl", label: "Nightowl" },
+                  { value: "palenight", label: "Palenight" },
+                  { value: "twitter-dim", label: "Twitter" },
+                  { value: "discord", label: "Discord" },
+                  { value: "whatsapp", label: "Whatsapp" },
+                  { value: "instagram", label: "Instagram" },
+                  { value: "eva", label: "Eva" },
+                  { value: "goku", label: "Goku" },
+                  { value: "akatsuki", label: "Akatsuki" },
+                  { value: "horror", label: "Horror" },
+                  { value: "mystery", label: "Mystery" },
+                  { value: "matrix", label: "Matrix" },
+                  { value: "coffee", label: "Coffee" },
+                  { value: "ocean", label: "Ocean" },
+                  { value: "forest", label: "Forest" },
+                  { value: "luxury", label: "Luxury" }
                 ]
               }
             ),

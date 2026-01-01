@@ -14,7 +14,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 [![Open Issues](https://img.shields.io/github/issues/010101-sans/moctale-plus)](https://github.com/010101-sans/moctale-plus/issues) 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/EXTENSION_ID)]()
 -->
-
+ 
 ## Table of Contents
 
 - [Features](#features)
@@ -46,7 +46,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 **2. Visual Features**
 | Feature | Description |
 |:-------|:-----------|
-| **Themes** | Default(Dark), Light Mode |
+| **Custom Themes** | `Default (Dark)`, `OLED (Black)`, `Midnight (Deep Blue)`, `Dracula`, `Nord`, `Monokai`, `Github Dark`, `Synthwave`, `Onedark`, `Gruvbox`, `Ayu`, `Nightowl`, `Palenight`, `Twitter`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Akatsuki`, `Horror`, `Mystery`, `Matrix`, `Coffee`, `Ocean`, `Forest`, `Luxury` |
 | **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
 | **Sticker Studio** | Add persistant images in the website's UI |
 

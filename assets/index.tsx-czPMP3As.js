@@ -1032,7 +1032,7 @@ const showHelpModal = () => {
       </div>
 
       <div class="px-6 py-3 bg-[#121212] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
-        <span>Moctale Plus v1.9.0</span>
+        <span>Moctale Plus v1.9.5</span>
         <div class="flex gap-4">
             <span>Press <kbd class="font-mono text-white/50">Esc</kbd> to close</span>
             <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[#8b5cf6] transition-colors">GitHub</a>
@@ -1770,7 +1770,7 @@ const initGridDensity = (initialColumns) => {
     attributeFilter: ["class"]
   });
 };
-const CURRENT_VERSION = "1.9.0";
+const CURRENT_VERSION = "1.9.5";
 const REPO_OWNER = "010101-sans";
 const REPO_NAME = "moctale-plus";
 const DEFAULT_TEMPLATES = [
@@ -4417,7 +4417,7 @@ const exportBackup = () => {
     };
     const backupData = {
       meta: {
-        version: "1.9.0",
+        version: "1.9.5",
         exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
         author: "010101-sans",
         type: "MoctalePlus_Backup"

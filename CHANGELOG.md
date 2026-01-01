@@ -16,7 +16,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 -->
 
 
+## v1.9.5 - 01/01/2025
 
+### Added
+- **Custom Themes:** Added 25+ beautiful themes
+    - `Default (Dark)`, `OLED (Black)`, `Midnight (Deep Blue)`, `Dracula`, `Nord`, `Monokai`, `Github Dark`, `Synthwave`, `Onedark`, `Gruvbox`, `Ayu`, `Nightowl`, `Palenight`, `Twitter`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Akatsuki`, `Horror`, `Mystery`, `Matrix`, `Coffee`, `Ocean`, `Forest`, `Luxury`
+    - Some themes requires page refresh to apply. I'll try to fix that later.
 
 
 ## v1.9.0 - 01/01/2025
