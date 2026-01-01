@@ -19,10 +19,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+## v1.9.0 - 01/01/2025
+
+### Added
+- **Annual New Year Celebration:** Adds a Happy New Year Banner with link to visit official newely launched website
+- **Page Summary:** Shows a page summary for currently opened title.
+- **Image Downloader:** Download any image by clicking the download button appearing on hovering the iamge.
+- **Performance Max:** Makes the website faster and smoother to use.
+    - Optimization techniques:
+        - **NETWORK:** Speculation Rules (Prefetch) & CDN Preconnection.
+        - **INTERACTION:** Warm Connections (MouseDown) & Tap Delay Removal.
+        - **SCROLL:** Pointer Events Locking (60fps Scroll).
+        - **SCHEDULING:** Idle Callbacks for heavy tasks.
+    - Possible Addtions (Not Implemented Yet): GPU acceleration (transforms) and Virtualization (content-visibility)
+
+### Fixed
+- **Image Preview:** 
+    - It used to not work on pictures in posts with multiple images. 
+    - It was happening because of `pointer-events: none` used in the carousel images
+
+
+
+
 ## v1.8.5 - 27/12/2025
 
 ### Improved
-
 - **Watch Status Indicator Extreme Optimization:** 
     - The problem :
         - Layout Thrashing by repeativie call for querySelectorAll.

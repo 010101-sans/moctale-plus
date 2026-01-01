@@ -12569,15 +12569,15 @@ function requirePropTypes() {
 }
 var propTypesExports = /* @__PURE__ */ requirePropTypes();
 const PropTypes = /* @__PURE__ */ getDefaultExportFromCjs(propTypesExports);
-var _excluded$m = ["variant", "color", "size"];
-var Bold$m = function Bold(_ref) {
+var _excluded$o = ["variant", "color", "size"];
+var Bold$o = function Bold(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
     d: "M17.919 8.18H6.079c-.96 0-1.44 1.16-.76 1.84l5.18 5.18c.83.83 2.18.83 3.01 0l1.97-1.97 3.21-3.21c.67-.68.19-1.84-.77-1.84z"
   }));
 };
-var Broken$m = function Broken(_ref2) {
+var Broken$o = function Broken(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
@@ -12588,7 +12588,7 @@ var Broken$m = function Broken(_ref2) {
     d: "M16.01 12.85l-2.62 2.62c-.77.77-2.03.77-2.8 0L4.08 8.95M19.92 8.95l-1.04 1.04"
   }));
 };
-var Bulk$m = function Bulk(_ref3) {
+var Bulk$o = function Bulk(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
@@ -12599,7 +12599,7 @@ var Bulk$m = function Bulk(_ref3) {
     d: "M17.92 8.18h-6.23l3.79 5.05 3.21-3.21c.67-.68.19-1.84-.77-1.84z"
   }));
 };
-var Linear$m = function Linear(_ref4) {
+var Linear$o = function Linear(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
@@ -12610,14 +12610,14 @@ var Linear$m = function Linear(_ref4) {
     d: "M19.92 8.95l-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
   }));
 };
-var Outline$m = function Outline(_ref5) {
+var Outline$o = function Outline(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
     d: "M12 16.8c-.7 0-1.4-.27-1.93-.8L3.55 9.48a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l6.52 6.52c.48.48 1.26.48 1.74 0l6.52-6.52c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06L13.93 16c-.53.53-1.23.8-1.93.8z"
   }));
 };
-var TwoTone$m = function TwoTone(_ref6) {
+var TwoTone$o = function TwoTone(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
@@ -12628,7 +12628,273 @@ var TwoTone$m = function TwoTone(_ref6) {
     d: "M19.92 8.95l-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
   }));
 };
-var chooseVariant$m = function chooseVariant(variant, color) {
+var chooseVariant$o = function chooseVariant(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$o, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$o, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$o, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$o, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$o, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$o, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$o, {
+        color
+      });
+  }
+};
+var ArrowDown2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$o);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$o(variant, color));
+});
+ArrowDown2.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+ArrowDown2.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+ArrowDown2.displayName = "ArrowDown2";
+var _excluded$n = ["variant", "color", "size"];
+var Bold$n = function Bold2(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M21.14 9.898h-8.39v5.48c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5.48H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.11 10-10c0-.48-.38-.86-.86-.86z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12.748 5.8l1.56 1.56c.29.29.77.29 1.06 0 .29-.29.29-.77 0-1.06l-2.85-2.84a.754.754 0 00-1.06 0l-2.84 2.85c-.14.15-.22.34-.22.53s.07.38.22.53c.29.29.77.29 1.06 0l1.56-1.56V9.9h1.5V5.8h.01z"
+  }));
+};
+var Broken$n = function Broken2(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M17.52 18.01C16.16 19.25 14.29 20 12 20c-5 0-8-3.58-8-8M20 12c0 1.05-.17 2.05-.49 2.97M9.44 6.47L12 3.91l2.56 2.56M12 9.15V3.98M12 14.15v-1.96"
+  }));
+};
+var Bulk$n = function Bulk2(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M22 10.76a.86.86 0 00-.86-.86H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.12 10-10z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12.53 3.46l2.85 2.84c.29.29.29.77 0 1.06-.29.29-.77.29-1.06 0L12.75 5.8v9.57c0 .41-.34.75-.75.75s-.75-.34-.75-.75V5.8L9.69 7.37c-.29.29-.77.29-1.06 0a.753.753 0 01-.23-.53c0-.19.07-.38.22-.53l2.85-2.84c.29-.3.77-.3 1.06-.01z"
+  }));
+};
+var Linear$n = function Linear2(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 6.5l2.56-2.56 2.56 2.56M11.88 14.18V4.01M4 12c0 4.42 3 8 8 8s8-3.58 8-8"
+  }));
+};
+var Outline$n = function Outline2(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M14.44 7.25c-.19 0-.38-.07-.53-.22L11.88 5 9.85 7.03c-.29.29-.77.29-1.06 0a.754.754 0 010-1.06l2.56-2.56c.29-.29.77-.29 1.06 0l2.56 2.56c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.88 14.93c-.41 0-.75-.34-.75-.75V4.01c0-.41.34-.75.75-.75s.75.34.75.75v10.17c0 .42-.34.75-.75.75z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 20.75c-5.15 0-8.75-3.6-8.75-8.75 0-.41.34-.75.75-.75s.75.34.75.75c0 4.27 2.98 7.25 7.25 7.25s7.25-2.98 7.25-7.25c0-.41.34-.75.75-.75s.75.34.75.75c0 5.15-3.6 8.75-8.75 8.75z"
+  }));
+};
+var TwoTone$n = function TwoTone2(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 6.5l2.56-2.56 2.56 2.56M11.88 14.18V4.01"
+  })), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M4 12c0 4.42 3 8 8 8s8-3.58 8-8"
+  }));
+};
+var chooseVariant$n = function chooseVariant2(variant, color) {
+  switch (variant) {
+    case "Bold":
+      return /* @__PURE__ */ React.createElement(Bold$n, {
+        color
+      });
+    case "Broken":
+      return /* @__PURE__ */ React.createElement(Broken$n, {
+        color
+      });
+    case "Bulk":
+      return /* @__PURE__ */ React.createElement(Bulk$n, {
+        color
+      });
+    case "Linear":
+      return /* @__PURE__ */ React.createElement(Linear$n, {
+        color
+      });
+    case "Outline":
+      return /* @__PURE__ */ React.createElement(Outline$n, {
+        color
+      });
+    case "TwoTone":
+      return /* @__PURE__ */ React.createElement(TwoTone$n, {
+        color
+      });
+    default:
+      return /* @__PURE__ */ React.createElement(Linear$n, {
+        color
+      });
+  }
+};
+var Export = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+  var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$n);
+  return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
+    xmlns: "http://www.w3.org/2000/svg",
+    ref,
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }), chooseVariant$n(variant, color));
+});
+Export.propTypes = {
+  variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+Export.defaultProps = {
+  variant: "Linear",
+  color: "currentColor",
+  size: "24"
+};
+Export.displayName = "Export";
+var _excluded$m = ["variant", "color", "size"];
+var Bold$m = function Bold3(_ref) {
+  var color = _ref.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M21.14 9.898h-8.46v3.67l1.57-1.57c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.85 2.84c-.29.29-.77.29-1.06 0l-2.85-2.84a.742.742 0 01-.22-.53c0-.19.08-.38.23-.53.29-.29.77-.29 1.06 0l1.56 1.56v-3.66H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.11 10-10c0-.48-.38-.86-.86-.86zM12.68 3.988c0-.41-.34-.75-.75-.75s-.75.34-.75.75v5.9h1.5v-5.9z"
+  }));
+};
+var Broken$m = function Broken3(_ref2) {
+  var color = _ref2.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.44 11.68L12 14.24l2.56-2.56M12 9v5.17M12 4v1.96M17.52 18.01C16.16 19.25 14.29 20 12 20c-5 0-8-3.58-8-8M20 12c0 1.05-.17 2.05-.49 2.97"
+  }));
+};
+var Bulk$m = function Bulk3(_ref3) {
+  var color = _ref3.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M22 10.76a.86.86 0 00-.86-.86H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.12 10-10z",
+    opacity: ".4"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12.46 15.9l2.85-2.84c.29-.29.29-.77 0-1.06a.754.754 0 00-1.06 0l-1.56 1.56V3.99c0-.41-.34-.75-.75-.75s-.75.34-.75.75v9.57L9.62 12a.754.754 0 00-1.06 0c-.15.15-.22.34-.22.53s.07.38.22.53l2.85 2.84c.29.3.76.3 1.05 0z"
+  }));
+};
+var Linear$m = function Linear3(_ref4) {
+  var color = _ref4.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 11.68l2.56 2.56 2.56-2.56M11.88 4v10.17"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M20 12.18c0 4.42-3 8-8 8s-8-3.58-8-8"
+  }));
+};
+var Outline$m = function Outline3(_ref5) {
+  var color = _ref5.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.88 14.99c-.19 0-.38-.07-.53-.22l-2.56-2.56a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l2.03 2.03 2.03-2.03c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.56 2.56c-.15.15-.34.22-.53.22z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M11.88 14.92c-.41 0-.75-.34-.75-.75V4c0-.41.34-.75.75-.75s.75.34.75.75v10.17c0 .41-.34.75-.75.75z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M12 20.93c-5.15 0-8.75-3.6-8.75-8.75 0-.41.34-.75.75-.75s.75.34.75.75c0 4.27 2.98 7.25 7.25 7.25s7.25-2.98 7.25-7.25c0-.41.34-.75.75-.75s.75.34.75.75c0 5.15-3.6 8.75-8.75 8.75z"
+  }));
+};
+var TwoTone$m = function TwoTone3(_ref6) {
+  var color = _ref6.color;
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M9.32 11.68l2.56 2.56 2.56-2.56M11.88 4v10.17"
+  })), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeMiterlimit: "10",
+    strokeWidth: "1.5",
+    d: "M20 12.18c0 4.42-3 8-8 8s-8-3.58-8-8"
+  }));
+};
+var chooseVariant$m = function chooseVariant3(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$m, {
@@ -12660,7 +12926,7 @@ var chooseVariant$m = function chooseVariant(variant, color) {
       });
   }
 };
-var ArrowDown2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Import = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$m);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -12671,29 +12937,29 @@ var ArrowDown2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$m(variant, color));
 });
-ArrowDown2.propTypes = {
+Import.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-ArrowDown2.defaultProps = {
+Import.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-ArrowDown2.displayName = "ArrowDown2";
+Import.displayName = "Import";
 var _excluded$l = ["variant", "color", "size"];
-var Bold$l = function Bold2(_ref) {
+var Bold$l = function Bold4(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M21.14 9.898h-8.39v5.48c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5.48H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.11 10-10c0-.48-.38-.86-.86-.86z"
+    d: "M7.878 12.07c0-.41.34-.75.75-.75h5.48V2.86a.869.869 0 00-.87-.86c-5.89 0-10 4.11-10 10s4.11 10 10 10c.47 0 .86-.38.86-.86v-8.33h-5.47a.734.734 0 01-.75-.74z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12.748 5.8l1.56 1.56c.29.29.77.29 1.06 0 .29-.29.29-.77 0-1.06l-2.85-2.84a.754.754 0 00-1.06 0l-2.84 2.85c-.14.15-.22.34-.22.53s.07.38.22.53c.29.29.77.29 1.06 0l1.56-1.56V9.9h1.5V5.8h.01z"
+    d: "M20.542 11.54l-2.84-2.85a.754.754 0 00-1.06 0c-.29.29-.29.77 0 1.06l1.56 1.56h-4.1v1.5h4.09l-1.56 1.56c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.84-2.85c.3-.28.3-.75.01-1.04z"
   }));
 };
-var Broken$l = function Broken2(_ref2) {
+var Broken$l = function Broken4(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
@@ -12701,21 +12967,21 @@ var Broken$l = function Broken2(_ref2) {
     strokeLinejoin: "round",
     strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M17.52 18.01C16.16 19.25 14.29 20 12 20c-5 0-8-3.58-8-8M20 12c0 1.05-.17 2.05-.49 2.97M9.44 6.47L12 3.91l2.56 2.56M12 9.15V3.98M12 14.15v-1.96"
+    d: "M6.56 14.56L4 12l2.56-2.56M9.24 12H4.07M14.24 12h-1.96M18.01 6.48C19.25 7.84 20 9.71 20 12c0 5-3.58 8-8 8M12 4c1.05 0 2.05.17 2.97.49"
   }));
 };
-var Bulk$l = function Bulk2(_ref3) {
+var Bulk$l = function Bulk4(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M22 10.76a.86.86 0 00-.86-.86H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.12 10-10z",
+    d: "M13.24 2c.47 0 .86.38.86.86v18.29c0 .47-.38.86-.86.86-5.89 0-10-4.11-10-10S7.36 2 13.24 2z",
     opacity: ".4"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12.53 3.46l2.85 2.84c.29.29.29.77 0 1.06-.29.29-.77.29-1.06 0L12.75 5.8v9.57c0 .41-.34.75-.75.75s-.75-.34-.75-.75V5.8L9.69 7.37c-.29.29-.77.29-1.06 0a.753.753 0 01-.23-.53c0-.19.07-.38.22-.53l2.85-2.84c.29-.3.77-.3 1.06-.01z"
+    d: "M20.54 11.54L17.7 8.69a.754.754 0 00-1.06 0c-.29.29-.29.77 0 1.06l1.56 1.56H8.63c-.41 0-.75.34-.75.75s.34.75.75.75h9.57l-1.56 1.56c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.84-2.85a.73.73 0 000-1.04z"
   }));
 };
-var Linear$l = function Linear2(_ref4) {
+var Linear$l = function Linear4(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
@@ -12723,23 +12989,23 @@ var Linear$l = function Linear2(_ref4) {
     strokeLinejoin: "round",
     strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M9.32 6.5l2.56-2.56 2.56 2.56M11.88 14.18V4.01M4 12c0 4.42 3 8 8 8s8-3.58 8-8"
+    d: "M17.44 14.62L20 12.06 17.44 9.5M9.76 12.06h10.17M11.76 20c-4.42 0-8-3-8-8s3.58-8 8-8"
   }));
 };
-var Outline$l = function Outline2(_ref5) {
+var Outline$l = function Outline4(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M14.44 7.25c-.19 0-.38-.07-.53-.22L11.88 5 9.85 7.03c-.29.29-.77.29-1.06 0a.754.754 0 010-1.06l2.56-2.56c.29-.29.77-.29 1.06 0l2.56 2.56c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22z"
+    d: "M17.44 15.37c-.19 0-.38-.07-.53-.22a.754.754 0 010-1.06l2.03-2.03-2.03-2.03a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l2.56 2.56c.29.29.29.77 0 1.06l-2.56 2.56c-.15.15-.34.22-.53.22z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M11.88 14.93c-.41 0-.75-.34-.75-.75V4.01c0-.41.34-.75.75-.75s.75.34.75.75v10.17c0 .42-.34.75-.75.75z"
+    d: "M19.93 12.81H9.76c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h10.17c.41 0 .75.34.75.75s-.34.75-.75.75z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12 20.75c-5.15 0-8.75-3.6-8.75-8.75 0-.41.34-.75.75-.75s.75.34.75.75c0 4.27 2.98 7.25 7.25 7.25s7.25-2.98 7.25-7.25c0-.41.34-.75.75-.75s.75.34.75.75c0 5.15-3.6 8.75-8.75 8.75z"
+    d: "M11.76 20.75c-5.15 0-8.75-3.6-8.75-8.75s3.6-8.75 8.75-8.75c.41 0 .75.34.75.75s-.34.75-.75.75c-4.27 0-7.25 2.98-7.25 7.25s2.98 7.25 7.25 7.25c.41 0 .75.34.75.75s-.34.75-.75.75z"
   }));
 };
-var TwoTone$l = function TwoTone2(_ref6) {
+var TwoTone$l = function TwoTone4(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
     opacity: ".4"
@@ -12749,17 +13015,17 @@ var TwoTone$l = function TwoTone2(_ref6) {
     strokeLinejoin: "round",
     strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M9.32 6.5l2.56-2.56 2.56 2.56M11.88 14.18V4.01"
+    d: "M17.44 14.62L20 12.06 17.44 9.5M9.76 12.06h10.17"
   })), /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
     strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M4 12c0 4.42 3 8 8 8s8-3.58 8-8"
+    d: "M11.76 20c-4.42 0-8-3-8-8s3.58-8 8-8"
   }));
 };
-var chooseVariant$l = function chooseVariant2(variant, color) {
+var chooseVariant$l = function chooseVariant4(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$l, {
@@ -12791,7 +13057,7 @@ var chooseVariant$l = function chooseVariant2(variant, color) {
       });
   }
 };
-var Export = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Logout = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$l);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -12802,99 +13068,118 @@ var Export = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$l(variant, color));
 });
-Export.propTypes = {
+Logout.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Export.defaultProps = {
+Logout.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Export.displayName = "Export";
+Logout.displayName = "Logout";
 var _excluded$k = ["variant", "color", "size"];
-var Bold$k = function Bold3(_ref) {
+var Bold$k = function Bold5(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M21.14 9.898h-8.46v3.67l1.57-1.57c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.85 2.84c-.29.29-.77.29-1.06 0l-2.85-2.84a.742.742 0 01-.22-.53c0-.19.08-.38.23-.53.29-.29.77-.29 1.06 0l1.56 1.56v-3.66H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.11 10-10c0-.48-.38-.86-.86-.86zM12.68 3.988c0-.41-.34-.75-.75-.75s-.75.34-.75.75v5.9h1.5v-5.9z"
+    d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-5.4 9.23c.17-1.19.7-2.26 1.53-3.1 2-1.99 5.15-2.1 7.29-.36v-.95c0-.41.34-.75.75-.75s.75.34.75.75v2.67c0 .41-.34.75-.75.75H13.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.75a3.965 3.965 0 00-5.07.45c-.6.6-.98 1.38-1.11 2.25-.05.37-.37.64-.74.64-.04 0-.07 0-.11-.01a.739.739 0 01-.62-.84zm9.27 4.64a5.45 5.45 0 01-3.87 1.6c-1.22 0-2.43-.43-3.43-1.24v.94c0 .41-.34.75-.75.75s-.75-.34-.75-.75V14.5c0-.41.34-.75.75-.75h2.67c.41 0 .75.34.75.75s-.34.75-.75.75h-.75c1.55 1.08 3.69.93 5.07-.45.6-.6.98-1.38 1.11-2.25.06-.41.43-.7.85-.64.41.06.69.44.64.85-.18 1.21-.71 2.28-1.54 3.11z"
   }));
 };
-var Broken$k = function Broken3(_ref2) {
+var Broken$k = function Broken5(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M9.44 11.68L12 14.24l2.56-2.56M12 9v5.17M12 4v1.96M17.52 18.01C16.16 19.25 14.29 20 12 20c-5 0-8-3.58-8-8M20 12c0 1.05-.17 2.05-.49 2.97"
+    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M4 6c-1.25 1.67-2 3.75-2 6 0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2c-1.43 0-2.8.3-4.03.85"
   }));
 };
-var Bulk$k = function Bulk3(_ref3) {
+var Bulk$k = function Bulk5(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M22 10.76a.86.86 0 00-.86-.86H2.86c-.48 0-.86.38-.86.86 0 5.89 4.11 10 10 10s10-4.12 10-10z",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z",
     opacity: ".4"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12.46 15.9l2.85-2.84c.29-.29.29-.77 0-1.06a.754.754 0 00-1.06 0l-1.56 1.56V3.99c0-.41-.34-.75-.75-.75s-.75.34-.75.75v9.57L9.62 12a.754.754 0 00-1.06 0c-.15.15-.22.34-.22.53s.07.38.22.53l2.85 2.84c.29.3.76.3 1.05 0z"
+    d: "M16.759 11.93a.741.741 0 00-.85.64c-.12.87-.51 1.65-1.11 2.25-1.38 1.38-3.52 1.52-5.07.45h.75c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-2.67c-.41 0-.75.34-.75.75v2.67c0 .41.34.75.75.75s.75-.34.75-.75v-.94c1 .81 2.21 1.24 3.43 1.24 1.4 0 2.8-.53 3.87-1.6.83-.83 1.36-1.9 1.53-3.1a.734.734 0 00-.63-.86zM7.34 12.08c.37 0 .69-.27.74-.64.12-.87.51-1.65 1.11-2.25 1.38-1.38 3.52-1.52 5.07-.45h-.75c-.41 0-.75.34-.75.75s.34.75.75.75h2.67c.41 0 .75-.34.75-.75V6.82c0-.41-.34-.75-.75-.75s-.75.34-.75.75v.94c-2.15-1.74-5.3-1.63-7.29.36-.83.83-1.36 1.9-1.53 3.1-.06.41.23.79.64.85.02.01.06.01.09.01z"
   }));
 };
-var Linear$k = function Linear3(_ref4) {
+var Linear$k = function Linear5(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M9.32 11.68l2.56 2.56 2.56-2.56M11.88 4v10.17"
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
   }), /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M20 12.18c0 4.42-3 8-8 8s-8-3.58-8-8"
+    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
   }));
 };
-var Outline$k = function Outline3(_ref5) {
+var Outline$k = function Outline5(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M11.88 14.99c-.19 0-.38-.07-.53-.22l-2.56-2.56a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l2.03 2.03 2.03-2.03c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.56 2.56c-.15.15-.34.22-.53.22z"
+    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M11.88 14.92c-.41 0-.75-.34-.75-.75V4c0-.41.34-.75.75-.75s.75.34.75.75v10.17c0 .41-.34.75-.75.75z"
+    d: "M12 17.47c-1.4 0-2.8-.53-3.87-1.6-.28-.28-.53-.59-.76-.96a.747.747 0 111.27-.79c.17.28.35.5.55.7a3.977 3.977 0 005.62 0c.6-.6.98-1.38 1.11-2.25.06-.41.44-.71.85-.64.41.06.69.44.64.85-.17 1.19-.7 2.26-1.53 3.1A5.522 5.522 0 0112 17.47zM7.34 12.08c-.04 0-.07 0-.11-.01a.754.754 0 01-.64-.85c.17-1.19.7-2.26 1.53-3.1 2.13-2.13 5.6-2.13 7.74 0 .28.28.53.59.76.97a.747.747 0 11-1.27.79c-.17-.27-.35-.5-.55-.7a3.977 3.977 0 00-5.62 0c-.6.6-.98 1.38-1.11 2.25-.04.38-.36.65-.73.65z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12 20.93c-5.15 0-8.75-3.6-8.75-8.75 0-.41.34-.75.75-.75s.75.34.75.75c0 4.27 2.98 7.25 7.25 7.25s7.25-2.98 7.25-7.25c0-.41.34-.75.75-.75s.75.34.75.75c0 5.15-3.6 8.75-8.75 8.75z"
+    d: "M7.82 17.93c-.41 0-.75-.34-.75-.75v-2.67c0-.41.34-.75.75-.75h2.67c.41 0 .75.34.75.75s-.34.75-.75.75H8.57v1.92c0 .41-.33.75-.75.75zM16.18 10.24h-2.67c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h1.92V6.82c0-.41.34-.75.75-.75s.75.34.75.75v2.67c0 .42-.34.75-.75.75z"
   }));
 };
-var TwoTone$k = function TwoTone3(_ref6) {
+var TwoTone$k = function TwoTone5(_ref6) {
   var color = _ref6.color;
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+  }), /* @__PURE__ */ React.createElement("g", {
     opacity: ".4"
   }, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M9.32 11.68l2.56 2.56 2.56-2.56M11.88 4v10.17"
-  })), /* @__PURE__ */ React.createElement("path", {
+    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+  }), /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M20 12.18c0 4.42-3 8-8 8s-8-3.58-8-8"
-  }));
+    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
+  })));
 };
-var chooseVariant$k = function chooseVariant3(variant, color) {
+var chooseVariant$k = function chooseVariant5(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$k, {
@@ -12926,7 +13211,7 @@ var chooseVariant$k = function chooseVariant3(variant, color) {
       });
   }
 };
-var Import = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var RefreshCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$k);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -12937,75 +13222,85 @@ var Import = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$k(variant, color));
 });
-Import.propTypes = {
+RefreshCircle.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Import.defaultProps = {
+RefreshCircle.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Import.displayName = "Import";
+RefreshCircle.displayName = "RefreshCircle";
 var _excluded$j = ["variant", "color", "size"];
-var Bold$j = function Bold4(_ref) {
+var Bold$j = function Bold6(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M7.878 12.07c0-.41.34-.75.75-.75h5.48V2.86a.869.869 0 00-.87-.86c-5.89 0-10 4.11-10 10s4.11 10 10 10c.47 0 .86-.38.86-.86v-8.33h-5.47a.734.734 0 01-.75-.74z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M20.542 11.54l-2.84-2.85a.754.754 0 00-1.06 0c-.29.29-.29.77 0 1.06l1.56 1.56h-4.1v1.5h4.09l-1.56 1.56c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.84-2.85c.3-.28.3-.75.01-1.04z"
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zM12 18.01c-3.17 0-5.75-2.58-5.75-5.75 0-1.14.33-2.25.97-3.19a.746.746 0 111.24.83 4.3 4.3 0 00-.71 2.36A4.26 4.26 0 0012 16.51a4.26 4.26 0 004.25-4.25A4.26 4.26 0 0012 8.01c-.19 0-.37.02-.56.04l.56.41c.33.24.41.71.16 1.05-.15.2-.38.31-.61.31-.15 0-.31-.05-.44-.14L9.17 8.25l-.02-.02c-.01-.01-.02-.01-.03-.02-.03-.02-.04-.06-.07-.09-.03-.04-.06-.07-.09-.12-.02-.04-.03-.09-.05-.13-.01-.05-.03-.09-.03-.14 0-.05 0-.09.01-.14 0-.05 0-.09.02-.14 0-.05.03-.09.05-.14.02-.03.02-.07.05-.11.01 0 .02-.01.03-.02.01-.01.01-.02.02-.03l1.67-1.91c.27-.31.75-.35 1.06-.07.31.27.34.75.07 1.06l-.28.32c.14-.01.28-.03.43-.03 3.17 0 5.75 2.58 5.75 5.75s-2.59 5.74-5.76 5.74z"
   }));
 };
-var Broken$j = function Broken4(_ref2) {
+var Broken$j = function Broken6(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M6.56 14.56L4 12l2.56-2.56M9.24 12H4.07M14.24 12h-1.96M18.01 6.48C19.25 7.84 20 9.71 20 12c0 5-3.58 8-8 8M12 4c1.05 0 2.05.17 2.97.49"
+    d: "M10.33 7.51c.5-.15 1.05-.25 1.67-.25 2.76 0 5 2.24 5 5s-2.24 5-5 5a5.002 5.002 0 01-4.16-7.78M9.62 7.65l1.66-1.91M9.62 7.65l1.94 1.42"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M2 14v1c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9"
   }));
 };
-var Bulk$j = function Bulk4(_ref3) {
+var Bulk$j = function Bulk6(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M13.24 2c.47 0 .86.38.86.86v18.29c0 .47-.38.86-.86.86-5.89 0-10-4.11-10-10S7.36 2 13.24 2z",
+    d: "M16.19 2H7.82C4.17 2 2 4.17 2 7.81v8.37c0 3.64 2.17 5.81 5.81 5.81h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2z",
     opacity: ".4"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M20.54 11.54L17.7 8.69a.754.754 0 00-1.06 0c-.29.29-.29.77 0 1.06l1.56 1.56H8.63c-.41 0-.75.34-.75.75s.34.75.75.75h9.57l-1.56 1.56c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.84-2.85a.73.73 0 000-1.04z"
+    d: "M12 6.51c-.14 0-.29.02-.43.03l.28-.32c.27-.31.24-.79-.07-1.06a.756.756 0 00-1.06.07L9.05 7.14c-.01.01-.01.02-.02.03-.01.01-.02.01-.02.02-.02.03-.03.07-.05.11-.02.05-.05.09-.06.14-.01.05-.01.09-.02.14 0 .05-.01.09-.01.14 0 .05.02.09.04.14.01.05.03.09.05.13.02.04.06.08.09.12.03.03.04.07.07.09.01.01.02.01.03.02.01.01.01.02.02.02l1.94 1.42c.13.1.29.14.44.14.23 0 .46-.11.61-.31.24-.33.17-.8-.16-1.05l-.56-.41c.18-.02.37-.04.56-.04a4.26 4.26 0 014.25 4.25A4.26 4.26 0 0112 16.49a4.26 4.26 0 01-4.25-4.25c0-.85.25-1.66.71-2.36.23-.34.14-.81-.21-1.04a.746.746 0 00-1.04.21c-.63.95-.97 2.05-.97 3.19 0 3.17 2.58 5.75 5.75 5.75s5.75-2.58 5.75-5.75S15.17 6.51 12 6.51z"
   }));
 };
-var Linear$j = function Linear4(_ref4) {
+var Linear$j = function Linear6(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M17.44 14.62L20 12.06 17.44 9.5M9.76 12.06h10.17M11.76 20c-4.42 0-8-3-8-8s3.58-8 8-8"
+    d: "M10.33 7.51c.5-.15 1.05-.25 1.67-.25 2.76 0 5 2.24 5 5s-2.24 5-5 5a5.002 5.002 0 01-4.16-7.78M9.62 7.65l1.66-1.91M9.62 7.65l1.94 1.42"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7z"
   }));
 };
-var Outline$j = function Outline4(_ref5) {
+var Outline$j = function Outline6(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M17.44 15.37c-.19 0-.38-.07-.53-.22a.754.754 0 010-1.06l2.03-2.03-2.03-2.03a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l2.56 2.56c.29.29.29.77 0 1.06l-2.56 2.56c-.15.15-.34.22-.53.22z"
+    d: "M12 18.01c-3.17 0-5.75-2.58-5.75-5.75 0-1.14.33-2.25.97-3.19.23-.34.7-.44 1.04-.21.34.23.44.7.21 1.04a4.26 4.26 0 003.54 6.61 4.26 4.26 0 004.25-4.25 4.26 4.26 0 00-4.25-4.25c-.5 0-.98.07-1.45.21a.76.76 0 01-.94-.5c-.12-.4.1-.82.5-.94.61-.19 1.24-.28 1.89-.28 3.17 0 5.75 2.58 5.75 5.75s-2.59 5.76-5.76 5.76z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M19.93 12.81H9.76c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h10.17c.41 0 .75.34.75.75s-.34.75-.75.75z"
+    d: "M9.62 8.4c-.17 0-.35-.06-.49-.18a.756.756 0 01-.07-1.06l1.67-1.91c.27-.31.75-.35 1.06-.07.31.27.34.75.07 1.06l-1.67 1.91c-.16.16-.36.25-.57.25z"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M11.76 20.75c-5.15 0-8.75-3.6-8.75-8.75s3.6-8.75 8.75-8.75c.41 0 .75.34.75.75s-.34.75-.75.75c-4.27 0-7.25 2.98-7.25 7.25s2.98 7.25 7.25 7.25c.41 0 .75.34.75.75s-.34.75-.75.75z"
+    d: "M11.56 9.82c-.15 0-.31-.05-.44-.14L9.18 8.26a.75.75 0 01-.16-1.05.75.75 0 011.05-.16l1.94 1.42c.33.24.41.71.16 1.05-.15.19-.38.3-.61.3z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    fill: color,
+    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9z"
   }));
 };
-var TwoTone$j = function TwoTone4(_ref6) {
+var TwoTone$j = function TwoTone6(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
     opacity: ".4"
@@ -13013,19 +13308,17 @@ var TwoTone$j = function TwoTone4(_ref6) {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M17.44 14.62L20 12.06 17.44 9.5M9.76 12.06h10.17"
+    d: "M10.33 7.51c.5-.15 1.05-.25 1.67-.25 2.76 0 5 2.24 5 5s-2.24 5-5 5a5.002 5.002 0 01-4.16-7.78M9.621 7.65l1.66-1.91M9.621 7.65l1.94 1.42"
   })), /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    strokeMiterlimit: "10",
     strokeWidth: "1.5",
-    d: "M11.76 20c-4.42 0-8-3-8-8s3.58-8 8-8"
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7z"
   }));
 };
-var chooseVariant$j = function chooseVariant4(variant, color) {
+var chooseVariant$j = function chooseVariant6(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$j, {
@@ -13057,7 +13350,7 @@ var chooseVariant$j = function chooseVariant4(variant, color) {
       });
   }
 };
-var Logout = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var RefreshLeftSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$j);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13068,118 +13361,84 @@ var Logout = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$j(variant, color));
 });
-Logout.propTypes = {
+RefreshLeftSquare.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Logout.defaultProps = {
+RefreshLeftSquare.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Logout.displayName = "Logout";
+RefreshLeftSquare.displayName = "RefreshLeftSquare";
 var _excluded$i = ["variant", "color", "size"];
-var Bold$i = function Bold5(_ref) {
+var Bold$i = function Bold7(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-5.4 9.23c.17-1.19.7-2.26 1.53-3.1 2-1.99 5.15-2.1 7.29-.36v-.95c0-.41.34-.75.75-.75s.75.34.75.75v2.67c0 .41-.34.75-.75.75H13.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.75a3.965 3.965 0 00-5.07.45c-.6.6-.98 1.38-1.11 2.25-.05.37-.37.64-.74.64-.04 0-.07 0-.11-.01a.739.739 0 01-.62-.84zm9.27 4.64a5.45 5.45 0 01-3.87 1.6c-1.22 0-2.43-.43-3.43-1.24v.94c0 .41-.34.75-.75.75s-.75-.34-.75-.75V14.5c0-.41.34-.75.75-.75h2.67c.41 0 .75.34.75.75s-.34.75-.75.75h-.75c1.55 1.08 3.69.93 5.07-.45.6-.6.98-1.38 1.11-2.25.06-.41.43-.7.85-.64.41.06.69.44.64.85-.18 1.21-.71 2.28-1.54 3.11z"
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zM12 18.25c-1.79 0-3.19-.89-4.14-1.77v.71c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-2.75c0-.41.34-.75.75-.75h2.48c.41 0 .75.34.75.75s-.34.75-.75.75h-.9c.74.74 1.89 1.56 3.31 1.56 2.62 0 4.75-2.13 4.75-4.75 0-.41.34-.75.75-.75s.75.34.75.75c0 3.45-2.8 6.25-6.25 6.25zm6.25-8.71v.08a.75.75 0 01-.3.54c-.07.05-.15.09-.24.12-.07.02-.14.03-.21.03h-2.43c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.83c-.8-.74-2.09-1.56-3.88-1.56-2.62 0-4.75 2.13-4.75 4.75 0 .41-.34.75-.75.75s-.77-.34-.77-.75c0-3.45 2.8-6.25 6.25-6.25 2.15 0 3.73.93 4.75 1.82v-.76c0-.41.34-.75.75-.75s.75.34.75.75v2.73z"
   }));
 };
-var Broken$i = function Broken5(_ref2) {
+var Broken$i = function Broken7(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
-  }), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
-  }), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M4 6c-1.25 1.67-2 3.75-2 6 0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2c-1.43 0-2.8.3-4.03.85"
+    d: "M18.01 19.99A9.964 9.964 0 0112 22c-5.52 0-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M22 12c0 1.82-.49 3.53-1.34 5M6.03 3.97A9.921 9.921 0 0112 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44M2 12c0-1.82.48-3.53 1.33-5"
   }));
 };
-var Bulk$i = function Bulk5(_ref3) {
+var Bulk$i = function Bulk7(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z",
+    d: "M22 7.81v8.37c0 3.64-2.17 5.81-5.81 5.81H7.81C4.17 22 2 19.83 2 16.19V7.81C2 4.17 4.17 2 7.81 2h8.37C19.83 2 22 4.17 22 7.81z",
     opacity: ".4"
   }), /* @__PURE__ */ React.createElement("path", {
     fill: color,
-    d: "M16.759 11.93a.741.741 0 00-.85.64c-.12.87-.51 1.65-1.11 2.25-1.38 1.38-3.52 1.52-5.07.45h.75c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-2.67c-.41 0-.75.34-.75.75v2.67c0 .41.34.75.75.75s.75-.34.75-.75v-.94c1 .81 2.21 1.24 3.43 1.24 1.4 0 2.8-.53 3.87-1.6.83-.83 1.36-1.9 1.53-3.1a.734.734 0 00-.63-.86zM7.34 12.08c.37 0 .69-.27.74-.64.12-.87.51-1.65 1.11-2.25 1.38-1.38 3.52-1.52 5.07-.45h-.75c-.41 0-.75.34-.75.75s.34.75.75.75h2.67c.41 0 .75-.34.75-.75V6.82c0-.41-.34-.75-.75-.75s-.75.34-.75.75v.94c-2.15-1.74-5.3-1.63-7.29.36-.83.83-1.36 1.9-1.53 3.1-.06.41.23.79.64.85.02.01.06.01.09.01z"
+    d: "M12 18.25c-1.79 0-3.19-.89-4.14-1.77v.71c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-2.75c0-.41.34-.75.75-.75h2.48c.41 0 .75.34.75.75s-.34.75-.75.75h-.9c.74.74 1.89 1.56 3.31 1.56 2.62 0 4.75-2.13 4.75-4.75 0-.41.34-.75.75-.75s.75.34.75.75c0 3.45-2.8 6.25-6.25 6.25zm-5.5-5.5c-.41 0-.75-.34-.75-.75 0-3.45 2.8-6.25 6.25-6.25 2.15 0 3.73.93 4.75 1.82v-.76c0-.41.34-.75.75-.75s.75.34.75.75V9.63a.75.75 0 01-.3.54c-.07.05-.15.09-.24.12-.07.02-.14.03-.21.03h-2.43c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.83c-.8-.74-2.09-1.56-3.88-1.56-2.62 0-4.75 2.13-4.75 4.75-.02.4-.36.74-.77.74z"
   }));
 };
-var Linear$i = function Linear5(_ref4) {
+var Linear$i = function Linear7(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
-  }), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
+    d: "M22 12c0 5.52-4.48 10-10 10s-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
   }));
 };
-var Outline$i = function Outline5(_ref5) {
+var Outline$i = function Outline7(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M12 17.47c-1.4 0-2.8-.53-3.87-1.6-.28-.28-.53-.59-.76-.96a.747.747 0 111.27-.79c.17.28.35.5.55.7a3.977 3.977 0 005.62 0c.6-.6.98-1.38 1.11-2.25.06-.41.44-.71.85-.64.41.06.69.44.64.85-.17 1.19-.7 2.26-1.53 3.1A5.522 5.522 0 0112 17.47zM7.34 12.08c-.04 0-.07 0-.11-.01a.754.754 0 01-.64-.85c.17-1.19.7-2.26 1.53-3.1 2.13-2.13 5.6-2.13 7.74 0 .28.28.53.59.76.97a.747.747 0 11-1.27.79c-.17-.27-.35-.5-.55-.7a3.977 3.977 0 00-5.62 0c-.6.6-.98 1.38-1.11 2.25-.04.38-.36.65-.73.65z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M7.82 17.93c-.41 0-.75-.34-.75-.75v-2.67c0-.41.34-.75.75-.75h2.67c.41 0 .75.34.75.75s-.34.75-.75.75H8.57v1.92c0 .41-.33.75-.75.75zM16.18 10.24h-2.67c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h1.92V6.82c0-.41.34-.75.75-.75s.75.34.75.75v2.67c0 .42-.34.75-.75.75z"
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M22 12c0 5.52-4.48 10-10 10s-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
   }));
 };
-var TwoTone$i = function TwoTone5(_ref6) {
+var TwoTone$i = function TwoTone7(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-  }), /* @__PURE__ */ React.createElement("g", {
-    opacity: ".4"
-  }, /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M8.01 14.51c.18.3.4.58.65.83a4.732 4.732 0 006.68 0 4.71 4.71 0 001.32-2.67M7.34 11.33c.14-.98.57-1.92 1.32-2.67a4.732 4.732 0 016.68 0c.26.26.47.54.65.83"
+    d: "M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
   }), /* @__PURE__ */ React.createElement("path", {
     stroke: color,
     strokeLinecap: "round",
     strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M7.82 17.18v-2.67h2.67M16.18 6.82v2.67h-2.67"
-  })));
+    d: "M21.89 12c0 5.52-4.48 10-10 10S3 16.44 3 16.44m0 0h4.52m-4.52 0v5",
+    opacity: ".4"
+  }));
 };
-var chooseVariant$i = function chooseVariant5(variant, color) {
+var chooseVariant$i = function chooseVariant7(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$i, {
@@ -13211,7 +13470,7 @@ var chooseVariant$i = function chooseVariant5(variant, color) {
       });
   }
 };
-var RefreshCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Refresh = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$i);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13222,103 +13481,97 @@ var RefreshCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref)
     fill: "none"
   }), chooseVariant$i(variant, color));
 });
-RefreshCircle.propTypes = {
+Refresh.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-RefreshCircle.defaultProps = {
+Refresh.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-RefreshCircle.displayName = "RefreshCircle";
+Refresh.displayName = "Refresh";
 var _excluded$h = ["variant", "color", "size"];
-var Bold$h = function Bold6(_ref) {
+var Bold$h = function Bold8(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zM12 18.01c-3.17 0-5.75-2.58-5.75-5.75 0-1.14.33-2.25.97-3.19a.746.746 0 111.24.83 4.3 4.3 0 00-.71 2.36A4.26 4.26 0 0012 16.51a4.26 4.26 0 004.25-4.25A4.26 4.26 0 0012 8.01c-.19 0-.37.02-.56.04l.56.41c.33.24.41.71.16 1.05-.15.2-.38.31-.61.31-.15 0-.31-.05-.44-.14L9.17 8.25l-.02-.02c-.01-.01-.02-.01-.03-.02-.03-.02-.04-.06-.07-.09-.03-.04-.06-.07-.09-.12-.02-.04-.03-.09-.05-.13-.01-.05-.03-.09-.03-.14 0-.05 0-.09.01-.14 0-.05 0-.09.02-.14 0-.05.03-.09.05-.14.02-.03.02-.07.05-.11.01 0 .02-.01.03-.02.01-.01.01-.02.02-.03l1.67-1.91c.27-.31.75-.35 1.06-.07.31.27.34.75.07 1.06l-.28.32c.14-.01.28-.03.43-.03 3.17 0 5.75 2.58 5.75 5.75s-2.59 5.74-5.76 5.74z"
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87M9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.14-.23.39-.38.66-.38 4.27 0 7.75 3.48 7.75 7.75 0 .41-.34.75-.75.75Z",
+    fill: color
   }));
 };
-var Broken$h = function Broken6(_ref2) {
+var Broken$h = function Broken8(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M15.288 9.98c-.93-5.64-9.08-3.5-7.15 1.87M8.11 11.852c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84.77-.67 1.08-1.6 1.02-2.5",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M10.33 7.51c.5-.15 1.05-.25 1.67-.25 2.76 0 5 2.24 5 5s-2.24 5-5 5a5.002 5.002 0 01-4.16-7.78M9.62 7.65l1.66-1.91M9.62 7.65l1.94 1.42"
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M2 14v1c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9"
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }));
 };
-var Bulk$h = function Bulk6(_ref3) {
+var Bulk$h = function Bulk8(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M16.19 2H7.82C4.17 2 2 4.17 2 7.81v8.37c0 3.64 2.17 5.81 5.81 5.81h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2z",
-    opacity: ".4"
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
+    fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M12 6.51c-.14 0-.29.02-.43.03l.28-.32c.27-.31.24-.79-.07-1.06a.756.756 0 00-1.06.07L9.05 7.14c-.01.01-.01.02-.02.03-.01.01-.02.01-.02.02-.02.03-.03.07-.05.11-.02.05-.05.09-.06.14-.01.05-.01.09-.02.14 0 .05-.01.09-.01.14 0 .05.02.09.04.14.01.05.03.09.05.13.02.04.06.08.09.12.03.03.04.07.07.09.01.01.02.01.03.02.01.01.01.02.02.02l1.94 1.42c.13.1.29.14.44.14.23 0 .46-.11.61-.31.24-.33.17-.8-.16-1.05l-.56-.41c.18-.02.37-.04.56-.04a4.26 4.26 0 014.25 4.25A4.26 4.26 0 0112 16.49a4.26 4.26 0 01-4.25-4.25c0-.85.25-1.66.71-2.36.23-.34.14-.81-.21-1.04a.746.746 0 00-1.04.21c-.63.95-.97 2.05-.97 3.19 0 3.17 2.58 5.75 5.75 5.75s5.75-2.58 5.75-5.75S15.17 6.51 12 6.51z"
+    opacity: ".4",
+    d: "M9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.13-.24.38-.38.65-.38 4.27 0 7.75 3.48 7.75 7.75a.74.74 0 0 1-.74.75Z",
+    fill: color
   }));
 };
-var Linear$h = function Linear6(_ref4) {
+var Linear$h = function Linear8(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M10.33 7.51c.5-.15 1.05-.25 1.67-.25 2.76 0 5 2.24 5 5s-2.24 5-5 5a5.002 5.002 0 01-4.16-7.78M9.62 7.65l1.66-1.91M9.62 7.65l1.94 1.42"
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
+    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7z"
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }));
 };
-var Outline$h = function Outline6(_ref5) {
+var Outline$h = function Outline8(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M12 18.01c-3.17 0-5.75-2.58-5.75-5.75 0-1.14.33-2.25.97-3.19.23-.34.7-.44 1.04-.21.34.23.44.7.21 1.04a4.26 4.26 0 003.54 6.61 4.26 4.26 0 004.25-4.25 4.26 4.26 0 00-4.25-4.25c-.5 0-.98.07-1.45.21a.76.76 0 01-.94-.5c-.12-.4.1-.82.5-.94.61-.19 1.24-.28 1.89-.28 3.17 0 5.75 2.58 5.75 5.75s-2.59 5.76-5.76 5.76z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M9.62 8.4c-.17 0-.35-.06-.49-.18a.756.756 0 01-.07-1.06l1.67-1.91c.27-.31.75-.35 1.06-.07.31.27.34.75.07 1.06l-1.67 1.91c-.16.16-.36.25-.57.25z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M11.56 9.82c-.15 0-.31-.05-.44-.14L9.18 8.26a.75.75 0 01-.16-1.05.75.75 0 011.05-.16l1.94 1.42c.33.24.41.71.16 1.05-.15.19-.38.3-.61.3z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9z"
+    d: "M14.81 17.102h-6.7c-1.98-.14-2.86-1.65-2.86-3 0-1.13.62-2.37 1.95-2.83-.3-1.5.07-2.9 1.06-3.94 1.19-1.25 3.1-1.74 4.74-1.24 1.46.45 2.51 1.62 2.92 3.25 1.25.35 2.24 1.33 2.65 2.66.46 1.52.04 3.08-1.1 4.07-.72.66-1.67 1.03-2.66 1.03Zm-6.67-4.5c-1.02.09-1.39.86-1.39 1.5 0 .65.37 1.43 1.41 1.5h6.62c.65 0 1.22-.22 1.68-.65.84-.73.89-1.78.67-2.52-.22-.74-.85-1.58-1.94-1.71a.753.753 0 0 1-.65-.62c-.22-1.33-.93-2.24-1.99-2.57-1.09-.34-2.42.01-3.21.84-.78.81-.95 1.96-.5 3.23a.75.75 0 0 1-.45.96c-.08.03-.21.05-.25.04ZM9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.13-.24.38-.38.65-.38 4.27 0 7.75 3.48 7.75 7.75a.74.74 0 0 1-.74.75Z",
+    fill: color
   }));
 };
-var TwoTone$h = function TwoTone6(_ref6) {
+var TwoTone$h = function TwoTone8(_ref6) {
   var color = _ref6.color;
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
-    opacity: ".4"
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }, /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M10.33 7.51c.5-.15 1.05-.25 1.67-.25 2.76 0 5 2.24 5 5s-2.24 5-5 5a5.002 5.002 0 01-4.16-7.78M9.621 7.65l1.66-1.91M9.621 7.65l1.94 1.42"
-  })), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7z"
-  }));
+    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75"
+  })));
 };
-var chooseVariant$h = function chooseVariant6(variant, color) {
+var chooseVariant$h = function chooseVariant8(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$h, {
@@ -13350,7 +13603,7 @@ var chooseVariant$h = function chooseVariant6(variant, color) {
       });
   }
 };
-var RefreshLeftSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var CloudChange = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$h);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13361,84 +13614,102 @@ var RefreshLeftSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, 
     fill: "none"
   }), chooseVariant$h(variant, color));
 });
-RefreshLeftSquare.propTypes = {
+CloudChange.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-RefreshLeftSquare.defaultProps = {
+CloudChange.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-RefreshLeftSquare.displayName = "RefreshLeftSquare";
+CloudChange.displayName = "CloudChange";
 var _excluded$g = ["variant", "color", "size"];
-var Bold$g = function Bold7(_ref) {
+var Bold$g = function Bold9(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zM12 18.25c-1.79 0-3.19-.89-4.14-1.77v.71c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-2.75c0-.41.34-.75.75-.75h2.48c.41 0 .75.34.75.75s-.34.75-.75.75h-.9c.74.74 1.89 1.56 3.31 1.56 2.62 0 4.75-2.13 4.75-4.75 0-.41.34-.75.75-.75s.75.34.75.75c0 3.45-2.8 6.25-6.25 6.25zm6.25-8.71v.08a.75.75 0 01-.3.54c-.07.05-.15.09-.24.12-.07.02-.14.03-.21.03h-2.43c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.83c-.8-.74-2.09-1.56-3.88-1.56-2.62 0-4.75 2.13-4.75 4.75 0 .41-.34.75-.75.75s-.77-.34-.77-.75c0-3.45 2.8-6.25 6.25-6.25 2.15 0 3.73.93 4.75 1.82v-.76c0-.41.34-.75.75-.75s.75.34.75.75v2.73z"
+    d: "M21 22H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM19.02 3.482c-1.94-1.94-3.84-1.99-5.83 0l-1.21 1.21c-.1.1-.14.26-.1.4a8.129 8.129 0 0 0 5.53 5.53.4.4 0 0 0 .41-.1l1.2-1.21c.99-.98 1.47-1.93 1.47-2.89.01-.99-.47-1.95-1.47-2.94ZM15.61 11.53c-.29-.14-.57-.28-.84-.44a8.8 8.8 0 0 1-.64-.42c-.17-.11-.37-.27-.56-.43a1.22 1.22 0 0 1-.17-.15c-.33-.28-.7-.64-1.03-1.04-.03-.02-.08-.09-.15-.18-.1-.12-.27-.32-.42-.55a5.49 5.49 0 0 1-.39-.59c-.16-.27-.3-.54-.44-.82a6.88 6.88 0 0 1-.061-.135c-.148-.333-.583-.43-.84-.173L4.34 12.331c-.13.13-.25.38-.28.55l-.54 3.83c-.1.68.09 1.32.51 1.75.36.35.86.54 1.4.54.12 0 .24-.01.36-.03l3.84-.54c.18-.03.43-.15.55-.28l5.722-5.721c.26-.26.161-.705-.176-.85a26.852 26.852 0 0 1-.116-.05Z",
+    fill: color
   }));
 };
-var Broken$g = function Broken7(_ref2) {
+var Broken$g = function Broken9(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m17.37 10.171 1.34-1.42c1.42-1.5 2.06-3.21-.15-5.3-2.21-2.08-3.88-1.35-5.3.15l-8.21 8.69c-.31.33-.61.98-.67 1.43l-.37 3.24c-.13 1.17.71 1.97 1.87 1.77l3.22-.55c.45-.08 1.08-.41 1.39-.75l3.95-4.18",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M18.01 19.99A9.964 9.964 0 0112 22c-5.52 0-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M22 12c0 1.82-.49 3.53-1.34 5M6.03 3.97A9.921 9.921 0 0112 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44M2 12c0-1.82.48-3.53 1.33-5"
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M11.89 5.05a6.126 6.126 0 0 0 5.45 5.15M3 22h11M18 22h3",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }));
 };
-var Bulk$g = function Bulk7(_ref3) {
+var Bulk$g = function Bulk9(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M22 7.81v8.37c0 3.64-2.17 5.81-5.81 5.81H7.81C4.17 22 2 19.83 2 16.19V7.81C2 4.17 4.17 2 7.81 2h8.37C19.83 2 22 4.17 22 7.81z",
-    opacity: ".4"
+    opacity: ".4",
+    d: "M21 22H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM19.02 3.482c-1.94-1.94-3.84-1.99-5.83 0l-1.21 1.21c-.1.1-.14.26-.1.4a8.129 8.129 0 0 0 5.53 5.53.4.4 0 0 0 .41-.1l1.2-1.21c.99-.98 1.47-1.93 1.47-2.89.01-.99-.47-1.95-1.47-2.94Z",
+    fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    fill: color,
-    d: "M12 18.25c-1.79 0-3.19-.89-4.14-1.77v.71c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-2.75c0-.41.34-.75.75-.75h2.48c.41 0 .75.34.75.75s-.34.75-.75.75h-.9c.74.74 1.89 1.56 3.31 1.56 2.62 0 4.75-2.13 4.75-4.75 0-.41.34-.75.75-.75s.75.34.75.75c0 3.45-2.8 6.25-6.25 6.25zm-5.5-5.5c-.41 0-.75-.34-.75-.75 0-3.45 2.8-6.25 6.25-6.25 2.15 0 3.73.93 4.75 1.82v-.76c0-.41.34-.75.75-.75s.75.34.75.75V9.63a.75.75 0 01-.3.54c-.07.05-.15.09-.24.12-.07.02-.14.03-.21.03h-2.43c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.83c-.8-.74-2.09-1.56-3.88-1.56-2.62 0-4.75 2.13-4.75 4.75-.02.4-.36.74-.77.74z"
+    d: "M15.61 11.53c-.29-.14-.57-.28-.84-.44a8.8 8.8 0 0 1-.64-.42c-.17-.11-.37-.27-.56-.43a1.22 1.22 0 0 1-.17-.15c-.33-.28-.7-.64-1.03-1.04-.03-.02-.08-.09-.15-.18-.1-.12-.27-.32-.42-.55a5.49 5.49 0 0 1-.39-.59c-.16-.27-.3-.54-.44-.82-.14-.3-.25-.59-.35-.86l-6.28 6.28c-.13.13-.25.38-.28.55l-.54 3.83c-.1.68.09 1.32.51 1.75.36.35.86.54 1.4.54.12 0 .24-.01.36-.03l3.84-.54c.18-.03.43-.15.55-.28l6.28-6.28c-.28-.1-.55-.21-.85-.34Z",
+    fill: color
   }));
 };
-var Linear$g = function Linear7(_ref4) {
+var Linear$g = function Linear9(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m13.26 3.6-8.21 8.69c-.31.33-.61.98-.67 1.43l-.37 3.24c-.13 1.17.71 1.97 1.87 1.77l3.22-.55c.45-.08 1.08-.41 1.39-.75l8.21-8.69c1.42-1.5 2.06-3.21-.15-5.3-2.2-2.07-3.87-1.34-5.29.16Z",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M22 12c0 5.52-4.48 10-10 10s-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M11.89 5.05a6.126 6.126 0 0 0 5.45 5.15M3 22h18",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }));
 };
-var Outline$g = function Outline7(_ref5) {
+var Outline$g = function Outline9(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M22 12c0 5.52-4.48 10-10 10s-8.89-5.56-8.89-5.56m0 0h4.52m-4.52 0v5M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
+    d: "M5.54 19.52c-.61 0-1.18-.21-1.59-.6-.52-.49-.77-1.23-.68-2.03l.37-3.24c.07-.61.44-1.42.87-1.86l8.21-8.69c2.05-2.17 4.19-2.23 6.36-.18s2.23 4.19.18 6.36l-8.21 8.69c-.42.45-1.2.87-1.81.97l-3.22.55c-.17.01-.32.03-.48.03ZM15.93 2.91c-.77 0-1.44.48-2.12 1.2l-8.21 8.7c-.2.21-.43.71-.47 1l-.37 3.24c-.04.33.04.6.22.77.18.17.45.23.78.18l3.22-.55c.29-.05.77-.31.97-.52l8.21-8.69C19.4 6.92 19.85 5.7 18.04 4c-.8-.77-1.49-1.09-2.11-1.09Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M17.34 10.949h-.07a6.86 6.86 0 0 1-6.11-5.78c-.06-.41.22-.79.63-.86.41-.06.79.22.86.63a5.372 5.372 0 0 0 4.78 4.52c.41.04.71.41.67.82-.05.38-.38.67-.76.67ZM21 22.75H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    fill: color
   }));
 };
-var TwoTone$g = function TwoTone7(_ref6) {
+var TwoTone$g = function TwoTone9(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m13.26 3.6-8.21 8.69c-.31.33-.61.98-.67 1.43l-.37 3.24c-.13 1.17.71 1.97 1.87 1.77l3.22-.55c.45-.08 1.08-.41 1.39-.75l8.21-8.69c1.42-1.5 2.06-3.21-.15-5.3-2.2-2.07-3.87-1.34-5.29.16Z",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M2 12C2 6.48 6.44 2 12 2c6.67 0 10 5.56 10 5.56m0 0v-5m0 5h-4.44"
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M11.89 5.05a6.126 6.126 0 0 0 5.45 5.15M3 22h18",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M21.89 12c0 5.52-4.48 10-10 10S3 16.44 3 16.44m0 0h4.52m-4.52 0v5",
-    opacity: ".4"
+    strokeMiterlimit: "10",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
   }));
 };
-var chooseVariant$g = function chooseVariant7(variant, color) {
+var chooseVariant$g = function chooseVariant9(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$g, {
@@ -13470,7 +13741,7 @@ var chooseVariant$g = function chooseVariant7(variant, color) {
       });
   }
 };
-var Refresh = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Edit2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$g);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13481,97 +13752,131 @@ var Refresh = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$g(variant, color));
 });
-Refresh.propTypes = {
+Edit2.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Refresh.defaultProps = {
+Edit2.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Refresh.displayName = "Refresh";
+Edit2.displayName = "Edit2";
 var _excluded$f = ["variant", "color", "size"];
-var Bold$f = function Bold8(_ref) {
+var Bold$f = function Bold10(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87M9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.14-.23.39-.38.66-.38 4.27 0 7.75 3.48 7.75 7.75 0 .41-.34.75-.75.75Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm-5.7 14.72c-.34.34-.79.57-1.34.64l-1.35.15c-.74.08-1.37-.55-1.29-1.3l.15-1.36c.13-1.21 1.14-1.98 2.21-2 .1-.01.22 0 .33.01.47.06.92.28 1.3.65.37.37.58.81.64 1.26.01.11.02.22.02.32 0 .62-.23 1.19-.67 1.63Zm6.95-9.17c-.72 1.8-2.37 4.16-3.94 5.7a3.3 3.3 0 0 0-2.8-2.74c1.54-1.58 3.92-3.25 5.73-3.98.32-.12.64-.03.84.17.2.22.3.53.17.85Z",
     fill: color
   }));
 };
-var Broken$f = function Broken8(_ref2) {
+var Broken$f = function Broken10(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M15.288 9.98c-.93-5.64-9.08-3.5-7.15 1.87M8.11 11.852c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84.77-.67 1.08-1.6 1.02-2.5",
+    d: "M1.97 12.941v2.06c0 5 2 7 7 7h6c5 0 7-2 7-7v-2M10.97 2h-2c-5 0-7 2-7 7",
     stroke: color,
     strokeWidth: "1.5",
-    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75",
+    d: "M18.51 3c.66-.37 1.3-.68 1.9-.92.47-.18.93-.04 1.22.25.3.3.45.76.26 1.23-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c1.07-1.34 2.72-2.82 4.49-4.11",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.78 14.489c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 0 1-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46ZM15.82 11.981c0-2.09-1.69-3.79-3.79-3.79",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$f = function Bulk8(_ref3) {
+var Bulk$f = function Bulk10(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
+    opacity: ".4",
+    d: "M14.19 0H5.81C2.17 0 0 2.17 0 5.81v8.37C0 17.83 2.17 20 5.81 20h8.37c3.64 0 5.81-2.17 5.81-5.81V5.81C20 2.17 17.83 0 14.19 0Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M19.83 1.55c-1.05 2.61-3.43 6.02-5.71 8.25a4.763 4.763 0 0 0-4.05-3.96c2.24-2.28 5.67-4.7 8.29-5.76.46-.18.93-.04 1.21.25.31.3.45.76.26 1.22Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
-    d: "M9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.13-.24.38-.38.65-.38 4.27 0 7.75 3.48 7.75 7.75a.74.74 0 0 1-.74.75Z",
+    d: "M14.12 9.792c-.4.39-.8.75-1.18 1.05l-1.57 1.26c-.2.14-.4.26-.62.36 0-.15-.02-.3-.03-.46-.09-.66-.39-1.29-.93-1.83a3.31 3.31 0 0 0-1.88-.94c-.16-.02-.33-.02-.48-.02.09-.25.22-.48.39-.67l1.25-1.57c.3-.38.64-.76 1.01-1.14 2.07.29 3.72 1.91 4.04 3.96Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.75 12.47c0 .88-.34 1.72-.97 2.35-.49.49-1.14.83-1.94.93l-1.96.22c-1.07.12-1.99-.8-1.87-1.88l.22-1.96c.19-1.75 1.65-2.87 3.2-2.9.15-.01.32 0 .48.02.68.09 1.33.4 1.88.94.53.53.84 1.17.93 1.83.01.15.03.3.03.45Z",
     fill: color
   }));
 };
-var Linear$f = function Linear8(_ref4) {
+var Linear$f = function Linear10(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
     stroke: color,
-    strokeWidth: "1.5",
-    strokeMiterlimit: "10",
     strokeLinecap: "round",
-    strokeLinejoin: "round"
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M10.97 2h-2c-5 0-7 2-7 7v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75",
     stroke: color,
-    strokeWidth: "1.5",
     strokeLinecap: "round",
-    strokeLinejoin: "round"
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M21.88 3.56c-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c2.07-2.58 6.26-5.69 9.32-6.92.47-.18.93-.04 1.22.25.3.3.44.76.25 1.23z"
+  }), /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M12.78 14.49c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 01-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46zM15.82 11.98c0-2.09-1.69-3.79-3.79-3.79"
   }));
 };
-var Outline$f = function Outline8(_ref5) {
+var Outline$f = function Outline10(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M14.81 17.102h-6.7c-1.98-.14-2.86-1.65-2.86-3 0-1.13.62-2.37 1.95-2.83-.3-1.5.07-2.9 1.06-3.94 1.19-1.25 3.1-1.74 4.74-1.24 1.46.45 2.51 1.62 2.92 3.25 1.25.35 2.24 1.33 2.65 2.66.46 1.52.04 3.08-1.1 4.07-.72.66-1.67 1.03-2.66 1.03Zm-6.67-4.5c-1.02.09-1.39.86-1.39 1.5 0 .65.37 1.43 1.41 1.5h6.62c.65 0 1.22-.22 1.68-.65.84-.73.89-1.78.67-2.52-.22-.74-.85-1.58-1.94-1.71a.753.753 0 0 1-.65-.62c-.22-1.33-.93-2.24-1.99-2.57-1.09-.34-2.42.01-3.21.84-.78.81-.95 1.96-.5 3.23a.75.75 0 0 1-.45.96c-.08.03-.21.05-.25.04ZM9 22.75c-4.27 0-7.75-3.48-7.75-7.75 0-.41.34-.75.75-.75s.75.34.75.75c0 2.96 2.06 5.44 4.83 6.09l-.27-.45a.751.751 0 1 1 1.29-.77l1.05 1.75c.14.23.14.52.01.75-.14.23-.39.38-.66.38ZM22 9.75c-.41 0-.75-.34-.75-.75 0-2.96-2.06-5.44-4.83-6.09l.27.45a.751.751 0 1 1-1.29.77l-1.05-1.75a.745.745 0 0 1-.01-.75c.13-.24.38-.38.65-.38 4.27 0 7.75 3.48 7.75 7.75a.74.74 0 0 1-.74.75Z",
+    d: "M14.97 22.75h-6c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h2c.41 0 .75.34.75.75s-.34.75-.75.75h-2C4.36 2.75 2.72 4.39 2.72 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25v-2c0-.41.34-.75.75-.75s.75.34.75.75v2c0 5.43-2.31 7.75-7.75 7.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.78 15.24c-.15 0-.29-.04-.42-.13a.738.738 0 0 1-.33-.62c0-.11-.01-.23-.03-.35-.07-.53-.31-1-.71-1.41-.41-.41-.91-.67-1.46-.74-.08-.01-.21-.02-.33-.01-.25.02-.5-.09-.65-.29a.78.78 0 0 1-.11-.71c.12-.34.31-.66.53-.91l1.23-1.54c2.14-2.67 6.45-5.87 9.63-7.14.73-.28 1.5-.12 2.03.41.55.55.71 1.33.42 2.04-1.27 3.17-4.47 7.49-7.13 9.62l-1.57 1.26c-.31.22-.56.37-.82.47-.09.03-.19.05-.28.05Zm-2.06-4.57c.61.2 1.16.54 1.63 1 .46.46.79.99.98 1.56l1.18-.95c2.49-2 5.49-6.04 6.68-9.01.08-.19-.01-.33-.09-.42-.05-.05-.19-.16-.42-.07-2.96 1.19-7 4.19-9 6.68l-.96 1.21Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M7.701 18.75c-.64 0-1.25-.25-1.71-.71-.53-.53-.79-1.26-.7-2.01l.21-1.96c.22-2.03 1.87-3.53 3.94-3.57.16-.01.36 0 .55.01a4 4 0 0 1 2.36 1.17c.64.64 1.03 1.4 1.14 2.26a4.061 4.061 0 0 1-1.15 3.45c-.63.63-1.45 1.02-2.38 1.14l-1.98.21c-.1.01-.19.01-.28.01Zm1.9-6.76h-.1c-1.15.03-2.36.8-2.51 2.24l-.21 1.97c-.03.29.07.58.27.78.2.2.48.3.76.27l1.97-.21c.58-.07 1.1-.32 1.49-.71.48-.49.75-1.13.75-1.83 0-.11-.01-.23-.03-.35-.07-.53-.31-1-.71-1.41-.41-.41-.91-.67-1.46-.74-.05-.01-.13-.01-.22-.01ZM15.82 12.731c-.41 0-.75-.34-.75-.75 0-1.67-1.36-3.04-3.04-3.04-.41 0-.75-.34-.75-.75s.34-.75.75-.75c2.5 0 4.54 2.03 4.54 4.54 0 .41-.33.75-.75.75Z",
     fill: color
   }));
 };
-var TwoTone$f = function TwoTone8(_ref6) {
+var TwoTone$f = function TwoTone10(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M8.11 11.85c-2.82.2-2.81 4.3 0 4.5h6.67c.81.01 1.59-.3 2.19-.84 1.98-1.73.92-5.2-1.68-5.53-.93-5.64-9.08-3.5-7.15 1.87",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeMiterlimit: "10",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("g", {
     opacity: ".4",
+    d: "M10.97 2h-2c-5 0-7 2-7 7v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, /* @__PURE__ */ React.createElement("path", {
-    d: "M2 15c0 3.87 3.13 7 7 7l-1.05-1.75M22 9c0-3.87-3.13-7-7-7l1.05 1.75"
-  })));
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M21.88 3.56c-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c2.07-2.58 6.26-5.69 9.32-6.92.47-.18.93-.04 1.22.25.3.3.44.76.25 1.23Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12.78 14.489c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 0 1-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".4",
+    d: "M15.82 11.981c0-2.09-1.69-3.79-3.79-3.79",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }));
 };
-var chooseVariant$f = function chooseVariant8(variant, color) {
+var chooseVariant$f = function chooseVariant10(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$f, {
@@ -13603,7 +13908,7 @@ var chooseVariant$f = function chooseVariant8(variant, color) {
       });
   }
 };
-var CloudChange = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var BrushSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$f);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13614,102 +13919,84 @@ var CloudChange = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$f(variant, color));
 });
-CloudChange.propTypes = {
+BrushSquare.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-CloudChange.defaultProps = {
+BrushSquare.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-CloudChange.displayName = "CloudChange";
+BrushSquare.displayName = "BrushSquare";
 var _excluded$e = ["variant", "color", "size"];
-var Bold$e = function Bold9(_ref) {
+var Bold$e = function Bold11(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M21 22H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM19.02 3.482c-1.94-1.94-3.84-1.99-5.83 0l-1.21 1.21c-.1.1-.14.26-.1.4a8.129 8.129 0 0 0 5.53 5.53.4.4 0 0 0 .41-.1l1.2-1.21c.99-.98 1.47-1.93 1.47-2.89.01-.99-.47-1.95-1.47-2.94ZM15.61 11.53c-.29-.14-.57-.28-.84-.44a8.8 8.8 0 0 1-.64-.42c-.17-.11-.37-.27-.56-.43a1.22 1.22 0 0 1-.17-.15c-.33-.28-.7-.64-1.03-1.04-.03-.02-.08-.09-.15-.18-.1-.12-.27-.32-.42-.55a5.49 5.49 0 0 1-.39-.59c-.16-.27-.3-.54-.44-.82a6.88 6.88 0 0 1-.061-.135c-.148-.333-.583-.43-.84-.173L4.34 12.331c-.13.13-.25.38-.28.55l-.54 3.83c-.1.68.09 1.32.51 1.75.36.35.86.54 1.4.54.12 0 .24-.01.36-.03l3.84-.54c.18-.03.43-.15.55-.28l5.722-5.721c.26-.26.161-.705-.176-.85a26.852 26.852 0 0 1-.116-.05Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM18 12.75h-5.25V18c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5.25H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h5.25V6c0-.41.34-.75.75-.75s.75.34.75.75v5.25H18c.41 0 .75.34.75.75s-.34.75-.75.75Z",
     fill: color
   }));
 };
-var Broken$e = function Broken9(_ref2) {
+var Broken$e = function Broken11(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "m17.37 10.171 1.34-1.42c1.42-1.5 2.06-3.21-.15-5.3-2.21-2.08-3.88-1.35-5.3.15l-8.21 8.69c-.31.33-.61.98-.67 1.43l-.37 3.24c-.13 1.17.71 1.97 1.87 1.77l3.22-.55c.45-.08 1.08-.41 1.39-.75l3.95-4.18",
+    d: "M12 18V6M16 12h2M6 12h5.66M12 18V6",
     stroke: color,
     strokeWidth: "1.5",
-    strokeMiterlimit: "10",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M11.89 5.05a6.126 6.126 0 0 0 5.45 5.15M3 22h11M18 22h3",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$e = function Bulk9(_ref3) {
+var Bulk$e = function Bulk11(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
-    d: "M21 22H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM19.02 3.482c-1.94-1.94-3.84-1.99-5.83 0l-1.21 1.21c-.1.1-.14.26-.1.4a8.129 8.129 0 0 0 5.53 5.53.4.4 0 0 0 .41-.1l1.2-1.21c.99-.98 1.47-1.93 1.47-2.89.01-.99-.47-1.95-1.47-2.94Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M15.61 11.53c-.29-.14-.57-.28-.84-.44a8.8 8.8 0 0 1-.64-.42c-.17-.11-.37-.27-.56-.43a1.22 1.22 0 0 1-.17-.15c-.33-.28-.7-.64-1.03-1.04-.03-.02-.08-.09-.15-.18-.1-.12-.27-.32-.42-.55a5.49 5.49 0 0 1-.39-.59c-.16-.27-.3-.54-.44-.82-.14-.3-.25-.59-.35-.86l-6.28 6.28c-.13.13-.25.38-.28.55l-.54 3.83c-.1.68.09 1.32.51 1.75.36.35.86.54 1.4.54.12 0 .24-.01.36-.03l3.84-.54c.18-.03.43-.15.55-.28l6.28-6.28c-.28-.1-.55-.21-.85-.34Z",
+    d: "M18 11.25h-5.25V6c0-.41-.34-.75-.75-.75s-.75.34-.75.75v5.25H6c-.41 0-.75.34-.75.75s.34.75.75.75h5.25V18c0 .41.34.75.75.75s.75-.34.75-.75v-5.25H18c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z",
     fill: color
   }));
 };
-var Linear$e = function Linear9(_ref4) {
+var Linear$e = function Linear11(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "m13.26 3.6-8.21 8.69c-.31.33-.61.98-.67 1.43l-.37 3.24c-.13 1.17.71 1.97 1.87 1.77l3.22-.55c.45-.08 1.08-.41 1.39-.75l8.21-8.69c1.42-1.5 2.06-3.21-.15-5.3-2.2-2.07-3.87-1.34-5.29.16Z",
+    d: "M6 12h12M12 18V6",
     stroke: color,
     strokeWidth: "1.5",
-    strokeMiterlimit: "10",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M11.89 5.05a6.126 6.126 0 0 0 5.45 5.15M3 22h18",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Outline$e = function Outline9(_ref5) {
+var Outline$e = function Outline11(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M5.54 19.52c-.61 0-1.18-.21-1.59-.6-.52-.49-.77-1.23-.68-2.03l.37-3.24c.07-.61.44-1.42.87-1.86l8.21-8.69c2.05-2.17 4.19-2.23 6.36-.18s2.23 4.19.18 6.36l-8.21 8.69c-.42.45-1.2.87-1.81.97l-3.22.55c-.17.01-.32.03-.48.03ZM15.93 2.91c-.77 0-1.44.48-2.12 1.2l-8.21 8.7c-.2.21-.43.71-.47 1l-.37 3.24c-.04.33.04.6.22.77.18.17.45.23.78.18l3.22-.55c.29-.05.77-.31.97-.52l8.21-8.69C19.4 6.92 19.85 5.7 18.04 4c-.8-.77-1.49-1.09-2.11-1.09Z",
+    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M17.34 10.949h-.07a6.86 6.86 0 0 1-6.11-5.78c-.06-.41.22-.79.63-.86.41-.06.79.22.86.63a5.372 5.372 0 0 0 4.78 4.52c.41.04.71.41.67.82-.05.38-.38.67-.76.67ZM21 22.75H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    d: "M12 18.75c-.41 0-.75-.34-.75-.75V6c0-.41.34-.75.75-.75s.75.34.75.75v12c0 .41-.34.75-.75.75Z",
     fill: color
   }));
 };
-var TwoTone$e = function TwoTone9(_ref6) {
+var TwoTone$e = function TwoTone11(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "m13.26 3.6-8.21 8.69c-.31.33-.61.98-.67 1.43l-.37 3.24c-.13 1.17.71 1.97 1.87 1.77l3.22-.55c.45-.08 1.08-.41 1.39-.75l8.21-8.69c1.42-1.5 2.06-3.21-.15-5.3-2.2-2.07-3.87-1.34-5.29.16Z",
+    opacity: ".4",
+    d: "M6 12h12",
     stroke: color,
     strokeWidth: "1.5",
-    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
-    opacity: ".4",
-    d: "M11.89 5.05a6.126 6.126 0 0 0 5.45 5.15M3 22h18",
+    d: "M12 18V6",
     stroke: color,
     strokeWidth: "1.5",
-    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$e = function chooseVariant9(variant, color) {
+var chooseVariant$e = function chooseVariant11(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$e, {
@@ -13741,7 +14028,7 @@ var chooseVariant$e = function chooseVariant9(variant, color) {
       });
   }
 };
-var Edit2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Add = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$e);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13752,131 +14039,88 @@ var Edit2 = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$e(variant, color));
 });
-Edit2.propTypes = {
+Add.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Edit2.defaultProps = {
+Add.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Edit2.displayName = "Edit2";
+Add.displayName = "Add";
 var _excluded$d = ["variant", "color", "size"];
-var Bold$d = function Bold10(_ref) {
+var Bold$d = function Bold12(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm-5.7 14.72c-.34.34-.79.57-1.34.64l-1.35.15c-.74.08-1.37-.55-1.29-1.3l.15-1.36c.13-1.21 1.14-1.98 2.21-2 .1-.01.22 0 .33.01.47.06.92.28 1.3.65.37.37.58.81.64 1.26.01.11.02.22.02.32 0 .62-.23 1.19-.67 1.63Zm6.95-9.17c-.72 1.8-2.37 4.16-3.94 5.7a3.3 3.3 0 0 0-2.8-2.74c1.54-1.58 3.92-3.25 5.73-3.98.32-.12.64-.03.84.17.2.22.3.53.17.85Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm-.83 12.3c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22l-2.3-2.3-2.3 2.3c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l2.3-2.3-2.3-2.3a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 2.3-2.3c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.3 2.3 2.3 2.3Z",
     fill: color
   }));
 };
-var Broken$d = function Broken10(_ref2) {
+var Broken$d = function Broken12(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M1.97 12.941v2.06c0 5 2 7 7 7h6c5 0 7-2 7-7v-2M10.97 2h-2c-5 0-7 2-7 7",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M18.51 3c.66-.37 1.3-.68 1.9-.92.47-.18.93-.04 1.22.25.3.3.45.76.26 1.23-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c1.07-1.34 2.72-2.82 4.49-4.11",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M12.78 14.489c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 0 1-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46ZM15.82 11.981c0-2.09-1.69-3.79-3.79-3.79",
+    d: "m13.99 10.012.84-.84M9.17 14.828l2.75-2.75M14.83 14.832l-5.66-5.66M2 12.96V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$d = function Bulk10(_ref3) {
+var Bulk$d = function Bulk12(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
-    d: "M14.19 0H5.81C2.17 0 0 2.17 0 5.81v8.37C0 17.83 2.17 20 5.81 20h8.37c3.64 0 5.81-2.17 5.81-5.81V5.81C20 2.17 17.83 0 14.19 0Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M19.83 1.55c-1.05 2.61-3.43 6.02-5.71 8.25a4.763 4.763 0 0 0-4.05-3.96c2.24-2.28 5.67-4.7 8.29-5.76.46-.18.93-.04 1.21.25.31.3.45.76.26 1.22Z",
-    fill: color
-  }), /* @__PURE__ */ React.createElement("path", {
-    opacity: ".4",
-    d: "M14.12 9.792c-.4.39-.8.75-1.18 1.05l-1.57 1.26c-.2.14-.4.26-.62.36 0-.15-.02-.3-.03-.46-.09-.66-.39-1.29-.93-1.83a3.31 3.31 0 0 0-1.88-.94c-.16-.02-.33-.02-.48-.02.09-.25.22-.48.39-.67l1.25-1.57c.3-.38.64-.76 1.01-1.14 2.07.29 3.72 1.91 4.04 3.96Z",
-    fill: color
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M10.75 12.47c0 .88-.34 1.72-.97 2.35-.49.49-1.14.83-1.94.93l-1.96.22c-1.07.12-1.99-.8-1.87-1.88l.22-1.96c.19-1.75 1.65-2.87 3.2-2.9.15-.01.32 0 .48.02.68.09 1.33.4 1.88.94.53.53.84 1.17.93 1.83.01.15.03.3.03.45Z",
+    d: "m13.06 12 2.3-2.3c.29-.29.29-.77 0-1.06a.754.754 0 0 0-1.06 0l-2.3 2.3-2.3-2.3a.754.754 0 0 0-1.06 0c-.29.29-.29.77 0 1.06l2.3 2.3-2.3 2.3c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.3-2.3 2.3 2.3c.15.15.34.22.53.22s.38-.07.53-.22c.29-.29.29-.77 0-1.06l-2.3-2.3Z",
     fill: color
   }));
 };
-var Linear$d = function Linear10(_ref4) {
+var Linear$d = function Linear12(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "m9.17 14.83 5.66-5.66M14.83 14.83 9.17 9.17M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
     stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
     strokeWidth: "1.5",
-    d: "M10.97 2h-2c-5 0-7 2-7 7v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"
-  }), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
     strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M21.88 3.56c-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c2.07-2.58 6.26-5.69 9.32-6.92.47-.18.93-.04 1.22.25.3.3.44.76.25 1.23z"
-  }), /* @__PURE__ */ React.createElement("path", {
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M12.78 14.49c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 01-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46zM15.82 11.98c0-2.09-1.69-3.79-3.79-3.79"
+    strokeLinejoin: "round"
   }));
 };
-var Outline$d = function Outline10(_ref5) {
+var Outline$d = function Outline12(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M14.97 22.75h-6c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h2c.41 0 .75.34.75.75s-.34.75-.75.75h-2C4.36 2.75 2.72 4.39 2.72 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25v-2c0-.41.34-.75.75-.75s.75.34.75.75v2c0 5.43-2.31 7.75-7.75 7.75Z",
+    d: "M9.17 15.58c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l5.66-5.66c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06L9.7 15.36c-.14.15-.34.22-.53.22Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M12.78 15.24c-.15 0-.29-.04-.42-.13a.738.738 0 0 1-.33-.62c0-.11-.01-.23-.03-.35-.07-.53-.31-1-.71-1.41-.41-.41-.91-.67-1.46-.74-.08-.01-.21-.02-.33-.01-.25.02-.5-.09-.65-.29a.78.78 0 0 1-.11-.71c.12-.34.31-.66.53-.91l1.23-1.54c2.14-2.67 6.45-5.87 9.63-7.14.73-.28 1.5-.12 2.03.41.55.55.71 1.33.42 2.04-1.27 3.17-4.47 7.49-7.13 9.62l-1.57 1.26c-.31.22-.56.37-.82.47-.09.03-.19.05-.28.05Zm-2.06-4.57c.61.2 1.16.54 1.63 1 .46.46.79.99.98 1.56l1.18-.95c2.49-2 5.49-6.04 6.68-9.01.08-.19-.01-.33-.09-.42-.05-.05-.19-.16-.42-.07-2.96 1.19-7 4.19-9 6.68l-.96 1.21Z",
+    d: "M14.83 15.58c-.19 0-.38-.07-.53-.22L8.64 9.7a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l5.66 5.66c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M7.701 18.75c-.64 0-1.25-.25-1.71-.71-.53-.53-.79-1.26-.7-2.01l.21-1.96c.22-2.03 1.87-3.53 3.94-3.57.16-.01.36 0 .55.01a4 4 0 0 1 2.36 1.17c.64.64 1.03 1.4 1.14 2.26a4.061 4.061 0 0 1-1.15 3.45c-.63.63-1.45 1.02-2.38 1.14l-1.98.21c-.1.01-.19.01-.28.01Zm1.9-6.76h-.1c-1.15.03-2.36.8-2.51 2.24l-.21 1.97c-.03.29.07.58.27.78.2.2.48.3.76.27l1.97-.21c.58-.07 1.1-.32 1.49-.71.48-.49.75-1.13.75-1.83 0-.11-.01-.23-.03-.35-.07-.53-.31-1-.71-1.41-.41-.41-.91-.67-1.46-.74-.05-.01-.13-.01-.22-.01ZM15.82 12.731c-.41 0-.75-.34-.75-.75 0-1.67-1.36-3.04-3.04-3.04-.41 0-.75-.34-.75-.75s.34-.75.75-.75c2.5 0 4.54 2.03 4.54 4.54 0 .41-.33.75-.75.75Z",
+    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
     fill: color
   }));
 };
-var TwoTone$d = function TwoTone10(_ref6) {
+var TwoTone$d = function TwoTone12(_ref6) {
   var color = _ref6.color;
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
     opacity: ".4",
-    d: "M10.97 2h-2c-5 0-7 2-7 7v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M21.88 3.56c-1.23 3.07-4.32 7.25-6.9 9.32l-1.58 1.26c-.2.15-.4.27-.63.36 0-.15-.01-.3-.03-.46-.09-.67-.39-1.3-.93-1.83-.55-.55-1.21-.86-1.89-.95-.16-.01-.32-.02-.48-.01.09-.25.22-.48.39-.67L11.09 9c2.07-2.58 6.26-5.69 9.32-6.92.47-.18.93-.04 1.22.25.3.3.44.76.25 1.23Z",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M12.78 14.489c0 .88-.34 1.72-.97 2.36-.49.49-1.15.83-1.94.93l-1.97.21a1.7 1.7 0 0 1-1.87-1.88l.21-1.97c.19-1.75 1.65-2.87 3.21-2.9.16-.01.32 0 .48.01.68.09 1.34.4 1.89.95.54.54.84 1.16.93 1.83.02.16.03.32.03.46Z",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    opacity: ".4",
-    d: "M15.82 11.981c0-2.09-1.69-3.79-3.79-3.79",
+  }, /* @__PURE__ */ React.createElement("path", {
+    d: "m9.17 14.832 5.66-5.66M14.83 14.832l-5.66-5.66"
+  })), /* @__PURE__ */ React.createElement("path", {
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$d = function chooseVariant10(variant, color) {
+var chooseVariant$d = function chooseVariant12(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$d, {
@@ -13908,7 +14152,7 @@ var chooseVariant$d = function chooseVariant10(variant, color) {
       });
   }
 };
-var BrushSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var CloseSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$d);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -13919,84 +14163,77 @@ var BrushSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$d(variant, color));
 });
-BrushSquare.propTypes = {
+CloseSquare.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-BrushSquare.defaultProps = {
+CloseSquare.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-BrushSquare.displayName = "BrushSquare";
+CloseSquare.displayName = "CloseSquare";
 var _excluded$c = ["variant", "color", "size"];
-var Bold$c = function Bold11(_ref) {
+var Bold$c = function Bold13(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM18 12.75h-5.25V18c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5.25H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h5.25V6c0-.41.34-.75.75-.75s.75.34.75.75v5.25H18c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    d: "M17.91 10.72h-3.09v-7.2c0-1.68-.91-2.02-2.02-.76l-.8.91-6.77 7.7c-.93 1.05-.54 1.91.86 1.91h3.09v7.2c0 1.68.91 2.02 2.02.76l.8-.91 6.77-7.7c.93-1.05.54-1.91-.86-1.91Z",
     fill: color
   }));
 };
-var Broken$c = function Broken11(_ref2) {
+var Broken$c = function Broken13(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M12 18V6M16 12h2M6 12h5.66M12 18V6",
+    d: "M14.82 7.02v-3.5c0-1.68-.91-2.02-2.02-.76l-7.57 8.6c-.93 1.05-.54 1.92.87 1.92h3.09v7.2c0 1.68.91 2.02 2.02.76l7.57-8.6c.93-1.05.54-1.92-.87-1.92h-3.09",
     stroke: color,
     strokeWidth: "1.5",
+    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$c = function Bulk11(_ref3) {
+var Bulk$c = function Bulk13(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    opacity: ".4",
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    d: "M12 3.672v16.66l-.8.91c-1.11 1.26-2.02.92-2.02-.76v-7.2H6.09c-1.4 0-1.79-.86-.86-1.91l6.77-7.7Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M18 11.25h-5.25V6c0-.41-.34-.75-.75-.75s-.75.34-.75.75v5.25H6c-.41 0-.75.34-.75.75s.34.75.75.75h5.25V18c0 .41.34.75.75.75s.75-.34.75-.75v-5.25H18c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z",
+    opacity: ".4",
+    d: "M18.77 12.63 12 20.33V3.67l.8-.91c1.11-1.26 2.02-.92 2.02.76v7.2h3.09c1.4 0 1.79.86.86 1.91Z",
     fill: color
   }));
 };
-var Linear$c = function Linear11(_ref4) {
+var Linear$c = function Linear13(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M6 12h12M12 18V6",
+    d: "M6.09 13.28h3.09v7.2c0 1.68.91 2.02 2.02.76l7.57-8.6c.93-1.05.54-1.92-.87-1.92h-3.09v-7.2c0-1.68-.91-2.02-2.02-.76l-7.57 8.6c-.92 1.06-.53 1.92.87 1.92Z",
     stroke: color,
     strokeWidth: "1.5",
+    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Outline$c = function Outline11(_ref5) {
+var Outline$c = function Outline13(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
-    fill: color
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M12 18.75c-.41 0-.75-.34-.75-.75V6c0-.41.34-.75.75-.75s.75.34.75.75v12c0 .41-.34.75-.75.75Z",
+    d: "M9.99 22.75c-.2 0-.36-.04-.48-.09-.4-.15-1.08-.64-1.08-2.19v-6.45H6.09c-1.34 0-1.82-.63-1.99-1-.17-.38-.32-1.15.56-2.16l7.57-8.6c1.02-1.16 1.85-1.08 2.25-.93.4.15 1.08.64 1.08 2.19v6.45h2.34c1.34 0 1.82.63 1.99 1 .17.38.32 1.15-.56 2.16l-7.57 8.6c-.71.81-1.33 1.02-1.77 1.02Zm3.94-20.01c-.03.04-.24.14-.57.52l-7.57 8.6c-.28.32-.32.52-.32.56.02.01.2.11.62.11h3.09c.41 0 .75.34.75.75v7.2c0 .5.09.72.13.78.03-.04.24-.14.57-.52l7.57-8.6c.28-.32.32-.52.32-.56-.02-.01-.2-.11-.62-.11h-3.09c-.41 0-.75-.34-.75-.75v-7.2c.01-.5-.09-.71-.13-.78Z",
     fill: color
   }));
 };
-var TwoTone$c = function TwoTone11(_ref6) {
+var TwoTone$c = function TwoTone13(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    opacity: ".4",
-    d: "M6 12h12",
+    d: "M6.09 13.28h3.09v7.2c0 1.68.91 2.02 2.02.76l7.57-8.6c.93-1.05.54-1.92-.87-1.92h-3.09v-7.2c0-1.68-.91-2.02-2.02-.76l-7.57 8.6c-.92 1.06-.53 1.92.87 1.92Z",
     stroke: color,
     strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M12 18V6",
-    stroke: color,
-    strokeWidth: "1.5",
+    strokeMiterlimit: "10",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$c = function chooseVariant11(variant, color) {
+var chooseVariant$c = function chooseVariant13(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$c, {
@@ -14028,7 +14265,7 @@ var chooseVariant$c = function chooseVariant11(variant, color) {
       });
   }
 };
-var Add = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Flash = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$c);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -14039,88 +14276,74 @@ var Add = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$c(variant, color));
 });
-Add.propTypes = {
+Flash.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Add.defaultProps = {
+Flash.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Add.displayName = "Add";
+Flash.displayName = "Flash";
 var _excluded$b = ["variant", "color", "size"];
-var Bold$b = function Bold12(_ref) {
+var Bold$b = function Bold14(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm-.83 12.3c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22l-2.3-2.3-2.3 2.3c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l2.3-2.3-2.3-2.3a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 2.3-2.3c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2.3 2.3 2.3 2.3Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
     fill: color
   }));
 };
-var Broken$b = function Broken12(_ref2) {
+var Broken$b = function Broken14(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "m13.99 10.012.84-.84M9.17 14.828l2.75-2.75M14.83 14.832l-5.66-5.66M2 12.96V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9",
+    d: "M16 12h2M6 12h5.66",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$b = function Bulk12(_ref3) {
+var Bulk$b = function Bulk14(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
     d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "m13.06 12 2.3-2.3c.29-.29.29-.77 0-1.06a.754.754 0 0 0-1.06 0l-2.3 2.3-2.3-2.3a.754.754 0 0 0-1.06 0c-.29.29-.29.77 0 1.06l2.3 2.3-2.3 2.3c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2.3-2.3 2.3 2.3c.15.15.34.22.53.22s.38-.07.53-.22c.29-.29.29-.77 0-1.06l-2.3-2.3Z",
+    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
     fill: color
   }));
 };
-var Linear$b = function Linear12(_ref4) {
+var Linear$b = function Linear14(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "m9.17 14.83 5.66-5.66M14.83 14.83 9.17 9.17M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    d: "M6 12h12",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Outline$b = function Outline12(_ref5) {
+var Outline$b = function Outline14(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M9.17 15.58c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l5.66-5.66c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06L9.7 15.36c-.14.15-.34.22-.53.22Z",
-    fill: color
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M14.83 15.58c-.19 0-.38-.07-.53-.22L8.64 9.7a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l5.66 5.66c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22Z",
-    fill: color
-  }), /* @__PURE__ */ React.createElement("path", {
-    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
+    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
     fill: color
   }));
 };
-var TwoTone$b = function TwoTone12(_ref6) {
+var TwoTone$b = function TwoTone14(_ref6) {
   var color = _ref6.color;
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
-    opacity: ".4",
-    stroke: color,
-    strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /* @__PURE__ */ React.createElement("path", {
-    d: "m9.17 14.832 5.66-5.66M14.83 14.832l-5.66-5.66"
-  })), /* @__PURE__ */ React.createElement("path", {
-    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
+    d: "M6 12h12",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$b = function chooseVariant12(variant, color) {
+var chooseVariant$b = function chooseVariant14(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$b, {
@@ -14152,7 +14375,7 @@ var chooseVariant$b = function chooseVariant12(variant, color) {
       });
   }
 };
-var CloseSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Minus = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$b);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -14163,74 +14386,96 @@ var CloseSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$b(variant, color));
 });
-CloseSquare.propTypes = {
+Minus.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-CloseSquare.defaultProps = {
+Minus.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-CloseSquare.displayName = "CloseSquare";
+Minus.displayName = "Minus";
 var _excluded$a = ["variant", "color", "size"];
-var Bold$a = function Bold13(_ref) {
+var Bold$a = function Bold15(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    d: "M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z",
     fill: color
   }));
 };
-var Broken$a = function Broken13(_ref2) {
+var Broken$a = function Broken15(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M16 12h2M6 12h5.66",
+    d: "M4 6c-1.25 1.67-2 3.75-2 6 0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2c-1.43 0-2.8.3-4.03.85M15 10.38l1.12-1.13",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "m7.88 12 2.74 2.75 2.55-2.54",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$a = function Bulk13(_ref3) {
+var Bulk$a = function Bulk15(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
     fill: color
   }));
 };
-var Linear$a = function Linear13(_ref4) {
+var Linear$a = function Linear15(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M6 12h12",
+    d: "M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "m7.75 12 2.83 2.83 5.67-5.66",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Outline$a = function Outline13(_ref5) {
+var Outline$a = function Outline15(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M18 12.75H6c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h12c.41 0 .75.34.75.75s-.34.75-.75.75Z",
+    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75Zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
     fill: color
   }));
 };
-var TwoTone$a = function TwoTone13(_ref6) {
+var TwoTone$a = function TwoTone15(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M6 12h12",
+    d: "M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    opacity: ".34",
+    d: "m7.75 12.002 2.83 2.83 5.67-5.66",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$a = function chooseVariant13(variant, color) {
+var chooseVariant$a = function chooseVariant15(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$a, {
@@ -14262,7 +14507,7 @@ var chooseVariant$a = function chooseVariant13(variant, color) {
       });
   }
 };
-var Minus = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var TickCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$a);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -14273,29 +14518,29 @@ var Minus = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$a(variant, color));
 });
-Minus.propTypes = {
+TickCircle.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-Minus.defaultProps = {
+TickCircle.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-Minus.displayName = "Minus";
+TickCircle.displayName = "TickCircle";
 var _excluded$9 = ["variant", "color", "size"];
-var Bold$9 = function Bold14(_ref) {
+var Bold$9 = function Bold16(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm.59 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z",
     fill: color
   }));
 };
-var Broken$9 = function Broken14(_ref2) {
+var Broken$9 = function Broken16(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M4 6c-1.25 1.67-2 3.75-2 6 0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2c-1.43 0-2.8.3-4.03.85M15 10.38l1.12-1.13",
+    d: "M2 12.96V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9M15 10.38l1.12-1.13",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
@@ -14308,21 +14553,21 @@ var Broken$9 = function Broken14(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$9 = function Bulk14(_ref3) {
+var Bulk$9 = function Bulk16(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
-    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z",
+    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
     d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
     fill: color
   }));
 };
-var Linear$9 = function Linear14(_ref4) {
+var Linear$9 = function Linear16(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z",
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
@@ -14335,20 +14580,20 @@ var Linear$9 = function Linear14(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$9 = function Outline14(_ref5) {
+var Outline$9 = function Outline16(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75Zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75Z",
+    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
     d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
     fill: color
   }));
 };
-var TwoTone$9 = function TwoTone14(_ref6) {
+var TwoTone$9 = function TwoTone16(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z",
+    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
@@ -14362,7 +14607,7 @@ var TwoTone$9 = function TwoTone14(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$9 = function chooseVariant14(variant, color) {
+var chooseVariant$9 = function chooseVariant16(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$9, {
@@ -14394,7 +14639,7 @@ var chooseVariant$9 = function chooseVariant14(variant, color) {
       });
   }
 };
-var TickCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var TickSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$9);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -14405,96 +14650,118 @@ var TickCircle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$9(variant, color));
 });
-TickCircle.propTypes = {
+TickSquare.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-TickCircle.defaultProps = {
+TickSquare.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-TickCircle.displayName = "TickCircle";
+TickSquare.displayName = "TickSquare";
 var _excluded$8 = ["variant", "color", "size"];
-var Bold$8 = function Bold15(_ref) {
+var Bold$8 = function Bold17(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Zm.59 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z",
+    d: "M7.649 20.91c-.03 0-.07.02-.1.02-1.94-.96-3.52-2.55-4.49-4.49 0-.03.02-.07.02-.1 1.22.36 2.48.63 3.73.84.22 1.26.48 2.51.84 3.73ZM20.94 16.45c-.99 1.99-2.64 3.6-4.65 4.57.38-1.27.7-2.55.91-3.84 1.26-.21 2.5-.48 3.72-.84-.01.04.02.08.02.11ZM21.02 7.71c-1.26-.38-2.53-.69-3.82-.91-.21-1.29-.52-2.57-.91-3.82 2.07.99 3.74 2.66 4.73 4.73ZM7.65 3.089c-.36 1.22-.62 2.46-.83 3.72-1.29.2-2.57.52-3.84.9.97-2.01 2.58-3.66 4.57-4.65.03 0 .07.03.1.03ZM15.492 6.59c-2.32-.26-4.66-.26-6.98 0 .25-1.37.57-2.74 1.02-4.06.02-.08.01-.14.02-.22.79-.19 1.6-.31 2.45-.31.84 0 1.66.12 2.44.31.01.08.01.14.03.22.45 1.33.77 2.69 1.02 4.06ZM6.59 15.492c-1.38-.25-2.74-.57-4.06-1.02-.08-.02-.14-.01-.22-.02-.19-.79-.31-1.6-.31-2.45 0-.84.12-1.66.31-2.44.08-.01.14-.01.22-.03 1.33-.44 2.68-.77 4.06-1.02-.25 2.32-.25 4.66 0 6.98ZM22 12.002c0 .85-.12 1.66-.31 2.45-.08.01-.14 0-.22.02-1.33.44-2.69.77-4.06 1.02.26-2.32.26-4.66 0-6.98 1.37.25 2.74.57 4.06 1.02.08.02.14.03.22.03.19.79.31 1.6.31 2.44ZM15.492 17.41c-.25 1.38-.57 2.74-1.02 4.06-.02.08-.02.14-.03.22-.78.19-1.6.31-2.44.31-.85 0-1.66-.12-2.45-.31-.01-.08 0-.14-.02-.22a29.77 29.77 0 0 1-1.02-4.06c1.16.13 2.32.22 3.49.22 1.17 0 2.34-.09 3.49-.22ZM15.763 15.763a30.035 30.035 0 0 1-7.526 0 30.039 30.039 0 0 1 0-7.526 30.039 30.039 0 0 1 7.526 0 30.035 30.035 0 0 1 0 7.526Z",
     fill: color
   }));
 };
-var Broken$8 = function Broken15(_ref2) {
+var Broken$8 = function Broken17(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M2 12.96V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9M15 10.38l1.12-1.13",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "m7.88 12 2.74 2.75 2.55-2.54",
+    d: "M7.54 12c0 3.04.49 6.08 1.46 9H8M7.998 3h1c-.49 1.46-.85 2.95-1.1 4.46M16.13 16.36c-.25 1.56-.62 3.12-1.13 4.64M15 3c.97 2.92 1.46 5.96 1.46 9",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M3 16v-1a28.424 28.424 0 0 0 18 0v1M3 9.002a28.424 28.424 0 0 1 18 0",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Bulk$8 = function Bulk15(_ref3) {
+var Bulk$8 = function Bulk17(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
-    d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2Z",
+    d: "M7.649 20.91c-.03 0-.07.02-.1.02-1.94-.96-3.52-2.55-4.49-4.49 0-.03.02-.07.02-.1 1.22.36 2.48.63 3.73.84.22 1.26.48 2.51.84 3.73ZM20.94 16.45c-.99 1.99-2.64 3.6-4.65 4.57.38-1.27.7-2.55.91-3.84 1.26-.21 2.5-.48 3.72-.84-.01.04.02.08.02.11ZM21.02 7.71c-1.26-.38-2.53-.69-3.82-.91-.21-1.29-.52-2.57-.91-3.82 2.07.99 3.74 2.66 4.73 4.73ZM7.65 3.089c-.36 1.22-.62 2.46-.83 3.72-1.29.2-2.57.52-3.84.9.97-2.01 2.58-3.66 4.57-4.65.03 0 .07.03.1.03Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
+    d: "M15.492 6.59c-2.32-.26-4.66-.26-6.98 0 .25-1.37.57-2.74 1.02-4.06.02-.08.01-.14.02-.22.79-.19 1.6-.31 2.45-.31.84 0 1.66.12 2.44.31.01.08.01.14.03.22.45 1.33.77 2.69 1.02 4.06ZM6.59 15.492c-1.38-.25-2.74-.57-4.06-1.02-.08-.02-.14-.01-.22-.02-.19-.79-.31-1.6-.31-2.45 0-.84.12-1.66.31-2.44.08-.01.14-.01.22-.03 1.33-.44 2.68-.77 4.06-1.02-.25 2.32-.25 4.66 0 6.98ZM22 12.002c0 .85-.12 1.66-.31 2.45-.08.01-.14 0-.22.02-1.33.44-2.69.77-4.06 1.02.26-2.32.26-4.66 0-6.98 1.37.25 2.74.57 4.06 1.02.08.02.14.03.22.03.19.79.31 1.6.31 2.44ZM15.492 17.41c-.25 1.38-.57 2.74-1.02 4.06-.02.08-.02.14-.03.22-.78.19-1.6.31-2.44.31-.85 0-1.66-.12-2.45-.31-.01-.08 0-.14-.02-.22a29.77 29.77 0 0 1-1.02-4.06c1.16.13 2.32.22 3.49.22 1.17 0 2.34-.09 3.49-.22ZM15.763 15.763a30.035 30.035 0 0 1-7.526 0 30.039 30.039 0 0 1 0-7.526 30.039 30.039 0 0 1 7.526 0 30.035 30.035 0 0 1 0 7.526Z",
     fill: color
   }));
 };
-var Linear$8 = function Linear15(_ref4) {
+var Linear$8 = function Linear17(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "m7.75 12 2.83 2.83 5.67-5.66",
+    d: "M8 3h1a28.424 28.424 0 0 0 0 18H8M15 3a28.424 28.424 0 0 1 0 18",
+    stroke: color,
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M3 16v-1a28.424 28.424 0 0 0 18 0v1M3 9a28.424 28.424 0 0 1 18 0",
     stroke: color,
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }));
 };
-var Outline$8 = function Outline15(_ref5) {
+var Outline$8 = function Outline17(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M15 22.75H9c-5.43 0-7.75-2.32-7.75-7.75V9c0-5.43 2.32-7.75 7.75-7.75h6c5.43 0 7.75 2.32 7.75 7.75v6c0 5.43-2.32 7.75-7.75 7.75Zm-6-20C4.39 2.75 2.75 4.39 2.75 9v6c0 4.61 1.64 6.25 6.25 6.25h6c4.61 0 6.25-1.64 6.25-6.25V9c0-4.61-1.64-6.25-6.25-6.25H9Z",
+    d: "M12 22.75C6.07 22.75 1.25 17.93 1.25 12S6.07 1.25 12 1.25 22.75 6.07 22.75 12 17.93 22.75 12 22.75Zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75Z",
     fill: color
   }), /* @__PURE__ */ React.createElement("path", {
-    d: "M10.58 15.582a.75.75 0 0 1-.53-.22l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-5.67 5.67a.75.75 0 0 1-.53.22Z",
+    d: "M8.998 21.75h-1c-.41 0-.75-.34-.75-.75s.32-.74.73-.75a29.49 29.49 0 0 1 0-16.5.745.745 0 0 1-.73-.75c0-.41.34-.75.75-.75h1c.24 0 .47.12.61.31.14.2.18.45.1.68a27.948 27.948 0 0 0 0 17.53c.08.23.04.48-.1.68-.14.18-.37.3-.61.3ZM14.998 21.75a.745.745 0 0 1-.71-.99 27.948 27.948 0 0 0 0-17.53.749.749 0 1 1 1.42-.48 29.318 29.318 0 0 1 0 18.47c-.1.33-.4.53-.71.53Z",
+    fill: color
+  }), /* @__PURE__ */ React.createElement("path", {
+    d: "M12 17.2c-2.79 0-5.57-.39-8.25-1.18-.01.4-.34.73-.75.73s-.75-.34-.75-.75v-1c0-.24.12-.47.31-.61.2-.14.45-.18.68-.1a27.948 27.948 0 0 0 17.53 0 .75.75 0 0 1 .68.1c.2.14.31.37.31.61v1c0 .41-.34.75-.75.75s-.74-.32-.75-.73c-2.69.79-5.47 1.18-8.26 1.18ZM21 9.75c-.08 0-.16-.01-.24-.04a27.948 27.948 0 0 0-17.53 0c-.4.13-.82-.08-.95-.47-.12-.4.09-.82.48-.95a29.318 29.318 0 0 1 18.47 0c.39.13.61.56.47.95a.73.73 0 0 1-.7.51Z",
     fill: color
   }));
 };
-var TwoTone$8 = function TwoTone15(_ref6) {
+var TwoTone$8 = function TwoTone17(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
-    d: "M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z",
     stroke: color,
-    strokeWidth: "1.5",
     strokeLinecap: "round",
-    strokeLinejoin: "round"
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+  }), /* @__PURE__ */ React.createElement("g", {
+    opacity: ".4"
+  }, /* @__PURE__ */ React.createElement("path", {
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M8 3h1a28.424 28.424 0 000 18H8M15 3a28.424 28.424 0 010 18"
   }), /* @__PURE__ */ React.createElement("path", {
-    opacity: ".34",
-    d: "m7.75 12.002 2.83 2.83 5.67-5.66",
     stroke: color,
-    strokeWidth: "1.5",
     strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }));
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    d: "M3 16v-1a28.424 28.424 0 0018 0v1M3 9a28.424 28.424 0 0118 0"
+  })));
 };
-var chooseVariant$8 = function chooseVariant15(variant, color) {
+var chooseVariant$8 = function chooseVariant17(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$8, {
@@ -14526,7 +14793,7 @@ var chooseVariant$8 = function chooseVariant15(variant, color) {
       });
   }
 };
-var TickSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
+var Global = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
   var variant = _ref7.variant, color = _ref7.color, size = _ref7.size, rest = _objectWithoutProperties(_ref7, _excluded$8);
   return /* @__PURE__ */ React.createElement("svg", _extends({}, rest, {
     xmlns: "http://www.w3.org/2000/svg",
@@ -14537,26 +14804,26 @@ var TickSquare = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     fill: "none"
   }), chooseVariant$8(variant, color));
 });
-TickSquare.propTypes = {
+Global.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
-TickSquare.defaultProps = {
+Global.defaultProps = {
   variant: "Linear",
   color: "currentColor",
   size: "24"
 };
-TickSquare.displayName = "TickSquare";
+Global.displayName = "Global";
 var _excluded$7 = ["variant", "color", "size"];
-var Bold$7 = function Bold16(_ref) {
+var Bold$7 = function Bold18(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2ZM9.11 16.9c0 .28-.22.5-.5.5H5.82c-.28 0-.5-.22-.5-.5v-4.62c0-.63.51-1.14 1.14-1.14h2.15c.28 0 .5.22.5.5v5.26Zm4.78 0c0 .28-.22.5-.5.5H10.6c-.28 0-.5-.22-.5-.5V7.74c0-.63.51-1.14 1.14-1.14h1.52c.63 0 1.14.51 1.14 1.14v9.16h-.01Zm4.79 0c0 .28-.22.5-.5.5h-2.79c-.28 0-.5-.22-.5-.5v-3.55c0-.28.22-.5.5-.5h2.15c.63 0 1.14.51 1.14 1.14v2.91Z",
     fill: color
   }));
 };
-var Broken$7 = function Broken16(_ref2) {
+var Broken$7 = function Broken18(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M2 12.83V15c0 5 2 7 7 7h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9",
@@ -14580,7 +14847,7 @@ var Broken$7 = function Broken16(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$7 = function Bulk16(_ref3) {
+var Bulk$7 = function Bulk18(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -14598,7 +14865,7 @@ var Bulk$7 = function Bulk16(_ref3) {
     fill: color
   }));
 };
-var Linear$7 = function Linear16(_ref4) {
+var Linear$7 = function Linear18(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M10.11 11.15H7.46c-.63 0-1.14.51-1.14 1.14v5.12h3.79v-6.26 0Z",
@@ -14622,7 +14889,7 @@ var Linear$7 = function Linear16(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$7 = function Outline16(_ref5) {
+var Outline$7 = function Outline18(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M10.11 18.15H6.32c-.41 0-.75-.34-.75-.75v-5.12c0-1.04.85-1.89 1.89-1.89h2.65c.41 0 .75.34.75.75v6.25c0 .42-.34.76-.75.76Zm-3.04-1.5h2.29V11.9h-1.9a.39.39 0 0 0-.39.39v4.36Z",
@@ -14638,7 +14905,7 @@ var Outline$7 = function Outline16(_ref5) {
     fill: color
   }));
 };
-var TwoTone$7 = function TwoTone16(_ref6) {
+var TwoTone$7 = function TwoTone18(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("g", {
     opacity: ".4",
@@ -14659,7 +14926,7 @@ var TwoTone$7 = function TwoTone16(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$7 = function chooseVariant16(variant, color) {
+var chooseVariant$7 = function chooseVariant18(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$7, {
@@ -14714,14 +14981,14 @@ ChartSquare.defaultProps = {
 };
 ChartSquare.displayName = "ChartSquare";
 var _excluded$6 = ["variant", "color", "size"];
-var Bold$6 = function Bold17(_ref) {
+var Bold$6 = function Bold19(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M21 10H3c-.55 0-1 .45-1 1v5.19c0 .2.01.4.03.6.2 3.08 2.1 4.98 5.18 5.18.2.02.4.03.6.03h8.38c.2 0 .4-.01.6-.03 3.08-.2 4.98-2.1 5.18-5.18.02-.2.03-.4.03-.6V11c0-.55-.45-1-1-1ZM8 16.15c.34.5.8.91 1.33 1.18.38.18.53.63.34 1.01-.13.26-.4.41-.67.41-.11 0-.23-.03-.33-.08-.78-.38-1.44-.97-1.91-1.68-.4-.6-.4-1.38 0-1.98.47-.71 1.13-1.3 1.91-1.68.37-.19.82-.04 1 .33.19.38.04.83-.34 1.01-.53.27-.99.68-1.33 1.18-.06.09-.06.21 0 .3Zm9.45.84c-.48.71-1.14 1.3-1.91 1.68a.742.742 0 0 1-1-.33.745.745 0 0 1 .33-1.01c.54-.27 1-.68 1.33-1.18a.24.24 0 0 0 0-.3c-.33-.5-.79-.91-1.33-1.18a.745.745 0 0 1-.33-1.01c.18-.37.63-.52 1-.33.77.38 1.43.97 1.91 1.68.4.6.4 1.38 0 1.98ZM22 7.81V8c0 .55-.45 1-1 1L3 9.01c-.55 0-1-.45-1-1v-.2c0-.2.01-.4.03-.6.2-3.08 2.1-4.98 5.18-5.18.2-.02.4-.03.6-.03h8.38c.2 0 .4.01.6.03 3.08.2 4.98 2.1 5.18 5.18.02.2.03.4.03.6Z",
     fill: color
   }));
 };
-var Broken$6 = function Broken17(_ref2) {
+var Broken$6 = function Broken19(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M9 13c-.66.33-1.21.82-1.62 1.43-.23.35-.23.79 0 1.14.41.61.96 1.1 1.62 1.43M15.21 13c.66.33 1.21.82 1.62 1.43.23.35.23.79 0 1.14-.41.61-.96 1.1-1.62 1.43",
@@ -14737,7 +15004,7 @@ var Broken$6 = function Broken17(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$6 = function Bulk17(_ref3) {
+var Bulk$6 = function Bulk19(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -14748,7 +15015,7 @@ var Bulk$6 = function Bulk17(_ref3) {
     fill: color
   }));
 };
-var Linear$6 = function Linear17(_ref4) {
+var Linear$6 = function Linear19(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M9 13c-.66.33-1.21.82-1.62 1.43-.23.35-.23.79 0 1.14.41.61.96 1.1 1.62 1.43M15.21 13c.66.33 1.21.82 1.62 1.43.23.35.23.79 0 1.14-.41.61-.96 1.1-1.62 1.43",
@@ -14764,7 +15031,7 @@ var Linear$6 = function Linear17(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$6 = function Outline17(_ref5) {
+var Outline$6 = function Outline19(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M6.89 15.749c-.28 0-.54-.15-.67-.41a.745.745 0 0 1 .34-1.01c.87-.43 1.61-1.09 2.14-1.89.18-.27.18-.61 0-.88-.54-.8-1.28-1.46-2.14-1.89a.74.74 0 0 1-.34-1.01c.18-.37.63-.52 1-.33 1.1.55 2.04 1.38 2.72 2.4a2.3 2.3 0 0 1 0 2.54 7.077 7.077 0 0 1-2.72 2.4c-.1.05-.22.08-.33.08ZM17 15.75h-4c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h4c.41 0 .75.34.75.75s-.34.75-.75.75Z",
@@ -14774,7 +15041,7 @@ var Outline$6 = function Outline17(_ref5) {
     fill: color
   }));
 };
-var TwoTone$6 = function TwoTone17(_ref6) {
+var TwoTone$6 = function TwoTone19(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -14798,7 +15065,7 @@ var TwoTone$6 = function TwoTone17(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$6 = function chooseVariant17(variant, color) {
+var chooseVariant$6 = function chooseVariant19(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$6, {
@@ -14853,7 +15120,7 @@ Code.defaultProps = {
 };
 Code.displayName = "Code";
 var _excluded$5 = ["variant", "color", "size"];
-var Bold$5 = function Bold18(_ref) {
+var Bold$5 = function Bold20(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12.001 17.35a1.63 1.63 0 1 0 0-3.26 1.63 1.63 0 0 0 0 3.26Z",
@@ -14863,7 +15130,7 @@ var Bold$5 = function Bold18(_ref) {
     fill: color
   }));
 };
-var Broken$5 = function Broken18(_ref2) {
+var Broken$5 = function Broken20(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M6 10V8c0-3.31 1-6 6-6s6 2.69 6 6v2M22 17v-2c0-4-1-5-5-5H7c-4 0-5 1-5 5v2c0 4 1 5 5 5h10c1.76 0 2.94-.19 3.71-.75",
@@ -14879,7 +15146,7 @@ var Broken$5 = function Broken18(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$5 = function Bulk18(_ref3) {
+var Bulk$5 = function Bulk20(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M18.75 8v2.1c-.44-.06-.94-.09-1.5-.1V8c0-3.15-.89-5.25-5.25-5.25S6.75 4.85 6.75 8v2c-.56.01-1.06.04-1.5.1V8c0-2.9.7-6.75 6.75-6.75S18.75 5.1 18.75 8Z",
@@ -14893,7 +15160,7 @@ var Bulk$5 = function Bulk18(_ref3) {
     fill: color
   }));
 };
-var Linear$5 = function Linear18(_ref4) {
+var Linear$5 = function Linear20(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M6 10V8c0-3.31 1-6 6-6s6 2.69 6 6v2M17 22H7c-4 0-5-1-5-5v-2c0-4 1-5 5-5h10c4 0 5 1 5 5v2c0 4-1 5-5 5Z",
@@ -14909,7 +15176,7 @@ var Linear$5 = function Linear18(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$5 = function Outline18(_ref5) {
+var Outline$5 = function Outline20(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M18 10.75c-.41 0-.75-.34-.75-.75V8c0-3.15-.89-5.25-5.25-5.25S6.75 4.85 6.75 8v2c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-2.9.7-6.75 6.75-6.75S18.75 5.1 18.75 8v2c0 .41-.34.75-.75.75ZM12 19.25c-1.79 0-3.25-1.46-3.25-3.25s1.46-3.25 3.25-3.25 3.25 1.46 3.25 3.25-1.46 3.25-3.25 3.25Zm0-5c-.96 0-1.75.79-1.75 1.75s.79 1.75 1.75 1.75 1.75-.79 1.75-1.75-.79-1.75-1.75-1.75Z",
@@ -14919,7 +15186,7 @@ var Outline$5 = function Outline18(_ref5) {
     fill: color
   }));
 };
-var TwoTone$5 = function TwoTone18(_ref6) {
+var TwoTone$5 = function TwoTone20(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -14943,7 +15210,7 @@ var TwoTone$5 = function TwoTone18(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$5 = function chooseVariant18(variant, color) {
+var chooseVariant$5 = function chooseVariant20(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$5, {
@@ -14998,14 +15265,14 @@ Lock.defaultProps = {
 };
 Lock.displayName = "Lock";
 var _excluded$4 = ["variant", "color", "size"];
-var Bold$4 = function Bold19(_ref) {
+var Bold$4 = function Bold21(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M20.1 9.221c-1.81 0-2.55-1.28-1.65-2.85.52-.91.21-2.07-.7-2.59l-1.73-.99c-.79-.47-1.81-.19-2.28.6l-.11.19c-.9 1.57-2.38 1.57-3.29 0l-.11-.19a1.641 1.641 0 0 0-2.26-.6l-1.73.99c-.91.52-1.22 1.69-.7 2.6.91 1.56.17 2.84-1.64 2.84-1.04 0-1.9.85-1.9 1.9v1.76c0 1.04.85 1.9 1.9 1.9 1.81 0 2.55 1.28 1.64 2.85-.52.91-.21 2.07.7 2.59l1.73.99c.79.47 1.81.19 2.28-.6l.11-.19c.9-1.57 2.38-1.57 3.29 0l.11.19c.47.79 1.49 1.07 2.28.6l1.73-.99c.91-.52 1.22-1.69.7-2.59-.91-1.57-.17-2.85 1.64-2.85 1.04 0 1.9-.85 1.9-1.9v-1.76a1.92 1.92 0 0 0-1.91-1.9Zm-8.1 6.03c-1.79 0-3.25-1.46-3.25-3.25s1.46-3.25 3.25-3.25 3.25 1.46 3.25 3.25-1.46 3.25-3.25 3.25Z",
     fill: color
   }));
 };
-var Broken$4 = function Broken19(_ref2) {
+var Broken$4 = function Broken21(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M15 12c0-1.66-1.34-3-3-3s-3 1.34-3 3a2.996 2.996 0 0 0 4.17 2.76",
@@ -15023,7 +15290,7 @@ var Broken$4 = function Broken19(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$4 = function Bulk19(_ref3) {
+var Bulk$4 = function Bulk21(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -15034,7 +15301,7 @@ var Bulk$4 = function Bulk19(_ref3) {
     fill: color
   }));
 };
-var Linear$4 = function Linear19(_ref4) {
+var Linear$4 = function Linear21(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
@@ -15052,7 +15319,7 @@ var Linear$4 = function Linear19(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$4 = function Outline19(_ref5) {
+var Outline$4 = function Outline21(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12 15.75c-2.07 0-3.75-1.68-3.75-3.75 0-2.07 1.68-3.75 3.75-3.75 2.07 0 3.75 1.68 3.75 3.75 0 2.07-1.68 3.75-3.75 3.75Zm0-6c-1.24 0-2.25 1.01-2.25 2.25s1.01 2.25 2.25 2.25 2.25-1.01 2.25-2.25S13.24 9.75 12 9.75Z",
@@ -15062,7 +15329,7 @@ var Outline$4 = function Outline19(_ref5) {
     fill: color
   }));
 };
-var TwoTone$4 = function TwoTone19(_ref6) {
+var TwoTone$4 = function TwoTone21(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".34",
@@ -15081,7 +15348,7 @@ var TwoTone$4 = function TwoTone19(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$4 = function chooseVariant19(variant, color) {
+var chooseVariant$4 = function chooseVariant21(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$4, {
@@ -15136,14 +15403,14 @@ Setting2.defaultProps = {
 };
 Setting2.displayName = "Setting2";
 var _excluded$3 = ["variant", "color", "size"];
-var Bold$3 = function Bold20(_ref) {
+var Bold$3 = function Bold22(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M16.44 3.102c-1.81 0-3.43.88-4.44 2.23a5.549 5.549 0 0 0-4.44-2.23c-3.07 0-5.56 2.5-5.56 5.59 0 1.19.19 2.29.52 3.31 1.58 5 6.45 7.99 8.86 8.81.34.12.9.12 1.24 0 2.41-.82 7.28-3.81 8.86-8.81.33-1.02.52-2.12.52-3.31 0-3.09-2.49-5.59-5.56-5.59Z",
     fill: color
   }));
 };
-var Broken$3 = function Broken20(_ref2) {
+var Broken$3 = function Broken22(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M20.59 4.972c.88.99 1.41 2.29 1.41 3.72 0 7-6.48 11.13-9.38 12.13-.34.12-.9.12-1.24 0-2.9-1-9.38-5.13-9.38-12.13 0-3.09 2.49-5.59 5.56-5.59 1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24",
@@ -15153,7 +15420,7 @@ var Broken$3 = function Broken20(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$3 = function Bulk20(_ref3) {
+var Bulk$3 = function Bulk22(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M22 8.692c0 1.19-.19 2.29-.52 3.31H2.52c-.33-1.02-.52-2.12-.52-3.31 0-3.09 2.49-5.59 5.56-5.59 1.81 0 3.43.88 4.44 2.23a5.549 5.549 0 0 1 4.44-2.23c3.07 0 5.56 2.5 5.56 5.59Z",
@@ -15164,7 +15431,7 @@ var Bulk$3 = function Bulk20(_ref3) {
     fill: color
   }));
 };
-var Linear$3 = function Linear20(_ref4) {
+var Linear$3 = function Linear22(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z",
@@ -15174,14 +15441,14 @@ var Linear$3 = function Linear20(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$3 = function Outline20(_ref5) {
+var Outline$3 = function Outline22(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12 21.652c-.31 0-.61-.04-.86-.13-3.82-1.31-9.89-5.96-9.89-12.83 0-3.5 2.83-6.34 6.31-6.34 1.69 0 3.27.66 4.44 1.84a6.214 6.214 0 0 1 4.44-1.84c3.48 0 6.31 2.85 6.31 6.34 0 6.88-6.07 11.52-9.89 12.83-.25.09-.55.13-.86.13Zm-4.44-17.8c-2.65 0-4.81 2.17-4.81 4.84 0 6.83 6.57 10.63 8.88 11.42.18.06.57.06.75 0 2.3-.79 8.88-4.58 8.88-11.42 0-2.67-2.16-4.84-4.81-4.84-1.52 0-2.93.71-3.84 1.94-.28.38-.92.38-1.2 0a4.77 4.77 0 0 0-3.85-1.94Z",
     fill: color
   }));
 };
-var TwoTone$3 = function TwoTone20(_ref6) {
+var TwoTone$3 = function TwoTone22(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12.62 20.812c-.34.12-.9.12-1.24 0-2.9-.99-9.38-5.12-9.38-12.12 0-3.09 2.49-5.59 5.56-5.59 1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24c3.07 0 5.56 2.5 5.56 5.59 0 7-6.48 11.13-9.38 12.12Z",
@@ -15191,7 +15458,7 @@ var TwoTone$3 = function TwoTone20(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$3 = function chooseVariant20(variant, color) {
+var chooseVariant$3 = function chooseVariant22(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$3, {
@@ -15246,14 +15513,14 @@ Heart.defaultProps = {
 };
 Heart.displayName = "Heart";
 var _excluded$2 = ["variant", "color", "size"];
-var Bold$2 = function Bold21(_ref) {
+var Bold$2 = function Bold23(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12 4.648c-4.78 0-8.67 3.89-8.67 8.67 0 4.78 3.89 8.68 8.67 8.68 4.78 0 8.67-3.89 8.67-8.67 0-4.78-3.89-8.68-8.67-8.68Zm.75 8.35c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-5c0-.41.34-.75.75-.75s.75.34.75.75v5ZM14.89 3.45H9.11c-.4 0-.72-.32-.72-.72 0-.4.32-.73.72-.73h5.78c.4 0 .72.32.72.72 0 .4-.32.73-.72.73Z",
     fill: color
   }));
 };
-var Broken$2 = function Broken21(_ref2) {
+var Broken$2 = function Broken23(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12 8v5",
@@ -15276,7 +15543,7 @@ var Broken$2 = function Broken21(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$2 = function Bulk21(_ref3) {
+var Bulk$2 = function Bulk23(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -15287,7 +15554,7 @@ var Bulk$2 = function Bulk21(_ref3) {
     fill: color
   }));
 };
-var Linear$2 = function Linear21(_ref4) {
+var Linear$2 = function Linear23(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M20.75 13.25c0 4.83-3.92 8.75-8.75 8.75s-8.75-3.92-8.75-8.75S7.17 4.5 12 4.5s8.75 3.92 8.75 8.75ZM12 8v5",
@@ -15304,7 +15571,7 @@ var Linear$2 = function Linear21(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$2 = function Outline21(_ref5) {
+var Outline$2 = function Outline23(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12 22.75c-5.24 0-9.5-4.26-9.5-9.5s4.26-9.5 9.5-9.5 9.5 4.26 9.5 9.5-4.26 9.5-9.5 9.5Zm0-17.5c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8Z",
@@ -15314,7 +15581,7 @@ var Outline$2 = function Outline21(_ref5) {
     fill: color
   }));
 };
-var TwoTone$2 = function TwoTone21(_ref6) {
+var TwoTone$2 = function TwoTone23(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M20.75 13.25c0 4.83-3.92 8.75-8.75 8.75s-8.75-3.92-8.75-8.75S7.17 4.5 12 4.5s8.75 3.92 8.75 8.75Z",
@@ -15339,7 +15606,7 @@ var TwoTone$2 = function TwoTone21(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$2 = function chooseVariant21(variant, color) {
+var chooseVariant$2 = function chooseVariant23(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$2, {
@@ -15394,14 +15661,14 @@ Timer1.defaultProps = {
 };
 Timer1.displayName = "Timer1";
 var _excluded$1 = ["variant", "color", "size"];
-var Bold$1 = function Bold22(_ref) {
+var Bold$1 = function Bold24(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "m22.019 16.82-3.13-7.32c-.57-1.34-1.42-2.1-2.39-2.15-.96-.05-1.89.62-2.6 1.9l-1.9 3.41c-.4.72-.97 1.15-1.59 1.2-.63.06-1.26-.27-1.77-.92l-.22-.28c-.71-.89-1.59-1.32-2.49-1.23-.9.09-1.67.71-2.18 1.72l-1.73 3.45c-.62 1.25-.56 2.7.17 3.88.73 1.18 2 1.89 3.39 1.89h12.76c1.34 0 2.59-.67 3.33-1.79.76-1.12.88-2.53.35-3.76ZM6.97 8.381a3.38 3.38 0 1 0 0-6.76 3.38 3.38 0 0 0 0 6.76Z",
     fill: color
   }));
 };
-var Broken$1 = function Broken22(_ref2) {
+var Broken$1 = function Broken24(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M12.332 12.84c-.96 1.73-2.75 1.88-3.99.33l-.22-.28c-1.29-1.62-3.11-1.42-4.04.43l-1.72 3.45c-1.2 2.4.55 5.23 3.23 5.23h12.76c2.59 0 4.34-2.65 3.32-5.04l-3.13-7.31c-1.06-2.48-3.01-2.58-4.32-.22M9.969 5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3c.36 0 .7.06 1.01.18",
@@ -15411,7 +15678,7 @@ var Broken$1 = function Broken22(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk$1 = function Bulk22(_ref3) {
+var Bulk$1 = function Bulk24(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -15422,7 +15689,7 @@ var Bulk$1 = function Bulk22(_ref3) {
     fill: color
   }));
 };
-var Linear$1 = function Linear22(_ref4) {
+var Linear$1 = function Linear24(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "m21.68 16.96-3.13-7.31c-1.06-2.48-3.01-2.58-4.32-.22l-1.89 3.41c-.96 1.73-2.75 1.88-3.99.33l-.22-.28c-1.29-1.62-3.11-1.42-4.04.43l-1.72 3.45C1.16 19.17 2.91 22 5.59 22h12.76c2.6 0 4.35-2.65 3.33-5.04ZM6.97 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
@@ -15432,14 +15699,14 @@ var Linear$1 = function Linear22(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline$1 = function Outline22(_ref5) {
+var Outline$1 = function Outline24(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M18.36 22.75H5.59c-1.52 0-2.91-.77-3.71-2.07a4.35 4.35 0 0 1-.19-4.25l1.72-3.45c.56-1.12 1.46-1.82 2.47-1.93 1.01-.11 2.04.39 2.82 1.36l.22.28c.44.54.95.83 1.45.78.5-.04.96-.4 1.3-1.01l1.89-3.41c.78-1.41 1.82-2.14 2.95-2.09 1.12.06 2.08.9 2.72 2.38l3.13 7.31a4.35 4.35 0 0 1-.37 4.12 4.284 4.284 0 0 1-3.63 1.98Zm-12.2-10.2c-.04 0-.08 0-.12.01-.5.05-.96.45-1.29 1.1l-1.72 3.45c-.45.89-.4 1.94.12 2.79.52.85 1.44 1.36 2.44 1.36h12.76c.98 0 1.85-.47 2.39-1.29.54-.82.63-1.8.24-2.7l-3.13-7.31c-.38-.9-.91-1.45-1.42-1.47-.47-.03-1.08.47-1.56 1.32l-1.89 3.41c-.58 1.04-1.49 1.69-2.48 1.78-.99.08-2-.4-2.75-1.34l-.22-.28c-.42-.55-.9-.83-1.37-.83ZM6.969 8.75c-2.06 0-3.75-1.68-3.75-3.75 0-2.07 1.68-3.75 3.75-3.75 2.07 0 3.75 1.68 3.75 3.75 0 2.07-1.68 3.75-3.75 3.75Zm0-6c-1.24 0-2.25 1.01-2.25 2.25s1.01 2.25 2.25 2.25S9.219 6.24 9.219 5s-1.01-2.25-2.25-2.25Z",
     fill: color
   }));
 };
-var TwoTone$1 = function TwoTone22(_ref6) {
+var TwoTone$1 = function TwoTone24(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "m21.68 16.96-3.13-7.31c-1.06-2.48-3.01-2.58-4.32-.22l-1.89 3.41c-.96 1.73-2.75 1.88-3.99.33l-.22-.28c-1.29-1.62-3.11-1.42-4.04.43l-1.72 3.45C1.16 19.17 2.91 22 5.59 22h12.76c2.6 0 4.35-2.65 3.33-5.04Z",
@@ -15456,7 +15723,7 @@ var TwoTone$1 = function TwoTone22(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant$1 = function chooseVariant22(variant, color) {
+var chooseVariant$1 = function chooseVariant24(variant, color) {
   switch (variant) {
     case "Bold":
       return /* @__PURE__ */ React.createElement(Bold$1, {
@@ -15511,14 +15778,14 @@ Image.defaultProps = {
 };
 Image.displayName = "Image";
 var _excluded = ["variant", "color", "size"];
-var Bold23 = function Bold24(_ref) {
+var Bold25 = function Bold26(_ref) {
   var color = _ref.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M21.75 17.98c0-.02-.01-.04-.01-.06-.01-.08-.02-.16-.05-.23a.913.913 0 0 0-.15-.23s0-.01-.01-.01a.776.776 0 0 0-.53-.22l-4.67.02h-.01c-.6 0-1.18-.28-1.54-.76l-1.22-1.57a.738.738 0 0 0-1.05-.13.74.74 0 0 0-.13 1.05l1.22 1.57c.65.84 1.67 1.34 2.73 1.34h.01l2.85-.01-.71.71c-.29.29-.29.77 0 1.06.15.15.34.22.53.22s.38-.07.53-.22l2-2c.07-.07.12-.15.16-.24.03-.1.05-.2.05-.29ZM8.42 6.692a3.45 3.45 0 0 0-2.8-1.43H5.6l-2.6.01c-.41 0-.75.34-.75.75s.34.75.75.75l2.61-.01h.01c.63 0 1.22.3 1.58.81l1.08 1.5c.15.2.38.31.61.31.15 0 .31-.05.44-.14.34-.25.41-.72.17-1.05l-1.08-1.5ZM21.74 6.079c0-.02.01-.04.01-.05a.776.776 0 0 0-.22-.53l-2-2a.754.754 0 0 0-1.06 0c-.29.29-.29.77 0 1.06l.71.71-2.73-.01h-.02c-1.15 0-2.23.57-2.87 1.54l-6.39 9.58c-.36.54-.97.87-1.62.87h-.01L3 17.229a.749.749 0 1 0 0 1.5l2.55.01h.02c1.16 0 2.23-.57 2.87-1.54l6.39-9.58c.36-.54.97-.87 1.62-.87h.01l4.54.02a.753.753 0 0 0 .53-.22s0-.01.01-.01a.704.704 0 0 0 .2-.46Z",
     fill: color
   }));
 };
-var Broken23 = function Broken24(_ref2) {
+var Broken25 = function Broken26(_ref2) {
   var color = _ref2.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "m16.45 6 4.55.02M3 17.98l2.55.01c.91 0 1.76-.45 2.26-1.2l1.18-1.77.76-1.14L13.67 8M19 19.98l2-2M8.89 8.62l-1.08-1.5A2.675 2.675 0 0 0 5.61 6L3 6.01M12.969 15.379l1.22 1.57c.51.66 1.31 1.05 2.15 1.05l4.67-.02M21 6.02l-2-2",
@@ -15528,7 +15795,7 @@ var Broken23 = function Broken24(_ref2) {
     strokeLinejoin: "round"
   }));
 };
-var Bulk23 = function Bulk24(_ref3) {
+var Bulk25 = function Bulk26(_ref3) {
   var color = _ref3.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     opacity: ".4",
@@ -15539,7 +15806,7 @@ var Bulk23 = function Bulk24(_ref3) {
     fill: color
   }));
 };
-var Linear23 = function Linear24(_ref4) {
+var Linear25 = function Linear26(_ref4) {
   var color = _ref4.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "m3 17.98 2.55.01c.91 0 1.76-.45 2.26-1.2l6.39-9.58a2.69 2.69 0 0 1 2.26-1.2l4.55.02M19 19.98l2-2M8.89 8.62l-1.08-1.5A2.675 2.675 0 0 0 5.61 6L3 6.01M12.97 15.38l1.22 1.57c.51.66 1.31 1.05 2.15 1.05l4.67-.02M21 6.02l-2-2",
@@ -15549,7 +15816,7 @@ var Linear23 = function Linear24(_ref4) {
     strokeLinejoin: "round"
   }));
 };
-var Outline23 = function Outline24(_ref5) {
+var Outline25 = function Outline26(_ref5) {
   var color = _ref5.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "M5.562 18.74h-.02l-2.55-.01c-.41 0-.75-.34-.75-.75s.34-.75.75-.75l2.55.01h.01c.65 0 1.26-.32 1.62-.87l6.39-9.58c.64-.96 1.71-1.54 2.87-1.54h.02l4.55.02c.41 0 .75.34.75.75s-.34.75-.75.75l-4.55-.02h-.01c-.65 0-1.26.32-1.62.87l-6.39 9.58a3.42 3.42 0 0 1-2.87 1.54ZM19.001 20.732c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l2-2c.29-.29.77-.29 1.06 0 .29.29.29.77 0 1.06l-2 2c-.15.15-.34.22-.53.22ZM8.89 9.382c-.23 0-.46-.11-.61-.31l-1.08-1.5a1.99 1.99 0 0 0-1.59-.81L3 6.772c-.46-.01-.75-.33-.75-.75 0-.41.33-.75.75-.75l2.61-.01h.02c1.11 0 2.15.54 2.8 1.43l1.08 1.5c.24.34.17.8-.17 1.05-.14.09-.29.14-.45.14Z",
@@ -15559,7 +15826,7 @@ var Outline23 = function Outline24(_ref5) {
     fill: color
   }));
 };
-var TwoTone23 = function TwoTone24(_ref6) {
+var TwoTone25 = function TwoTone26(_ref6) {
   var color = _ref6.color;
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", {
     d: "m3 17.982 2.55.01c.91 0 1.76-.45 2.26-1.2l6.39-9.58a2.69 2.69 0 0 1 2.26-1.2l4.55.02",
@@ -15590,34 +15857,34 @@ var TwoTone23 = function TwoTone24(_ref6) {
     strokeLinejoin: "round"
   }));
 };
-var chooseVariant23 = function chooseVariant24(variant, color) {
+var chooseVariant25 = function chooseVariant26(variant, color) {
   switch (variant) {
     case "Bold":
-      return /* @__PURE__ */ React.createElement(Bold23, {
+      return /* @__PURE__ */ React.createElement(Bold25, {
         color
       });
     case "Broken":
-      return /* @__PURE__ */ React.createElement(Broken23, {
+      return /* @__PURE__ */ React.createElement(Broken25, {
         color
       });
     case "Bulk":
-      return /* @__PURE__ */ React.createElement(Bulk23, {
+      return /* @__PURE__ */ React.createElement(Bulk25, {
         color
       });
     case "Linear":
-      return /* @__PURE__ */ React.createElement(Linear23, {
+      return /* @__PURE__ */ React.createElement(Linear25, {
         color
       });
     case "Outline":
-      return /* @__PURE__ */ React.createElement(Outline23, {
+      return /* @__PURE__ */ React.createElement(Outline25, {
         color
       });
     case "TwoTone":
-      return /* @__PURE__ */ React.createElement(TwoTone23, {
+      return /* @__PURE__ */ React.createElement(TwoTone25, {
         color
       });
     default:
-      return /* @__PURE__ */ React.createElement(Linear23, {
+      return /* @__PURE__ */ React.createElement(Linear25, {
         color
       });
   }
@@ -15631,7 +15898,7 @@ var Shuffle = /* @__PURE__ */ reactExports.forwardRef(function(_ref7, ref) {
     height: size,
     viewBox: "0 0 24 24",
     fill: "none"
-  }), chooseVariant23(variant, color));
+  }), chooseVariant25(variant, color));
 });
 Shuffle.propTypes = {
   variant: PropTypes.oneOf(["Linear", "Bold", "Broken", "Bulk", "Outline", "TwoTone"]),
@@ -15644,13 +15911,712 @@ Shuffle.defaultProps = {
   size: "24"
 };
 Shuffle.displayName = "Shuffle";
+var reactDomExports = requireReactDom();
+var module$1 = {};
+(function main(global, module2, isWorker, workerSize) {
+  var canUseWorker = !!(global.Worker && global.Blob && global.Promise && global.OffscreenCanvas && global.OffscreenCanvasRenderingContext2D && global.HTMLCanvasElement && global.HTMLCanvasElement.prototype.transferControlToOffscreen && global.URL && global.URL.createObjectURL);
+  var canUsePaths = typeof Path2D === "function" && typeof DOMMatrix === "function";
+  var canDrawBitmap = (function() {
+    if (!global.OffscreenCanvas) {
+      return false;
+    }
+    try {
+      var canvas = new OffscreenCanvas(1, 1);
+      var ctx = canvas.getContext("2d");
+      ctx.fillRect(0, 0, 1, 1);
+      var bitmap = canvas.transferToImageBitmap();
+      ctx.createPattern(bitmap, "no-repeat");
+    } catch (e) {
+      return false;
+    }
+    return true;
+  })();
+  function noop() {
+  }
+  function promise(func) {
+    var ModulePromise = module2.exports.Promise;
+    var Prom = ModulePromise !== void 0 ? ModulePromise : global.Promise;
+    if (typeof Prom === "function") {
+      return new Prom(func);
+    }
+    func(noop, noop);
+    return null;
+  }
+  var bitmapMapper = /* @__PURE__ */ (function(skipTransform, map) {
+    return {
+      transform: function(bitmap) {
+        if (skipTransform) {
+          return bitmap;
+        }
+        if (map.has(bitmap)) {
+          return map.get(bitmap);
+        }
+        var canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(bitmap, 0, 0);
+        map.set(bitmap, canvas);
+        return canvas;
+      },
+      clear: function() {
+        map.clear();
+      }
+    };
+  })(canDrawBitmap, /* @__PURE__ */ new Map());
+  var raf = (function() {
+    var TIME = Math.floor(1e3 / 60);
+    var frame, cancel;
+    var frames = {};
+    var lastFrameTime = 0;
+    if (typeof requestAnimationFrame === "function" && typeof cancelAnimationFrame === "function") {
+      frame = function(cb) {
+        var id = Math.random();
+        frames[id] = requestAnimationFrame(function onFrame(time) {
+          if (lastFrameTime === time || lastFrameTime + TIME - 1 < time) {
+            lastFrameTime = time;
+            delete frames[id];
+            cb();
+          } else {
+            frames[id] = requestAnimationFrame(onFrame);
+          }
+        });
+        return id;
+      };
+      cancel = function(id) {
+        if (frames[id]) {
+          cancelAnimationFrame(frames[id]);
+        }
+      };
+    } else {
+      frame = function(cb) {
+        return setTimeout(cb, TIME);
+      };
+      cancel = function(timer) {
+        return clearTimeout(timer);
+      };
+    }
+    return { frame, cancel };
+  })();
+  var getWorker = /* @__PURE__ */ (function() {
+    var worker;
+    var prom;
+    var resolves = {};
+    function decorate(worker2) {
+      function execute(options, callback) {
+        worker2.postMessage({ options: options || {}, callback });
+      }
+      worker2.init = function initWorker(canvas) {
+        var offscreen = canvas.transferControlToOffscreen();
+        worker2.postMessage({ canvas: offscreen }, [offscreen]);
+      };
+      worker2.fire = function fireWorker(options, size, done) {
+        if (prom) {
+          execute(options, null);
+          return prom;
+        }
+        var id = Math.random().toString(36).slice(2);
+        prom = promise(function(resolve) {
+          function workerDone(msg) {
+            if (msg.data.callback !== id) {
+              return;
+            }
+            delete resolves[id];
+            worker2.removeEventListener("message", workerDone);
+            prom = null;
+            bitmapMapper.clear();
+            done();
+            resolve();
+          }
+          worker2.addEventListener("message", workerDone);
+          execute(options, id);
+          resolves[id] = workerDone.bind(null, { data: { callback: id } });
+        });
+        return prom;
+      };
+      worker2.reset = function resetWorker() {
+        worker2.postMessage({ reset: true });
+        for (var id in resolves) {
+          resolves[id]();
+          delete resolves[id];
+        }
+      };
+    }
+    return function() {
+      if (worker) {
+        return worker;
+      }
+      if (!isWorker && canUseWorker) {
+        var code = [
+          "var CONFETTI, SIZE = {}, module = {};",
+          "(" + main.toString() + ")(this, module, true, SIZE);",
+          "onmessage = function(msg) {",
+          "  if (msg.data.options) {",
+          "    CONFETTI(msg.data.options).then(function () {",
+          "      if (msg.data.callback) {",
+          "        postMessage({ callback: msg.data.callback });",
+          "      }",
+          "    });",
+          "  } else if (msg.data.reset) {",
+          "    CONFETTI && CONFETTI.reset();",
+          "  } else if (msg.data.resize) {",
+          "    SIZE.width = msg.data.resize.width;",
+          "    SIZE.height = msg.data.resize.height;",
+          "  } else if (msg.data.canvas) {",
+          "    SIZE.width = msg.data.canvas.width;",
+          "    SIZE.height = msg.data.canvas.height;",
+          "    CONFETTI = module.exports.create(msg.data.canvas);",
+          "  }",
+          "}"
+        ].join("\n");
+        try {
+          worker = new Worker(URL.createObjectURL(new Blob([code])));
+        } catch (e) {
+          typeof console !== "undefined" && typeof console.warn === "function" ? console.warn("🎊 Could not load worker", e) : null;
+          return null;
+        }
+        decorate(worker);
+      }
+      return worker;
+    };
+  })();
+  var defaults = {
+    particleCount: 50,
+    angle: 90,
+    spread: 45,
+    startVelocity: 45,
+    decay: 0.9,
+    gravity: 1,
+    drift: 0,
+    ticks: 200,
+    x: 0.5,
+    y: 0.5,
+    shapes: ["square", "circle"],
+    zIndex: 100,
+    colors: [
+      "#26ccff",
+      "#a25afd",
+      "#ff5e7e",
+      "#88ff5a",
+      "#fcff42",
+      "#ffa62d",
+      "#ff36ff"
+    ],
+    // probably should be true, but back-compat
+    disableForReducedMotion: false,
+    scalar: 1
+  };
+  function convert(val, transform) {
+    return transform ? transform(val) : val;
+  }
+  function isOk(val) {
+    return !(val === null || val === void 0);
+  }
+  function prop(options, name, transform) {
+    return convert(
+      options && isOk(options[name]) ? options[name] : defaults[name],
+      transform
+    );
+  }
+  function onlyPositiveInt(number) {
+    return number < 0 ? 0 : Math.floor(number);
+  }
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  function toDecimal(str) {
+    return parseInt(str, 16);
+  }
+  function colorsToRgb(colors) {
+    return colors.map(hexToRgb);
+  }
+  function hexToRgb(str) {
+    var val = String(str).replace(/[^0-9a-f]/gi, "");
+    if (val.length < 6) {
+      val = val[0] + val[0] + val[1] + val[1] + val[2] + val[2];
+    }
+    return {
+      r: toDecimal(val.substring(0, 2)),
+      g: toDecimal(val.substring(2, 4)),
+      b: toDecimal(val.substring(4, 6))
+    };
+  }
+  function getOrigin(options) {
+    var origin = prop(options, "origin", Object);
+    origin.x = prop(origin, "x", Number);
+    origin.y = prop(origin, "y", Number);
+    return origin;
+  }
+  function setCanvasWindowSize(canvas) {
+    canvas.width = document.documentElement.clientWidth;
+    canvas.height = document.documentElement.clientHeight;
+  }
+  function setCanvasRectSize(canvas) {
+    var rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+  }
+  function getCanvas(zIndex) {
+    var canvas = document.createElement("canvas");
+    canvas.style.position = "fixed";
+    canvas.style.top = "0px";
+    canvas.style.left = "0px";
+    canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = zIndex;
+    return canvas;
+  }
+  function ellipse(context, x, y, radiusX, radiusY, rotation, startAngle, endAngle, antiClockwise) {
+    context.save();
+    context.translate(x, y);
+    context.rotate(rotation);
+    context.scale(radiusX, radiusY);
+    context.arc(0, 0, 1, startAngle, endAngle, antiClockwise);
+    context.restore();
+  }
+  function randomPhysics(opts) {
+    var radAngle = opts.angle * (Math.PI / 180);
+    var radSpread = opts.spread * (Math.PI / 180);
+    return {
+      x: opts.x,
+      y: opts.y,
+      wobble: Math.random() * 10,
+      wobbleSpeed: Math.min(0.11, Math.random() * 0.1 + 0.05),
+      velocity: opts.startVelocity * 0.5 + Math.random() * opts.startVelocity,
+      angle2D: -radAngle + (0.5 * radSpread - Math.random() * radSpread),
+      tiltAngle: (Math.random() * (0.75 - 0.25) + 0.25) * Math.PI,
+      color: opts.color,
+      shape: opts.shape,
+      tick: 0,
+      totalTicks: opts.ticks,
+      decay: opts.decay,
+      drift: opts.drift,
+      random: Math.random() + 2,
+      tiltSin: 0,
+      tiltCos: 0,
+      wobbleX: 0,
+      wobbleY: 0,
+      gravity: opts.gravity * 3,
+      ovalScalar: 0.6,
+      scalar: opts.scalar,
+      flat: opts.flat
+    };
+  }
+  function updateFetti(context, fetti) {
+    fetti.x += Math.cos(fetti.angle2D) * fetti.velocity + fetti.drift;
+    fetti.y += Math.sin(fetti.angle2D) * fetti.velocity + fetti.gravity;
+    fetti.velocity *= fetti.decay;
+    if (fetti.flat) {
+      fetti.wobble = 0;
+      fetti.wobbleX = fetti.x + 10 * fetti.scalar;
+      fetti.wobbleY = fetti.y + 10 * fetti.scalar;
+      fetti.tiltSin = 0;
+      fetti.tiltCos = 0;
+      fetti.random = 1;
+    } else {
+      fetti.wobble += fetti.wobbleSpeed;
+      fetti.wobbleX = fetti.x + 10 * fetti.scalar * Math.cos(fetti.wobble);
+      fetti.wobbleY = fetti.y + 10 * fetti.scalar * Math.sin(fetti.wobble);
+      fetti.tiltAngle += 0.1;
+      fetti.tiltSin = Math.sin(fetti.tiltAngle);
+      fetti.tiltCos = Math.cos(fetti.tiltAngle);
+      fetti.random = Math.random() + 2;
+    }
+    var progress = fetti.tick++ / fetti.totalTicks;
+    var x1 = fetti.x + fetti.random * fetti.tiltCos;
+    var y1 = fetti.y + fetti.random * fetti.tiltSin;
+    var x2 = fetti.wobbleX + fetti.random * fetti.tiltCos;
+    var y2 = fetti.wobbleY + fetti.random * fetti.tiltSin;
+    context.fillStyle = "rgba(" + fetti.color.r + ", " + fetti.color.g + ", " + fetti.color.b + ", " + (1 - progress) + ")";
+    context.beginPath();
+    if (canUsePaths && fetti.shape.type === "path" && typeof fetti.shape.path === "string" && Array.isArray(fetti.shape.matrix)) {
+      context.fill(transformPath2D(
+        fetti.shape.path,
+        fetti.shape.matrix,
+        fetti.x,
+        fetti.y,
+        Math.abs(x2 - x1) * 0.1,
+        Math.abs(y2 - y1) * 0.1,
+        Math.PI / 10 * fetti.wobble
+      ));
+    } else if (fetti.shape.type === "bitmap") {
+      var rotation = Math.PI / 10 * fetti.wobble;
+      var scaleX = Math.abs(x2 - x1) * 0.1;
+      var scaleY = Math.abs(y2 - y1) * 0.1;
+      var width = fetti.shape.bitmap.width * fetti.scalar;
+      var height = fetti.shape.bitmap.height * fetti.scalar;
+      var matrix = new DOMMatrix([
+        Math.cos(rotation) * scaleX,
+        Math.sin(rotation) * scaleX,
+        -Math.sin(rotation) * scaleY,
+        Math.cos(rotation) * scaleY,
+        fetti.x,
+        fetti.y
+      ]);
+      matrix.multiplySelf(new DOMMatrix(fetti.shape.matrix));
+      var pattern = context.createPattern(bitmapMapper.transform(fetti.shape.bitmap), "no-repeat");
+      pattern.setTransform(matrix);
+      context.globalAlpha = 1 - progress;
+      context.fillStyle = pattern;
+      context.fillRect(
+        fetti.x - width / 2,
+        fetti.y - height / 2,
+        width,
+        height
+      );
+      context.globalAlpha = 1;
+    } else if (fetti.shape === "circle") {
+      context.ellipse ? context.ellipse(fetti.x, fetti.y, Math.abs(x2 - x1) * fetti.ovalScalar, Math.abs(y2 - y1) * fetti.ovalScalar, Math.PI / 10 * fetti.wobble, 0, 2 * Math.PI) : ellipse(context, fetti.x, fetti.y, Math.abs(x2 - x1) * fetti.ovalScalar, Math.abs(y2 - y1) * fetti.ovalScalar, Math.PI / 10 * fetti.wobble, 0, 2 * Math.PI);
+    } else if (fetti.shape === "star") {
+      var rot = Math.PI / 2 * 3;
+      var innerRadius = 4 * fetti.scalar;
+      var outerRadius = 8 * fetti.scalar;
+      var x = fetti.x;
+      var y = fetti.y;
+      var spikes = 5;
+      var step = Math.PI / spikes;
+      while (spikes--) {
+        x = fetti.x + Math.cos(rot) * outerRadius;
+        y = fetti.y + Math.sin(rot) * outerRadius;
+        context.lineTo(x, y);
+        rot += step;
+        x = fetti.x + Math.cos(rot) * innerRadius;
+        y = fetti.y + Math.sin(rot) * innerRadius;
+        context.lineTo(x, y);
+        rot += step;
+      }
+    } else {
+      context.moveTo(Math.floor(fetti.x), Math.floor(fetti.y));
+      context.lineTo(Math.floor(fetti.wobbleX), Math.floor(y1));
+      context.lineTo(Math.floor(x2), Math.floor(y2));
+      context.lineTo(Math.floor(x1), Math.floor(fetti.wobbleY));
+    }
+    context.closePath();
+    context.fill();
+    return fetti.tick < fetti.totalTicks;
+  }
+  function animate(canvas, fettis, resizer, size, done) {
+    var animatingFettis = fettis.slice();
+    var context = canvas.getContext("2d");
+    var animationFrame;
+    var destroy;
+    var prom = promise(function(resolve) {
+      function onDone() {
+        animationFrame = destroy = null;
+        context.clearRect(0, 0, size.width, size.height);
+        bitmapMapper.clear();
+        done();
+        resolve();
+      }
+      function update() {
+        if (isWorker && !(size.width === workerSize.width && size.height === workerSize.height)) {
+          size.width = canvas.width = workerSize.width;
+          size.height = canvas.height = workerSize.height;
+        }
+        if (!size.width && !size.height) {
+          resizer(canvas);
+          size.width = canvas.width;
+          size.height = canvas.height;
+        }
+        context.clearRect(0, 0, size.width, size.height);
+        animatingFettis = animatingFettis.filter(function(fetti) {
+          return updateFetti(context, fetti);
+        });
+        if (animatingFettis.length) {
+          animationFrame = raf.frame(update);
+        } else {
+          onDone();
+        }
+      }
+      animationFrame = raf.frame(update);
+      destroy = onDone;
+    });
+    return {
+      addFettis: function(fettis2) {
+        animatingFettis = animatingFettis.concat(fettis2);
+        return prom;
+      },
+      canvas,
+      promise: prom,
+      reset: function() {
+        if (animationFrame) {
+          raf.cancel(animationFrame);
+        }
+        if (destroy) {
+          destroy();
+        }
+      }
+    };
+  }
+  function confettiCannon(canvas, globalOpts) {
+    var isLibCanvas = !canvas;
+    var allowResize = !!prop(globalOpts || {}, "resize");
+    var hasResizeEventRegistered = false;
+    var globalDisableForReducedMotion = prop(globalOpts, "disableForReducedMotion", Boolean);
+    var shouldUseWorker = canUseWorker && !!prop(globalOpts || {}, "useWorker");
+    var worker = shouldUseWorker ? getWorker() : null;
+    var resizer = isLibCanvas ? setCanvasWindowSize : setCanvasRectSize;
+    var initialized = canvas && worker ? !!canvas.__confetti_initialized : false;
+    var preferLessMotion = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion)").matches;
+    var animationObj;
+    function fireLocal(options, size, done) {
+      var particleCount = prop(options, "particleCount", onlyPositiveInt);
+      var angle = prop(options, "angle", Number);
+      var spread = prop(options, "spread", Number);
+      var startVelocity = prop(options, "startVelocity", Number);
+      var decay = prop(options, "decay", Number);
+      var gravity = prop(options, "gravity", Number);
+      var drift = prop(options, "drift", Number);
+      var colors = prop(options, "colors", colorsToRgb);
+      var ticks = prop(options, "ticks", Number);
+      var shapes = prop(options, "shapes");
+      var scalar = prop(options, "scalar");
+      var flat = !!prop(options, "flat");
+      var origin = getOrigin(options);
+      var temp = particleCount;
+      var fettis = [];
+      var startX = canvas.width * origin.x;
+      var startY = canvas.height * origin.y;
+      while (temp--) {
+        fettis.push(
+          randomPhysics({
+            x: startX,
+            y: startY,
+            angle,
+            spread,
+            startVelocity,
+            color: colors[temp % colors.length],
+            shape: shapes[randomInt(0, shapes.length)],
+            ticks,
+            decay,
+            gravity,
+            drift,
+            scalar,
+            flat
+          })
+        );
+      }
+      if (animationObj) {
+        return animationObj.addFettis(fettis);
+      }
+      animationObj = animate(canvas, fettis, resizer, size, done);
+      return animationObj.promise;
+    }
+    function fire(options) {
+      var disableForReducedMotion = globalDisableForReducedMotion || prop(options, "disableForReducedMotion", Boolean);
+      var zIndex = prop(options, "zIndex", Number);
+      if (disableForReducedMotion && preferLessMotion) {
+        return promise(function(resolve) {
+          resolve();
+        });
+      }
+      if (isLibCanvas && animationObj) {
+        canvas = animationObj.canvas;
+      } else if (isLibCanvas && !canvas) {
+        canvas = getCanvas(zIndex);
+        document.body.appendChild(canvas);
+      }
+      if (allowResize && !initialized) {
+        resizer(canvas);
+      }
+      var size = {
+        width: canvas.width,
+        height: canvas.height
+      };
+      if (worker && !initialized) {
+        worker.init(canvas);
+      }
+      initialized = true;
+      if (worker) {
+        canvas.__confetti_initialized = true;
+      }
+      function onResize() {
+        if (worker) {
+          var obj = {
+            getBoundingClientRect: function() {
+              if (!isLibCanvas) {
+                return canvas.getBoundingClientRect();
+              }
+            }
+          };
+          resizer(obj);
+          worker.postMessage({
+            resize: {
+              width: obj.width,
+              height: obj.height
+            }
+          });
+          return;
+        }
+        size.width = size.height = null;
+      }
+      function done() {
+        animationObj = null;
+        if (allowResize) {
+          hasResizeEventRegistered = false;
+          global.removeEventListener("resize", onResize);
+        }
+        if (isLibCanvas && canvas) {
+          if (document.body.contains(canvas)) {
+            document.body.removeChild(canvas);
+          }
+          canvas = null;
+          initialized = false;
+        }
+      }
+      if (allowResize && !hasResizeEventRegistered) {
+        hasResizeEventRegistered = true;
+        global.addEventListener("resize", onResize, false);
+      }
+      if (worker) {
+        return worker.fire(options, size, done);
+      }
+      return fireLocal(options, size, done);
+    }
+    fire.reset = function() {
+      if (worker) {
+        worker.reset();
+      }
+      if (animationObj) {
+        animationObj.reset();
+      }
+    };
+    return fire;
+  }
+  var defaultFire;
+  function getDefaultFire() {
+    if (!defaultFire) {
+      defaultFire = confettiCannon(null, { useWorker: true, resize: true });
+    }
+    return defaultFire;
+  }
+  function transformPath2D(pathString, pathMatrix, x, y, scaleX, scaleY, rotation) {
+    var path2d = new Path2D(pathString);
+    var t1 = new Path2D();
+    t1.addPath(path2d, new DOMMatrix(pathMatrix));
+    var t2 = new Path2D();
+    t2.addPath(t1, new DOMMatrix([
+      Math.cos(rotation) * scaleX,
+      Math.sin(rotation) * scaleX,
+      -Math.sin(rotation) * scaleY,
+      Math.cos(rotation) * scaleY,
+      x,
+      y
+    ]));
+    return t2;
+  }
+  function shapeFromPath(pathData) {
+    if (!canUsePaths) {
+      throw new Error("path confetti are not supported in this browser");
+    }
+    var path, matrix;
+    if (typeof pathData === "string") {
+      path = pathData;
+    } else {
+      path = pathData.path;
+      matrix = pathData.matrix;
+    }
+    var path2d = new Path2D(path);
+    var tempCanvas = document.createElement("canvas");
+    var tempCtx = tempCanvas.getContext("2d");
+    if (!matrix) {
+      var maxSize = 1e3;
+      var minX = maxSize;
+      var minY = maxSize;
+      var maxX = 0;
+      var maxY = 0;
+      var width, height;
+      for (var x = 0; x < maxSize; x += 2) {
+        for (var y = 0; y < maxSize; y += 2) {
+          if (tempCtx.isPointInPath(path2d, x, y, "nonzero")) {
+            minX = Math.min(minX, x);
+            minY = Math.min(minY, y);
+            maxX = Math.max(maxX, x);
+            maxY = Math.max(maxY, y);
+          }
+        }
+      }
+      width = maxX - minX;
+      height = maxY - minY;
+      var maxDesiredSize = 10;
+      var scale = Math.min(maxDesiredSize / width, maxDesiredSize / height);
+      matrix = [
+        scale,
+        0,
+        0,
+        scale,
+        -Math.round(width / 2 + minX) * scale,
+        -Math.round(height / 2 + minY) * scale
+      ];
+    }
+    return {
+      type: "path",
+      path,
+      matrix
+    };
+  }
+  function shapeFromText(textData) {
+    var text, scalar = 1, color = "#000000", fontFamily = '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", "Twemoji Mozilla", "system emoji", sans-serif';
+    if (typeof textData === "string") {
+      text = textData;
+    } else {
+      text = textData.text;
+      scalar = "scalar" in textData ? textData.scalar : scalar;
+      fontFamily = "fontFamily" in textData ? textData.fontFamily : fontFamily;
+      color = "color" in textData ? textData.color : color;
+    }
+    var fontSize = 10 * scalar;
+    var font = "" + fontSize + "px " + fontFamily;
+    var canvas = new OffscreenCanvas(fontSize, fontSize);
+    var ctx = canvas.getContext("2d");
+    ctx.font = font;
+    var size = ctx.measureText(text);
+    var width = Math.ceil(size.actualBoundingBoxRight + size.actualBoundingBoxLeft);
+    var height = Math.ceil(size.actualBoundingBoxAscent + size.actualBoundingBoxDescent);
+    var padding = 2;
+    var x = size.actualBoundingBoxLeft + padding;
+    var y = size.actualBoundingBoxAscent + padding;
+    width += padding + padding;
+    height += padding + padding;
+    canvas = new OffscreenCanvas(width, height);
+    ctx = canvas.getContext("2d");
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.fillText(text, x, y);
+    var scale = 1 / scalar;
+    return {
+      type: "bitmap",
+      // TODO these probably need to be transfered for workers
+      bitmap: canvas.transferToImageBitmap(),
+      matrix: [scale, 0, 0, scale, -width * scale / 2, -height * scale / 2]
+    };
+  }
+  module2.exports = function() {
+    return getDefaultFire().apply(this, arguments);
+  };
+  module2.exports.reset = function() {
+    getDefaultFire().reset();
+  };
+  module2.exports.create = confettiCannon;
+  module2.exports.shapeFromPath = shapeFromPath;
+  module2.exports.shapeFromText = shapeFromText;
+})((function() {
+  if (typeof self !== "undefined") {
+    return self;
+  }
+  if (typeof self !== "undefined") {
+    return self;
+  }
+  return this || {};
+})(), module$1, false);
+const confetti = module$1.exports;
+module$1.exports.create;
 export {
   ArrowDown2 as A,
   BrushSquare as B,
   ChartSquare as C,
   Edit2 as E,
+  Flash as F,
+  Global as G,
   Heart as H,
-  Image as I,
+  Import as I,
   Lock as L,
   Minus as M,
   RefreshCircle as R,
@@ -15659,16 +16625,18 @@ export {
   RefreshLeftSquare as a,
   TickCircle as b,
   clientExports as c,
-  Timer1 as d,
-  Logout as e,
-  Refresh as f,
-  Setting2 as g,
-  CloudChange as h,
-  Import as i,
+  reactDomExports as d,
+  Timer1 as e,
+  confetti as f,
+  Logout as g,
+  Refresh as h,
+  Setting2 as i,
   jsxRuntimeExports as j,
-  Export as k,
-  Code as l,
-  CloseSquare as m,
-  Add as n,
+  Image as k,
+  CloudChange as l,
+  Export as m,
+  Code as n,
+  CloseSquare as o,
+  Add as p,
   reactExports as r
 };

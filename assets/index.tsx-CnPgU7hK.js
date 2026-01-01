@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as Timer1 } from "./vendor-Bpg3Sy_q.js";
+import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as reactDomExports, e as Timer1 } from "./vendor-DWMKswWr.js";
 const getIcon = (name) => {
   const iconClass = "w-6 h-6 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300";
   if (name === "tvtropes") {
@@ -1032,7 +1032,7 @@ const showHelpModal = () => {
       </div>
 
       <div class="px-6 py-3 bg-[#121212] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
-        <span>Moctale Plus v1.8.5</span>
+        <span>Moctale Plus v1.9.0</span>
         <div class="flex gap-4">
             <span>Press <kbd class="font-mono text-white/50">Esc</kbd> to close</span>
             <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[#8b5cf6] transition-colors">GitHub</a>
@@ -1770,7 +1770,7 @@ const initGridDensity = (initialColumns) => {
     attributeFilter: ["class"]
   });
 };
-const CURRENT_VERSION = "1.8.5";
+const CURRENT_VERSION = "1.9.0";
 const REPO_OWNER = "010101-sans";
 const REPO_NAME = "moctale-plus";
 const DEFAULT_TEMPLATES = [
@@ -1939,7 +1939,7 @@ const defaultSettings = {
   enablePickRandom: true,
   enableSpoilerShield: false,
   spoilerKeywords: "",
-  enableScrollSaver: true,
+  enableScrollSaver: false,
   gridColumns: 0,
   enableReviewTemplates: true,
   reviewTemplates: [],
@@ -1947,7 +1947,9 @@ const defaultSettings = {
   enableSearchPlus: true,
   enablePrivateNotes: true,
   enableImagePreview: true,
-  enableWatchStatus: true
+  enableWatchStatus: true,
+  enablePerformanceMax: true,
+  enableImageDownloader: true
 };
 const useSettings = () => {
   const [settings, setSettings] = reactExports.useState(defaultSettings);
@@ -3117,7 +3119,6 @@ const PREVIEW_STYLES = `
 `;
 const PreviewOverlay = () => {
   const [src, setSrc] = reactExports.useState(null);
-  const [rect, setRect] = reactExports.useState(null);
   const [visible, setVisible] = reactExports.useState(false);
   const [naturalSize, setNaturalSize] = reactExports.useState({ width: 0, height: 0 });
   reactExports.useEffect(() => {
@@ -3127,11 +3128,27 @@ const PreviewOverlay = () => {
       style.textContent = PREVIEW_STYLES;
       document.head.appendChild(style);
     }
-    const findImageUnderCursor = (x, y) => {
+    const findImageUnderCursor2 = (x, y) => {
       const elements = document.elementsFromPoint(x, y);
-      const img = elements.find((el) => el.tagName === "IMG");
+      let img = elements.find((el) => el.tagName === "IMG");
+      if (!img) {
+        for (const el of elements) {
+          if (el instanceof HTMLElement) {
+            const innerImg = el.querySelector("img");
+            if (innerImg) {
+              const rect = innerImg.getBoundingClientRect();
+              if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+                img = innerImg;
+                break;
+              }
+            }
+          }
+        }
+      }
       if (!img) return null;
-      if (img.width < 50 || img.height < 50) return null;
+      const width = img.width || img.naturalWidth;
+      const height = img.height || img.naturalHeight;
+      if (width < 50 || height < 50) return null;
       if (img.src.includes("data:image/svg")) return null;
       return img;
     };
@@ -3141,11 +3158,10 @@ const PreviewOverlay = () => {
         setSrc(null);
         return;
       }
-      const img = findImageUnderCursor(x, y);
+      const img = findImageUnderCursor2(x, y);
       if (img) {
         if (img.src !== src) {
           setSrc(img.src);
-          setRect(img.getBoundingClientRect());
           setNaturalSize({ width: img.naturalWidth, height: img.naturalHeight });
         }
         setVisible(true);
@@ -3185,73 +3201,74 @@ const PreviewOverlay = () => {
     }
   }, [visible]);
   if (!visible || !src) return null;
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "div",
-    {
-      className: "fixed z-[100000] pointer-events-none flex items-center justify-center animate-in fade-in duration-150",
-      style: {
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "rgba(0,0,0,0.6)",
-        backdropFilter: "blur(4px)"
-        // removed cursor: none from here since we handle it globally now
-      },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          className: "relative flex flex-col items-center bg-[#121212] p-2 rounded-2xl border border-[#353945] shadow-2xl",
-          style: {
-            maxWidth: "90vw",
-            maxHeight: "95vh"
-          },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "img",
-              {
-                src,
-                alt: "Preview",
-                className: "rounded-lg object-contain bg-black/20",
-                style: {
-                  maxHeight: "85vh",
-                  maxWidth: "85vw",
-                  minWidth: "200px",
-                  display: "block"
+  return (
+    // Portal Root (z-index boosted and transform-free)
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "fixed z-[100000] pointer-events-none flex items-center justify-center animate-in fade-in duration-150 fix-stacking-context",
+        style: {
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(4px)"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "relative flex flex-col items-center bg-[#121212] p-2 rounded-2xl border border-[#353945] shadow-2xl",
+            style: {
+              maxWidth: "90vw",
+              maxHeight: "95vh"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
+                {
+                  src,
+                  alt: "Preview",
+                  className: "rounded-lg object-contain bg-black/20",
+                  style: {
+                    maxHeight: "85vh",
+                    maxWidth: "85vw",
+                    minWidth: "200px",
+                    display: "block"
+                  }
                 }
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "moctale-preview-footer", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-[#555] font-medium tracking-wide", children: [
-                "Powered by ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#C776FF]", children: "Moctale Plus" })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-[#555] font-mono tracking-wide", children: [
-                naturalSize.width,
-                " × ",
-                naturalSize.height,
-                " px"
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "moctale-preview-footer", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-[#555] font-medium tracking-wide", children: [
+                  "Powered by ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#C776FF]", children: "Moctale Plus" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-[#555] font-mono tracking-wide", children: [
+                  naturalSize.width,
+                  " x ",
+                  naturalSize.height
+                ] })
               ] })
-            ] })
-          ]
-        }
-      )
-    }
+            ]
+          }
+        )
+      }
+    )
   );
 };
-let rootDiv = null;
+let rootDiv$1 = null;
 const initImagePreview = () => {
   if (document.getElementById("moctale-img-preview-root")) return;
-  rootDiv = document.createElement("div");
-  rootDiv.id = "moctale-img-preview-root";
-  document.documentElement.appendChild(rootDiv);
-  const root = clientExports.createRoot(rootDiv);
+  rootDiv$1 = document.createElement("div");
+  rootDiv$1.id = "moctale-img-preview-root";
+  document.body.appendChild(rootDiv$1);
+  const root = clientExports.createRoot(rootDiv$1);
   root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(PreviewOverlay, {}));
 };
 const stopImagePreview = () => {
-  if (rootDiv) {
-    rootDiv.remove();
-    rootDiv = null;
+  if (rootDiv$1) {
+    rootDiv$1.remove();
+    rootDiv$1 = null;
   }
   document.body.classList.remove("moctale-hide-cursor");
 };
@@ -3335,7 +3352,7 @@ const WATCH_STYLES = `
     box-shadow: 0 -2px 10px rgba(74, 222, 128, 0.5);
   }
 `;
-const ICONS = {
+const ICONS$1 = {
   eye: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>`,
   clock: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mp-icon-partial"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
   tick: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mp-icon-watched"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`
@@ -3347,15 +3364,15 @@ const updateUI = (container, contentId, status) => {
   if (!btn || !bar) return;
   bar.className = "mp-status-bar";
   if (status === 1) {
-    btn.innerHTML = ICONS.clock;
+    btn.innerHTML = ICONS$1.clock;
     btn.title = "Mark as Watched";
     bar.classList.add("is-partial");
   } else if (status === 2) {
-    btn.innerHTML = ICONS.tick;
+    btn.innerHTML = ICONS$1.tick;
     btn.title = "Mark as Unwatched";
     bar.classList.add("is-watched");
   } else {
-    btn.innerHTML = ICONS.eye;
+    btn.innerHTML = ICONS$1.eye;
     btn.title = "Mark as In Progress";
   }
 };
@@ -3466,6 +3483,690 @@ const stopWatchStatus = () => {
     if (btn) btn.remove();
   });
 };
+const PREFETCH_DELAY = 150;
+const CACHE_TTL = 5 * 60 * 1e3;
+const SCROLL_LOCK_DELAY = 150;
+const prefetchedUrls = /* @__PURE__ */ new Set();
+let hoverTimer = null;
+let scrollTimer = null;
+let imageLoopId = null;
+let cacheInterval = null;
+const PERF_STYLES = `
+    /* NOTE: Virtualization and GPU transforms removed to prevent 
+       Z-Index clipping and Stacking Context traps.
+    */
+
+    /* SCROLL PHYSICS - Makes scroll feel native and heavy */
+    html, body {
+        scroll-behavior: smooth !important;
+        overscroll-behavior-y: none;
+    }
+
+    /* IMAGE RENDERING - Sharper scaling */
+    img {
+        image-rendering: -webkit-optimize-contrast; 
+    }
+
+    /* INPUT LATENCY - Removes 300ms tap delay on touch devices */
+    a, button, [role="button"] {
+        touch-action: manipulation; 
+    }
+
+    /* POINTER LOCK - Disables heavy hover effects while scrolling */
+    /* This provides 90% of the scroll smoothness without breaking layout */
+    body.mp-scroll-lock {
+        pointer-events: none !important; 
+    }
+    body.mp-scroll-lock .group {
+        pointer-events: none !important;
+    }
+`;
+const injectPreconnect = () => {
+  if (document.getElementById("moctale-preconnect")) return;
+  const link1 = document.createElement("link");
+  link1.id = "moctale-preconnect";
+  link1.rel = "preconnect";
+  link1.href = "https://media.moctale.in";
+  link1.crossOrigin = "anonymous";
+  document.head.appendChild(link1);
+  const link2 = document.createElement("link");
+  link2.rel = "dns-prefetch";
+  link2.href = "https://media.moctale.in";
+  document.head.appendChild(link2);
+};
+const injectSpeculationRules = () => {
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    const existing = document.getElementById("moctale-speculation");
+    if (existing) return;
+    const specScript = document.createElement("script");
+    specScript.id = "moctale-speculation";
+    specScript.type = "speculationrules";
+    specScript.textContent = JSON.stringify({
+      prefetch: [{
+        source: "document",
+        where: {
+          and: [
+            { href_matches: "*/content/*" },
+            { href_matches: "*/explore/*" },
+            { href_matches: "*/person/*" }
+          ]
+        },
+        eagerness: "moderate"
+      }]
+    });
+    document.head.appendChild(specScript);
+  }
+};
+const triggerPrefetch = (url) => {
+  if (prefetchedUrls.has(url)) return;
+  try {
+    const targetUrl = new URL(url, self.location.href).href;
+    if (!targetUrl.includes("/content/") && !targetUrl.includes("/explore")) return;
+    prefetchedUrls.add(targetUrl);
+    if (!HTMLScriptElement.supports || !HTMLScriptElement.supports("speculationrules")) {
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = targetUrl;
+      link.as = "document";
+      document.head.appendChild(link);
+    }
+  } catch (e) {
+  }
+};
+const handleHoverStart = (e) => {
+  const target2 = e.target.closest("a");
+  if (!target2 || !target2.href) return;
+  hoverTimer = self.setTimeout(() => {
+    triggerPrefetch(target2.href);
+  }, PREFETCH_DELAY);
+};
+const handleHoverEnd = () => {
+  if (hoverTimer) {
+    clearTimeout(hoverTimer);
+    hoverTimer = null;
+  }
+};
+const handleMouseDown = (e) => {
+  const target2 = e.target.closest("a");
+  if (target2 && target2.href) {
+    triggerPrefetch(target2.href);
+  }
+};
+const handleScroll = () => {
+  if (!document.body.classList.contains("mp-scroll-lock")) {
+    document.body.classList.add("mp-scroll-lock");
+  }
+  if (scrollTimer) clearTimeout(scrollTimer);
+  scrollTimer = self.setTimeout(() => {
+    document.body.classList.remove("mp-scroll-lock");
+  }, SCROLL_LOCK_DELAY);
+};
+const optimizeImages = () => {
+  const images = document.querySelectorAll("img:not([data-moctale-opt])");
+  if (images.length === 0) return;
+  const runner = self.requestIdleCallback || ((cb) => cb({ didTimeout: false, timeRemaining: () => 1 }));
+  runner(() => {
+    images.forEach((img) => {
+      const el = img;
+      el.decoding = "async";
+      el.loading = "lazy";
+      el.setAttribute("data-moctale-opt", "true");
+    });
+  }, { timeout: 1e3 });
+};
+const startImageLoop = () => {
+  optimizeImages();
+  imageLoopId = self.setInterval(() => {
+    const runner = self.requestIdleCallback || ((cb) => cb({ didTimeout: false, timeRemaining: () => 1 }));
+    runner(optimizeImages);
+  }, 2e3);
+};
+const initPerformanceMax = () => {
+  console.log("[PerformanceMax] 🏎️ Engine Started (Safe Mode)");
+  if (!document.getElementById("moctale-perf-css")) {
+    const style = document.createElement("style");
+    style.id = "moctale-perf-css";
+    style.textContent = PERF_STYLES;
+    document.head.appendChild(style);
+  }
+  injectPreconnect();
+  injectSpeculationRules();
+  document.addEventListener("mouseover", handleHoverStart, { passive: true });
+  document.addEventListener("mouseout", handleHoverEnd, { passive: true });
+  document.addEventListener("mousedown", handleMouseDown, { passive: true });
+  self.addEventListener("scroll", handleScroll, { passive: true });
+  startImageLoop();
+  cacheInterval = self.setInterval(() => {
+    prefetchedUrls.clear();
+  }, CACHE_TTL);
+};
+const stopPerformanceMax = () => {
+  document.removeEventListener("mouseover", handleHoverStart);
+  document.removeEventListener("mouseout", handleHoverEnd);
+  document.removeEventListener("mousedown", handleMouseDown);
+  self.removeEventListener("scroll", handleScroll);
+  const style = document.getElementById("moctale-perf-css");
+  if (style) style.remove();
+  const spec = document.getElementById("moctale-speculation");
+  if (spec) spec.remove();
+  const pre = document.getElementById("moctale-preconnect");
+  if (pre) pre.remove();
+  if (imageLoopId) clearInterval(imageLoopId);
+  if (cacheInterval) clearInterval(cacheInterval);
+  document.body.classList.remove("mp-scroll-lock");
+  console.log("[PerformanceMax] 🛑 Engine Stopped");
+};
+const DOWNLOADER_STYLES = `
+  .mp-download-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; /* Circle like WatchStatus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Sleek Dark Glass - Matching WatchStatus */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    outline: none;
+    pointer-events: auto;
+    z-index: 1000;
+  }
+
+  .mp-download-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+  
+  .mp-download-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Icon styling */
+  .mp-dl-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+  }
+
+  /* Entrance Animation */
+  @keyframes mp-fade-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .mp-dl-animate {
+    animation: mp-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+`;
+const DOWNLOAD_ICON = `
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="mp-dl-icon">
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+  <polyline points="7 10 12 15 17 10"></polyline>
+  <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>`;
+const LOADING_ICON = `
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mp-dl-icon animate-spin">
+  <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+</svg>`;
+const getFileName = (img) => {
+  let name = "";
+  const parentLink = img.closest('a, button, div[role="link"]');
+  if (parentLink) {
+    const aria = parentLink.getAttribute("aria-label");
+    if (aria && !aria.startsWith("View details")) name = aria;
+  }
+  if (!name && img.alt && img.alt.length > 2 && !img.alt.includes("image")) {
+    name = img.alt;
+  }
+  if (!name) {
+    const card = img.closest(".group, .relative");
+    if (card) {
+      const header = card.querySelector("h3, h2, .text-lg");
+      if (header && header.textContent) name = header.textContent.trim();
+    }
+  }
+  if (!name) {
+    try {
+      const urlObj = new URL(img.src);
+      const path = urlObj.pathname.split("/").pop();
+      if (path && path.includes(".")) return path;
+    } catch (e) {
+    }
+    return "moctale-image.jpg";
+  }
+  name = name.replace(/[^a-z0-9]/gi, "-").toLowerCase();
+  return `moctale-${name}.jpg`;
+};
+const findImageUnderCursor = (x, y) => {
+  const elements = document.elementsFromPoint(x, y);
+  if (elements.some((el) => el.classList.contains("mp-download-btn"))) return "BUTTON";
+  let img = elements.find((el) => el.tagName === "IMG");
+  if (!img) {
+    for (const el of elements) {
+      if (el instanceof HTMLElement) {
+        const innerImg = el.querySelector("img");
+        if (innerImg) {
+          const rect = innerImg.getBoundingClientRect();
+          if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+            img = innerImg;
+            break;
+          }
+        }
+      }
+    }
+  }
+  if (!img) return null;
+  const width = img.width || img.naturalWidth;
+  const height = img.height || img.naturalHeight;
+  if (width < 150 || height < 150) return null;
+  if (img.src.includes("data:image/svg")) return null;
+  return img;
+};
+const DownloadOverlay = () => {
+  const [target2, setTarget] = reactExports.useState(null);
+  const [isDownloading, setIsDownloading] = reactExports.useState(false);
+  const timeoutRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    if (!document.getElementById("moctale-downloader-css")) {
+      const style = document.createElement("style");
+      style.id = "moctale-downloader-css";
+      style.textContent = DOWNLOADER_STYLES;
+      document.head.appendChild(style);
+    }
+    const handleMouseMove = (e) => {
+      const result = findImageUnderCursor(e.clientX, e.clientY);
+      if (result === "BUTTON") {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        return;
+      }
+      if (result instanceof HTMLImageElement) {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        const newSrc = result.src;
+        const newRect = result.getBoundingClientRect();
+        setTarget((prev) => {
+          if (prev && prev.src === newSrc && Math.abs(prev.rect.top - newRect.top) < 5) return prev;
+          return { src: newSrc, rect: newRect, el: result };
+        });
+      } else {
+        if (!timeoutRef.current) {
+          timeoutRef.current = setTimeout(() => {
+            setTarget(null);
+            timeoutRef.current = null;
+          }, 100);
+        }
+      }
+    };
+    const handleScroll2 = () => setTarget(null);
+    self.addEventListener("mousemove", handleMouseMove, { passive: true });
+    self.addEventListener("scroll", handleScroll2, { passive: true, capture: true });
+    return () => {
+      self.removeEventListener("mousemove", handleMouseMove);
+      self.removeEventListener("scroll", handleScroll2);
+    };
+  }, []);
+  const downloadImage = async (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (!target2 || isDownloading) return;
+    setIsDownloading(true);
+    try {
+      const response = await fetch(target2.src);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const filename = getFileName(target2.el);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Download failed", err);
+      self.open(target2.src, "_blank");
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+  if (!target2) return null;
+  const top = target2.rect.bottom + self.scrollY - 48;
+  const left = target2.rect.right + self.scrollX - 48;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "absolute fix-stacking-context mp-dl-animate",
+      style: { top, left, pointerEvents: "auto", zIndex: 99999 },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          className: "mp-download-btn",
+          onClick: downloadImage,
+          title: "Download Image",
+          dangerouslySetInnerHTML: { __html: isDownloading ? LOADING_ICON : DOWNLOAD_ICON }
+        }
+      )
+    }
+  );
+};
+let rootDiv = null;
+const initImageDownloader = () => {
+  if (document.getElementById("moctale-img-downloader-root")) return;
+  rootDiv = document.createElement("div");
+  rootDiv.id = "moctale-img-downloader-root";
+  document.body.appendChild(rootDiv);
+  const root = clientExports.createRoot(rootDiv);
+  root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOverlay, {}));
+};
+const stopImageDownloader = () => {
+  if (rootDiv) {
+    rootDiv.remove();
+    rootDiv = null;
+  }
+};
+const ICONS = {
+  MagicStar: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" }) }),
+  Close: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M18 6 6 18" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "m6 6 12 12" })
+  ] }),
+  Chart: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.5", strokeLinecap: "round", strokeLinejoin: "round", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 3v18h18" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "m19 9-5 5-4-4-3 3" })
+  ] })
+};
+const extractPageData = () => {
+  const clean = (s) => s?.trim().replace(/\s+/g, " ") || "";
+  const allH1 = Array.from(document.querySelectorAll("h1"));
+  const titleNode = allH1.find((h) => {
+    const t = clean(h.textContent);
+    return t.length > 2 && t !== "Menu" && t !== "Moctale";
+  }) || allH1[0];
+  const title = clean(titleNode?.textContent);
+  let poster = "";
+  const mainPosterDiv = document.querySelector("div[data-mp-content-id] img");
+  if (mainPosterDiv) poster = mainPosterDiv.src;
+  if (!poster && title) {
+    const altImg = document.querySelector(`img[alt="${title}"]`);
+    if (altImg) poster = altImg.src;
+  }
+  let backdrop = "";
+  const bannerImg = document.querySelector(".animate-banner-fadeIn img");
+  if (bannerImg) backdrop = bannerImg.src;
+  if (!backdrop) backdrop = poster;
+  let meta = "";
+  if (titleNode) {
+    const sibling = titleNode.previousElementSibling || titleNode.nextElementSibling;
+    if (sibling) meta = clean(sibling.textContent);
+  }
+  const year = meta.match(/\d{4}/)?.[0] || "";
+  let plot = "";
+  const allH2 = Array.from(document.querySelectorAll("h2"));
+  const overviewH2 = allH2.find((h) => h.textContent?.includes("Overview"));
+  if (overviewH2) {
+    const sectionContainer = overviewH2.parentElement;
+    if (sectionContainer) {
+      const nextDiv = sectionContainer.querySelector("div.relative");
+      const pMobile = nextDiv?.querySelector("p");
+      const pDesktop = sectionContainer.querySelector("div.hidden.lg\\:block p");
+      if (pDesktop) plot = clean(pDesktop.textContent);
+      else if (pMobile) plot = clean(pMobile.textContent);
+      if (!plot) {
+        const anyP = sectionContainer.querySelectorAll("p")[0];
+        if (anyP) plot = clean(anyP.textContent);
+      }
+    }
+  }
+  let director = "";
+  const spans = Array.from(document.querySelectorAll("span"));
+  const dirLabel = spans.find((s) => s.textContent?.includes("Directed By") || s.textContent?.includes("Showrunner"));
+  if (dirLabel) {
+    const parent = dirLabel.parentElement;
+    const link = parent?.querySelector("a");
+    if (link) {
+      const fullSpan = link.querySelector("span.min-\\[376px\\]\\:inline");
+      director = fullSpan ? clean(fullSpan.textContent) : clean(link.textContent);
+    }
+  }
+  const genres = [];
+  if (overviewH2) {
+    const container = overviewH2.parentElement?.parentElement;
+    if (container) {
+      const btns = container.querySelectorAll("button span");
+      btns.forEach((b) => {
+        const t = clean(b.textContent);
+        if (t && t.length > 2 && isNaN(Number(t)) && !t.includes("Review") && !t.includes("Template")) {
+          genres.push(t);
+        }
+      });
+    }
+  }
+  const cast = [];
+  const castH2 = allH2.find((h) => h.textContent?.includes("Cast"));
+  if (castH2) {
+    const headerContainer = castH2.parentElement;
+    const scrollContainer = headerContainer?.nextElementSibling;
+    if (scrollContainer) {
+      const cards = scrollContainer.querySelectorAll("a");
+      cards.forEach((card) => {
+        if (cast.length >= 8) return;
+        const img = card.querySelector("img")?.src || "";
+        const nameSpan = card.querySelector("span.text-white") || card.querySelector("span.text-\\[\\#E2E2E2\\]");
+        const roleSpan = card.querySelector("span.text-\\[\\#ABABAB\\]");
+        if (img && nameSpan) {
+          cast.push({
+            name: clean(nameSpan.textContent),
+            role: clean(roleSpan?.textContent),
+            img
+          });
+        }
+      });
+    }
+  }
+  const watchOptions = [];
+  const watchH2 = allH2.find((h) => h.textContent?.includes("Watch Online") || h.textContent?.includes("Tickets On"));
+  if (watchH2) {
+    const container = watchH2.parentElement?.nextElementSibling;
+    const links = container?.querySelectorAll("a");
+    links?.forEach((link) => {
+      const img = link.querySelector("img")?.src || "";
+      const nameSpan = link.querySelector("span.font-medium") || link.querySelector("span.text-sm");
+      const name = clean(nameSpan?.textContent);
+      if (name && img) {
+        watchOptions.push({ name, icon: img, url: link.href });
+      }
+    });
+  }
+  const vibes = [];
+  const legendItems = document.querySelectorAll('a[aria-label*="genre"]');
+  legendItems.forEach((item) => {
+    const aria = item.getAttribute("aria-label") || "";
+    const parts = aria.split(":");
+    if (parts.length === 2) {
+      const label = parts[0].replace("genre", "").trim();
+      const percent = parseInt(parts[1].replace("%", ""));
+      const dot = item.querySelector("div.rounded-full");
+      const color = dot?.style.backgroundColor || "#555";
+      if (!vibes.some((v) => v.label === label)) vibes.push({ label, percent, color });
+    }
+  });
+  let rating = "";
+  let voteCount = "";
+  const ratingNode = document.querySelector(".text-\\[42px\\]");
+  if (ratingNode) rating = clean(ratingNode.textContent);
+  const votesNode = document.querySelector(".text-\\[20px\\]");
+  if (votesNode && votesNode.textContent?.includes("Votes")) voteCount = clean(votesNode.textContent);
+  const meterBreakdown = [];
+  const breakdownItems = document.querySelectorAll('div[aria-label*="%"]');
+  breakdownItems.forEach((item) => {
+    const aria = item.getAttribute("aria-label") || "";
+    if (["Perfection", "Go for it", "Timepass", "Skip"].some((k) => aria.includes(k))) {
+      const parts = aria.split(":");
+      if (parts.length === 2) {
+        const label = parts[0].trim();
+        const percent = parseInt(parts[1].replace("%", ""));
+        let color = "#555";
+        if (label === "Perfection") color = "#B048FF";
+        if (label.includes("Go")) color = "#00D391";
+        if (label === "Timepass") color = "#FCB700";
+        if (label === "Skip") color = "#FE647E";
+        if (!meterBreakdown.some((m) => m.label === label)) {
+          meterBreakdown.push({ label, percent, color });
+        }
+      }
+    }
+  });
+  meterBreakdown.reverse();
+  return { title, poster, backdrop, year, meta, plot, rating, voteCount, genres, cast, director, vibes, meterBreakdown, watchOptions };
+};
+const SummaryModal = ({ onClose }) => {
+  const [data, setData] = reactExports.useState(null);
+  reactExports.useEffect(() => {
+    const extracted = extractPageData();
+    setData(extracted);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+  if (!data) return null;
+  return reactDomExports.createPortal(
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "fixed inset-0 z-[100000] flex items-center justify-center p-4 animate-in fade-in duration-300 font-sans", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-black/90 backdrop-blur-xl", onClick: onClose }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "relative w-full max-w-4xl bg-[#0A0A0A] border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]",
+          style: { boxShadow: "0 0 120px rgba(0,0,0,0.9)" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 left-0 w-full h-64 overflow-hidden z-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: data.backdrop, className: "w-full h-full object-cover opacity-30 blur-sm scale-105", alt: "Backdrop" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 overflow-y-auto custom-scrollbar flex-1 p-6 md:p-8 space-y-8", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row gap-6 mt-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-32 md:w-40 flex-shrink-0 rounded-xl overflow-hidden shadow-2xl border border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: data.poster, className: "w-full h-full object-cover", alt: "Poster" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex flex-col justify-center", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-3xl md:text-4xl font-bold text-white mb-2 leading-tight text-shadow-sm", children: data.title }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-sm text-gray-300 font-medium mb-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: data.year }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1 h-1 bg-gray-500 rounded-full" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: data.meta.split("•").pop()?.trim() }),
+                    data.director && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1 h-1 bg-gray-500 rounded-full" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#8b5cf6] font-semibold", children: data.director })
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs md:text-sm text-gray-300 leading-relaxed font-light max-w-2xl mb-5", children: data.plot.replaceAll("Reveal Spoiler Powered by Moctale Plus", "") || "No synopsis available." }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: data.genres.slice(0, 4).map((g) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white/80 bg-white/10 rounded border border-white/5", children: g }, g)) })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+                data.vibes.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/[0.03] p-5 rounded-2xl border border-white/5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-blue-500", children: ICONS.Chart }),
+                    " Vibe Check"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: data.vibes.map((v, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gray-400 w-20 truncate", children: v.label }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full rounded-full", style: { width: `${v.percent}%`, backgroundColor: v.color } }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gray-500 w-8 text-right", children: [
+                      v.percent,
+                      "%"
+                    ] })
+                  ] }, i)) })
+                ] }),
+                data.meterBreakdown.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/[0.03] p-5 rounded-2xl border border-white/5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-purple-500", children: ICONS.MagicStar }),
+                    " Moctale Meter"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: data.meterBreakdown.map((stat, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gray-400 w-20 truncate", children: stat.label }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full rounded-full", style: { width: `${stat.percent}%`, backgroundColor: stat.color } }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gray-500 w-8 text-right", children: [
+                      stat.percent,
+                      "%"
+                    ] })
+                  ] }, i)) })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-4 flex flex-col items-center gap-1 opacity-90 hover:opacity-100 transition-opacity", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[12px] text-white-500 flex items-center gap-1", children: [
+                "Powered by",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans/moctale-plus", target: "_blank", rel: "noreferrer", className: "text-white-500 font-medium underline hover:text-purple-400 transition-colors", children: "Moctale Plus" }),
+                "by",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans", target: "_blank", rel: "noreferrer", className: "text-white-500 font-medium underline hover:text-purple-400 transition-colors", children: "010101-sans" })
+              ] }) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: onClose,
+                className: "absolute top-4 right-4 p-2 text-white/50 hover:text-white bg-black/40 hover:bg-black/80 rounded-full transition-all z-50 backdrop-blur-md",
+                children: ICONS.Close
+              }
+            )
+          ]
+        }
+      )
+    ] }),
+    document.body
+  );
+};
+const SummaryButton = () => {
+  const [isOpen, setIsOpen] = reactExports.useState(false);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center w-full mt-2 animate-in fade-in slide-in-from-top-2", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        onClick: () => setIsOpen(true),
+        className: "\n                      group relative w-full max-w-md h-11 rounded-full\n                      flex items-center justify-center gap-2\n                      text-white border border-2 border-[#B048FF] \n                      bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a]\n                      shadow-md shadow-purple-900/20\n                      transition-all duration-300 ease-out\n                      hover:shadow-lg hover:shadow-purple-500/30\n                      hover:brightness-110\n                      active:scale-[0.98]\n                  ",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-10 text-lg text-[#B048FF]", children: ICONS.MagicStar }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-10 text-sm font-semibold tracking-wide", children: "Page Summary" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: "\n                    pointer-events-none absolute inset-0\n                    -translate-x-full\n                    bg-gradient-to-r from-transparent via-white/10 to-transparent\n                    group-hover:animate-[shimmer_1.6s_ease-in-out_infinite]\n                  "
+            }
+          )
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-2 text-[11px] font-medium tracking-wider text-white/40", children: "Powered by Moctale Plus by 010101-sans" }),
+    isOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(SummaryModal, { onClose: () => setIsOpen(false) })
+  ] });
+};
+const initPageSummary = () => {
+  const observer2 = new MutationObserver(() => {
+    const collectionBtns = Array.from(document.querySelectorAll("button")).filter(
+      (btn) => btn.textContent?.includes("Collection")
+    );
+    if (collectionBtns.length > 0) {
+      const targetBtn = collectionBtns.find((btn) => btn.closest(".xl\\:flex-col"));
+      if (targetBtn) {
+        const buttonWrapper = targetBtn.closest(".relative.flex");
+        const sidebarCol = buttonWrapper?.parentElement;
+        if (sidebarCol && !sidebarCol.querySelector(".moctale-summary-btn")) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "moctale-summary-btn w-full";
+          sidebarCol.appendChild(wrapper);
+          clientExports.createRoot(wrapper).render(/* @__PURE__ */ jsxRuntimeExports.jsx(SummaryButton, {}));
+        }
+      }
+    }
+  });
+  observer2.observe(document.body, { childList: true, subtree: true });
+};
 if (self.self !== self.top) {
   throw new Error("[Moctale+] Blocked execution in iframe");
 }
@@ -3486,12 +4187,13 @@ const getSettings = async () => {
       enablePickRandom: true,
       enableSpoilerShield: false,
       spoilerKeywords: DEFAULT_RISK_KEYWORDS.join(", "),
-      enableScrollSaver: true,
+      enableScrollSaver: false,
       gridColumns: 0,
       enableSearchPlus: true,
       enablePrivateNotes: true,
       enableImagePreview: true,
-      enableWatchStatus: true
+      enableWatchStatus: true,
+      enablePerformanceMax: true
     };
     if (typeof chrome !== "undefined" && chrome.storage) {
       chrome.storage.local.get(null, (items) => {
@@ -3608,7 +4310,40 @@ const runGlobalFeatures = async () => {
   } else {
     stopWatchStatus();
   }
+  if (settings.enablePerformanceMax) {
+    initPerformanceMax();
+  } else {
+    stopPerformanceMax();
+  }
+  if (settings.enableImageDownloader) {
+    initImageDownloader();
+  } else {
+    stopImageDownloader();
+  }
+  initPageSummary();
 };
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === "local") {
+    if (changes.gridColumns) {
+      updateGridDensity(changes.gridColumns.newValue);
+    }
+    if (changes.enablePreview) {
+      changes.enablePreview.newValue ? initImagePreview() : stopImagePreview();
+    }
+    if (changes.enableWatchStatus) {
+      changes.enableWatchStatus.newValue ? initWatchStatus() : stopWatchStatus();
+    }
+    if (changes.enableEpisodeTracker) {
+      if (changes.enableEpisodeTracker.newValue) initEpisodeTracker();
+    }
+    if (changes.enablePerformanceMax) {
+      changes.enablePerformanceMax.newValue ? initPerformanceMax() : stopPerformanceMax();
+    }
+    if (changes.enableImageDownloader) {
+      changes.enableImageDownloader.newValue ? initImageDownloader() : stopImageDownloader();
+    }
+  }
+});
 function debounce(func, wait) {
   let timeout;
   return function(...args) {
@@ -3682,7 +4417,7 @@ const exportBackup = () => {
     };
     const backupData = {
       meta: {
-        version: "1.8.5",
+        version: "1.9.0",
         exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
         author: "010101-sans",
         type: "MoctalePlus_Backup"

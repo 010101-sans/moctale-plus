@@ -1,6 +1,6 @@
 {
   "name": "Moctale Plus",
-  "version": "1.8.5",
+  "version": "1.9.0",
   "manifest_version": 3,
   "icons": {
     "16": "icons/logo.png",
@@ -37,7 +37,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.tsx-loader-DRxkT01m.js"
+        "assets/index.tsx-loader-CuSPJrj-.js"
       ],
       "matches": [
         "https://moctale.in/*",
@@ -78,8 +78,8 @@
         "https://www.moctale.in/*"
       ],
       "resources": [
-        "assets/vendor-Bpg3Sy_q.js",
-        "assets/index.tsx-D29Ye1Hf.js"
+        "assets/vendor-DWMKswWr.js",
+        "assets/index.tsx-CnPgU7hK.js"
       ],
       "use_dynamic_url": false
     }

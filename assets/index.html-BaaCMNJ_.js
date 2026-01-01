@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, e as Logout, f as Refresh, g as Setting2, I as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, h as CloudChange, i as Import, k as Export, l as Code, H as Heart, m as CloseSquare, A as ArrowDown2, M as Minus, n as Add, c as clientExports } from "./vendor-Bpg3Sy_q.js";
-import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-D29Ye1Hf.js";
+import { r as reactExports, f as confetti, j as jsxRuntimeExports, G as Global, F as Flash, I as Import, g as Logout, h as Refresh, i as Setting2, k as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, l as CloudChange, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-DWMKswWr.js";
+import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-CnPgU7hK.js";
 import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -171,7 +171,6 @@ const StickerControl = () => {
             alignItems: "center",
             justifyContent: "center",
             color: "#a1a1aa"
-            /* Explicit text color for inheritance */
           },
           title: "Upload Local Image",
           children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { size: "16", color: "currentColor", variant: "Bold" })
@@ -190,6 +189,12 @@ const isNewerVersion = (latest, current) => {
   }
   return false;
 };
+const isNewYearCelebrationPeriod = () => {
+  const now = /* @__PURE__ */ new Date();
+  const month = now.getMonth();
+  const day = now.getDate();
+  return month === 0 && day >= 1 && day <= 3;
+};
 function App() {
   const { settings, updateSetting, loading } = useSettings();
   const [openSection, setOpenSection] = reactExports.useState(null);
@@ -200,6 +205,36 @@ function App() {
   const [syncStatus, setSyncStatus] = reactExports.useState("idle");
   const [userProfile, setUserProfile] = reactExports.useState(null);
   const fileInputRef = reactExports.useRef(null);
+  const showCelebration = isNewYearCelebrationPeriod();
+  reactExports.useEffect(() => {
+    if (showCelebration) {
+      const end = Date.now() + 5 * 1e3;
+      const colors = ["#5b21b6", "#7c3aed", "#ffd700", "#e9d5ff"];
+      const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 50,
+          origin: { x: 0 },
+          colors: [randomColor()],
+          zIndex: 100
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 50,
+          origin: { x: 1 },
+          colors: [randomColor()],
+          zIndex: 100
+        });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+  }, []);
+  const openOfficialSite = () => {
+    self.open("https://010101-sans.is-a.dev/moctale-plus/", "_blank");
+  };
   reactExports.useEffect(() => {
     const initData = async () => {
       chrome.storage.local.get(["cachedUserProfile", "spoilerKeywords"], (items) => {
@@ -447,29 +482,271 @@ function App() {
           width: 100%;
           height: 42px; /* Force height for alignment */
         }
+
+        /* === 5. New Year Celebration Card (Enhanced) === */
+
+      .celebration-banner {
+        margin: 0 16px 10px;
+        border-radius: 14px;
+        padding: 14px;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+
+        background: linear-gradient(
+          120deg,
+          #312e81,
+          #7c3aed,
+          #facc15,
+          #831843
+        );
+        background-size: 300% 300%;
+
+        animation:
+          slideIn 0.5s ease-out,
+          gradientShift 6s ease infinite;
+
+        box-shadow:
+          0 6px 25px rgba(124, 58, 237, 0.35),
+          inset 0 0 20px rgba(255, 255, 255, 0.05);
+      }
+
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* Spark particles */
+      .celebration-banner::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(#fff 1px, transparent 1px),
+          radial-gradient(#fde047 1px, transparent 1px);
+        background-size: 22px 22px, 30px 30px;
+        opacity: 0.25;
+        animation: sparkleMove 12s linear infinite;
+        z-index: 0;
+      }
+
+      @keyframes sparkleMove {
+        from { transform: translateY(0); }
+        to { transform: translateY(-40px); }
+      }
+
+
+        .celebration-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .celebration-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: #fde047; /* Yellow-300 */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .celebration-year {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+
+        /* === Celebration CTA Button (Animated, Boxy) === */
+
+        .celebration-btn {
+          position: relative;
+          z-index: 10;
+
+          padding: 12px 14px;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+
+          border-radius: 8px; /* boxy, not pill */
+          border: 1px solid rgba(255, 255, 255, 0.25);
+
+          color: #ffffff;
+          background: linear-gradient(
+            270deg,
+            #fde047,
+            #7c3aed,
+            #312e81
+          );
+          background-size: 300% 300%;
+
+          animation: buttonGradientShift 6s ease infinite;
+
+          cursor: pointer;
+          box-shadow:
+            0 4px 10px rgba(0,0,0,0.25),
+            inset 0 0 6px rgba(255,255,255,0.25);
+
+          transition:
+            transform 0.15s ease,
+            box-shadow 0.15s ease;
+        }
+
+        @keyframes buttonGradientShift {
+          0% { background-position: 100% 50%; }
+          50% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+
+        /* Hover feedback */
+        .celebration-btn:hover {
+          transform: translateY(-1px);
+          box-shadow:
+            0 6px 16px rgba(0,0,0,0.35),
+            inset 0 0 10px rgba(255,255,255,0.35);
+        }
+
+        /* Active / press */
+        .celebration-btn:active {
+          transform: translateY(0);
+          box-shadow:
+            0 3px 8px rgba(0,0,0,0.3),
+            inset 0 0 4px rgba(255,255,255,0.2);
+        }
+
+        /* Stardust pattern overlay */
+        .celebration-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(white 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header-link-btn {
+          height: 28px;
+          width: 28px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 6px;
+          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.04);
+
+          color: #a1a1aa;
+          transition: all 0.2s ease;
+        }
+
+        .header-link-btn:hover {
+          color: #ffffff;
+          border-color: rgba(255,255,255,0.25);
+          background: rgba(255,255,255,0.12);
+        }
+
+        /* === HEADER RIGHT SIDE FIX === */
+
+        .header-right {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        /* Website icon button */
+        .header-link-btn {
+          height: 26px;
+          width: 26px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 6px;
+          border: 1px solid rgba(255,255,255,0.12);
+          background: rgba(255,255,255,0.05);
+
+          /* FORCE ICON VISIBILITY */
+          color: #d4d4d8 !important;
+          fill: currentColor !important;
+          stroke: currentColor !important;
+
+          opacity: 1 !important;
+          visibility: visible !important;
+
+          transition: all 0.2s ease;
+        }
+
+        .header-link-btn svg {
+          display: block;
+        }
+
+        /* Hover */
+        .header-link-btn:hover {
+          color: #ffffff !important;
+          border-color: rgba(255,255,255,0.3);
+          background: rgba(255,255,255,0.15);
+        }
+
       ` }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "header", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "logo-container", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icons/logo.png", alt: "Moctale Plus", width: "28", height: "28", style: { borderRadius: 6 } }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "logo-text", children: "Moctale Plus" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: updateAvailable ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "a",
-        {
-          href: `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/latest`,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          className: "update-badge",
-          title: `New version ${updateAvailable} available!`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(UpdateIcon, {}),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Update" })
-          ]
-        }
-      ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "version-badge", children: [
-        "Beta v",
-        CURRENT_VERSION
-      ] }) }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "header-right", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            onClick: openOfficialSite,
+            title: "Visit Official Website",
+            className: "header-link-btn",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Global, { size: "16", variant: "Linear" })
+          }
+        ),
+        updateAvailable ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "a",
+          {
+            href: `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/latest`,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: "update-badge",
+            title: `New version ${updateAvailable} available!`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(UpdateIcon, {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Update" })
+            ]
+          }
+        ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "version-badge", children: [
+          "Beta v",
+          CURRENT_VERSION
+        ] }) })
+      ] })
+    ] }),
+    showCelebration && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "celebration-banner", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "celebration-bg" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "celebration-content", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "celebration-title", children: "Happy New Year" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "celebration-year", children: "2026! 🎉" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            onClick: openOfficialSite,
+            className: "celebration-btn",
+            children: "Official Website"
+          }
+        )
+      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container", style: { flex: 1, paddingBottom: "30px" }, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -563,6 +840,16 @@ function App() {
                 desc: "Nav keys (1-6) enabled",
                 checked: settings.enableShortcuts,
                 onChange: (val) => updateSetting("enableShortcuts", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Flash, { size: "18", variant: "Bold", className: "text-yellow-400" }),
+                label: "Performance Max",
+                desc: "Instant loads & smooth scroll",
+                checked: settings.enablePerformanceMax,
+                onChange: (val) => updateSetting("enablePerformanceMax", val)
               }
             )
           ]
@@ -679,6 +966,16 @@ function App() {
                 desc: "Hover images to enlarge",
                 checked: settings.enableImagePreview,
                 onChange: (val) => updateSetting("enableImagePreview", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Import, { size: "18", variant: "Bold", className: "text-cyan-400" }),
+                label: "Image Downloader",
+                desc: "Hover image to download",
+                checked: settings.enableImageDownloader,
+                onChange: (val) => updateSetting("enableImageDownloader", val)
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(

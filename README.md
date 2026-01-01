@@ -29,15 +29,16 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 
 | Feature | Description |
 |:-------|:-----------|
-| **Linkifier**             | Converts plain-text URLs into clickable links |
-| **More Platforms**        | Quick access to IMDB, TMDB, Letterboxd and Anime Platforms |
-| **Reviews & Discussions** | Jump to YouTube, Reddit, and Twitter/X content & conversations |
-| **Creative Corner**       | Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
-| **Right-Click Search**    | Select text anywhere -> Right Click -> Search on Moctale |
-| **Keyboard Shortcuts**    | For fast navigation, quick actions and toggeling feature. Access the shortcuts guide with `Shift + /` |
-| **Advanced Spoiler Shield**  | Automatically blurs spoiler-heavy content |
+| **Linkifier**                 | Converts plain-text URLs into clickable links |
+| **More Platforms**            | Quick access to IMDB, TMDB, Letterboxd and Anime Platforms |
+| **Reviews & Discussions**     | Jump to YouTube, Reddit, and Twitter/X content & conversations |
+| **Creative Corner**           | Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
+| **Right-Click Search**        | Select text anywhere -> Right Click -> Search on Moctale |
+| **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. Access the shortcuts guide with `Shift + /` |
+| **Advanced Spoiler Shield**   | Automatically blurs spoiler-heavy content |
 | **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
-| **Review Templates** | Provides a set of pre-built templates for writing reviews, with ability to add custom templates |
+| **Review Templates**          | Provides a set of pre-built templates for writing reviews, with ability to add custom templates |
+| **Performace Max**            | Makes the website faster and smoother to use |
 
 
 
@@ -66,7 +67,9 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Search Plus**          | Adds search buttons for other platforms in the search section |
 | **Private Notes**        | Write privates notes for under all Titles |
 | **Image Preview**        | Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview |
+| **Image Downloader**     | Click the download button appearing on bottom-right corner of an image, which appears while hovering the image |
 | **Watch Status**         | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
+| **Page Summary**         | Generates a beautiful summary for currently opened title |
 
 
  
