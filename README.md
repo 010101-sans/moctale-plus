@@ -34,7 +34,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Reviews & Discussions**     | Jump to YouTube, Reddit, and Twitter/X content & conversations |
 | **Creative Corner**           | Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
 | **Right-Click Search**        | Select text anywhere -> Right Click -> Search on Moctale |
-| **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. Access the shortcuts guide with `Shift + /` |
+| **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. The shortcuts guide can be accessed anytime with `Shift + /` |
 | **Advanced Spoiler Shield**   | Automatically blurs spoiler-heavy content |
 | **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
 | **Review Templates**          | Provides a set of pre-built templates for writing reviews, with ability to add custom templates |
@@ -46,7 +46,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 **2. Visual Features**
 | Feature | Description |
 |:-------|:-----------|
-| **Custom Themes** | `Default (Dark)`, `OLED (Black)`, `Midnight (Deep Blue)`, `Dracula`, `Nord`, `Monokai`, `Github Dark`, `Synthwave`, `Onedark`, `Gruvbox`, `Ayu`, `Nightowl`, `Palenight`, `Twitter`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Akatsuki`, `Horror`, `Mystery`, `Matrix`, `Coffee`, `Ocean`, `Forest`, `Luxury` |
+| **Custom Themes** | `Default (Dark)`, `Oled`, `Midnight`, `Dracula`, `Nord`, `Github Dark`, `Synthwave`, `Onedark`, `Nightowl`, `Palenight`, `Twitter Dim`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Horror`, `Forest`, `Matrix`, `Coffee`, `Ocean`, `Catppuccin`, `Tokyonight`, `Rosepine`, `Kanagawa`, `Cobalt2`, `Shades Purple`, `Andromeda`, `Linear`, `Vercel`, `Supabase`, `Raycast`, `Spotify`, `Netflix`, `Disney`, `Hbo`, `Macos`, `Ubuntu` |
 | **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
 | **Sticker Studio** | Add persistant images in the website's UI |
 
@@ -67,7 +67,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Search Plus**          | Adds search buttons for other platforms in the search section |
 | **Private Notes**        | Write privates notes for under all Titles |
 | **Image Preview**        | Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview |
-| **Image Downloader**     | Click the download button appearing on bottom-right corner of an image, which appears while hovering the image |
+| **Image Downloader**     | Click the download button on an image appearing while pressing `Ctrl` and hovering the image |
 | **Watch Status**         | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
 | **Page Summary**         | Generates a beautiful summary for currently opened title |
 
@@ -118,8 +118,6 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 
 <!-- Note: Non-chromium based browsers like Firefox and Safari are not supported yet. -->
 
-**Made with ❤️ by [010101-sans](https://github.com/010101-sans)**  
-**Star ⭐ this project repository if you liked Moctale Plus.** 
 
 ## Disclaimer
 
@@ -128,3 +126,8 @@ Moctale Plus is an independent, third-party browser extension and is **not affil
 ## License
 
 Moctale Plus is distributed under a **custom proprietary license**. For full terms, see the [LICENSE](./LICENSE) file.
+
+## Author
+
+**Made with ❤️ by [010101-sans](https://github.com/010101-sans)**  
+**Star ⭐ this project repository if you liked Moctale Plus.** 

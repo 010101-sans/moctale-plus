@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as reactDomExports, e as Timer1 } from "./vendor-DWMKswWr.js";
+import { j as jsxRuntimeExports, c as clientExports, r as reactExports, S as Shuffle, R as RefreshCircle, a as RefreshLeftSquare, T as TickSquare, E as Edit2, L as Lock, b as TickCircle, d as reactDomExports, t as toPng, e as Timer1 } from "./vendor-B0imn2FR.js";
 const getIcon = (name) => {
   const iconClass = "w-6 h-6 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300";
   if (name === "tvtropes") {
@@ -29,11 +29,11 @@ const LinkButton = ({ label, icon, url }) => /* @__PURE__ */ jsxRuntimeExports.j
     className: "\n      group flex items-center gap-3 p-3 rounded-xl \n      bg-[#252833]/40 border border-transparent \n      hover:bg-white/10 hover:border-white/30\n      transition-all duration-200 h-full\n    ",
     children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-shrink-0 flex items-center justify-center w-6 h-6 text-white/80 -mr-2", children: icon }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 text-sm font-medium text-[#E2E2E2] group-hover:text-white transition-colors leading-none mt-0.5", children: label })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 text-sm font-medium text-[var(--mp-text-main)] group-hover:text-white transition-colors leading-none mt-0.5", children: label })
     ]
   }
 );
-const Footer = () => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full pt-3 mt-1 text-center border-t border-[#252833]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[11px] text-[#555]", children: [
+const Footer = () => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full pt-3 mt-1 text-center border-t border-[var(--mp-border)]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[11px] text-[#555]", children: [
   "Powered by",
   " ",
   /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans/moctale-plus", target: "_blank", rel: "noreferrer", className: "hover:text-[#888] underline decoration-dotted", children: "Moctale Plus" }),
@@ -52,8 +52,8 @@ const DiscussionSection = ({ title, year, type, isAnime }) => {
     { label: "Twitter / X", icon: getIcon("x"), url: `https://twitter.com/search?q=${query.replace(`%20${year}`, "")}${isAnime ? "+anime" : ""}+review+sand+discussion&f=top` },
     { label: "Reddit", icon: getIcon("reddit"), url: `https://www.reddit.com/search/?q=${query.replace(`%20${year}`, "")}${isAnime ? "+anime" : ""}+reviews+and+discussion` }
   ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-5 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[#252833] rounded-2xl", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[#E2E2E2] w-full border-b border-[#252833] pb-3 tracking-[0.1px]", children: "Reviews & Discussions" }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-5 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[var(--mp-border)] rounded-2xl", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[var(--mp-text-main)] w-full border-b border-[var(--mp-border)] pb-3 tracking-[0.1px]", children: "Reviews & Discussions" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col w-full gap-2", children: links.map((link, i) => (
       // <LinkButton key={i} {...link} subtext={`Search ${title}`} />
       /* @__PURE__ */ jsxRuntimeExports.jsx(LinkButton, { ...link }, i)
@@ -82,8 +82,8 @@ const PlatformSection = ({ title, isAnime }) => {
     { label: "Fandom", icon: getIcon("fandom"), url: `https://community.fandom.com/wiki/Special:Search?query=${queryTitleOnly}` },
     { label: "TV Tropes", icon: getIcon("tvtropes"), url: `https://tvtropes.org/pmwiki/search_result.php?q=${queryTitleOnly}` }
   ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-3 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[#252833] rounded-2xl", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[#E2E2E2] w-full border-b border-[#252833] pl-2 pb-3 tracking-[0.1px]", children: "More Platforms" }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-3 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[var(--mp-border)] rounded-2xl", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[var(--mp-text-main)] w-full border-b border-[var(--mp-border)] pl-2 pb-3 tracking-[0.1px]", children: "More Platforms" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 w-full gap-2.5", children: links.map((link, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(LinkButton, { ...link }, i)) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] });
@@ -153,8 +153,8 @@ const CreativeSection = ({ title, year, type, isAnime }) => {
       url: `https://www.google.com/search?q=${query}+fan+fiction`
     }
   ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-5 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[#252833] rounded-2xl", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex items-center justify-between border-b border-[#252833] pb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[#E2E2E2] tracking-[0.1px]", children: "Creative Corner" }) }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-5 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[var(--mp-border)] rounded-2xl", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex items-center justify-between border-b border-[var(--mp-border)] pb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[var(--mp-text-main)] tracking-[0.1px]", children: "Creative Corner" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 w-full gap-2", children: links.map((link, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       LinkButton,
       {
@@ -195,7 +195,7 @@ const BoxOfficeLink = ({ label, url, colorClass }) => /* @__PURE__ */ jsxRuntime
       bg-[#252833]/40 border border-[#333] 
       hover:bg-[#303440] hover:border-[#555] hover:text-white
       transition-all duration-200 group
-      text-xs font-medium text-[#C6C6C6]
+      text-xs font-medium text-[var(--mp-text-muted)]
       h-full
       ${colorClass || ""}
     `,
@@ -207,8 +207,8 @@ const BoxOfficeLink = ({ label, url, colorClass }) => /* @__PURE__ */ jsxRuntime
 );
 const BoxOfficeSection = ({ title }) => {
   const qTitle = encodeURIComponent(title);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-5 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[#252833] rounded-2xl transition-all hover:border-[#3a3f50]", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[#E2E2E2] w-full border-b border-[#252833] pb-3 tracking-[0.1px] flex justify-between items-center", children: "Box Office" }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start px-5 py-5 gap-4 w-full md:bg-[#1B1B1B] md:border md:border-[var(--mp-border)] rounded-2xl transition-all hover:border-[#3a3f50]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[20px] font-medium text-[var(--mp-text-main)] w-full border-b border-[var(--mp-border)] pb-3 tracking-[0.1px] flex justify-between items-center", children: "Box Office" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-2 w-full", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         BoxOfficeLink,
@@ -493,13 +493,13 @@ const ExportButton = () => {
     {
       type: "button",
       onClick: handleExport,
-      className: "\n        h-10 px-3 ml-2 rounded-md\n        inline-flex items-center justify-center gap-2\n        transition-colors duration-200\n        focus:outline-none focus:ring-1\n        bg-[#1A1A1A] hover:bg-[#252525] focus:ring-[#404040]\n        cursor-pointer \n      ",
+      className: "\n        h-10 px-3 ml-2 rounded-md\n        inline-flex items-center justify-center gap-2\n        transition-colors duration-200\n        focus:outline-none focus:ring-1\n        bg-[var(--mp-bg-layer)] hover:bg-[#252525] focus:ring-[#404040]\n        cursor-pointer \n      ",
       title: "Tip: Scroll to bottom of the collection first.",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadIcon$1, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start justify-center gap-1", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white leading-none", children: "Export Collection" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px] text-white/60 leading-none whitespace-nowrap", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px] text-[var(--mp-text-muted)] leading-none whitespace-nowrap", children: [
             "Powered by",
             " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -622,13 +622,13 @@ const MyCollectionExportButton = () => {
     {
       type: "button",
       onClick: handleExport,
-      className: "\n        h-10 px-3 ml-2 rounded-md\n        inline-flex items-center justify-center gap-2\n        transition-colors duration-200\n        focus:outline-none focus:ring-1\n        bg-[#1A1A1A] hover:bg-[#252525] focus:ring-[#404040]\n        cursor-pointer \n      ",
+      className: "\n        h-10 px-3 ml-2 rounded-md\n        inline-flex items-center justify-center gap-2\n        transition-colors duration-200\n        focus:outline-none focus:ring-1\n        bg-[var(--mp-bg-layer)] hover:bg-[#252525] focus:ring-[#404040]\n        cursor-pointer \n      ",
       title: "Tip: Scroll to bottom of the collection first.",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadIcon, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start justify-center gap-1", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white leading-none", children: "Export Collection" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px] text-white/60 leading-none whitespace-nowrap", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px] text-[var(--mp-text-muted)] leading-none whitespace-nowrap", children: [
             "Powered by",
             " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -971,13 +971,13 @@ const showHelpModal = () => {
       ]
     }
   ];
-  const renderKey = (key) => `<kbd class="min-w-[24px] px-2 h-6 flex items-center justify-center bg-[#1F1F1F] border-b-2 border-white/10 rounded text-xs font-bold text-white shadow-sm font-sans">${key}</kbd>`;
+  const renderKey = (key) => `<kbd class="min-w-[24px] px-2 h-6 flex items-center justify-center bg-[#1F1F1F] border-b-2 border-[var(--mp-border)] rounded text-xs font-bold text-white shadow-sm font-sans">${key}</kbd>`;
   modal.innerHTML = `
-    <div class="bg-[#0A0A0A] border border-[#8b5cf6]/30 rounded-2xl shadow-[0_0_50px_rgba(139,92,246,0.15)] w-full max-w-5xl h-[70vh] flex flex-col relative overflow-hidden">
+    <div class="bg-[var(--mp-bg-surface)] border border-[#8b5cf6]/30 rounded-2xl shadow-[0_0_50px_rgba(139,92,246,0.15)] w-full max-w-5xl h-[70vh] flex flex-col relative overflow-hidden">
       
-      <div class="px-6 py-5 border-b border-white/5 bg-[#0A0A0A]/95 flex justify-between items-center shrink-0">
+      <div class="px-6 py-5 border-b border-white/5 bg-[var(--mp-bg-surface)]/95 flex justify-between items-center shrink-0">
         <h3 class="text-xl font-bold text-white flex items-center gap-3 tracking-tight">
-           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-[#8b5cf6]/20 border border-[#8b5cf6]/30 text-[#8b5cf6] shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--mp-accent)]/20 border border-[#8b5cf6]/30 text-[var(--mp-accent)] shadow-[0_0_15px_rgba(139,92,246,0.2)]">
             <svg
               width="18"
               height="18"
@@ -1015,7 +1015,7 @@ const showHelpModal = () => {
         ${sections.map((section) => `
             <div class="flex flex-col h-full">
                 <div class="px-5 py-3 border-b border-white/5 bg-white/[0.02]">
-                    <h4 class="text-[11px] font-bold uppercase tracking-widest text-[#8b5cf6] opacity-90">${section.title}</h4>
+                    <h4 class="text-[11px] font-bold uppercase tracking-widest text-[var(--mp-accent)] opacity-90">${section.title}</h4>
                 </div>
                 <div class="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-1">
                     ${section.items.map((item) => `
@@ -1031,11 +1031,11 @@ const showHelpModal = () => {
         `).join("")}
       </div>
 
-      <div class="px-6 py-3 bg-[#121212] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
-        <span>Moctale Plus v1.9.5</span>
+      <div class="px-6 py-3 bg-[var(--mp-bg-surface)] border-t border-white/5 flex justify-between items-center text-[10px] text-white/30 shrink-0">
+        <span>Moctale Plus v1.9.8</span>
         <div class="flex gap-4">
             <span>Press <kbd class="font-mono text-white/50">Esc</kbd> to close</span>
-            <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[#8b5cf6] transition-colors">GitHub</a>
+            <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:text-[var(--mp-accent)] transition-colors">GitHub</a>
         </div>
       </div>
     </div>
@@ -1190,7 +1190,7 @@ const LoaderIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { classNa
   /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
   /* @__PURE__ */ jsxRuntimeExports.jsx("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })
 ] });
-const PoweredBySubtext = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px] text-white/60 leading-none whitespace-nowrap", children: [
+const PoweredBySubtext = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px] text-[var(--mp-text-muted)] leading-none whitespace-nowrap", children: [
   "Powered by",
   " ",
   /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -1288,7 +1288,7 @@ const PickRandomButton = () => {
                 inline-flex items-center justify-center gap-2
                 transition-colors duration-200
                 focus:outline-none focus:ring-1
-                bg-[#1A1A1A] hover:bg-[#252525] focus:ring-[#404040]
+                bg-[var(--mp-bg-layer)] hover:bg-[#252525] focus:ring-[#404040]
                 cursor-pointer shadow-sm
                 ${loading ? "opacity-80 cursor-wait" : ""}
             `,
@@ -1332,7 +1332,7 @@ const SpinWheelButton = () => {
     {
       type: "button",
       onClick: handleSpin,
-      className: "\n                h-10 px-3 ml-4 rounded-md\n                inline-flex items-center justify-center gap-2\n                transition-colors duration-200\n                focus:outline-none focus:ring-1\n                bg-[#1A1A1A] hover:bg-[#252525] focus:ring-[#404040]\n                cursor-pointer shadow-sm group\n            ",
+      className: "\n                h-10 px-3 ml-4 rounded-md\n                inline-flex items-center justify-center gap-2\n                transition-colors duration-200\n                focus:outline-none focus:ring-1\n                bg-[var(--mp-bg-layer)] hover:bg-[#252525] focus:ring-[#404040]\n                cursor-pointer shadow-sm group\n            ",
       title: "Open Spin Wheel on this page",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `transition-transform duration-500 group-hover:rotate-180`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCircle, { size: 20, color: "currentColor", variant: "Outline" }) }),
@@ -1422,8 +1422,8 @@ const TARGET_SELECTORS = [
   'div[class*="text-[16px]"] p',
   'div[class*="text-[14px]"] p',
   ".whitespace-pre-wrap",
-  '[class*="text-[#C6C6C6]"][class*="text-sm"]',
-  '.relative [class*="text-[#C6C6C6]"]'
+  '[class*="text-[var(--mp-text-muted)]"][class*="text-sm"]',
+  '.relative [class*="text-[var(--mp-text-muted)]"]'
 ];
 let activeKeywords = [];
 let observer$4 = null;
@@ -1770,7 +1770,7 @@ const initGridDensity = (initialColumns) => {
     attributeFilter: ["class"]
   });
 };
-const CURRENT_VERSION = "1.9.5";
+const CURRENT_VERSION = "1.9.8";
 const REPO_OWNER = "010101-sans";
 const REPO_NAME = "moctale-plus";
 const DEFAULT_TEMPLATES = [
@@ -1991,7 +1991,7 @@ const useSettings = () => {
   };
   return { settings, updateSetting, loading };
 };
-const TemplateIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: "text-[#8b5cf6]", children: [
+const TemplateIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: "text-[var(--mp-accent)]", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" }),
   /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "14 2 14 8 20 8" }),
   /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "16", x2: "8", y1: "13", y2: "13" }),
@@ -2111,15 +2111,15 @@ const ReviewDropdown = () => {
         onClick: () => setIsOpen(!isOpen),
         className: `
                     flex items-center gap-2 px-4 py-2 
-                    bg-[#121212]/90 backdrop-blur-xl 
+                    bg-[var(--mp-bg-surface)]/90 backdrop-blur-xl 
                     border transition-all duration-300 group z-10
                     text-xs font-medium rounded-full 
-                    ${isOpen ? "border-[#8b5cf6] shadow-[0_0_16px_rgba(139,92,246,0.32)] bg-[#1a1a1a] text-white" : "border-white/10 hover:border-[#8b5cf6]/50 hover:shadow-[0_0_16px_rgba(139,92,246,0.15)] text-white/90 hover:bg-[#1a1a1a]"}
+                    ${isOpen ? "border-[#8b5cf6] shadow-[0_0_16px_rgba(139,92,246,0.32)] bg-[var(--mp-bg-layer)] text-white" : "border-[var(--mp-border)] hover:border-[#8b5cf6]/50 hover:shadow-[0_0_16px_rgba(139,92,246,0.15)] text-white/90 hover:bg-[var(--mp-bg-layer)]"}
                 `,
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(TemplateIcon, {}),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-[#e9d8fd] transition-colors no-spoiler-shield", children: "Review Templates" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `transition-transform duration-300 text-white/50 group-hover:text-[#8b5cf6] ${isOpen ? "rotate-180" : ""}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, {}) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `transition-transform duration-300 text-white/50 group-hover:text-[var(--mp-accent)] ${isOpen ? "rotate-180" : ""}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, {}) })
         ]
       }
     ),
@@ -2131,22 +2131,22 @@ const ReviewDropdown = () => {
           href: "https://github.com/010101-sans/moctale-plus",
           target: "_blank",
           rel: "noopener noreferrer",
-          className: "text-[10px] font-medium text-white/50 hover:text-[#8b5cf6] underline decoration-[#8b5cf6]/30 hover:decoration-[#8b5cf6] transition-all flex items-center gap-0.5 no-spoiler-shield",
+          className: "text-[10px] font-medium text-white/50 hover:text-[var(--mp-accent)] underline decoration-[#8b5cf6]/30 hover:decoration-[#8b5cf6] transition-all flex items-center gap-0.5 no-spoiler-shield",
           children: "Moctale Plus"
         }
       )
     ] }),
-    isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-[calc(100%-18px)] left-0 mt-3 w-[600px] bg-[#0A0A0A] border border-white/10 rounded-xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.8)] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 backdrop-blur-2xl ring-1 ring-white/5", children: [
+    isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-[calc(100%-18px)] left-0 mt-3 w-[600px] bg-[var(--mp-bg-surface)] border border-[var(--mp-border)] rounded-xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.8)] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 backdrop-blur-2xl ring-1 ring-white/5", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-3 border-b border-white/5 bg-gradient-to-r from-[#9f7aea]/10 to-[#6d28d9]/10 flex justify-between items-center", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-bold text-[#e9d8fd]/70 uppercase tracking-widest flex items-center gap-2 no-spoiler-shield", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_rgba(139,92,246,0.8)]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-[var(--mp-accent)] shadow-[0_0_8px_rgba(139,92,246,0.8)]" }),
           editingId ? editingId === "new" ? "New Template" : "Edit Template" : "Select Template"
         ] }),
         !editingId && /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "button",
           {
             onClick: startCreate,
-            className: "flex items-center gap-1.5 px-2 py-1 bg-[#8b5cf6]/10 hover:bg-[#8b5cf6]/20 border border-[#8b5cf6]/30 rounded text-[10px] text-[#e9d8fd] transition-all hover:shadow-[0_0_10px_rgba(139,92,246,0.15)] no-spoiler-shield",
+            className: "flex items-center gap-1.5 px-2 py-1 bg-[var(--mp-accent)]/10 hover:bg-[var(--mp-accent)]/20 border border-[#8b5cf6]/30 rounded text-[10px] text-[#e9d8fd] transition-all hover:shadow-[0_0_10px_rgba(139,92,246,0.15)] no-spoiler-shield",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(PlusIcon, {}),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Add New" })
@@ -2158,7 +2158,7 @@ const ReviewDropdown = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: `p-3 custom-scrollbar bg-[#0A0A0A] overflow-y-auto transition-opacity duration-200 ${editingId ? "opacity-30 pointer-events-none grayscale" : "opacity-100"}`,
+            className: `p-3 custom-scrollbar bg-[var(--mp-bg-surface)] overflow-y-auto transition-opacity duration-200 ${editingId ? "opacity-30 pointer-events-none grayscale" : "opacity-100"}`,
             style: { maxHeight: "350px" },
             onMouseLeave: () => setHoveredTemplate(null),
             children: templates.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-4 gap-2", children: templates.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -2172,7 +2172,7 @@ const ReviewDropdown = () => {
                     "button",
                     {
                       onClick: (e) => startEdit(t, e),
-                      className: "absolute top-1.5 right-1.5 p-1.5 text-white/20 hover:text-[#8b5cf6] hover:bg-white/10 rounded-md opacity-0 group-hover:opacity-100 transition-all z-20",
+                      className: "absolute top-1.5 right-1.5 p-1.5 text-white/20 hover:text-[var(--mp-accent)] hover:bg-white/10 rounded-md opacity-0 group-hover:opacity-100 transition-all z-20",
                       title: "Edit",
                       children: /* @__PURE__ */ jsxRuntimeExports.jsx(EditIcon, {})
                     }
@@ -2184,7 +2184,7 @@ const ReviewDropdown = () => {
               t.id
             )) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 flex flex-col items-center justify-center text-center opacity-50", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(TemplateIcon, {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-2 text-xs font-medium text-white/60 no-spoiler-shield", children: "No templates found." })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-2 text-xs font-medium text-[var(--mp-text-muted)] no-spoiler-shield", children: "No templates found." })
             ] })
           }
         ),
@@ -2198,7 +2198,7 @@ const ReviewDropdown = () => {
                   value: draftTitle,
                   onChange: (e) => setDraftTitle(e.target.value),
                   placeholder: "Template Title",
-                  className: "flex-1 bg-black/40 border border-white/10 rounded px-2 py-1.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/20 transition-all",
+                  className: "flex-1 bg-black/40 border border-[var(--mp-border)] rounded px-2 py-1.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/20 transition-all",
                   autoFocus: true
                 }
               ),
@@ -2210,18 +2210,18 @@ const ReviewDropdown = () => {
                 value: draftContent,
                 onChange: (e) => setDraftContent(e.target.value),
                 placeholder: "Write your template structure here...",
-                className: "flex-1 bg-black/40 border border-white/10 rounded p-2 text-xs text-white/80 resize-none focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/20 font-mono custom-scrollbar"
+                className: "flex-1 bg-black/40 border border-[var(--mp-border)] rounded p-2 text-xs text-white/80 resize-none focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/20 font-mono custom-scrollbar"
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-end gap-2", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: cancelEdit, className: "px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white/40 hover:text-white transition-colors", children: "Cancel" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: saveEdit, className: "flex items-center gap-1.5 px-4 py-1.5 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white rounded text-[10px] font-bold uppercase tracking-wide shadow-lg shadow-[#8b5cf6]/20 transition-all active:scale-95", children: "Save" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: saveEdit, className: "flex items-center gap-1.5 px-4 py-1.5 bg-[var(--mp-accent)] hover:bg-[#7c3aed] text-white rounded text-[10px] font-bold uppercase tracking-wide shadow-lg shadow-[#8b5cf6]/20 transition-all active:scale-95", children: "Save" })
             ] })
           ] })
         ) : (
           // --- PREVIEW MODE ---
           /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] text-[#8b5cf6]/90 mb-2 uppercase font-bold tracking-wider flex items-center gap-2 no-spoiler-shield", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] text-[var(--mp-accent)]/90 mb-2 uppercase font-bold tracking-wider flex items-center gap-2 no-spoiler-shield", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", width: "12", height: "12", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3" })
@@ -2382,7 +2382,7 @@ const SeasonTracker = ({
       onClick: (e) => e.stopPropagation(),
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", style: { paddingInline: "2px" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[12px] font-bold uppercase tracking-wider text-[#E2E2E2]", children: "Tracker" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[12px] font-bold uppercase tracking-wider text-[var(--mp-text-main)]", children: "Tracker" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
             {
@@ -2402,11 +2402,11 @@ const SeasonTracker = ({
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-[#121212] border border-white/5 rounded-lg p-2.5 mb-3 flex flex-col gap-2 shadow-inner", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-[var(--mp-bg-surface)] border border-white/5 rounded-lg p-2.5 mb-3 flex flex-col gap-2 shadow-inner", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-end", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-medium text-white/60 uppercase tracking-wide", children: "Season Progress" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-medium text-[var(--mp-text-muted)] uppercase tracking-wide", children: "Season Progress" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-bold text-white font-mono", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#8b5cf6]", children: watched.length }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[var(--mp-accent)]", children: watched.length }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white/30", children: "/" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: totalEpisodes })
             ] })
@@ -2438,7 +2438,7 @@ const SeasonTracker = ({
                 className: `
                             h-6 w-full rounded md:rounded-md flex items-center justify-center text-[10px] font-bold font-mono
                             transition-all duration-200 border select-none
-                            ${watched.includes(ep) ? "bg-[#1a1a1a] border-green-500 text-green-500 shadow-[0_0_6px_rgba(34,197,94,0.2)]" : "bg-[#0A0A0A] border-white/10 text-white/40 hover:border-white/30 hover:text-white hover:bg-white/5"}
+                            ${watched.includes(ep) ? "bg-[var(--mp-bg-layer)] border-green-500 text-green-500 shadow-[0_0_6px_rgba(34,197,94,0.2)]" : "bg-[var(--mp-bg-surface)] border-[var(--mp-border)] text-white/40 hover:border-white/30 hover:text-white hover:bg-white/5"}
                         `,
                 title: `Toggle Episode ${ep}`,
                 children: ep
@@ -2904,7 +2904,7 @@ const INJECTED_STYLES = `
   .mn-textarea {
     width: 100%;
     min-height: 140px;
-    background-color: #171717;
+    background-color: var(--mp-bg-layer);
     color: #E2E2E2;
     font-size: 14px;
     line-height: 1.6;
@@ -3096,7 +3096,7 @@ const stopPrivateNotes = () => {
 };
 const injectNotesAfter = (overviewElement, contentId) => {
   const wrapper = document.createElement("div");
-  wrapper.className = "w-full border-b border-[#252833] pb-6 mb-6 moctale-notes-wrapper";
+  wrapper.className = "w-full border-b border-[var(--mp-border)] pb-6 mb-6 moctale-notes-wrapper";
   overviewElement.insertAdjacentElement("afterend", wrapper);
   const root = clientExports.createRoot(wrapper);
   root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(PrivateNotesEditor, { contentId }));
@@ -3218,10 +3218,14 @@ const PreviewOverlay = () => {
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "relative flex flex-col items-center bg-[#121212] p-2 rounded-2xl border border-[#353945] shadow-2xl",
+            className: "relative flex flex-col items-center p-2 rounded-2xl border shadow-2xl",
             style: {
               maxWidth: "90vw",
-              maxHeight: "95vh"
+              maxHeight: "95vh",
+              backgroundColor: "var(--mp-bg-surface)",
+              // Applies the theme background
+              borderColor: "var(--mp-border)"
+              // Applies the theme border
             },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -3534,29 +3538,6 @@ const injectPreconnect = () => {
   link2.href = "https://media.moctale.in";
   document.head.appendChild(link2);
 };
-const injectSpeculationRules = () => {
-  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
-    const existing = document.getElementById("moctale-speculation");
-    if (existing) return;
-    const specScript = document.createElement("script");
-    specScript.id = "moctale-speculation";
-    specScript.type = "speculationrules";
-    specScript.textContent = JSON.stringify({
-      prefetch: [{
-        source: "document",
-        where: {
-          and: [
-            { href_matches: "*/content/*" },
-            { href_matches: "*/explore/*" },
-            { href_matches: "*/person/*" }
-          ]
-        },
-        eagerness: "moderate"
-      }]
-    });
-    document.head.appendChild(specScript);
-  }
-};
 const triggerPrefetch = (url) => {
   if (prefetchedUrls.has(url)) return;
   try {
@@ -3630,7 +3611,6 @@ const initPerformanceMax = () => {
     document.head.appendChild(style);
   }
   injectPreconnect();
-  injectSpeculationRules();
   document.addEventListener("mouseover", handleHoverStart, { passive: true });
   document.addEventListener("mouseout", handleHoverEnd, { passive: true });
   document.addEventListener("mousedown", handleMouseDown, { passive: true });
@@ -3660,19 +3640,16 @@ const DOWNLOADER_STYLES = `
   .mp-download-btn {
     width: 36px;
     height: 36px;
-    border-radius: 50%; /* Circle like WatchStatus */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    /* Sleek Dark Glass - Matching WatchStatus */
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     outline: none;
@@ -3686,24 +3663,22 @@ const DOWNLOADER_STYLES = `
     border-color: rgba(255, 255, 255, 0.4);
     transform: scale(1.1);
   }
-  
+
   .mp-download-btn:active {
     transform: scale(0.95);
   }
-  
-  /* Icon styling */
+
   .mp-dl-icon {
     width: 18px;
     height: 18px;
     stroke-width: 2;
   }
 
-  /* Entrance Animation */
   @keyframes mp-fade-in {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
   }
-  
+
   .mp-dl-animate {
     animation: mp-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
@@ -3749,7 +3724,7 @@ const getFileName = (img) => {
 };
 const findImageUnderCursor = (x, y) => {
   const elements = document.elementsFromPoint(x, y);
-  if (elements.some((el) => el.classList.contains("mp-download-btn"))) return "BUTTON";
+  if (elements.some((el) => el.classList && el.classList.contains("mp-download-btn"))) return "BUTTON";
   let img = elements.find((el) => el.tagName === "IMG");
   if (!img) {
     for (const el of elements) {
@@ -3776,6 +3751,8 @@ const DownloadOverlay = () => {
   const [target2, setTarget] = reactExports.useState(null);
   const [isDownloading, setIsDownloading] = reactExports.useState(false);
   const timeoutRef = reactExports.useRef(null);
+  const ctrlRef = reactExports.useRef(false);
+  const mousePosRef = reactExports.useRef({ x: 0, y: 0 });
   reactExports.useEffect(() => {
     if (!document.getElementById("moctale-downloader-css")) {
       const style = document.createElement("style");
@@ -3783,14 +3760,48 @@ const DownloadOverlay = () => {
       style.textContent = DOWNLOADER_STYLES;
       document.head.appendChild(style);
     }
+    const handleKeyDown = (e) => {
+      const isCtrl = e.key === "Control" || e.ctrlKey;
+      if (!isCtrl) return;
+      if (ctrlRef.current) return;
+      ctrlRef.current = true;
+      const { x, y } = mousePosRef.current;
+      const result = findImageUnderCursor(x, y);
+      if (result instanceof HTMLImageElement) {
+        const newRect = result.getBoundingClientRect();
+        setTarget({ src: result.src, rect: newRect, el: result });
+      } else {
+        setTarget(null);
+      }
+    };
+    const handleKeyUp = (e) => {
+      e.key === "Control" || !e.ctrlKey;
+      if (!ctrlRef.current) return;
+      ctrlRef.current = false;
+      setTarget(null);
+    };
     const handleMouseMove = (e) => {
-      const result = findImageUnderCursor(e.clientX, e.clientY);
-      if (result === "BUTTON") {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      mousePosRef.current = { x: e.clientX, y: e.clientY };
+      const elements = document.elementsFromPoint(e.clientX, e.clientY);
+      if (elements.some((el) => el.classList && el.classList.contains("mp-download-btn"))) {
+        if (!ctrlRef.current) setTarget(null);
         return;
       }
+      if (!ctrlRef.current) {
+        if (!timeoutRef.current) {
+          timeoutRef.current = setTimeout(() => {
+            setTarget(null);
+            timeoutRef.current = null;
+          }, 50);
+        }
+        return;
+      }
+      const result = findImageUnderCursor(e.clientX, e.clientY);
       if (result instanceof HTMLImageElement) {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
         const newSrc = result.src;
         const newRect = result.getBoundingClientRect();
         setTarget((prev) => {
@@ -3806,12 +3817,21 @@ const DownloadOverlay = () => {
         }
       }
     };
-    const handleScroll2 = () => setTarget(null);
+    const handleScroll2 = () => {
+      setTarget(null);
+    };
+    self.addEventListener("keydown", handleKeyDown);
+    self.addEventListener("keyup", handleKeyUp);
     self.addEventListener("mousemove", handleMouseMove, { passive: true });
     self.addEventListener("scroll", handleScroll2, { passive: true, capture: true });
     return () => {
+      self.removeEventListener("keydown", handleKeyDown);
+      self.removeEventListener("keyup", handleKeyUp);
       self.removeEventListener("mousemove", handleMouseMove);
-      self.removeEventListener("scroll", handleScroll2);
+      self.removeEventListener("scroll", handleScroll2, true);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
   const downloadImage = async (e) => {
@@ -3851,7 +3871,7 @@ const DownloadOverlay = () => {
         {
           className: "mp-download-btn",
           onClick: downloadImage,
-          title: "Download Image",
+          title: "Download Image (hold Ctrl + hover)",
           dangerouslySetInnerHTML: { __html: isDownloading ? LOADING_ICON : DOWNLOAD_ICON }
         }
       )
@@ -3879,9 +3899,14 @@ const ICONS = {
     /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M18 6 6 18" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "m6 6 12 12" })
   ] }),
-  Chart: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.5", strokeLinecap: "round", strokeLinejoin: "round", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 3v18h18" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "m19 9-5 5-4-4-3 3" })
+  Share: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round", children: [
+    " ",
+    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" }),
+    " ",
+    /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "7 10 12 15 17 10" }),
+    " ",
+    /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "12", y1: "15", x2: "12", y2: "3" }),
+    " "
   ] })
 };
 const extractPageData = () => {
@@ -4001,10 +4026,18 @@ const extractPageData = () => {
   });
   let rating = "";
   let voteCount = "";
+  let totalVotes = 0;
   const ratingNode = document.querySelector(".text-\\[42px\\]");
   if (ratingNode) rating = clean(ratingNode.textContent);
-  const votesNode = document.querySelector(".text-\\[20px\\]");
-  if (votesNode && votesNode.textContent?.includes("Votes")) voteCount = clean(votesNode.textContent);
+  const votesNode = document.querySelector(".text-\\[20px\\].text-\\[\\#E2E2E2\\].mt-2");
+  if (votesNode) {
+    const rawText = clean(votesNode.textContent);
+    voteCount = rawText.toLowerCase().includes("votes") ? rawText : `${rawText} Votes`;
+    const parts = rawText.split("/");
+    if (parts.length === 2) {
+      totalVotes = parseInt(parts[1].replace(/[^0-9]/g, "")) || 0;
+    }
+  }
   const meterBreakdown = [];
   const breakdownItems = document.querySelectorAll('div[aria-label*="%"]');
   breakdownItems.forEach((item) => {
@@ -4019,8 +4052,9 @@ const extractPageData = () => {
         if (label.includes("Go")) color = "#00D391";
         if (label === "Timepass") color = "#FCB700";
         if (label === "Skip") color = "#FE647E";
+        const count = totalVotes > 0 ? Math.round(percent / 100 * totalVotes) : 0;
         if (!meterBreakdown.some((m) => m.label === label)) {
-          meterBreakdown.push({ label, percent, color });
+          meterBreakdown.push({ label, percent, color, count });
         }
       }
     }
@@ -4028,8 +4062,280 @@ const extractPageData = () => {
   meterBreakdown.reverse();
   return { title, poster, backdrop, year, meta, plot, rating, voteCount, genres, cast, director, vibes, meterBreakdown, watchOptions };
 };
+const VibeChart = ({ vibes }) => {
+  const [hoveredIndex, setHoveredIndex] = reactExports.useState(null);
+  const GAP_LENGTH = 1;
+  const chartData = reactExports.useMemo(() => {
+    let cumulativePercent = 0;
+    return vibes.map((v) => {
+      const start = cumulativePercent;
+      cumulativePercent += v.percent;
+      return { ...v, start, end: cumulativePercent };
+    });
+  }, [vibes]);
+  const dominantVibe = reactExports.useMemo(() => {
+    if (!vibes.length) return null;
+    return vibes.reduce(
+      (prev, current) => prev.percent > current.percent ? prev : current
+    );
+  }, [vibes]);
+  const dominantIndex = reactExports.useMemo(() => {
+    if (!dominantVibe) return -1;
+    return vibes.findIndex((v) => v.label === dominantVibe.label && v.percent === dominantVibe.percent);
+  }, [vibes, dominantVibe]);
+  const activeVibe = reactExports.useMemo(() => {
+    if (hoveredIndex !== null && vibes[hoveredIndex]) {
+      return vibes[hoveredIndex];
+    }
+    return dominantVibe;
+  }, [hoveredIndex, vibes, dominantVibe]);
+  const radius = 25;
+  const circumference = 2 * Math.PI * radius;
+  if (!dominantVibe) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden w-full h-full min-h-[300px] rounded-2xl bg-[#121214] border border-white/5 shadow-2xl p-6 flex flex-col", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-purple-500", children: "Vibe Chart" }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex justify-start items-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 100 100", className: "w-30 h-30 transform -rotate-90", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "circle",
+          {
+            cx: "50",
+            cy: "50",
+            r: radius,
+            fill: "transparent",
+            pointerEvents: "all",
+            className: "cursor-pointer",
+            onMouseEnter: () => dominantIndex !== -1 && setHoveredIndex(dominantIndex),
+            onMouseLeave: () => setHoveredIndex(null)
+          }
+        ),
+        chartData.map((v, i) => {
+          const strokeLength = v.percent / 100 * circumference - GAP_LENGTH;
+          const strokeDasharray = `${Math.max(0, strokeLength)} ${circumference}`;
+          const strokeDashoffset = -(v.start / 100 * circumference);
+          const isHovered = hoveredIndex === i;
+          const isDimmed = hoveredIndex !== null && hoveredIndex !== i;
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "circle",
+            {
+              cx: "50",
+              cy: "50",
+              r: radius,
+              fill: "transparent",
+              stroke: v.color,
+              strokeWidth: isHovered ? 12 : 8,
+              strokeDasharray,
+              strokeDashoffset,
+              strokeLinecap: "butt",
+              pointerEvents: "stroke",
+              className: `transition-all duration-300 ease-out cursor-pointer ${isDimmed ? "opacity-30 blur-[1px]" : "opacity-100"}`,
+              style: {
+                filter: isHovered ? `drop-shadow(0 0 6px ${v.color})` : "none"
+              },
+              onMouseEnter: () => setHoveredIndex(i),
+              onMouseLeave: () => setHoveredIndex(null)
+            },
+            i
+          );
+        })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 flex flex-col items-center justify-center pointer-events-none transition-all duration-200 ease-out", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] text-gray-400 uppercase tracking-widest font-semibold mb-0.5", children: hoveredIndex !== null ? "Vibe" : "Top Vibe" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[16px] font-bold", style: { color: activeVibe?.color || "#fff" }, children: activeVibe?.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[14px] font-mono text-white/50 mt-1", children: [
+          activeVibe?.percent,
+          "%"
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1 relative z-10", children: vibes.map((v, i) => {
+      const isHovered = hoveredIndex === i;
+      const isDimmed = hoveredIndex !== null && hoveredIndex !== i;
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: `
+                              group flex items-center justify-between mb-1 rounded-lg transition-all duration-300 cursor-pointer
+                              ${isHovered ? "bg-white/[0.08] translate-x-1" : "bg-transparent hover:bg-white/[0.04]"}
+                              ${isDimmed ? "opacity-30 grayscale" : "opacity-100"}
+                            `,
+          onMouseEnter: () => setHoveredIndex(i),
+          onMouseLeave: () => setHoveredIndex(null),
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-0.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex h-2.5 w-2.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: `animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 duration-1000 ${isHovered ? "block" : "hidden"}`,
+                    style: { backgroundColor: v.color }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "relative inline-flex rounded-full h-2.5 w-2.5",
+                    style: { backgroundColor: v.color }
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-gray-300 group-hover:text-white transition-colors", children: v.label })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2 pr-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-white font-mono", children: [
+              v.percent,
+              "%"
+            ] }) })
+          ]
+        },
+        i
+      );
+    }) })
+  ] });
+};
+const MoctaleMeter = ({ breakdown, voteCount }) => {
+  const [hoveredIndex, setHoveredIndex] = reactExports.useState(null);
+  const sortedData = reactExports.useMemo(() => {
+    const order = ["Skip", "Timepass", "Go for it", "Perfection"];
+    return [...breakdown].sort((a, b) => {
+      const indexA = order.findIndex((k) => a.label.includes(k));
+      const indexB = order.findIndex((k) => b.label.includes(k));
+      return (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB);
+    });
+  }, [breakdown]);
+  const listData = reactExports.useMemo(() => {
+    return [...sortedData].reverse();
+  }, [sortedData]);
+  const dominantStat = reactExports.useMemo(() => {
+    if (!sortedData.length) return null;
+    return sortedData.reduce(
+      (prev, current) => prev.percent > current.percent ? prev : current
+    );
+  }, [sortedData]);
+  const activeStat = hoveredIndex !== null ? sortedData[hoveredIndex] : dominantStat;
+  const radius = 35;
+  const center = { x: 50, y: 65 };
+  const gapDegrees = 2;
+  const createArc = (startAngle, endAngle) => {
+    const startRad = startAngle * Math.PI / 180;
+    const endRad = endAngle * Math.PI / 180;
+    const x1 = center.x + radius * Math.cos(startRad);
+    const y1 = center.y + radius * Math.sin(startRad);
+    const x2 = center.x + radius * Math.cos(endRad);
+    const y2 = center.y + radius * Math.sin(endRad);
+    return `M ${x1} ${y1} A ${radius} ${radius} 0 0 1 ${x2} ${y2}`;
+  };
+  let currentAngle = 180;
+  const arcs = sortedData.map((stat, i) => {
+    const sweep = stat.percent / 100 * 180;
+    const visibleSweep = Math.max(0, sweep - (i === sortedData.length - 1 ? 0 : gapDegrees));
+    const start = currentAngle;
+    const end = currentAngle + visibleSweep;
+    currentAngle += sweep;
+    return { ...stat, path: createArc(start, end) };
+  });
+  if (!dominantStat) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden w-full h-full min-h-[300px] rounded-2xl bg-[#121214] border border-white/5 shadow-2xl p-6 flex flex-col", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-purple-500", children: "Moctale Meter" }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex justify-center items-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 100 100", className: "w-30 h-30 transform overflow-visible", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: createArc(180, 360),
+            fill: "none",
+            stroke: "#ffffff",
+            strokeOpacity: "0.05",
+            strokeWidth: "8",
+            strokeLinecap: "butt"
+          }
+        ),
+        arcs.map((stat, i) => {
+          const isHovered = hoveredIndex === i;
+          const isDimmed = hoveredIndex !== null && hoveredIndex !== i;
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: stat.path,
+              fill: "none",
+              stroke: stat.color,
+              strokeWidth: isHovered ? 12 : 8,
+              strokeLinecap: "butt",
+              className: `transition-all duration-300 ease-out cursor-pointer ${isDimmed ? "opacity-30 blur-[1px]" : "opacity-100"}`,
+              style: {
+                filter: isHovered ? `drop-shadow(0 0 6px ${stat.color})` : "none"
+              },
+              onMouseEnter: () => setHoveredIndex(i),
+              onMouseLeave: () => setHoveredIndex(null)
+            },
+            i
+          );
+        })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 flex flex-col items-center justify-center pointer-events-none pt-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] text-gray-400 uppercase tracking-widest font-semibold mb-0.5", children: hoveredIndex !== null ? "Verdict" : "Score" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "span",
+          {
+            className: "text-[20px] font-bold transition-colors duration-200",
+            style: { color: activeStat?.color || "#fff" },
+            children: [
+              activeStat?.percent,
+              "%"
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15px] font-mono text-white/50 mt-1 uppercase", children: activeStat?.count !== void 0 && voteCount.includes("/") ? `${activeStat.count}/${voteCount.split("/")[1].replace("Votes", "").trim()}` : voteCount.replace("Votes", "").trim() })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1 relative z-10", children: listData.map((stat, i) => {
+      const originalIndex = sortedData.findIndex((s) => s.label === stat.label);
+      const isHovered = hoveredIndex === originalIndex;
+      const isDimmed = hoveredIndex !== null && hoveredIndex !== originalIndex;
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: `
+                                group flex items-center justify-between mb-1 rounded-lg transition-all duration-300 cursor-pointer
+                                ${isHovered ? "bg-white/[0.08] translate-x-1" : "bg-transparent hover:bg-white/[0.04]"}
+                                ${isDimmed ? "opacity-30 grayscale" : "opacity-100"}
+                            `,
+          onMouseEnter: () => setHoveredIndex(originalIndex),
+          onMouseLeave: () => setHoveredIndex(null),
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-0.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex h-2.5 w-2.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: `animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 duration-1000 ${isHovered ? "block" : "hidden"}`,
+                    style: { backgroundColor: stat.color }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "relative inline-flex rounded-full h-2.5 w-2.5",
+                    style: { backgroundColor: stat.color }
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-gray-300 group-hover:text-white transition-colors", children: stat.label })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2 pr-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-white font-mono", children: [
+              stat.percent,
+              "%"
+            ] }) })
+          ]
+        },
+        i
+      );
+    }) })
+  ] });
+};
 const SummaryModal = ({ onClose }) => {
   const [data, setData] = reactExports.useState(null);
+  const [isSharing, setIsSharing] = reactExports.useState(false);
+  const modalRef = reactExports.useRef(null);
   reactExports.useEffect(() => {
     const extracted = extractPageData();
     setData(extracted);
@@ -4038,6 +4344,55 @@ const SummaryModal = ({ onClose }) => {
       document.body.style.overflow = "auto";
     };
   }, []);
+  const captureScreenshot = async () => {
+    if (!modalRef.current || isSharing) return;
+    setIsSharing(true);
+    const element = modalRef.current;
+    const images = Array.from(element.querySelectorAll("img"));
+    const originalSrcs = /* @__PURE__ */ new Map();
+    const filter = (node) => {
+      const exclusionClasses = ["no-screenshot", "close-btn"];
+      return !exclusionClasses.some((classname) => node.classList?.contains(classname));
+    };
+    try {
+      await Promise.all(images.map(async (img) => {
+        try {
+          originalSrcs.set(img, img.src);
+          const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(img.src)}`;
+          const response = await fetch(proxyUrl);
+          if (!response.ok) throw new Error("Proxy blocked");
+          const blob = await response.blob();
+          const localUrl = URL.createObjectURL(blob);
+          img.src = localUrl;
+          img.crossOrigin = "anonymous";
+        } catch (e) {
+        }
+      }));
+      const dataUrl = await toPng(element, {
+        quality: 0.95,
+        cacheBust: true,
+        filter,
+        backgroundColor: "#0A0A0A"
+      });
+      const link = document.createElement("a");
+      link.download = `${data?.title.replace(/[^a-z0-9]/gi, "_") || "moctale"}_summary.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (error) {
+      console.error("Screenshot failed:", error);
+      alert("Failed to generate screenshot.");
+    } finally {
+      images.forEach((img) => {
+        if (originalSrcs.has(img)) {
+          const localUrl = img.src;
+          img.src = originalSrcs.get(img);
+          URL.revokeObjectURL(localUrl);
+          img.removeAttribute("crossOrigin");
+        }
+      });
+      setIsSharing(false);
+    }
+  };
   if (!data) return null;
   return reactDomExports.createPortal(
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "fixed inset-0 z-[100000] flex items-center justify-center p-4 animate-in fade-in duration-300 font-sans", children: [
@@ -4045,16 +4400,25 @@ const SummaryModal = ({ onClose }) => {
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "div",
         {
-          className: "relative w-full max-w-4xl bg-[#0A0A0A] border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]",
+          ref: modalRef,
+          className: "relative w-full max-w-4xl bg-[var(--mp-bg-surface)] border border-[var(--mp-border)] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]",
           style: { boxShadow: "0 0 120px rgba(0,0,0,0.9)" },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 left-0 w-full h-64 overflow-hidden z-0", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: data.backdrop, className: "w-full h-full object-cover opacity-30 blur-sm scale-105", alt: "Backdrop" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "absolute inset-0",
+                  style: {
+                    background: `linear-gradient(to top, var(--mp-bg-surface) 10%, var(--mp-bg-surface) 40%, transparent 100%)`
+                  }
+                }
+              )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 overflow-y-auto custom-scrollbar flex-1 p-6 md:p-8 space-y-8", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row gap-6 mt-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-32 md:w-40 flex-shrink-0 rounded-xl overflow-hidden shadow-2xl border border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: data.poster, className: "w-full h-full object-cover", alt: "Poster" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-32 md:w-40 flex-shrink-0 rounded-xl overflow-hidden shadow-2xl border border-[var(--mp-border)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: data.poster, className: "w-full h-full object-cover", alt: "Poster" }) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex flex-col justify-center", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-3xl md:text-4xl font-bold text-white mb-2 leading-tight text-shadow-sm", children: data.title }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-sm text-gray-300 font-medium mb-4", children: [
@@ -4063,7 +4427,7 @@ const SummaryModal = ({ onClose }) => {
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: data.meta.split("•").pop()?.trim() }),
                     data.director && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1 h-1 bg-gray-500 rounded-full" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#8b5cf6] font-semibold", children: data.director })
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[var(--mp-accent)] font-semibold", children: data.director })
                     ] })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs md:text-sm text-gray-300 leading-relaxed font-light max-w-2xl mb-5", children: data.plot.replaceAll("Reveal Spoiler Powered by Moctale Plus", "") || "No synopsis available." }),
@@ -4071,50 +4435,42 @@ const SummaryModal = ({ onClose }) => {
                 ] })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
-                data.vibes.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/[0.03] p-5 rounded-2xl border border-white/5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-blue-500", children: ICONS.Chart }),
-                    " Vibe Check"
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: data.vibes.map((v, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gray-400 w-20 truncate", children: v.label }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full rounded-full", style: { width: `${v.percent}%`, backgroundColor: v.color } }) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gray-500 w-8 text-right", children: [
-                      v.percent,
-                      "%"
-                    ] })
-                  ] }, i)) })
-                ] }),
-                data.meterBreakdown.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/[0.03] p-5 rounded-2xl border border-white/5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-purple-500", children: ICONS.MagicStar }),
-                    " Moctale Meter"
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: data.meterBreakdown.map((stat, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gray-400 w-20 truncate", children: stat.label }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full rounded-full", style: { width: `${stat.percent}%`, backgroundColor: stat.color } }) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gray-500 w-8 text-right", children: [
-                      stat.percent,
-                      "%"
-                    ] })
-                  ] }, i)) })
-                ] })
+                data.vibes.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(VibeChart, { vibes: data.vibes }),
+                data.meterBreakdown.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  MoctaleMeter,
+                  {
+                    breakdown: data.meterBreakdown,
+                    voteCount: data.voteCount || "0 Votes"
+                  }
+                )
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-4 flex flex-col items-center gap-1 opacity-90 hover:opacity-100 transition-opacity", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[12px] text-white-500 flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col items-center gap-1 opacity-90 hover:opacity-100 transition-opacity", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[12px] text-white-500 flex items-center gap-1", children: [
                 "Powered by",
                 /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans/moctale-plus", target: "_blank", rel: "noreferrer", className: "text-white-500 font-medium underline hover:text-purple-400 transition-colors", children: "Moctale Plus" }),
                 "by",
                 /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans", target: "_blank", rel: "noreferrer", className: "text-white-500 font-medium underline hover:text-purple-400 transition-colors", children: "010101-sans" })
               ] }) })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                onClick: onClose,
-                className: "absolute top-4 right-4 p-2 text-white/50 hover:text-white bg-black/40 hover:bg-black/80 rounded-full transition-all z-50 backdrop-blur-md",
-                children: ICONS.Close
-              }
-            )
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-4 right-4 flex items-center gap-2 z-50 no-screenshot", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: captureScreenshot,
+                  disabled: isSharing,
+                  title: "Save as Image",
+                  className: "p-2 text-white/50 hover:text-white bg-black/40 hover:bg-black/80 rounded-full transition-all backdrop-blur-md disabled:opacity-50",
+                  children: isSharing ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" }) : ICONS.Share
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: onClose,
+                  className: "p-2 text-white/50 hover:text-white bg-black/40 hover:bg-black/80 rounded-full transition-all backdrop-blur-md",
+                  children: ICONS.Close
+                }
+              )
+            ] })
           ]
         }
       )
@@ -4129,9 +4485,9 @@ const SummaryButton = () => {
       "button",
       {
         onClick: () => setIsOpen(true),
-        className: "\n                      group relative w-full max-w-md h-11 rounded-full\n                      flex items-center justify-center gap-2\n                      text-white border border-2 border-[#B048FF] \n                      bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a]\n                      shadow-md shadow-purple-900/20\n                      transition-all duration-300 ease-out\n                      hover:shadow-lg hover:shadow-purple-500/30\n                      hover:brightness-110\n                      active:scale-[0.98]\n                  ",
+        className: "\n                      group relative w-full max-w-md h-11 rounded-full\n                      flex items-center justify-center gap-2\n                      text-white border border-2 border-[var(--mp-accent)] \n                      bg-[var(--mp-accent)]\n                      shadow-md shadow-[var(--mp-accent)]-900/20\n                      transition-all duration-300 ease-out\n                      hover:shadow-lg hover:shadow-[var(--mp-accent)]-500/30\n                      hover:brightness-110\n                      active:scale-[0.98]\n                  ",
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-10 text-lg text-[#B048FF]", children: ICONS.MagicStar }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-10 text-lg text-[var(--mp-accent)]", children: ICONS.MagicStar }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-10 text-sm font-semibold tracking-wide", children: "Page Summary" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "span",
@@ -4417,7 +4773,7 @@ const exportBackup = () => {
     };
     const backupData = {
       meta: {
-        version: "1.9.5",
+        version: "1.9.8",
         exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
         author: "010101-sans",
         type: "MoctalePlus_Backup"

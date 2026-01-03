@@ -15,6 +15,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -->
 
+## v1.9.8 - 03/01/2025
+
+### Added
+- **More Themes:** 
+    - More themes based on social, ott and other entertainment platforms
+    - `Default (Dark)`, `Oled`, `Midnight`, `Dracula`, `Nord`, `Github Dark`, `Synthwave`, `Onedark`, `Nightowl`, `Palenight`, `Twitter Dim`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Horror`, `Forest`, `Matrix`, `Coffee`, `Ocean`, `Catppuccin`, `Tokyonight`, `Rosepine`, `Kanagawa`, `Cobalt2`, `Shades Purple`, `Andromeda`, `Linear`, `Vercel`, `Supabase`, `Raycast`, `Spotify`, `Netflix`, `Disney`, `Hbo`, `Macos`, `Ubuntu`
+
+### Improved
+- **Injected Element CSS:** 
+    - The elements injected by Moctale Plus will now follow the applied custom theme as well.
+    - It was done by migrating the hardcoded css values to follow the custom made CSS THEME ENGINE.
+- **Page Summary:** 
+    - Now shows one-to-one vibe chart and moctale meter with custome interactive implementations
+    - Also, users can save and share the page summary by downloading it as an image with the new dedicated button
+
+### Fixed
+- **Image Downloader:**
+    - Problem: The download button used to appear in places where it was not supposed to appear
+    - Solution: Now the download button will appear only when hovering the target image while pressing `Ctrl` button.
+
 
 ## v1.9.5 - 01/01/2025
 

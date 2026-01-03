@@ -1,5 +1,5 @@
-import { r as reactExports, f as confetti, j as jsxRuntimeExports, G as Global, F as Flash, I as Import, g as Logout, h as Refresh, i as Setting2, k as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, l as CloudChange, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-DWMKswWr.js";
-import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-czPMP3As.js";
+import { r as reactExports, f as confetti, j as jsxRuntimeExports, G as Global, F as Flash, I as Import, g as Logout, h as Refresh, i as Setting2, k as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, l as CloudChange, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-B0imn2FR.js";
+import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-ERjiqAr6.js";
 import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -871,32 +871,43 @@ function App() {
                 onChange: (val) => updateSetting("activeTheme", val),
                 options: [
                   { value: "default", label: "Default (Dark)" },
-                  { value: "oled", label: "OLED (Black)" },
-                  { value: "midnight", label: "Midnight (Deep Blue)" },
+                  { value: "oled", label: "Oled" },
+                  { value: "midnight", label: "Midnight" },
                   { value: "dracula", label: "Dracula" },
                   { value: "nord", label: "Nord" },
-                  { value: "monokai", label: "Monokai" },
-                  { value: "github-dark", label: "Github Dark" },
+                  { value: "github-dark", label: "Github-Dark" },
                   { value: "synthwave", label: "Synthwave" },
                   { value: "onedark", label: "Onedark" },
-                  { value: "gruvbox", label: "Gruvbox" },
-                  { value: "ayu", label: "Ayu" },
                   { value: "nightowl", label: "Nightowl" },
                   { value: "palenight", label: "Palenight" },
-                  { value: "twitter-dim", label: "Twitter" },
+                  { value: "twitter-dim", label: "Twitter-Dim" },
                   { value: "discord", label: "Discord" },
                   { value: "whatsapp", label: "Whatsapp" },
                   { value: "instagram", label: "Instagram" },
                   { value: "eva", label: "Eva" },
                   { value: "goku", label: "Goku" },
-                  { value: "akatsuki", label: "Akatsuki" },
                   { value: "horror", label: "Horror" },
-                  { value: "mystery", label: "Mystery" },
+                  { value: "forest", label: "Forest" },
                   { value: "matrix", label: "Matrix" },
                   { value: "coffee", label: "Coffee" },
                   { value: "ocean", label: "Ocean" },
-                  { value: "forest", label: "Forest" },
-                  { value: "luxury", label: "Luxury" }
+                  { value: "catppuccin", label: "Catppuccin" },
+                  { value: "tokyonight", label: "Tokyonight" },
+                  { value: "rosepine", label: "Rosepine" },
+                  { value: "kanagawa", label: "Kanagawa" },
+                  { value: "cobalt2", label: "Cobalt2" },
+                  { value: "shades-purple", label: "Shades-Purple" },
+                  { value: "andromeda", label: "Andromeda" },
+                  { value: "linear", label: "Linear" },
+                  { value: "vercel", label: "Vercel" },
+                  { value: "supabase", label: "Supabase" },
+                  { value: "raycast", label: "Raycast" },
+                  { value: "spotify", label: "Spotify" },
+                  { value: "netflix", label: "Netflix" },
+                  { value: "disney", label: "Disney" },
+                  { value: "hbo", label: "Hbo" },
+                  { value: "macos", label: "Macos" },
+                  { value: "ubuntu", label: "Ubuntu" }
                 ]
               }
             ),
