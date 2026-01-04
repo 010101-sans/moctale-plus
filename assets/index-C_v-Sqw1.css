@@ -18,6 +18,24 @@
   --mp-grad-fade-b: linear-gradient(to bottom, transparent, #080808);
 }
 
+/* Dynamic Theming Engine */
+body.theme-dynamic-theme {
+  --mp-bg-base: var(--mp-dynamic-bg-base) !important;
+  --mp-bg-surface: var(--mp-dynamic-bg-surface) !important;
+  --mp-bg-layer: var(--mp-dynamic-bg-layer) !important;
+  --mp-border: var(--mp-dynamic-border) !important;
+  --mp-text-main: var(--mp-dynamic-text-main) !important;
+  --mp-text-muted: var(--mp-dynamic-text-muted) !important;
+  --mp-accent: var(--mp-dynamic-accent) !important;
+  
+  --mp-filter-icon: none !important;
+  --mp-grad-fade-r: linear-gradient(to right, transparent, var(--mp-dynamic-bg-base)) !important;
+  --mp-grad-fade-b: linear-gradient(to bottom, transparent, var(--mp-dynamic-bg-base)) !important;
+  
+  /* Force override background */
+  background-color: var(--mp-dynamic-bg-base) !important;
+}
+
 /* OLED (High Contrast / Battery) */
 body.theme-oled {
   --mp-bg-base: #000000;

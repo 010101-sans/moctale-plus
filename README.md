@@ -30,9 +30,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | Feature | Description |
 |:-------|:-----------|
 | **Linkifier**                 | Converts plain-text URLs into clickable links |
-| **More Platforms**            | Quick access to IMDB, TMDB, Letterboxd and Anime Platforms |
-| **Reviews & Discussions**     | Jump to YouTube, Reddit, and Twitter/X content & conversations |
-| **Creative Corner**           | Songs & OSTs, Fan Edits, and Behind The Scenes, Fan art, Merchandise, Cosplay and Fan Fiction |
+| **SideBar Plus**              | Replaces the previous sections in SideBar with three section containing well-organized platforms and tools |
 | **Right-Click Search**        | Select text anywhere -> Right Click -> Search on Moctale |
 | **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. The shortcuts guide can be accessed anytime with `Shift + /` |
 | **Advanced Spoiler Shield**   | Automatically blurs spoiler-heavy content |
@@ -49,6 +47,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Custom Themes** | `Default (Dark)`, `Oled`, `Midnight`, `Dracula`, `Nord`, `Github Dark`, `Synthwave`, `Onedark`, `Nightowl`, `Palenight`, `Twitter Dim`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Horror`, `Forest`, `Matrix`, `Coffee`, `Ocean`, `Catppuccin`, `Tokyonight`, `Rosepine`, `Kanagawa`, `Cobalt2`, `Shades Purple`, `Andromeda`, `Linear`, `Vercel`, `Supabase`, `Raycast`, `Spotify`, `Netflix`, `Disney`, `Hbo`, `Macos`, `Ubuntu` |
 | **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
 | **Sticker Studio** | Add persistant images in the website's UI |
+| **Dynamic Theme** | Extracts color palette from currently opened Title's Poster and generates a new dynamic theme based on Poster Artwork |
 
 
 <!-- ### 3. Stats & Data -->
@@ -57,7 +56,6 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 |          Feature         |         Description                                     |
 |:-------------------------|:--------------------------------------------------------|
 | **Collection Export**    | One-click CSV export for your watchlist and collections |
-| **Box Office Tracker**   | Instant access to Box Office Mojo, Sacnilk, etc |
 | **Tier List Maker**      | Make Tier Lists of from currently opened collections with TierMaker.com |
 | **Random Picker**        | Picks random title from currently opened | 
 | **Spinning Wheel**       | Picks random title from currently opened collection with a beautifully animated spinning wheel |

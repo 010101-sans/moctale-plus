@@ -15,6 +15,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -->
 
+
+## v2.0.0 - 04/01/2025
+
+### Added
+- **Dynamic Theme:** 
+    - Extracts color palette from currently opened Title's Poster and generates a new dynamic theme based on Poster Artwork.
+    - Every Movie / Series page will have its own unique, personaliz
+- **SideBar Plus:** 
+    - Replaces the previous sections in SideBar with three section containing well-organized platforms and tools.
+
+### Improved
+- **Export Collection:** 
+    - Now exports the collection titles as a ZIP bundle containg CSV, JSON, Excel, TXT, Markdown and HTML variations of exported Collections.
+- **Page Summary:** Vibe Chart and Moctale Meter appears with a sleek animation.
+- **Page Summary Button:** Better UI with background color and text color
+- **Keyboard Shortcuts:**
+    - Better column layout for Shortcuts Guide
+- **Image Downloader:** 
+    - Removed the size limit for image download button to appear
+
+    - Download button appears only while pressing `Ctrl` and hovering the target image
+    
+### Fixed
+- **Custom Theme Switching:** New theme is applied immediately on change.
+- **Transparent Blurred Background Issue:** In Page Summary and Keyboard Shortcuts Guide
+- **Downloaded Page Summary:** Now follows the applied custom theme
+
+    
+
+
+
 ## v1.9.8 - 03/01/2025
 
 ### Added

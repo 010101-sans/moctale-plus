@@ -204,6 +204,27 @@ const performBackgroundBackup = async () => {
     console.error("[Moctale+] Auto-backup failed:", error);
   }
 };
+chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
+  if (request.type === "FETCH_IMAGE_BLOB") {
+    fetch(request.url).then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.blob();
+    }).then((blob) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        sendResponse({ success: true, dataUrl: reader.result });
+      };
+      reader.onerror = () => {
+        sendResponse({ success: false, error: "Failed to read blob" });
+      };
+      reader.readAsDataURL(blob);
+    }).catch((error) => {
+      console.error("Image fetch failed:", error);
+      sendResponse({ success: false, error: error.message });
+    });
+    return true;
+  }
+});
 export {
   GoogleDriveService as G
 };

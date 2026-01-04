@@ -1,6 +1,6 @@
-import { r as reactExports, f as confetti, j as jsxRuntimeExports, G as Global, F as Flash, I as Import, g as Logout, h as Refresh, i as Setting2, k as Image, B as BrushSquare, C as ChartSquare, b as TickCircle, l as CloudChange, m as Export, n as Code, H as Heart, o as CloseSquare, A as ArrowDown2, M as Minus, p as Add, c as clientExports } from "./vendor-B0imn2FR.js";
-import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-ERjiqAr6.js";
-import { G as GoogleDriveService } from "./service-worker.ts-Dz236_1K.js";
+import { r as reactExports, h as confetti, j as jsxRuntimeExports, G as Global, F as Flash, M as MagicStar, I as Import, i as Logout, k as Refresh, l as Setting2, m as Image, B as BrushSquare, C as ChartSquare, e as TickCircle, n as CloudChange, o as Export, p as Code, H as Heart, q as CloseSquare, A as ArrowDown2, s as Minus, v as Add, c as clientExports } from "./vendor-DU5dKAv-.js";
+import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-CkUqFpt-.js";
+import { G as GoogleDriveService } from "./service-worker.ts-DG5i3NkG.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -760,33 +760,6 @@ function App() {
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               ToggleItem,
               {
-                label: "More Platforms",
-                desc: "IMDB, TMDB & Letterboxd links",
-                checked: settings.enablePlatforms,
-                onChange: (val) => updateSetting("enablePlatforms", val)
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              ToggleItem,
-              {
-                label: "Reviews & Discussions",
-                desc: "Reddit threads & YouTube reviews",
-                checked: settings.enableDiscussions,
-                onChange: (val) => updateSetting("enableDiscussions", val)
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              ToggleItem,
-              {
-                label: "Creative Content",
-                desc: "Show Fan Art, Cosplay & OSTs",
-                checked: settings.enableCreative,
-                onChange: (val) => updateSetting("enableCreative", val)
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              ToggleItem,
-              {
                 label: "Linkifier",
                 desc: "Make raw text links clickable",
                 checked: settings.enableLinkifier,
@@ -863,6 +836,16 @@ function App() {
           isOpen: openSection === "visuals",
           onToggle: () => toggleSection("visuals"),
           children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(MagicStar, { size: "18", variant: "Bold", className: "text-purple-400" }),
+                label: "Dynamic Theming",
+                desc: "Adapt colors to movie posters",
+                checked: settings.enableDynamicTheme,
+                onChange: (val) => updateSetting("enableDynamicTheme", val)
+              }
+            ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SelectItem,
               {
@@ -941,6 +924,15 @@ function App() {
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               ToggleItem,
               {
+                label: "SideBar Plus",
+                desc: "Platforms, Community & Production",
+                checked: settings.enableSideBar,
+                onChange: (val) => updateSetting("enableSideBar", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
                 label: "Export Collections",
                 desc: "Enable CSV export button",
                 checked: settings.enableCollectionExport,
@@ -954,15 +946,6 @@ function App() {
                 desc: "Shuffle button for collections",
                 checked: settings.enablePickRandom,
                 onChange: (val) => updateSetting("enablePickRandom", val)
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              ToggleItem,
-              {
-                label: "Box Office Tracker",
-                desc: "Revenue data in sidebar",
-                checked: settings.enableBoxOffice,
-                onChange: (val) => updateSetting("enableBoxOffice", val)
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(

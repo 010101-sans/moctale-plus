@@ -1,6 +1,6 @@
 {
   "name": "Moctale Plus",
-  "version": "1.9.8",
+  "version": "2.0.0",
   "manifest_version": 3,
   "icons": {
     "16": "icons/logo.png",
@@ -21,7 +21,9 @@
     "storage",
     "contextMenus",
     "identity",
-    "alarms"
+    "alarms",
+    "activeTab",
+    "scripting"
   ],
   "oauth2": {
     "client_id": "299859044236-62ulq62rf4hebtrk5h9b0mier8gkjrgq.apps.googleusercontent.com",
@@ -37,15 +39,17 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.tsx-loader-C8Hi_fKW.js"
+        "assets/index.tsx-loader-DvOlYKN9.js"
       ],
       "matches": [
         "https://moctale.in/*",
-        "https://www.moctale.in/*"
+        "https://www.moctale.in/*",
+        "https://*.moctale.in/*",
+        "https://media.moctale.in/*"
       ],
       "run_at": "document_end",
       "css": [
-        "assets/index-mxIcULLP.css"
+        "assets/index-C_v-Sqw1.css"
       ]
     }
   ],
@@ -74,12 +78,14 @@
     },
     {
       "matches": [
+        "https://*.moctale.in/*",
+        "https://media.moctale.in/*",
         "https://moctale.in/*",
         "https://www.moctale.in/*"
       ],
       "resources": [
-        "assets/vendor-B0imn2FR.js",
-        "assets/index.tsx-ERjiqAr6.js"
+        "assets/vendor-DU5dKAv-.js",
+        "assets/index.tsx-CkUqFpt-.js"
       ],
       "use_dynamic_url": false
     }
