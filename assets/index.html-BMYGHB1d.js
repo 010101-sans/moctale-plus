@@ -1,5 +1,5 @@
-import { r as reactExports, h as confetti, j as jsxRuntimeExports, G as Global, F as Flash, M as MagicStar, I as Import, i as Logout, k as Refresh, l as Setting2, m as Image, B as BrushSquare, C as ChartSquare, e as TickCircle, n as CloudChange, o as Export, p as Code, H as Heart, q as CloseSquare, A as ArrowDown2, s as Minus, v as Add, c as clientExports } from "./vendor-DU5dKAv-.js";
-import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-CkUqFpt-.js";
+import { r as reactExports, ak as confetti, j as jsxRuntimeExports, al as Global, am as Flash, an as MagicStar, ao as Import, ap as Logout, aq as Refresh, ar as Setting2, as as Image, at as BrushSquare, au as ChartSquare, e as TickCircle, av as CloudChange, aw as Export, ax as Code, ay as Heart, az as CloseSquare, aA as ArrowDown2, aB as Minus, aC as Add, c as clientExports } from "./vendor-BCfMK5SM.js";
+import { u as useSettings, R as REPO_OWNER, a as REPO_NAME, C as CURRENT_VERSION, A as AutoBackupSettings, e as exportBackup, i as importBackup } from "./index.tsx-CqrLT73l.js";
 import { G as GoogleDriveService } from "./service-worker.ts-DG5i3NkG.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -809,15 +809,6 @@ function App() {
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               ToggleItem,
               {
-                label: "Keyboard Shortcuts",
-                desc: "Nav keys (1-6) enabled",
-                checked: settings.enableShortcuts,
-                onChange: (val) => updateSetting("enableShortcuts", val)
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              ToggleItem,
-              {
                 icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Flash, { size: "18", variant: "Bold", className: "text-yellow-400" }),
                 label: "Performance Max",
                 desc: "Instant loads & smooth scroll",
@@ -1001,6 +992,24 @@ function App() {
                 desc: "Show watched indicator on posters",
                 checked: settings.enableWatchStatus,
                 onChange: (val) => updateSetting("enableWatchStatus", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                label: "Local Tracker",
+                desc: "Builds a private & local database.",
+                checked: settings.enableLocalTracker,
+                onChange: (val) => updateSetting("enableLocalTracker", val)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              ToggleItem,
+              {
+                label: "Graph View",
+                desc: "Obsidian inspired graph view",
+                checked: settings.enableGraphView,
+                onChange: (val) => updateSetting("enableGraphView", val)
               }
             )
           ]

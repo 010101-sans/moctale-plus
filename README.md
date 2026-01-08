@@ -32,7 +32,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Linkifier**                 | Converts plain-text URLs into clickable links |
 | **SideBar Plus**              | Replaces the previous sections in SideBar with three section containing well-organized platforms and tools |
 | **Right-Click Search**        | Select text anywhere -> Right Click -> Search on Moctale |
-| **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. The shortcuts guide can be accessed anytime with `Shift + /` |
+<!-- | **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. The shortcuts guide can be accessed anytime with `Shift + /` | -->
 | **Advanced Spoiler Shield**   | Automatically blurs spoiler-heavy content |
 | **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
 | **Review Templates**          | Provides a set of pre-built templates for writing reviews, with ability to add custom templates |
@@ -44,10 +44,10 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 **2. Visual Features**
 | Feature | Description |
 |:-------|:-----------|
-| **Custom Themes** | `Default (Dark)`, `Oled`, `Midnight`, `Dracula`, `Nord`, `Github Dark`, `Synthwave`, `Onedark`, `Nightowl`, `Palenight`, `Twitter Dim`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Horror`, `Forest`, `Matrix`, `Coffee`, `Ocean`, `Catppuccin`, `Tokyonight`, `Rosepine`, `Kanagawa`, `Cobalt2`, `Shades Purple`, `Andromeda`, `Linear`, `Vercel`, `Supabase`, `Raycast`, `Spotify`, `Netflix`, `Disney`, `Hbo`, `Macos`, `Ubuntu` |
+| **Custom Themes**  | `Default (Dark)`, `Oled`, `Midnight`, `Dracula`, `Nord`, `Github Dark`, `Synthwave`, `Onedark`, `Nightowl`, `Palenight`, `Twitter Dim`, `Discord`, `Whatsapp`, `Instagram`, `Eva`, `Goku`, `Horror`, `Forest`, `Matrix`, `Coffee`, `Ocean`, `Catppuccin`, `Tokyonight`, `Rosepine`, `Kanagawa`, `Cobalt2`, `Shades Purple`, `Andromeda`, `Linear`, `Vercel`, `Supabase`, `Raycast`, `Spotify`, `Netflix`, `Disney`, `Hbo`, `Macos`, `Ubuntu` |
 | **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
 | **Sticker Studio** | Add persistant images in the website's UI |
-| **Dynamic Theme** | Extracts color palette from currently opened Title's Poster and generates a new dynamic theme based on Poster Artwork |
+| **Dynamic Theme**  | Extracts color palette from currently opened Title's Poster and generates a new dynamic theme based on Poster Artwork |
 
 
 <!-- ### 3. Stats & Data -->
@@ -67,7 +67,11 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Image Preview**        | Hovering an image while pressing `Ctrl + Shift` opens a high-quality preview |
 | **Image Downloader**     | Click the download button on an image appearing while pressing `Ctrl` and hovering the image |
 | **Watch Status**         | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
-| **Page Summary**         | Generates a beautiful summary for currently opened title |
+| **Page Summary**         | Generates a visually & aesthetic beautiful, interactive & animated summary for currently opened title |
+| **Full Cast & Crew**     | Search full on Google, IMDb, IMDbPro, Wikipedia |
+| **Local Tracker**        | Silently builds a private, local and comprehensive database of user's vieweing history. This rich, self-expanding knowledge database serves as the foundation for many other powerful features |
+| **Graph View**           | Visualizes user's unique viewing journey as an interactive & animated, Obsidian inspired galaxy of inter-connected nodes. Access the Graph View with `Alt + Shift + G` |
+| **Command Palette**      | A keyboard-centric and blazingly-fast power tool for fast navigation, quick actions & toggeling extension features. Access the Command Palette with `Alt + Shift + K` |
 
 
  
@@ -103,6 +107,24 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 
 ## Feedback & Help
 
+- **What is Moctale Plus?**
+  - Moctale Plus is an unofficial power-user extension for Moctale.in
+  - It exists for users who want:
+      - More control than defaults allow.
+      - Faster workflows than the core prioritises.
+      - Personal systems that do not need platform approval.
+  - Moctale Plus does not aim to replace Moctale, compete with it, or mirror its roadmap.
+  - Instead, it explores:
+    - Opinionated UX ideas.
+    -  Advanced review tooling.
+    - Personalisation beyond mass-market constraints.
+  - Some ideas may influence the core product. 
+  - Others are intentionally niche and will remain so.
+  - Moctale Plus is built for users who prefer agency over automation.
+
+- The **Design principles** of Moctale Plus are defined in [PHILOSOPHY.md](./PHILOSOPHY.md)
+- All **Notable Changes** to Moctal Plus are documented in [CHANGELOG.md](./CHANGELOG.md)
+
 - **Have a feature request?** [Submit here](https://github.com/010101-sans/moctale-plus/issues/new?labels=enhancement&title=[Feature]+)  
 - **Found an error / bug?** [Report here](https://github.com/010101-sans/moctale-plus/issues/new?labels=bug&title=[Bug]+)  
 - **Have a questions?** [Ask here](https://github.com/010101-sans/moctale-plus/issues/new?labels=question&title=[Question]+)
@@ -124,6 +146,32 @@ Moctale Plus is an independent, third-party browser extension and is **not affil
 ## License
 
 Moctale Plus is distributed under a **custom proprietary license**. For full terms, see the [LICENSE](./LICENSE) file.
+
+## Special Thanks
+
+- [Moctale.in](https://www.moctale.in/) for the original and inspiring platform.
+- [@facebook/react](https://github.com/facebook/react) and [@facebook/react-dom](https://github.com/facebook/react) - powering the core UI of Moctale Plus.
+- [@vitejs/vite](https://github.com/vitejs/vite) and [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) - for the modern, fast build and dev experience.
+- [@microsoft/TypeScript](https://github.com/microsoft/TypeScript) - enabling static typing and robust development.
+- [@FortAwesome/fontawesome-svg-core](https://github.com/FortAwesome/Font-Awesome), [@FortAwesome/free-brands-svg-icons](https://github.com/FortAwesome/Font-Awesome), [@FortAwesome/free-solid-svg-icons](https://github.com/FortAwesome/Font-Awesome) and [@FortAwesome/react-fontawesome](https://github.com/FortAwesome/react-fontawesome) - comprehensive icon support. ([GitHub ZH][2])
+- [@lusaxweb/iconsax-react](https://github.com/lusaxweb/iconsax-react) - for the Iconsax icon pack (React port). ([Yarn][3])
+- [@lucide-icons/lucide](https://github.com/lucide-icons/lucide) and [react-icons](https://github.com/react-icons/react-icons) - additional modern iconography.
+- [canvas-confetti](https://github.com/catdad/canvas-confetti) - celebratory effects.
+- [cmdk](https://github.com/pacocoursey/cmdk) - command palette primitives.
+- [colord](https://github.com/omgovich/colord) - colour utilities.
+- [color-thief](https://github.com/lokesh/color-thief) - extraction of dominant image colours.
+- [exceljs](https://github.com/exceljs/exceljs) - Excel file generation.
+- [fuse.js](https://github.com/krisk/Fuse) - fuzzy search.
+- [html-to-image](https://github.com/bubkoo/html-to-image) - DOM-to-image conversion.
+- [jszip](https://github.com/Stuk/jszip) - ZIP archive handling.
+- [vis-network](https://github.com/visjs/vis-network) - interactive network visualisation.
+- [@crxjs/vite-plugin](https://github.com/crxjs/chrome-extension-tools) - Chrome extension tooling with Vite.
+- [eslint](https://github.com/eslint/eslint), [@eslint/js](https://github.com/eslint/js) and related plugins (eslint-plugin-react-hooks, eslint-plugin-react-refresh) - code quality enforcement.
+- [@typescript-eslint/typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - TS linting support.
+- [javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) - build obfuscation.
+- [terser](https://github.com/terser/terser) - minification.
+- [`@types/*`](https://github.com/DefinitelyTyped/DefinitelyTyped) - TypeScript type definitions used across this project.
+- All open source package maintainers and contributors who make Moctale Plus possible.
 
 ## Author
 

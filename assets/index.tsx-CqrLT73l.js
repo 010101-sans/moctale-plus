@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, r as reactExports, R as React, c as clientExports, J as JSZip, E as ExcelJS, S as Shuffle, a as RefreshCircle, b as RefreshLeftSquare, T as TickSquare, d as Edit2, L as Lock, e as TickCircle, f as reactDomExports, t as toPng, u, g as Timer1 } from "./vendor-DU5dKAv-.js";
+import { j as jsxRuntimeExports, r as reactExports, R as React, c as clientExports, J as JSZip, E as ExcelJS, S as Shuffle, a as RefreshCircle, b as RefreshLeftSquare, T as TickSquare, d as Edit2, L as Lock, e as TickCircle, w, f as reactDomExports, t as toPng, k, u, g as a11yPlugin, m as mixPlugin, D as DataSet, N as Network, F as Fuse, _ as _e, h as Search, P as PaintBucket, C as CircleArrowDown, i as CircleArrowUp, l as ChartNoAxesColumnIncreasing, H as History, n as FileOutput, o as ExternalLink, M as MousePointer2, p as FileText, q as ListVideo, Z as Zap, s as CircleCheckBig, v as Palette, x as PanelRight, y as Download, z as Maximize, A as Dices, B as Link, G as EyeOff, U as User, I as Tv, K as Film, O as UserCog, Q as PenTool, V as Bookmark, W as Library, X as Telescope, Y as Users, $ as Megaphone, a0 as CalendarDays, a1 as Clock, a2 as Calendar, a3 as Star, a4 as Trophy, a5 as Smile, a6 as Layers, a7 as Ghost, a8 as Languages, a9 as Globe, aa as Hash, ab as LayoutGrid, ac as Compass, ad as Settings, ae as Network$1, af as Command, ag as CornerDownLeft, ah as ArrowDown, ai as ArrowUp, aj as Timer1 } from "./vendor-BCfMK5SM.js";
 const getIcon = (name) => {
   const iconClass = "w-6 h-6 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300";
   if (name === "tvtropes") {
@@ -147,7 +147,7 @@ const Footer = () => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "
   " ",
   /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans", target: "_blank", rel: "noreferrer", className: "hover:text-[#888] underline decoration-dotted", children: "010101-sans" })
 ] }) });
-const Icons$2 = {
+const Icons$3 = {
   // Generic Beautiful Icons (Lucide Style)
   Database: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }),
@@ -172,7 +172,7 @@ const PlatformSection = ({ title, type }) => {
       // Databases
       ...makeLink(
         "More Platforms",
-        Icons$2.Database,
+        Icons$3.Database,
         `empty-link`
       ),
       links: [
@@ -220,7 +220,7 @@ const PlatformSection = ({ title, type }) => {
       // Primary: AniList
       ...makeLink(
         "Anime Platforms",
-        Icons$2.Anime,
+        Icons$3.Anime,
         `https://anilist.co/search/anime?search=${queryTitleOnly}`
       ),
       links: [
@@ -256,7 +256,7 @@ const PlatformSection = ({ title, type }) => {
         ),
         makeLink(
           "aniDB",
-          Icons$2.Database,
+          Icons$3.Database,
           `https://anidb.net/anime/?adb.search=${queryTitleOnly}&do.update=Search&noalias=1`
         )
       ]
@@ -319,7 +319,7 @@ const PlatformSection = ({ title, type }) => {
         ),
         makeLink(
           "JioHotstar",
-          Icons$2.Star,
+          Icons$3.Star,
           `https://www.hotstar.com/in/explore?search_query=${queryTitleOnly}`
         ),
         makeLink(
@@ -344,7 +344,7 @@ const PlatformSection = ({ title, type }) => {
       // Primary: DoesTheDogDie
       ...makeLink(
         "Safety & Utility",
-        Icons$2.Shield,
+        Icons$3.Shield,
         `https://www.doesthedogdie.com/search?q=${queryTitleOnly}`
       ),
       links: [
@@ -389,7 +389,7 @@ const PlatformSection = ({ title, type }) => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] });
 };
-const Icons$1 = {
+const Icons$2 = {
   Message: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" }) }),
   Image: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
@@ -424,7 +424,7 @@ const CommunitySection = ({ title, isAnime }) => {
     // --- FORUMS ---
     {
       // Primary: Reddit
-      ...makeLink("Discussions & Forums", Icons$1.Message, ``),
+      ...makeLink("Discussions & Forums", Icons$2.Message, ``),
       links: [
         makeLink("Reviews", "youtube", `https://www.youtube.com/results?search_query=${queryTitle}${context}+reviews+and+discussion`),
         makeLink("Reactions", "youtube", `https://www.youtube.com/results?search_query=${queryTitle}${context}+live reactions`),
@@ -437,7 +437,7 @@ const CommunitySection = ({ title, isAnime }) => {
     },
     // --- Written REVIEWS ---
     {
-      ...makeLink("Written Reviews", Icons$1.Star, ``),
+      ...makeLink("Written Reviews", Icons$2.Star, ``),
       links: [
         makeLink("Google Reviews", "google", `https://www.google.com/search?q=${queryTitle}+reviews`),
         makeLink("Rotten Tomatoes", "rottentomatoes", `https://www.rottentomatoes.com/search?search=${queryTitle}`),
@@ -447,18 +447,18 @@ const CommunitySection = ({ title, isAnime }) => {
     },
     // --- VISUALS ---
     {
-      ...makeLink("Visuals & Trends", Icons$1.Image, ``),
+      ...makeLink("Visuals & Trends", Icons$2.Image, ``),
       links: [
         makeLink("Google Images", "google", `https://www.google.com/search?q=${queryTitle}+offical+and+fan+artwork+and+posters&tbm=isch`),
         makeLink("Pinterest", "pinterest", `https://www.pinterest.com/search/pins/?q=${queryTitle}`),
-        makeLink("ArtStation", Icons$1.Image, `https://www.artstation.com/search?sort_by=relevance&query=${queryTitle}`),
-        makeLink("DeviantArt", Icons$1.Image, `https://www.deviantart.com/search?q=${queryTitle}`)
+        makeLink("ArtStation", Icons$2.Image, `https://www.artstation.com/search?sort_by=relevance&query=${queryTitle}`),
+        makeLink("DeviantArt", Icons$2.Image, `https://www.deviantart.com/search?q=${queryTitle}`)
       ]
     },
     // --- LORE ---
     {
       // Primary: Not In The Book
-      ...makeLink("Wikis, Trivia & Lore", Icons$1.Book, ``),
+      ...makeLink("Wikis, Trivia & Lore", Icons$2.Book, ``),
       links: [
         makeLink("Google Trivia", "google", `https://www.google.com/search?q=${queryTitle}+trivia+facts`),
         // Backup
@@ -467,30 +467,30 @@ const CommunitySection = ({ title, isAnime }) => {
         makeLink("NotInTheBook", "wikibooks", `https://thatwasnotinthebook.com/search?q=${queryTitle}`),
         makeLink("Wikipedia", "wikipedia", `https://en.wikipedia.org/wiki/Special:Search?go=Go&search=${queryTitle}&ns0=1`),
         makeLink("Wiki Data", "alwaysdata", `https://www.wikidata.org/w/index.php?search=${queryTitle}&language=en&title=Special%3ASearch&ns0=1`),
-        makeLink("TV Tropes", Icons$1.Book, `https://tvtropes.org/pmwiki/search_result.php#gsc.tab=0&gsc.q=${queryTitle}&gsc.sort=`),
+        makeLink("TV Tropes", Icons$2.Book, `https://tvtropes.org/pmwiki/search_result.php#gsc.tab=0&gsc.q=${queryTitle}&gsc.sort=`),
         makeLink("Fandom Wiki", "fandom", `https://community.fandom.com/wiki/Special:Search?query=${queryTitle}`)
       ]
     },
     // --- FICTION ---
     {
       // Primary: AO3
-      ...makeLink("Fan Fiction", Icons$1.Pen, ``),
+      ...makeLink("Fan Fiction", Icons$2.Pen, ``),
       links: [
         makeLink("Google FanFic", "google", `https://www.google.com/search?q=${queryTitle}+fanfiction`),
         // Backup
-        makeLink("Wattpad", Icons$1.Pen, `https://www.wattpad.com/search/${queryTitle}`),
-        makeLink("FanFiction", Icons$1.Pen, `https://www.fanfiction.net/search/?keywords=${queryTitle}&ready=1&type=story`),
-        makeLink("AO3", Icons$1.Pen, `https://archiveofourown.org/works/search?work_search[query]=${queryTitle}`)
+        makeLink("Wattpad", Icons$2.Pen, `https://www.wattpad.com/search/${queryTitle}`),
+        makeLink("FanFiction", Icons$2.Pen, `https://www.fanfiction.net/search/?keywords=${queryTitle}&ready=1&type=story`),
+        makeLink("AO3", Icons$2.Pen, `https://archiveofourown.org/works/search?work_search[query]=${queryTitle}`)
       ]
     },
     // --- MERCH ---
     {
       // Primary: Redbubble
-      ...makeLink("Merch (Global)", Icons$1.Bag, `https://www.redbubble.com/search?q=${queryTitle}`),
+      ...makeLink("Merch (Global)", Icons$2.Bag, `https://www.redbubble.com/search?q=${queryTitle}`),
       links: [
         makeLink("Google Shopping", "google", `https://www.google.com/search?q=${queryTitle}+merch+t-shirt&tbm=shop`),
         // Backup
-        makeLink("Souled Store (In)", Icons$1.Bag, `https://www.thesouledstore.com/search?q=${queryTitle}`)
+        makeLink("Souled Store (In)", Icons$2.Bag, `https://www.thesouledstore.com/search?q=${queryTitle}`)
       ]
     }
   ];
@@ -500,7 +500,7 @@ const CommunitySection = ({ title, isAnime }) => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] });
 };
-const Icons = {
+const Icons$1 = {
   // Beautiful Outline Icons
   Chart: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "18", y1: "20", x2: "18", y2: "10" }),
@@ -564,21 +564,21 @@ const ProductionSection = ({ title, type }) => {
     // --- FINANCIALS ---
     ...isMovie ? [{
       // Primary: Sacnilk
-      ...makeLink("Box Office", Icons.Chart, `https://www.sacnilk.com/Search.aspx?search_txt=${query}`),
+      ...makeLink("Box Office", Icons$1.Chart, `https://www.sacnilk.com/Search.aspx?search_txt=${query}`),
       links: [
         makeLink("Google Boxoffice", "google", `https://www.google.com/search?q=${query}+box+office+collection+report`),
-        makeLink("Box Office India", Icons.Chart, `https://www.boxofficeindia.com/search.php?search=${query}`),
-        makeLink("Box Office Mojo", Icons.Mojo, `https://www.boxofficemojo.com/search/?q=${query}`),
-        makeLink("Sacnilk Verdict", Icons.Sacnilk, `https://www.google.com/search?q=${query}+box+office+collection+site:sacnilk.com`),
-        makeLink("Bollywood Hungama", Icons.Hungama, `https://www.google.com/search?q=${query}+box+office+site:bollywoodhungama.com`),
-        makeLink("The Numbers", Icons.Numbers, `https://www.the-numbers.com/search?search_term=${query}`),
+        makeLink("Box Office India", Icons$1.Chart, `https://www.boxofficeindia.com/search.php?search=${query}`),
+        makeLink("Box Office Mojo", Icons$1.Mojo, `https://www.boxofficemojo.com/search/?q=${query}`),
+        makeLink("Sacnilk Verdict", Icons$1.Sacnilk, `https://www.google.com/search?q=${query}+box+office+collection+site:sacnilk.com`),
+        makeLink("Bollywood Hungama", Icons$1.Hungama, `https://www.google.com/search?q=${query}+box+office+site:bollywoodhungama.com`),
+        makeLink("The Numbers", Icons$1.Numbers, `https://www.the-numbers.com/search?search_term=${query}`),
         makeLink("Wiki Budget", "wikipedia", `https://en.wikipedia.org/wiki/Special:Search?search=${query}+film+box+office`)
       ]
     }] : [],
     // --- MUSIC ---
     {
       // Primary: Tunefind
-      ...makeLink("Songs & OSTs", Icons.Note, `https://www.tunefind.com/search/site?q=${query}`),
+      ...makeLink("Songs & OSTs", Icons$1.Note, `https://www.tunefind.com/search/site?q=${query}`),
       links: [
         makeLink("Google Songs", "google", `https://www.google.com/search?q=${query}+soundtrack+list`),
         makeLink("Spotify", "spotify", `https://open.spotify.com/search/${query}`),
@@ -589,38 +589,38 @@ const ProductionSection = ({ title, type }) => {
     // --- SCRIPTS ---
     {
       // Primary: Script Slug
-      ...makeLink("Screenplay", Icons.File, ``),
+      ...makeLink("Screenplay", Icons$1.File, ``),
       links: [
         makeLink("Google PDF", "google", `https://www.google.com/search?q=${query}+screenplay+script+filetype:pdf`),
         // Backup
-        makeLink("Scrite", Icons.File, `https://www.google.com/search?q=site:scrite.io+${query}`),
-        makeLink("Script Slug", Icons.File, `https://www.scriptslug.com/search?q=${query}`)
+        makeLink("Scrite", Icons$1.File, `https://www.google.com/search?q=site:scrite.io+${query}`),
+        makeLink("Script Slug", Icons$1.File, `https://www.scriptslug.com/search?q=${query}`)
       ]
     },
     // --- VISUALS ---
     {
       // Primary: Film-Grab
-      ...makeLink("Cinematography", Icons.Camera, ``),
+      ...makeLink("Cinematography", Icons$1.Camera, ``),
       links: [
         makeLink("Google Shots", "google", `https://www.google.com/search?q=${query}+cinematography+stills&tbm=isch`),
         makeLink("Film Grab", "google", `https://film-grab.com/?s=${title}`),
-        makeLink("Shot.Cafe", Icons.Camera, `https://shot.cafe/search/movie/${query}`),
-        makeLink("ShotDeck", Icons.Camera, `https://shotdeck.com/search?q=${query}`),
-        makeLink("MovieBarcode", Icons.Camera, `https://moviebarcode.tumblr.com/search/${query}`),
-        makeLink("Color Palette", Icons.Camera, `http://colormind.io/search?q=${query}`)
+        makeLink("Shot.Cafe", Icons$1.Camera, `https://shot.cafe/search/movie/${query}`),
+        makeLink("ShotDeck", Icons$1.Camera, `https://shotdeck.com/search?q=${query}`),
+        makeLink("MovieBarcode", Icons$1.Camera, `https://moviebarcode.tumblr.com/search/${query}`),
+        makeLink("Color Palette", Icons$1.Camera, `http://colormind.io/search?q=${query}`)
       ]
     },
     // --- TECH & LOCATIONS ---
     {
       // Primary: Movie-Locations
-      ...makeLink("Locations & Tech", Icons.Map, `https://www.google.com/search?q=site:movie-locations.com+${query}`),
+      ...makeLink("Locations & Tech", Icons$1.Map, `https://www.google.com/search?q=site:movie-locations.com+${query}`),
       links: [
         makeLink("Google Locations", "google", `https://www.google.com/search?q=${query}+filming+locations`),
         // Backup
-        makeLink("Behind The Scenes", Icons.Video, `https://www.youtube.com/results?search_query=${query}+making+and+behind+the+scenes`),
-        makeLink("Editing Analysis", Icons.Video, `https://www.youtube.com/results?search_query=${query}+editing+analysis`),
+        makeLink("Behind The Scenes", Icons$1.Video, `https://www.youtube.com/results?search_query=${query}+making+and+behind+the+scenes`),
+        makeLink("Editing Analysis", Icons$1.Video, `https://www.youtube.com/results?search_query=${query}+editing+analysis`),
         makeLink("Wiki Data", "alwaysdata", `https://www.wikidata.org/w/index.php?search=${query}&language=en&title=Special%3ASearch&ns0=1`),
-        makeLink("ShotOnWhat", Icons.Camera, `https://shotonwhat.com/?s=${query}`),
+        makeLink("ShotOnWhat", Icons$1.Camera, `https://shotonwhat.com/?s=${query}`),
         makeLink("IMDb Tech Specs", "imdb", `https://www.imdb.com/find/?s=tt&q=${query}`)
       ]
     }
@@ -633,7 +633,10 @@ const ProductionSection = ({ title, type }) => {
 };
 const getPageMediaInfo = () => {
   try {
-    let titleEl = document.querySelector("h1.text-\\[20px\\], h1.lg\\:text-\\[28px\\]");
+    let titleEl = document.querySelector("h1.text-4xl, h1.text-5xl, h1.lg\\:text-6xl");
+    if (!titleEl) {
+      titleEl = document.querySelector("h1.text-\\[20px\\], h1.lg\\:text-\\[28px\\]");
+    }
     if (!titleEl) {
       const h1s = Array.from(document.querySelectorAll("h1"));
       titleEl = h1s.find((el) => {
@@ -644,54 +647,39 @@ const getPageMediaInfo = () => {
     let title = titleEl?.textContent?.trim() || "";
     title = title.replace(/\(\d{4}\)/, "").trim();
     if (!title) return null;
-    const metaEl = document.querySelector("div.text-\\[14px\\].text-\\[\\#ABABAB\\]");
+    const metaEl = document.querySelector("div.text-\\[14px\\].text-\\[\\#ABABAB\\], p.text-\\[\\#C6C6C6\\]");
     const metaText = metaEl?.textContent?.trim() || "";
     let year = "";
-    let type = "Unknown";
+    let type = "unknown";
     if (metaText) {
       const yearMatch = metaText.match(/\b(19|20)\d{2}\b/);
       if (yearMatch) year = yearMatch[0];
-      if (metaText.includes("Movie")) {
-        type = "Movie";
-      } else if (metaText.includes("Show") || metaText.includes("TV") || metaText.includes("Series") || metaText.includes("Season")) {
-        type = "Show";
-      }
+      const lowerMeta = metaText.toLowerCase();
+      if (lowerMeta.includes("movie")) type = "movie";
+      else if (lowerMeta.includes("show") || lowerMeta.includes("series") || lowerMeta.includes("season")) type = "tv";
     }
-    const potentialTags = /* @__PURE__ */ new Set();
-    document.querySelectorAll('a[href*="/genre/"]').forEach(
-      (el) => potentialTags.add(el.textContent?.trim().toLowerCase() || "")
-    );
-    document.querySelectorAll("button span.text-\\[\\#E1E6F0\\], button span.capitalize").forEach(
-      (el) => potentialTags.add(el.textContent?.trim().toLowerCase() || "")
-    );
-    const countryNode = document.querySelector('a[href*="/country/"]');
-    const country = countryNode?.textContent?.trim().toLowerCase() || "";
-    if (metaText) potentialTags.add(metaText.toLowerCase());
-    const animeKeywords = [
-      "anime",
-      "donghua",
-      "seinen",
-      "shonen",
-      "shojo",
-      "josei",
-      "isekai",
-      "mecha",
-      "slice of life",
-      "animation"
-    ];
+    let poster = "";
+    const imgCandidates = Array.from(document.querySelectorAll('img[src*="/images/"]'));
+    const posterImg = imgCandidates.find((img) => {
+      const rect = img.getBoundingClientRect();
+      return rect.width > 50 && rect.height > rect.width && rect.top < 600;
+    });
+    if (posterImg) poster = posterImg.src;
+    const genres = [];
+    document.querySelectorAll('a[href^="/genre/"]').forEach((el) => {
+      const g = el.textContent?.trim();
+      if (g && g.length > 2) genres.push(g);
+    });
     let isAnime = false;
-    for (const tag of potentialTags) {
-      if (animeKeywords.some((keyword) => tag.includes(keyword.toLowerCase()))) {
-        isAnime = true;
-        break;
-      }
+    const animeKeywords = ["anime", "donghua", "seinen", "shonen", "shojo", "josei", "isekai", "mecha", "animation"];
+    if (genres.some((g) => animeKeywords.some((k2) => g.toLowerCase().includes(k2)))) isAnime = true;
+    const countryNode = document.querySelector('a[href^="/country/"]');
+    if (countryNode?.textContent?.trim().toLowerCase() === "japan") {
+      if (genres.some((g) => g.toLowerCase().includes("animation"))) isAnime = true;
     }
-    if (!isAnime && country.toLowerCase() === "japan") {
-      if (potentialTags.has("animation") || potentialTags.has("animated")) {
-        isAnime = true;
-      }
-    }
-    return { title, year, isAnime, type };
+    if (isAnime) type = "anime";
+    if (self.location.href.includes("/person/")) type = "person";
+    return { title, year, isAnime, type, poster, genres };
   } catch (e) {
     console.error("[Moctale+] Error scraping page info:", e);
     return null;
@@ -1370,485 +1358,6 @@ const simulateReactTyping = (input, text) => {
     input.dispatchEvent(enterEvent);
   }, 300);
 };
-let isListenerAttached = false;
-let isReloadPending = false;
-const navigate = (path) => {
-  self.location.href = path;
-};
-const clickSearch = () => {
-  const searchBtn = document.querySelector('button[aria-label="Search"]');
-  if (searchBtn) {
-    searchBtn.click();
-  } else {
-    self.location.hash = "#auto_search=";
-  }
-};
-const openProfile = () => {
-  const profileTrigger = document.querySelector('button[aria-label="Open profile menu"]');
-  if (profileTrigger) {
-    profileTrigger.click();
-    setTimeout(() => {
-      const dialog = document.querySelector('div[role="dialog"]');
-      if (dialog) {
-        const links = Array.from(dialog.querySelectorAll("a"));
-        const myProfileLink = links.find((a) => a.textContent?.includes("My Profile"));
-        if (myProfileLink) {
-          myProfileLink.click();
-        } else {
-          const firstLink = dialog.querySelector("a");
-          if (firstLink) firstLink.click();
-        }
-      }
-    }, 50);
-  } else {
-    const avatar = document.querySelector('img[alt="Profile"]');
-    if (avatar) {
-      const btn = avatar.closest("button");
-      if (btn) btn.click();
-    }
-  }
-};
-const toggleNotifications = () => {
-  let notifBtn = document.querySelector('button[aria-label="Notifications"]');
-  if (!notifBtn) {
-    const bellIcon = document.querySelector(".lucide-bell");
-    if (bellIcon) notifBtn = bellIcon.closest("button");
-  }
-  if (notifBtn) {
-    const opts = {
-      view: self,
-      bubbles: true,
-      cancelable: true,
-      buttons: 1
-      // Left mouse button
-    };
-    notifBtn.dispatchEvent(new PointerEvent("pointerdown", opts));
-    notifBtn.dispatchEvent(new MouseEvent("mousedown", opts));
-    notifBtn.dispatchEvent(new PointerEvent("pointerup", opts));
-    notifBtn.dispatchEvent(new MouseEvent("mouseup", opts));
-    notifBtn.click();
-    console.log("[Moctale+] Notification toggle triggered");
-  } else {
-    console.warn("[Moctale+] Notification button not found");
-  }
-};
-const showToast = (message, isReloading = false) => {
-  const existing = document.getElementById("moctale-toast");
-  if (existing) {
-    existing.style.transform = "translateX(120%)";
-    existing.style.opacity = "0";
-    setTimeout(() => existing.remove(), 300);
-  }
-  const logoUrl = chrome.runtime.getURL("icons/logo.png");
-  const toast = document.createElement("div");
-  toast.id = "moctale-toast";
-  toast.className = `
-    fixed right-8 bottom-10 z-[10000]
-    flex items-center gap-4
-    pl-4 pr-6 py-4
-    rounded-xl
-    text-white font-sans
-    bg-[#0B0716]/95 backdrop-blur-xl
-    border border-[#7C3AED]/30
-    shadow-[0_16px_50px_-18px_rgba(124,58,237,0.6)]
-    transform translate-x-[120%] opacity-0
-    transition-transform transition-opacity
-    duration-[420ms]
-    ease-[cubic-bezier(0.22,1,0.36,1)]
-  `;
-  const iconHtml = isReloading ? `
-      <div class="w-10 h-10 flex items-center justify-center
-                  border border-[#7C3AED]/40
-                  bg-[#7C3AED]/15 rounded-lg">
-        <svg class="w-5 h-5 text-[#A78BFA] animate-spin"
-             viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5">
-          <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
-        </svg>
-      </div>` : `
-      <div class="w-10 h-10 flex items-center justify-center
-                  border border-[#7C3AED]/40
-                  bg-[#7C3AED]/15 rounded-lg">
-        <img
-          src="${logoUrl}"
-          alt="Moctale Plus"
-          class="w-6 h-6 object-contain
-                 drop-shadow-[0_0_8px_rgba(124,58,237,0.7)]"
-          onerror="
-            this.replaceWith(
-              Object.assign(document.createElement('div'), {
-                innerHTML:
-                  '<svg width=18 height=18 viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'#A78BFA\\' stroke-width=\\'2.5\\'><path d=\\'M12 2v20M2 12h20\\'/></svg>'
-              })
-            )
-          "
-        />
-      </div>`;
-  toast.innerHTML = `
-    <div class="absolute left-0 top-0 h-full w-[3px]
-                bg-gradient-to-b
-                from-[#A78BFA]
-                via-[#7C3AED]
-                to-[#4C1D95]"></div>
-
-    ${iconHtml}
-
-    <div class="flex flex-col gap-1">
-      <span class="text-[13px] font-semibold tracking-wide">
-        ${message}
-      </span>
-      <span class="text-[10px] uppercase tracking-widest text-white/45
-                   flex items-center gap-2">
-        ${isReloading ? `<span class="w-1.5 h-1.5 rounded-full
-                     bg-[#A78BFA] animate-pulse"></span>
-               Applying Changes` : "Moctale Plus"}
-      </span>
-    </div>
-  `;
-  document.body.appendChild(toast);
-  requestAnimationFrame(() => {
-    toast.style.transform = "translateX(0)";
-    toast.style.opacity = "1";
-  });
-  if (!isReloading) {
-    setTimeout(() => {
-      const t = document.getElementById("moctale-toast");
-      if (t) {
-        t.style.transform = "translateX(120%)";
-        t.style.opacity = "0";
-        setTimeout(() => t.remove(), 300);
-      }
-    }, 3600);
-  }
-};
-const toggleSetting = (key, name) => {
-  if (isReloadPending) return;
-  if (typeof chrome === "undefined" || !chrome.runtime?.id) {
-    console.warn("[Moctale+] Context Invalidated. Refreshing...");
-    self.location.reload();
-    return;
-  }
-  if (!chrome.storage || !chrome.storage.local) return;
-  chrome.storage.local.get([key], (result) => {
-    if (chrome.runtime.lastError) return;
-    const current = result[key] === true;
-    const newValue = !current;
-    chrome.storage.local.set({ [key]: newValue }, () => {
-      const needsReload = key === "enableSpoilerShield";
-      if (needsReload) {
-        isReloadPending = true;
-        showToast(`${name}: ${newValue ? "ON" : "OFF"}`, true);
-        setTimeout(() => self.location.reload(), 800);
-      } else {
-        showToast(`${name}: ${newValue ? "ON" : "OFF"}`, false);
-      }
-    });
-  });
-};
-const triggerRandomPick = () => {
-  const randomBtn = document.querySelector(".moctale-pick-random button");
-  if (randomBtn) randomBtn.click();
-};
-const scrollToTop = () => {
-  self.scrollTo({ top: 0, behavior: "smooth" });
-};
-const closeModals = () => {
-  const randomClose = document.querySelector(".moctale-pick-random-modal-close");
-  if (randomClose) randomClose.click();
-  const helpModal = document.getElementById("moctale-shortcuts-help");
-  if (helpModal) helpModal.remove();
-  const backdrop = document.querySelector(".fixed.inset-0.z-\\[100\\]");
-  if (backdrop && backdrop instanceof HTMLElement) backdrop.click();
-  if (self.location.hash.includes("#auto_search")) {
-    history.pushState("", document.title, self.location.pathname + self.location.search);
-  }
-};
-const handleScheduleCycle = () => {
-  const current = self.location.href;
-  if (current.includes("timeFilter=today")) navigate("/schedule?timeFilter=upcoming");
-  else if (current.includes("timeFilter=upcoming")) navigate("/schedule?timeFilter=announced");
-  else navigate("/schedule?timeFilter=today");
-};
-const handleExploreCycle = () => {
-  const current = self.location.pathname;
-  if (current === "/explore/categories") navigate("/explore/genres");
-  else if (current === "/explore/genres") navigate("/explore/anime");
-  else if (current === "/explore/anime") navigate("/explore/franchise");
-  else navigate("/explore/categories");
-};
-const showHelpModal = () => {
-  if (document.getElementById("moctale-shortcuts-help")) return;
-  const modal = document.createElement("div");
-  modal.id = "moctale-shortcuts-help";
-  modal.className = "fixed inset-0 z-[9999] flex items-center justify-center animate-in fade-in duration-200 font-sans";
-  modal.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-  modal.style.backdropFilter = "blur(8px)";
-  modal.style.webkitBackdropFilter = "blur(8px)";
-  const logoUrl = typeof chrome !== "undefined" && chrome.runtime ? chrome.runtime.getURL("icons/logo.png") : "";
-  const sections = [
-    {
-      title: "Navigation",
-      items: [
-        { k: "1", d: "Explore" },
-        { k: "2", d: "Schedule" },
-        { k: "3", d: "Clubs" },
-        { k: "4", d: "Categories" },
-        { k: "5", d: "Search" },
-        { k: "6", d: "My Profile" },
-        { k: "N", d: "Notifications" },
-        { k: "Shift + S", d: "Settings" },
-        { k: "[", d: "My Collections" },
-        { k: "]", d: "Saved Collections" }
-      ]
-    },
-    {
-      title: "Actions",
-      items: [
-        { k: "R", d: "Pick Random" },
-        { k: "T", d: "Scroll Top" },
-        { k: "Ctrl + Shift", d: "Preview Images with Mouse" },
-        { k: "Shift + /", d: "Show Shortcuts Guide" }
-      ]
-    },
-    {
-      title: "Toggles",
-      items: [
-        { k: "S", d: "Spoiler Shield", setting: "enableSpoilerShield" },
-        { k: "L", d: "Linkifier", setting: "enableLinkifier" },
-        { k: "C", d: "Context Menu", setting: "enableContextMenu" },
-        { k: "D", d: "Discussions", setting: "enableDiscussions" },
-        { k: "P", d: "More Platforms", setting: "enablePlatforms" },
-        { k: "K", d: "Creative Corner", setting: "enableCreative" },
-        { k: "E", d: "Export Collection", setting: "enableCollectionExport" },
-        { k: "B", d: "Box Office", setting: "enableBoxOffice" },
-        { k: "X", d: "Pick Random", setting: "enablePickRandom" },
-        { k: "M", d: "Review Templates", setting: "enableReviewTemplates" },
-        { k: "F", d: "Search Plus", setting: "enableSearchPlus" },
-        { k: "Q", d: "Private Notes", setting: "enablePrivateNotes" },
-        { k: "I", d: "Image Preview", setting: "enableImagePreview" },
-        { k: "W", d: "Watch Status", setting: "enableWatchStatus" }
-      ]
-    }
-  ];
-  const renderKey = (key) => `<kbd class="min-w-[24px] px-2 h-6 flex items-center justify-center bg-[var(--mp-bg-layer)] border-b-2 border-[var(--mp-border)] rounded text-xs font-bold text-[var(--mp-text-main)] shadow-sm font-sans">${key}</kbd>`;
-  const cardStyle = `
-    background: color-mix(in srgb, var(--mp-bg-surface), transparent 10%);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--mp-border);
-    box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
-    color: var(--mp-text-main);
-  `;
-  modal.innerHTML = `
-    <div style="${cardStyle}" class="rounded-2xl w-full max-w-6xl h-[70vh] flex flex-col relative overflow-hidden">
-      
-      <div class="px-6 py-5 border-b border-[var(--mp-border)] bg-[var(--mp-bg-surface)]/40 flex justify-between items-center shrink-0">
-        <h3 class="text-xl font-bold flex items-center gap-3 tracking-tight" style="color: var(--mp-text-main)">
-           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--mp-accent)]/10 border border-[var(--mp-accent)]/20 text-[var(--mp-accent)]">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="5" width="20" height="14" rx="2" ry="2" />
-              <line x1="6" y1="9" x2="6" y2="9" /> <line x1="10" y1="9" x2="10" y2="9" /> <line x1="14" y1="9" x2="14" y2="9" /> <line x1="18" y1="9" x2="18" y2="9" />
-              <line x1="6" y1="13" x2="6" y2="13" /> <line x1="10" y1="13" x2="10" y2="13" /> <line x1="14" y1="13" x2="14" y2="13" /> <line x1="18" y1="13" x2="18" y2="13" />
-            </svg>
-          </span>
-           Keyboard Shortcuts
-        </h3>
-        <div class="flex items-center gap-4">
-            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--mp-bg-layer)] border border-[var(--mp-border)]">
-                <img src="${logoUrl}" class="w-5 h-5 object-contain opacity-80" alt="Moctale" onerror="this.style.display='none'" />
-                <span class="text-[11px] font-bold opacity-70 uppercase tracking-wider" style="color: var(--mp-text-muted)">Moctale Plus</span>
-            </div>
-            <button id="moctale-help-close" class="hover:bg-[var(--mp-bg-layer)] transition-all p-2 rounded-full active:scale-90" style="color: var(--mp-text-muted)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
-        </div>
-      </div>
-
-      <div class="flex-1 grid grid-cols-3 divide-x divide-[var(--mp-border)] overflow-hidden">
-        ${sections.map((section) => {
-    const isGrid = section.items.length > 16;
-    const containerClass = isGrid ? "grid grid-cols-2 gap-x-4 gap-y-1" : "flex flex-col space-y-0";
-    return `
-            <div class="flex flex-col h-full">
-                <div class="px-5 py-3 border-b border-[var(--mp-border)] bg-[var(--mp-bg-surface)]/30">
-                    <h4 class="text-[11px] font-bold uppercase tracking-widest opacity-90" style="color: var(--mp-accent)">${section.title}</h4>
-                </div>
-                <div class="flex-1 overflow-y-auto custom-scrollbar p-3">
-                    <div class="${containerClass}">
-                        ${section.items.map((item) => `
-                            <div class="flex items-center justify-between group py-1 px-2 rounded hover:bg-[var(--mp-bg-layer)] transition-colors overflow-hidden">
-                                <span class="text-xs font-medium truncate pr-2 opacity-70 group-hover:opacity-100 transition-opacity" style="color: var(--mp-text-muted)" title="${item.d}">${item.d}</span>
-                                <div class="flex gap-1 shrink-0">
-                                    ${renderKey(item.k)}
-                                </div>
-                            </div>
-                        `).join("")}
-                    </div>
-                </div>
-            </div>
-            `;
-  }).join("")}
-      </div>
-
-      <div class="px-6 py-3 bg-[var(--mp-bg-surface)]/30 border-t border-[var(--mp-border)] flex justify-between items-center text-[10px] shrink-0" style="color: var(--mp-text-muted)">
-        <div>
-          Powered by
-          <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="hover:underline transition-colors" style="color: var(--mp-accent)">Moctale Plus</a>
-          by
-          <a href="https://github.com/010101-sans/" target="_blank" class="hover:underline transition-colors" style="color: var(--mp-accent)">010101-sans</a>
-        </div>
-        <div class="flex gap-4">
-            <span>Press <kbd class="font-mono" style="color: var(--mp-text-main)">Esc</kbd> to close</span>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(modal);
-  const closeBtn = document.getElementById("moctale-help-close");
-  if (closeBtn) closeBtn.addEventListener("click", () => modal.remove());
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.remove();
-  });
-};
-const initKeyboardShortcuts = (isEnabled) => {
-  if (!isEnabled) return;
-  if (isListenerAttached) return;
-  isListenerAttached = true;
-  self.addEventListener("keydown", (e) => {
-    const target2 = e.target;
-    const isInput = target2.tagName === "INPUT" || target2.tagName === "TEXTAREA" || target2.isContentEditable;
-    if (isInput) {
-      if (e.key === "Escape") target2.blur();
-      else return;
-    }
-    if (!e.ctrlKey && !e.altKey && !e.metaKey && !e.shiftKey) {
-      const key = e.key.toLowerCase();
-      switch (key) {
-        case "s":
-          e.preventDefault();
-          toggleSetting("enableSpoilerShield", "Spoiler Shield");
-          return;
-        case "l":
-          e.preventDefault();
-          toggleSetting("enableLinkifier", "Linkifier");
-          return;
-        case "c":
-          e.preventDefault();
-          toggleSetting("enableContextMenu", "Context Menu");
-          return;
-        case "d":
-          e.preventDefault();
-          toggleSetting("enableDiscussions", "Discussions");
-          return;
-        case "p":
-          e.preventDefault();
-          toggleSetting("enablePlatforms", "More Platforms");
-          return;
-        case "k":
-          e.preventDefault();
-          toggleSetting("enableCreative", "Creative Corner");
-          return;
-        case "e":
-          e.preventDefault();
-          toggleSetting("enableCollectionExport", "Export Collection");
-          return;
-        case "b":
-          e.preventDefault();
-          toggleSetting("enableBoxOffice", "Box Office");
-          return;
-        case "x":
-          e.preventDefault();
-          toggleSetting("enablePickRandom", "Pick Random");
-          return;
-        case "m":
-          e.preventDefault();
-          toggleSetting("enableReviewTemplates", "Review Templates");
-          return;
-        case "f":
-          e.preventDefault();
-          toggleSetting("enableSearchPlus", "Search Plus");
-          return;
-        case "q":
-          e.preventDefault();
-          toggleSetting("enablePrivateNotes", "Private Notes");
-          return;
-        case "i":
-          e.preventDefault();
-          toggleSetting("enableImagePreview", "Image Preview");
-          return;
-        case "w":
-          e.preventDefault();
-          toggleSetting("enableWatchStatus", "Watch Status");
-          return;
-      }
-    }
-    if ((e.key === "?" || e.key === "/" && e.shiftKey) && !isInput) {
-      e.preventDefault();
-      e.stopPropagation();
-      showHelpModal();
-      return;
-    }
-    if (e.shiftKey && !e.ctrlKey && !e.altKey) {
-      if (e.key.toLowerCase() === "s") {
-        e.preventDefault();
-        navigate("https://www.moctale.in/accounts/edit?section=settings");
-        return;
-      }
-    }
-    if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) return;
-    switch (e.key.toLowerCase()) {
-      case "1":
-        e.preventDefault();
-        navigate("/explore");
-        break;
-      case "2":
-        e.preventDefault();
-        handleScheduleCycle();
-        break;
-      case "3":
-        e.preventDefault();
-        navigate("/clubs");
-        break;
-      case "4":
-        e.preventDefault();
-        handleExploreCycle();
-        break;
-      case "5":
-        e.preventDefault();
-        clickSearch();
-        break;
-      case "6":
-        e.preventDefault();
-        openProfile();
-        break;
-      case "n":
-        e.preventDefault();
-        toggleNotifications();
-        break;
-      case "r":
-        if (document.querySelector(".moctale-pick-random button")) {
-          e.preventDefault();
-          triggerRandomPick();
-        }
-        break;
-      case "t":
-        e.preventDefault();
-        scrollToTop();
-        break;
-      case "[":
-        e.preventDefault();
-        navigate("/my-collections");
-        break;
-      case "]":
-        e.preventDefault();
-        navigate("/saved-collections");
-        break;
-      case "escape":
-        closeModals();
-        break;
-    }
-  }, { capture: true });
-};
 const LoaderIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "animate-spin", xmlns: "http://www.w3.org/2000/svg", width: "18", height: "18", fill: "none", viewBox: "0 0 24 24", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }),
   /* @__PURE__ */ jsxRuntimeExports.jsx("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })
@@ -2089,10 +1598,10 @@ const TARGET_SELECTORS = [
   '.relative [class*="text-[var(--mp-text-muted)]"]'
 ];
 let activeKeywords = [];
-let observer$5 = null;
+let observer$6 = null;
 let scanTimeout = null;
 const getRiskPattern = () => {
-  const safeKeywords = activeKeywords.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const safeKeywords = activeKeywords.map((k2) => k2.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   return new RegExp(`\\b(${safeKeywords.join("|")})\\b`, "gi");
 };
 const isTitleElement = (element) => {
@@ -2191,21 +1700,21 @@ const scanTargetZones = () => {
   });
 };
 const initSpoilerShield = (customKeywords) => {
-  activeKeywords = customKeywords.map((k) => k.trim()).filter((k) => k.length > 0);
+  activeKeywords = customKeywords.map((k2) => k2.trim()).filter((k2) => k2.length > 0);
   if (activeKeywords.length === 0) activeKeywords = DEFAULT_RISK_KEYWORDS;
   console.log(`[Moctale+] Spoiler Shield: ACTIVE (${activeKeywords.length} keywords) 🛡️`);
   scanTargetZones();
-  if (observer$5) observer$5.disconnect();
-  observer$5 = new MutationObserver((mutations) => {
+  if (observer$6) observer$6.disconnect();
+  observer$6 = new MutationObserver((mutations) => {
     if (!mutations.some((m) => m.addedNodes.length > 0)) return;
     if (scanTimeout) clearTimeout(scanTimeout);
     scanTimeout = setTimeout(scanTargetZones, 800);
   });
-  observer$5.observe(document.body, { childList: true, subtree: true });
+  observer$6.observe(document.body, { childList: true, subtree: true });
 };
 const stopSpoilerShield = () => {
-  if (observer$5) observer$5.disconnect();
-  observer$5 = null;
+  if (observer$6) observer$6.disconnect();
+  observer$6 = null;
   document.querySelectorAll(".moctale-spoiler-blur").forEach((el) => el.classList.remove("moctale-spoiler-blur"));
   document.querySelectorAll(".moctale-spoiler-badge").forEach((el) => el.remove());
   document.querySelectorAll(".moctale-redacted-word").forEach((el) => el.classList.add("revealed"));
@@ -2433,7 +1942,7 @@ const initGridDensity = (initialColumns) => {
     attributeFilter: ["class"]
   });
 };
-const CURRENT_VERSION = "2.0.0";
+const CURRENT_VERSION = "2.5.0";
 const REPO_OWNER = "010101-sans";
 const REPO_NAME = "moctale-plus";
 const DEFAULT_TEMPLATES = [
@@ -2594,7 +2103,8 @@ const defaultSettings = {
   enableSideBar: true,
   enableCollectionExport: true,
   enableContextMenu: true,
-  enableShortcuts: true,
+  enableShortcuts: false,
+  // feature disabled
   enableTierList: true,
   enablePickRandom: true,
   enableSpoilerShield: false,
@@ -2610,7 +2120,17 @@ const defaultSettings = {
   enableWatchStatus: true,
   enablePerformanceMax: true,
   enableImageDownloader: true,
-  enableDynamicTheme: true
+  enableDynamicTheme: false,
+  enableLocalTracker: true,
+  // Graph View
+  enableGraphView: true,
+  graph_gravity: -80,
+  graph_springLength: 80,
+  graph_springConstant: 0.08,
+  graph_damping: 0.9,
+  graph_nodeScale: 1,
+  graph_fontSize: 10,
+  graph_edgeOpacity: 0.3
 };
 const useSettings = () => {
   const [settings, setSettings] = reactExports.useState(defaultSettings);
@@ -3404,11 +2924,11 @@ const SEARCH_PLATFORMS = [
   { label: "Fandom", id: "fandom", url: "https://community.fandom.com/wiki/Special:Search?query=" },
   { label: "TV Tropes", id: "tvtropes", url: "https://tvtropes.org/pmwiki/search_result.php?q=" }
 ];
-let observer$4 = null;
+let observer$5 = null;
 const initSearchPlus = () => {
-  if (observer$4) return;
+  if (observer$5) return;
   console.log("[SearchPlus] Initializing...");
-  observer$4 = new MutationObserver((mutations) => {
+  observer$5 = new MutationObserver((mutations) => {
     for (const m of mutations) {
       if (m.addedNodes.length) {
         const overlay = document.querySelector('div[data-search-overlay="true"]');
@@ -3419,7 +2939,7 @@ const initSearchPlus = () => {
       }
     }
   });
-  observer$4.observe(document.body, { childList: true });
+  observer$5.observe(document.body, { childList: true });
   const existing = document.querySelector('div[data-search-overlay="true"]');
   if (existing && !existing.getAttribute("data-moctale-plus-init")) {
     existing.setAttribute("data-moctale-plus-init", "true");
@@ -3427,9 +2947,9 @@ const initSearchPlus = () => {
   }
 };
 const stopSearchPlus = () => {
-  if (observer$4) {
-    observer$4.disconnect();
-    observer$4 = null;
+  if (observer$5) {
+    observer$5.disconnect();
+    observer$5 = null;
   }
   document.querySelectorAll(".moctale-plus-search-element").forEach((el) => el.remove());
   const overlay = document.querySelector('div[data-search-overlay="true"]');
@@ -3696,10 +3216,10 @@ const PrivateNotesEditor = ({ contentId }) => {
     ] }) })
   ] });
 };
-let observer$3 = null;
+let observer$4 = null;
 let pollInterval = null;
 const initPrivateNotes = () => {
-  if (observer$3) return;
+  if (observer$4) return;
   if (!location.pathname.startsWith("/content/")) return;
   const contentId = location.pathname.split("/").pop() || "unknown";
   console.log(`[PrivateNotes] Initializing for: ${contentId}`);
@@ -3720,8 +3240,8 @@ const initPrivateNotes = () => {
       }
     }
   };
-  observer$3 = new MutationObserver(() => scanAndInject());
-  observer$3.observe(document.body, { childList: true, subtree: true });
+  observer$4 = new MutationObserver(() => scanAndInject());
+  observer$4.observe(document.body, { childList: true, subtree: true });
   if (pollInterval) clearInterval(pollInterval);
   pollInterval = setInterval(() => {
     if (document.querySelector(".mn-container")) {
@@ -3733,9 +3253,9 @@ const initPrivateNotes = () => {
   scanAndInject();
 };
 const stopPrivateNotes = () => {
-  if (observer$3) {
-    observer$3.disconnect();
-    observer$3 = null;
+  if (observer$4) {
+    observer$4.disconnect();
+    observer$4 = null;
   }
   if (pollInterval) {
     clearInterval(pollInterval);
@@ -4072,7 +3592,7 @@ const injectWidget = (container, contentId) => {
   const status = (val === true ? 2 : val) || 0;
   updateUI(container, contentId, status);
 };
-let observer$2 = null;
+let observer$3 = null;
 let isInitialized = false;
 const loadCache = (callback) => {
   chrome.storage.local.get(["watchedItems"], (result) => {
@@ -4121,7 +3641,7 @@ const runProcessor = () => {
 };
 const startObserver = () => {
   let pending = false;
-  observer$2 = new MutationObserver(() => {
+  observer$3 = new MutationObserver(() => {
     if (pending) return;
     pending = true;
     queueMicrotask(() => {
@@ -4129,12 +3649,12 @@ const startObserver = () => {
       pending = false;
     });
   });
-  observer$2.observe(document.body, { childList: true, subtree: true });
+  observer$3.observe(document.body, { childList: true, subtree: true });
 };
 const stopWatchStatus = () => {
-  if (observer$2) {
-    observer$2.disconnect();
-    observer$2 = null;
+  if (observer$3) {
+    observer$3.disconnect();
+    observer$3 = null;
   }
   isInitialized = false;
   const style = document.getElementById("moctale-watch-css");
@@ -4551,6 +4071,17 @@ const stopImageDownloader = () => {
     rootDiv = null;
   }
 };
+const ensureVisibleOnDark = (colorInput) => {
+  const c = w(colorInput);
+  if (!c.isValid()) return colorInput;
+  if (c.brightness() < 0.6) {
+    const hsl = c.toHsl();
+    const newSaturation = Math.max(hsl.s, 95);
+    const newLightness = Math.max(hsl.l, 60);
+    return w({ h: hsl.h, s: newSaturation, l: newLightness }).toHslString();
+  }
+  return colorInput;
+};
 const ICONS = {
   MagicStar: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" }) }),
   Close: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
@@ -4678,7 +4209,8 @@ const extractPageData = () => {
       const label = parts[0].replace("genre", "").trim();
       const percent = parseInt(parts[1].replace("%", ""));
       const dot = item.querySelector("div.rounded-full");
-      const color = dot?.style.backgroundColor || "#555";
+      const rawColor = dot?.style.backgroundColor || "#555";
+      const color = ensureVisibleOnDark(rawColor);
       if (!vibes.some((v) => v.label === label)) vibes.push({ label, percent, color });
     }
   });
@@ -4700,7 +4232,7 @@ const extractPageData = () => {
   const breakdownItems = document.querySelectorAll('div[aria-label*="%"]');
   breakdownItems.forEach((item) => {
     const aria = item.getAttribute("aria-label") || "";
-    if (["Perfection", "Go for it", "Timepass", "Skip"].some((k) => aria.includes(k))) {
+    if (["Perfection", "Go for it", "Timepass", "Skip"].some((k2) => aria.includes(k2))) {
       const parts = aria.split(":");
       if (parts.length === 2) {
         const label = parts[0].trim();
@@ -4880,8 +4412,8 @@ const MoctaleMeter = ({ breakdown, voteCount, isVisible }) => {
   const sortedData = reactExports.useMemo(() => {
     const visualOrder = ["Skip", "Timepass", "Go for it", "Perfection"];
     return [...breakdown].sort((a, b) => {
-      const indexA = visualOrder.findIndex((k) => a.label.includes(k));
-      const indexB = visualOrder.findIndex((k) => b.label.includes(k));
+      const indexA = visualOrder.findIndex((k2) => a.label.includes(k2));
+      const indexB = visualOrder.findIndex((k2) => b.label.includes(k2));
       return (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB);
     });
   }, [breakdown]);
@@ -4918,11 +4450,18 @@ const MoctaleMeter = ({ breakdown, voteCount, isVisible }) => {
         const runStep = () => {
           if (step <= totalSteps) {
             const activeIndices = priority.slice(0, step);
-            setAnimatingIndex(priority[step - 1]);
+            const currentAnimatingIdx = priority[step - 1];
+            setAnimatingIndex(currentAnimatingIdx);
             const activeItems = activeIndices.map((i) => sortedData[i]);
             const activeSum = activeItems.reduce((sum, item) => sum + item.percent, 0);
             const newDisplay = sortedData.map((item, index) => {
               if (activeIndices.includes(index)) {
+                if (activeSum === 0) {
+                  if (index === currentAnimatingIdx) {
+                    return { ...item, percent: 100 };
+                  }
+                  return { ...item, percent: 0 };
+                }
                 return {
                   ...item,
                   percent: item.percent / activeSum * 100
@@ -4999,8 +4538,8 @@ const MoctaleMeter = ({ breakdown, voteCount, isVisible }) => {
         chartLayers.map((stat, i) => {
           const isHovered = hoveredIndex === i;
           const isDimmed = hoveredIndex !== null && hoveredIndex !== i;
-          const segmentLength = stat.percent / 100 * arcLength - GAP_LENGTH;
-          const strokeDasharray = `${Math.max(0, segmentLength)} ${arcLength * 2}`;
+          const segmentLength = Math.max(0, stat.percent / 100 * arcLength - GAP_LENGTH);
+          const strokeDasharray = `${segmentLength} ${arcLength * 2}`;
           const strokeDashoffset = -(stat.start / 100 * arcLength);
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
             "path",
@@ -5033,7 +4572,7 @@ const MoctaleMeter = ({ breakdown, voteCount, isVisible }) => {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 flex flex-col items-center justify-center pointer-events-none pt-8", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] text-gray-400 uppercase tracking-widest font-semibold mb-0.5", children: hoveredIndex !== null && hoveredIndex !== dominantIndex ? "Verdict" : isFinished ? "Score" : "Verdict" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[20px] font-bold transition-colors duration-200", style: { color: activeStat?.color || "#fff" }, children: [
-          activeStat?.percent,
+          animatingIndex !== null && activeStat?.percent === 0 ? 0 : Math.round(activeStat?.percent || 0),
           "%"
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[12px] font-mono text-white/50 mt-1 uppercase", children: activeStat?.count !== void 0 && voteCount.includes("/") ? `${activeStat.count} / ${voteCount.split("/")[1].replace("Votes", "").trim()}` : voteCount.replace("Votes", "").trim() })
@@ -5197,11 +4736,22 @@ const SummaryButton = () => {
                 @keyframes shimmer { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
                 @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 10px -2px var(--mp-accent), inset 0 1px 1px rgba(255,255,255,0.4); } 50% { box-shadow: 0 0 20px 0px var(--mp-accent), inset 0 1px 1px rgba(255,255,255,0.4); } }
             ` }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { onClick: () => setIsOpen(true), style: { backgroundColor: "var(--mp-accent)", color: "#fff" }, className: "group relative w-full max-w-sm h-12 rounded-full overflow-hidden flex items-center justify-center gap-2.5 font-bold tracking-wide border border-white/20 transition-all duration-300 animate-[pulse-glow_3s_ease-in-out_infinite] hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 z-10 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none", style: { transform: "translateX(-100%)", animation: "shimmer 3s infinite linear" } }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-20 transition-transform duration-500 group-hover:rotate-180 group-hover:scale-110 drop-shadow-sm", children: ICONS.MagicStar }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-20 text-sm font-bold shadow-black drop-shadow-sm", children: "Page Summary" })
-    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        onClick: () => setIsOpen(true),
+        style: {
+          backgroundColor: "var(--mp-accent)",
+          color: "var(--mp-dynamic-accent-text, #fff)"
+        },
+        className: "group relative w-full max-w-sm h-12 rounded-full overflow-hidden flex items-center justify-center gap-2.5 font-bold tracking-wide border border-white/20 transition-all duration-300 animate-[pulse-glow_3s_ease-in-out_infinite] hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 z-10 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none", style: { transform: "translateX(-100%)", animation: "shimmer 3s infinite linear" } }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-20 transition-transform duration-500 group-hover:rotate-180 group-hover:scale-110 drop-shadow-sm", children: ICONS.MagicStar }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative z-20 text-sm font-bold shadow-black drop-shadow-sm", children: "Page Summary" })
+        ]
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-3 text-[10px] tracking-[0.2em] font-bold opacity-50", style: { color: "var(--mp-text-muted)" }, children: [
       "Powered by ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/010101-sans/moctale-plus", children: "Moctale Plus" }),
@@ -5229,45 +4779,25 @@ const initPageSummary = () => {
   });
   observer2.observe(document.body, { childList: true, subtree: true });
 };
-const adjustBrightness = (hex, percent) => {
-  hex = hex.replace(/^#/, "");
-  let r = parseInt(hex.substring(0, 2), 16);
-  let g = parseInt(hex.substring(2, 4), 16);
-  let b = parseInt(hex.substring(4, 6), 16);
-  r = Math.floor(r * (1 + percent / 100));
-  g = Math.floor(g * (1 + percent / 100));
-  b = Math.floor(b * (1 + percent / 100));
-  r = Math.min(255, Math.max(0, r));
-  g = Math.min(255, Math.max(0, g));
-  b = Math.min(255, Math.max(0, b));
-  const toHex = (n) => {
-    const hexStr = n.toString(16);
-    return hexStr.length === 1 ? "0" + hexStr : hexStr;
-  };
-  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-};
-const rgbToHex = (r, g, b) => "#" + [r, g, b].map((x) => {
-  const hex = x.toString(16);
-  return hex.length === 1 ? "0" + hex : hex;
-}).join("");
+k([a11yPlugin, mixPlugin]);
 const colorThief = new u();
-let observer$1 = null;
+let observer$2 = null;
 let savedUserTheme = null;
 let isDynamicActive = false;
 let retryCount = 0;
 const initDynamicTheme = () => {
   handleNavigation();
-  if (!observer$1) {
-    observer$1 = new MutationObserver(() => {
+  if (!observer$2) {
+    observer$2 = new MutationObserver(() => {
       handleNavigation();
     });
-    observer$1.observe(document.body, { childList: true, subtree: true });
+    observer$2.observe(document.body, { childList: true, subtree: true });
   }
 };
 const stopDynamicTheme = () => {
-  if (observer$1) {
-    observer$1.disconnect();
-    observer$1 = null;
+  if (observer$2) {
+    observer$2.disconnect();
+    observer$2 = null;
   }
   restoreUserTheme();
 };
@@ -5311,8 +4841,10 @@ const processImageColor = (imageUrl) => {
       const tempImg = new Image();
       tempImg.onload = () => {
         try {
-          const color = colorThief.getColor(tempImg);
-          applyDynamicStyles(color);
+          const palette = colorThief.getPalette(tempImg, 5);
+          if (palette && palette.length > 0) {
+            applyDynamicStyles(palette);
+          }
         } catch (e) {
           console.warn("[Moctale Dynamic] Extraction failed", e);
         }
@@ -5323,21 +4855,23 @@ const processImageColor = (imageUrl) => {
     }
   });
 };
-const applyDynamicStyles = (rgb) => {
+const applyDynamicStyles = (palette) => {
+  const dominantRgb = palette[0];
+  const dominantColor = w({ r: dominantRgb[0], g: dominantRgb[1], b: dominantRgb[2] });
+  const contrastWithWhite = dominantColor.contrast("#ffffff");
+  const isBright = contrastWithWhite < 3;
+  const accentText = isBright ? "#0f172a" : "#ffffff";
+  const accentBg = dominantColor.toHsl().s < 20 ? dominantColor.saturate(0.2) : dominantColor;
   document.body.classList.forEach((cls) => {
     if (cls.startsWith("theme-") && cls !== "theme-dynamic-theme") {
       savedUserTheme = cls;
       document.body.classList.remove(cls);
     }
   });
-  const dominantHex = rgbToHex(rgb[0], rgb[1], rgb[2]);
-  const bgBase = adjustBrightness(dominantHex, -85);
-  const bgSurface = adjustBrightness(dominantHex, -75);
-  const bgLayer = adjustBrightness(dominantHex, -65);
-  const border = adjustBrightness(dominantHex, -50);
-  let accent = dominantHex;
-  const lum = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2];
-  if (lum < 60) accent = adjustBrightness(dominantHex, 60);
+  const bgBase = dominantColor.mix("#000000", 0.92).toHex();
+  const bgSurface = dominantColor.mix("#000000", 0.82).toHex();
+  const bgLayer = dominantColor.mix("#000000", 0.72).toHex();
+  const border = dominantColor.mix("#000000", 0.6).toHex();
   const s = document.body.style;
   s.setProperty("--mp-dynamic-bg-base", bgBase);
   s.setProperty("--mp-dynamic-bg-surface", bgSurface);
@@ -5345,10 +4879,10 @@ const applyDynamicStyles = (rgb) => {
   s.setProperty("--mp-dynamic-border", border);
   s.setProperty("--mp-dynamic-text-main", "#f1f5f9");
   s.setProperty("--mp-dynamic-text-muted", "#94a3b8");
-  s.setProperty("--mp-dynamic-accent", accent);
+  s.setProperty("--mp-dynamic-accent", accentBg.toHex());
+  s.setProperty("--mp-dynamic-accent-text", accentText);
   document.body.classList.add("theme-dynamic-theme");
   isDynamicActive = true;
-  console.log("[Moctale Dynamic] Active");
 };
 const restoreUserTheme = () => {
   if (!isDynamicActive) return;
@@ -5359,8 +4893,2346 @@ const restoreUserTheme = () => {
   const s = document.body.style;
   s.removeProperty("--mp-dynamic-bg-base");
   s.removeProperty("--mp-dynamic-bg-surface");
+  s.removeProperty("--mp-dynamic-bg-layer");
+  s.removeProperty("--mp-dynamic-border");
+  s.removeProperty("--mp-dynamic-text-main");
+  s.removeProperty("--mp-dynamic-text-muted");
+  s.removeProperty("--mp-dynamic-accent");
+  s.removeProperty("--mp-dynamic-accent-text");
   isDynamicActive = false;
   console.log("[Moctale Dynamic] Restored:", savedUserTheme);
+};
+const SearchIcon = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.5", strokeLinecap: "round", strokeLinejoin: "round", children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "11", cy: "11", r: "8" }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" })
+] });
+const CastCrewButton = ({ type, title, year }) => {
+  const [isWrapperHovered, setIsWrapperHovered] = reactExports.useState(false);
+  const [hoveredBtn, setHoveredBtn] = reactExports.useState(null);
+  const handleSearch = (e, platform) => {
+    e.preventDefault();
+    e.stopPropagation();
+    let query = "";
+    const suffix = `full ${type.toLowerCase()}`;
+    if (platform === "google") {
+      query = `${title} ${year} ${suffix}`;
+    } else if (platform === "imdb") {
+      query = `${title} ${year} ${suffix} site:imdb.com`;
+    } else if (platform === "imdbpro") {
+      query = `${title} ${year} ${suffix} site:pro.imdb.com`;
+    } else if (platform === "wikipedia") {
+      query = `${title} ${year} ${suffix} site:en.wikipedia.org`;
+    }
+    self.open(`https://www.google.com/search?q=${encodeURIComponent(query)}&clie=1`, "_blank");
+  };
+  const mainContainerStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    marginLeft: "6px"
+  };
+  const pillStyle = {
+    display: "flex",
+    alignItems: "center",
+    background: isWrapperHovered ? "var(--mp-bg-layer)" : "var(--mp-bg-surface)",
+    border: "1px solid var(--mp-border)",
+    borderRadius: "6px",
+    padding: "0 4px 0 10px",
+    cursor: "default",
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    height: "28px",
+    overflow: "hidden",
+    boxShadow: isWrapperHovered ? "0 4px 12px rgba(0,0,0,0.2)" : "none",
+    borderColor: isWrapperHovered ? "var(--mp-text-muted)" : "var(--mp-border)"
+  };
+  const labelStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    fontFamily: '"Inter", sans-serif',
+    fontSize: "11px",
+    fontWeight: 600,
+    color: isWrapperHovered ? "var(--mp-text-main)" : "var(--mp-text-muted)",
+    whiteSpace: "nowrap",
+    transition: "color 0.2s ease",
+    marginRight: "2px"
+  };
+  const actionsContainerStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: "2px",
+    // Increased max-width to accomodate 4th button (approx 60-70px more)
+    maxWidth: isWrapperHovered ? "300px" : "0px",
+    opacity: isWrapperHovered ? 1 : 0,
+    transform: isWrapperHovered ? "translateX(0)" : "translateX(-10px)",
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+  };
+  const dividerStyle = {
+    width: "1px",
+    height: "12px",
+    background: "var(--mp-border)",
+    margin: "0 8px"
+  };
+  const getBtnStyle = (btnType) => {
+    const isThisHovered = hoveredBtn === btnType;
+    let hoverColor = "var(--mp-text-main)";
+    if (btnType === "google") hoverColor = "#60a5fa";
+    if (btnType === "imdb") hoverColor = "#facc15";
+    if (btnType === "imdbpro") hoverColor = "#22d3ee";
+    if (btnType === "wikipedia") hoverColor = "#ffffff";
+    return {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "4px 8px",
+      borderRadius: "4px",
+      border: "none",
+      background: isThisHovered ? "rgba(255,255,255,0.08)" : "transparent",
+      color: isThisHovered ? hoverColor : "var(--mp-text-muted)",
+      cursor: "pointer",
+      transition: "all 0.2s ease",
+      fontSize: "10px",
+      fontWeight: isThisHovered ? 700 : 500,
+      fontFamily: '"Inter", sans-serif',
+      letterSpacing: "0.01em"
+    };
+  };
+  const poweredByStyle = {
+    fontSize: "10px",
+    fontWeight: 500,
+    color: "var(--mp-text-muted)",
+    opacity: 0.5,
+    display: "flex",
+    alignItems: "center",
+    gap: "6px",
+    whiteSpace: "nowrap",
+    letterSpacing: "0.02em",
+    fontFamily: '"Inter", sans-serif'
+  };
+  const dotStyle = {
+    width: "3px",
+    height: "3px",
+    borderRadius: "50%",
+    background: "var(--mp-text-muted)",
+    opacity: 0.4
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: mainContainerStyle, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        style: pillStyle,
+        onMouseEnter: () => setIsWrapperHovered(true),
+        onMouseLeave: () => setIsWrapperHovered(false),
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: labelStyle, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SearchIcon, {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+              "Full ",
+              type
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: actionsContainerStyle, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: dividerStyle }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: (e) => handleSearch(e, "google"),
+                style: getBtnStyle("google"),
+                onMouseEnter: () => setHoveredBtn("google"),
+                onMouseLeave: () => setHoveredBtn(null),
+                children: "Google"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: (e) => handleSearch(e, "imdb"),
+                style: getBtnStyle("imdb"),
+                onMouseEnter: () => setHoveredBtn("imdb"),
+                onMouseLeave: () => setHoveredBtn(null),
+                children: "IMDb"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: (e) => handleSearch(e, "imdbpro"),
+                style: getBtnStyle("imdbpro"),
+                onMouseEnter: () => setHoveredBtn("imdbpro"),
+                onMouseLeave: () => setHoveredBtn(null),
+                children: "IMDbPro"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: (e) => handleSearch(e, "wikipedia"),
+                style: getBtnStyle("wikipedia"),
+                onMouseEnter: () => setHoveredBtn("wikipedia"),
+                onMouseLeave: () => setHoveredBtn(null),
+                children: "Wiki"
+              }
+            )
+          ] })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: poweredByStyle, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: dotStyle }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Powered by Moctale Plus" })
+    ] })
+  ] });
+};
+const initFullCastCrew = () => {
+  const info = getPageMediaInfo();
+  if (!info) return;
+  const headers = Array.from(document.querySelectorAll("h2"));
+  headers.forEach((h2) => {
+    const text = h2.textContent?.trim();
+    if (text !== "Cast" && text !== "Crew") return;
+    if (h2.getAttribute("data-mp-cast-injected")) return;
+    h2.setAttribute("data-mp-cast-injected", "true");
+    const parent = h2.parentElement;
+    if (!parent) return;
+    const wrapper = document.createElement("div");
+    wrapper.className = "flex items-center gap-2";
+    parent.insertBefore(wrapper, h2);
+    wrapper.appendChild(h2);
+    const btnContainer = document.createElement("div");
+    wrapper.appendChild(btnContainer);
+    const root = clientExports.createRoot(btnContainer);
+    root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(CastCrewButton, { type: text, title: info.title, year: info.year }));
+  });
+};
+const VIRTUAL_IDS = {
+  CONTENT: "/virtual/content",
+  MOVIES: "/virtual/movies",
+  SERIES: "/virtual/series",
+  COLLECTIONS: "/virtual/collections",
+  MY_COLLECTIONS: "/virtual/my-collections",
+  MEMBERS: "/virtual/community/members"
+};
+const cleanSlug = (text) => {
+  if (!text) return "";
+  const decoded = decodeURIComponent(text);
+  return decoded.split(/[-_]/).map((w2) => w2.charAt(0).toUpperCase() + w2.slice(1)).join(" ");
+};
+const normalizeId = (path, search) => {
+  const params = new URLSearchParams(search);
+  const BLOCKLIST = ["source", "ref", "utm_source", "utm_medium", "utm_campaign", "tab"];
+  BLOCKLIST.forEach((p) => params.delete(p));
+  params.sort();
+  const safePath = path.replace("https://www.moctale.in", "");
+  return params.toString() ? `${safePath}?${params.toString()}` : safePath;
+};
+const resolveHierarchy = (path, search) => {
+  const params = new URLSearchParams(search);
+  if (path === "/" || path === "/explore") return { parentId: "", type: "root", title: "Home" };
+  if (path === "/explore/categories") return { parentId: "/explore", type: "hub", title: "Categories" };
+  if (path === "/explore/genres") return { parentId: "/explore", type: "hub", title: "Genres" };
+  if (path === "/explore/countries") return { parentId: "/explore", type: "hub", title: "Countries" };
+  if (path === "/explore/languages") return { parentId: "/explore", type: "hub", title: "Languages" };
+  if (path === "/schedule") {
+    const time = params.get("timeFilter");
+    const content = params.get("contentFilter");
+    if (!time) return { parentId: "/explore", type: "hub", title: "Schedule" };
+    if (time && !content) return { parentId: "/schedule", type: "hub", title: cleanSlug(time) };
+    if (time && content) {
+      let title = cleanSlug(content);
+      if (content.includes("MOVIE")) title = content.includes("THEATRE") ? "In Theatres" : "On OTT";
+      if (content === "NEW_SHOW") title = "New Shows";
+      if (content === "NEW_SEASON") title = "New Seasons";
+      return { parentId: `/schedule?timeFilter=${time}`, type: "filter", title };
+    }
+  }
+  if (path === "/clubs") {
+    const group = params.get("group");
+    if (group) return { parentId: "/clubs", type: "club", title: cleanSlug(group) };
+    return { parentId: "/explore", type: "hub", title: "Clubs" };
+  }
+  if (path.startsWith("/u/")) {
+    const username = path.split("/")[2];
+    return { parentId: VIRTUAL_IDS.MEMBERS, type: "user", title: username };
+  }
+  if (path.startsWith("/my-collections")) {
+    const watchlist = params.get("watchlist");
+    if (watchlist) return { parentId: VIRTUAL_IDS.MY_COLLECTIONS, type: "collection", title: "Loading..." };
+    return { parentId: VIRTUAL_IDS.COLLECTIONS, type: "hub", title: "My Collections" };
+  }
+  if (path.startsWith("/explore/collection/")) {
+    return { parentId: VIRTUAL_IDS.COLLECTIONS, type: "collection", title: "Collection" };
+  }
+  if (["/explore/family-friendly", "/explore/award-winners", "/explore/moctale-select", "/explore/franchise", "/explore/anime"].includes(path)) {
+    return { parentId: VIRTUAL_IDS.COLLECTIONS, type: "collection", title: cleanSlug(path.split("/").pop() || "") };
+  }
+  if (path.startsWith("/category/")) return { parentId: "/explore/categories", type: "category", title: cleanSlug(path.split("/")[2]) };
+  if (path.startsWith("/genre/")) return { parentId: "/explore/genres", type: "genre", title: cleanSlug(path.split("/")[2]) };
+  if (path.startsWith("/country/")) return { parentId: "/explore/countries", type: "country", title: cleanSlug(path.split("/")[2]) };
+  if (path.startsWith("/language/")) return { parentId: "/explore/languages", type: "language", title: cleanSlug(path.split("/")[2]) };
+  if (path.startsWith("/content/")) return { parentId: VIRTUAL_IDS.CONTENT, type: "movie", title: "Loading..." };
+  if (path.startsWith("/person/")) return { parentId: "/explore", type: "person", title: cleanSlug(path.split("/")[2]) };
+  return { parentId: "/explore", type: "unknown", title: "Unknown Page" };
+};
+const waitForTitle = async (type, currentTitle) => {
+  return new Promise((resolve) => {
+    let attempts = 0;
+    const maxAttempts = 12;
+    const check = () => {
+      let title = "";
+      let poster = "";
+      if (self.location.pathname.startsWith("/my-collections")) {
+        const h1 = document.querySelector("h1.font-bold.text-white");
+        if (h1) title = h1.textContent?.trim() || "";
+      } else if (self.location.pathname.startsWith("/explore/collection/")) {
+        const h1 = document.querySelector("div.flex-1 h1, h1.text-\\[\\#E2E2E2\\]");
+        if (h1 && h1.textContent !== "Menu") title = h1.textContent?.trim() || "";
+      } else if (type === "movie" || type === "tv" || type === "anime" || type === "person") {
+        const info = getPageMediaInfo();
+        if (info && info.title) {
+          title = info.title;
+          poster = info.poster || "";
+        }
+      }
+      if (!title) {
+        const h1s = Array.from(document.querySelectorAll("h1"));
+        const goodH1 = h1s.find((el) => {
+          const t = el.textContent?.trim();
+          return t && t !== "Menu" && t !== "Moctale" && t !== "Home";
+        });
+        if (goodH1) title = goodH1.textContent?.trim() || "";
+      }
+      if (title && title !== "Loading..." && title !== "Unknown") {
+        resolve({ title, poster });
+      } else if (attempts < maxAttempts) {
+        attempts++;
+        setTimeout(check, 250);
+      } else {
+        resolve({ title: currentTitle, poster });
+      }
+    };
+    check();
+  });
+};
+const getScrapedLinks = (currentType) => {
+  const links = /* @__PURE__ */ new Set();
+  const add = (sel) => document.querySelectorAll(sel).forEach((e) => {
+    const h = e.getAttribute("href");
+    if (h) links.add(h);
+  });
+  const isHub = ["root", "hub", "filter", "category", "genre", "club"].includes(currentType);
+  if (!isHub) add('a[href^="/content/"]');
+  if (currentType === "hub" || currentType === "user") {
+    const isClubHub = self.location.pathname === "/clubs" && !self.location.search.includes("group=");
+    if (isClubHub) {
+      const potentialClubs = document.querySelectorAll("div.flex.items-center.gap-3 > span.truncate");
+      potentialClubs.forEach((span) => {
+        const text = span.textContent?.trim();
+        if (text && text !== "Feed" && text !== "Discover") {
+          const slug = text.toLowerCase().replace(/\s+/g, "-");
+          links.add(`/clubs?group=${slug}`);
+        }
+      });
+    }
+    add('a[href*="group="]');
+  }
+  add('a[href^="/explore/collection/"]');
+  add('a[href^="/category/"]');
+  add('a[href^="/genre/"]');
+  add('a[href^="/country/"]');
+  add('a[href^="/language/"]');
+  add('a[href^="/u/"]');
+  add('a[href^="/person/"]');
+  add('a[href*="watchlist="]');
+  const finalLinks = Array.from(links).filter((l) => l.length > 1);
+  if (["genre", "country", "language", "category"].includes(currentType)) {
+    return finalLinks.filter((l) => l !== "/explore");
+  }
+  return finalLinks;
+};
+const MetadataExtractor = {
+  async run() {
+    const path = self.location.pathname;
+    const search = self.location.search;
+    let fullId = normalizeId(path, search);
+    if (path === "/my-collections" && !search) fullId = VIRTUAL_IDS.MY_COLLECTIONS;
+    const hierarchy = resolveHierarchy(path, search);
+    let { title, type, parentId } = hierarchy;
+    const enriched = await waitForTitle(type, title);
+    title = enriched.title;
+    const poster = enriched.poster;
+    let genres = [];
+    let year = "";
+    let rating = "";
+    let description = "";
+    if (path.startsWith("/content/")) {
+      const info = getPageMediaInfo();
+      if (info) {
+        type = info.type;
+        year = info.year;
+        genres = info.genres || [];
+        rating = info.rating || "";
+        description = info.description || "";
+        if (type === "movie") parentId = VIRTUAL_IDS.MOVIES;
+        else if (type === "tv" || type === "anime") parentId = VIRTUAL_IDS.SERIES;
+        else parentId = VIRTUAL_IDS.CONTENT;
+      }
+    }
+    const scrapedLinks = getScrapedLinks(type);
+    const attributeLinks = [];
+    genres.forEach((g) => attributeLinks.push(`/genre/${g.toLowerCase().replace(/\s+/g, "-")}`));
+    const safeLinks = scrapedLinks.filter((l) => {
+      const link = l.toLowerCase();
+      if (link === "/" || link === "/explore") return false;
+      if (link.includes("moctale.in") && !link.includes("moctale.in/")) return false;
+      if (link.includes("/schedule")) return false;
+      if (type === "club" && link.includes("group=")) return false;
+      return true;
+    });
+    const normalizedLinks = safeLinks.map((l) => {
+      const [p, s] = l.split("?");
+      return normalizeId(p, s || "");
+    });
+    const connectionSet = /* @__PURE__ */ new Set([parentId, ...attributeLinks, ...normalizedLinks]);
+    connectionSet.delete("");
+    connectionSet.delete(fullId);
+    if (["movie", "tv", "anime", "person"].includes(type)) {
+      connectionSet.delete("/");
+      connectionSet.delete("/explore");
+    }
+    return {
+      id: fullId,
+      title,
+      type,
+      year,
+      poster,
+      genres,
+      rating,
+      description,
+      parentId,
+      relatedLinks: Array.from(connectionSet),
+      visitCount: 1,
+      firstVisitedAt: Date.now(),
+      lastVisitedAt: Date.now()
+    };
+  },
+  getVirtualGraphNodes: () => {
+    const ts = Date.now();
+    const createNode = (id, title, parent, links = []) => ({
+      id,
+      title,
+      parentId: parent,
+      type: "hub",
+      relatedLinks: links,
+      visitCount: 1,
+      firstVisitedAt: ts,
+      lastVisitedAt: ts,
+      poster: "",
+      genres: []
+    });
+    const nodes = [
+      { ...createNode(VIRTUAL_IDS.CONTENT, "Content Library", "/explore"), relatedLinks: ["/explore", VIRTUAL_IDS.MOVIES, VIRTUAL_IDS.SERIES] },
+      createNode(VIRTUAL_IDS.MOVIES, "Movies", VIRTUAL_IDS.CONTENT),
+      createNode(VIRTUAL_IDS.SERIES, "Series", VIRTUAL_IDS.CONTENT),
+      { ...createNode(VIRTUAL_IDS.COLLECTIONS, "Collections", "/explore"), relatedLinks: ["/explore", VIRTUAL_IDS.MY_COLLECTIONS] },
+      createNode(VIRTUAL_IDS.MY_COLLECTIONS, "My Collections", VIRTUAL_IDS.COLLECTIONS),
+      { ...createNode("/clubs", "Clubs", "/explore"), relatedLinks: ["/explore", VIRTUAL_IDS.MEMBERS] },
+      createNode(VIRTUAL_IDS.MEMBERS, "Community Members", "/clubs"),
+      createNode("/schedule", "Schedule", "/explore", ["/explore", "/schedule?timeFilter=today", "/schedule?timeFilter=upcoming", "/schedule?timeFilter=announced"])
+    ];
+    const times = [{ id: "today", t: "Today" }, { id: "upcoming", t: "Upcoming" }, { id: "announced", t: "Announced" }];
+    const cats = [{ id: "NEW_MOVIE_THEATRE", t: "In Theatres" }, { id: "NEW_MOVIE_OTT", t: "On OTT" }, { id: "NEW_SHOW", t: "New Shows" }, { id: "NEW_SEASON", t: "New Seasons" }];
+    times.forEach((tm) => {
+      const tmId = `/schedule?timeFilter=${tm.id}`;
+      const kids = cats.map((c) => `/schedule?timeFilter=${tm.id}&contentFilter=${c.id}`);
+      nodes.push(createNode(tmId, tm.t, "/schedule", kids));
+      cats.forEach((c) => nodes.push({ ...createNode(`${tmId}&contentFilter=${c.id}`, c.t, tmId), type: "filter" }));
+    });
+    return nodes;
+  }
+};
+const DB_KEY = "moctale_knowledge_graph";
+const sanitizeNode = (node) => {
+  let parent = node.parentId;
+  if (node.type === "movie") parent = VIRTUAL_IDS.MOVIES;
+  else if (node.type === "tv" || node.type === "anime") parent = VIRTUAL_IDS.SERIES;
+  else if (node.type === "user") parent = VIRTUAL_IDS.MEMBERS;
+  else if (node.type === "club") parent = "/clubs";
+  else if (node.type === "collection") {
+    if (node.id.includes("watchlist=")) parent = VIRTUAL_IDS.MY_COLLECTIONS;
+    else if (node.id === VIRTUAL_IDS.MY_COLLECTIONS) parent = VIRTUAL_IDS.COLLECTIONS;
+    else if (!parent || parent === "/explore") parent = VIRTUAL_IDS.COLLECTIONS;
+  }
+  if (!parent && node.type !== "root") parent = "/explore";
+  let links = node.relatedLinks || [];
+  if (parent && !links.includes(parent)) {
+    links = [...links, parent];
+  }
+  links = links.filter(
+    (l) => l !== node.id && l !== "/" && !(l === "/explore" && ["movie", "tv", "person"].includes(node.type))
+  );
+  return { ...node, parentId: parent, relatedLinks: links };
+};
+const LocalDbService = {
+  async getDB() {
+    return new Promise((resolve) => {
+      chrome.storage.local.get([DB_KEY], (result) => {
+        const db = result[DB_KEY];
+        if (!db || !db.entities) {
+          resolve({ entities: {}, lastUpdated: Date.now() });
+        } else {
+          resolve(db);
+        }
+      });
+    });
+  },
+  // 2. Track Visit (Now accepts data directly or fetches it)
+  async trackVisit(extractedData) {
+    const data = extractedData || await MetadataExtractor.run();
+    if (!data || !data.id) return;
+    if (!data.title || data.title === "Loading..." || data.title === "Unknown") return;
+    if (data.type === "unknown" || data.title === "Unknown Page") return;
+    const db = await this.getDB();
+    const now = Date.now();
+    const existing = db.entities[data.id];
+    let finalNode;
+    if (existing) {
+      finalNode = {
+        ...existing,
+        ...data,
+        // Persist parent if existing is better, unless new data is specific (like watchlist)
+        parentId: data.parentId && data.parentId !== "/explore" ? data.parentId : existing.parentId,
+        relatedLinks: data.relatedLinks || existing.relatedLinks,
+        visitCount: (existing.visitCount || 0) + 1,
+        lastVisitedAt: now,
+        firstVisitedAt: existing.firstVisitedAt || now
+      };
+    } else {
+      finalNode = {
+        id: data.id,
+        title: data.title || "Unknown",
+        poster: data.poster || "",
+        type: data.type || "unknown",
+        year: data.year,
+        genres: data.genres || [],
+        rating: data.rating,
+        parentId: data.parentId,
+        relatedLinks: data.relatedLinks || [],
+        visitCount: 1,
+        firstVisitedAt: now,
+        lastVisitedAt: now,
+        description: data.description
+      };
+    }
+    finalNode = sanitizeNode(finalNode);
+    db.entities[finalNode.id] = finalNode;
+    const virtualNodes = MetadataExtractor.getVirtualGraphNodes();
+    virtualNodes.forEach((node) => {
+      if (node.id) {
+        const ex = db.entities[node.id];
+        db.entities[node.id] = {
+          ...node,
+          visitCount: ex ? ex.visitCount : node.visitCount,
+          firstVisitedAt: ex ? ex.firstVisitedAt : node.firstVisitedAt,
+          lastVisitedAt: now
+        };
+      }
+    });
+    ["/explore/anime", "/explore/franchise", "/saved-collections", "/virtual/collections"].forEach((badId) => {
+      if (badId === "/virtual/collections" && db.entities[badId]?.type === "collection") {
+        delete db.entities[badId];
+      } else if (badId !== "/virtual/collections") {
+        if (db.entities[badId]) delete db.entities[badId];
+      }
+    });
+    db.lastUpdated = now;
+    await chrome.storage.local.set({ [DB_KEY]: db });
+    console.log(`[Moctale DB] Tracked: ${finalNode.title} -> Parent: ${finalNode.parentId}`);
+  },
+  async search(query) {
+    const db = await this.getDB();
+    const lowerQ = query.toLowerCase();
+    return Object.values(db.entities).filter((item) => item.title.toLowerCase().includes(lowerQ)).sort((a, b) => b.lastVisitedAt - a.lastVisitedAt).slice(0, 10);
+  },
+  async getHistory(limit = 20) {
+    const db = await this.getDB();
+    return Object.values(db.entities).sort((a, b) => b.lastVisitedAt - a.lastVisitedAt).slice(0, limit);
+  }
+};
+let lastTrackedPath = "";
+let observer$1 = null;
+const attemptTrack = async () => {
+  const path = self.location.pathname;
+  const search = self.location.search;
+  const fullKey = path + search;
+  if (fullKey === lastTrackedPath) return;
+  try {
+    const data = await MetadataExtractor.run();
+    if (data && data.title && data.title !== "Loading..." && data.title !== "Unknown") {
+      await LocalDbService.trackVisit({
+        id: data.id || path,
+        title: data.title,
+        type: data.type,
+        year: data.year,
+        poster: data.poster,
+        genres: data.genres,
+        relatedLinks: data.relatedLinks
+      });
+      lastTrackedPath = fullKey;
+      console.log(`[LocalTracker] Captured: [${data.type}] ${data.title}`);
+    }
+  } catch (error) {
+    console.error("[LocalTracker] Tracking failed:", error);
+  }
+};
+const initLocalTracker = () => {
+  if (observer$1) return;
+  attemptTrack();
+  let currentUrl = location.href;
+  observer$1 = new MutationObserver(() => {
+    if (currentUrl !== location.href) {
+      currentUrl = location.href;
+      setTimeout(attemptTrack, 500);
+    }
+  });
+  observer$1.observe(document, { subtree: true, childList: true });
+  console.log("[LocalTracker] Started");
+};
+const stopLocalTracker = () => {
+  if (observer$1) {
+    observer$1.disconnect();
+    observer$1 = null;
+    console.log("[LocalTracker] Stopped");
+  }
+};
+const NODE_COLORS = {
+  hub: "#ffffff",
+  category: "#a78bfa",
+  genre: "#c084fc",
+  movie: "#38bdf8",
+  tv: "#22d3ee",
+  anime: "#f472b6",
+  person: "#fbbf24",
+  user: "#34d399",
+  collection: "#f87171",
+  franchise: "#f472b6",
+  club: "#fb923c"
+};
+const VIRTUAL_LINK_MAP = {
+  "/virtual/content": "/explore",
+  "/virtual/movies": "/explore/categories",
+  "/virtual/series": "/explore/categories",
+  "/virtual/collections": "/explore",
+  "/virtual/my-collections": "/my-collections",
+  "/virtual/community/members": "/clubs"
+};
+const DEFAULT_CONFIG = {
+  physics: {
+    gravitationalConstant: -80,
+    springLength: 80,
+    springConstant: 0.08,
+    damping: 0.9
+  },
+  display: {
+    nodeScale: 1,
+    fontSize: 10,
+    edgeOpacity: 0.3
+  }
+};
+let currentConfig = JSON.parse(JSON.stringify(DEFAULT_CONFIG));
+let network = null;
+let nodesDataSet = null;
+let edgesDataSet = null;
+let keyHandler = null;
+let searchTimeout = null;
+let animationTimer = null;
+const getNodeSize = (type, visitCount, scale) => {
+  let base = 5;
+  if (type === "hub") base = 15;
+  else if (type === "category" || type === "genre") base = 8;
+  else if (visitCount > 5) base = 8;
+  return base * scale;
+};
+const loadSettings = async () => {
+  return new Promise((resolve) => {
+    chrome.storage.local.get([
+      "graph_gravity",
+      "graph_springLength",
+      "graph_damping",
+      "graph_nodeScale",
+      "graph_fontSize",
+      "graph_edgeOpacity"
+    ], (result) => {
+      if (result.graph_gravity !== void 0) currentConfig.physics.gravitationalConstant = result.graph_gravity;
+      if (result.graph_springLength !== void 0) currentConfig.physics.springLength = result.graph_springLength;
+      if (result.graph_damping !== void 0) currentConfig.physics.damping = result.graph_damping;
+      if (result.graph_nodeScale !== void 0) currentConfig.display.nodeScale = result.graph_nodeScale;
+      if (result.graph_fontSize !== void 0) currentConfig.display.fontSize = result.graph_fontSize;
+      if (result.graph_edgeOpacity !== void 0) currentConfig.display.edgeOpacity = result.graph_edgeOpacity;
+      resolve();
+    });
+  });
+};
+const saveSetting = (key, value) => {
+  chrome.storage.local.set({ [key]: value });
+};
+const pruneIllegalConnections = (nodes) => {
+  const GENRE_HUB = "/explore/genres";
+  const COUNTRY_HUB = "/explore/countries";
+  const LANG_HUB = "/explore/languages";
+  const HOME = "/explore";
+  Object.values(nodes).forEach((node) => {
+    if (!node.relatedLinks) return;
+    if (node.type === "genre") {
+      node.relatedLinks = node.relatedLinks.filter((link) => link !== HOME);
+      if (!node.relatedLinks.includes(GENRE_HUB)) node.relatedLinks.push(GENRE_HUB);
+    }
+    if (node.type === "country") {
+      node.relatedLinks = node.relatedLinks.filter((link) => link !== HOME);
+      if (!node.relatedLinks.includes(COUNTRY_HUB)) node.relatedLinks.push(COUNTRY_HUB);
+    }
+    if (node.type === "language") {
+      node.relatedLinks = node.relatedLinks.filter((link) => link !== HOME);
+      if (!node.relatedLinks.includes(LANG_HUB)) node.relatedLinks.push(LANG_HUB);
+    }
+    if (node.type === "category") {
+      const CAT_HUB = "/explore/categories";
+      node.relatedLinks = node.relatedLinks.filter((link) => link !== HOME);
+      if (!node.relatedLinks.includes(CAT_HUB)) node.relatedLinks.push(CAT_HUB);
+    }
+    node.relatedLinks = node.relatedLinks.filter((link) => link !== node.id);
+  });
+};
+const ensureConnectivity = (entities) => {
+  const nodes = { ...entities };
+  pruneIllegalConnections(nodes);
+  const SKELETON = {
+    "/explore": { title: "Home", type: "hub" },
+    "/virtual/content": { title: "Content Library", type: "hub", parent: "/explore" },
+    "/virtual/movies": { title: "Movies", type: "hub", parent: "/virtual/content" },
+    "/virtual/series": { title: "Series", type: "hub", parent: "/virtual/content" },
+    "/virtual/collections": { title: "Collections", type: "hub", parent: "/explore" },
+    "/virtual/my-collections": { title: "My Collections", type: "hub", parent: "/virtual/collections" },
+    "/clubs": { title: "Clubs", type: "hub", parent: "/explore" },
+    "/virtual/community/members": { title: "Community Members", type: "hub", parent: "/clubs" },
+    "/explore/categories": { title: "Categories", type: "hub", parent: "/explore" },
+    "/explore/genres": { title: "Genres", type: "hub", parent: "/explore" },
+    "/explore/countries": { title: "Countries", type: "hub", parent: "/explore" },
+    "/explore/languages": { title: "Languages", type: "hub", parent: "/explore" },
+    "/schedule": { title: "Schedule", type: "hub", parent: "/explore" }
+  };
+  Object.keys(SKELETON).forEach((id) => {
+    if (!nodes[id]) {
+      nodes[id] = {
+        id,
+        title: SKELETON[id].title,
+        type: SKELETON[id].type,
+        poster: "",
+        visitCount: 1,
+        firstVisitedAt: Date.now(),
+        lastVisitedAt: Date.now(),
+        relatedLinks: SKELETON[id].parent ? [SKELETON[id].parent] : []
+      };
+    }
+  });
+  return Object.values(nodes);
+};
+const toggleHandler = async (e) => {
+  if (e.altKey && e.shiftKey && e.code === "KeyG") {
+    e.preventDefault();
+    await loadSettings();
+    const db = await LocalDbService.getDB();
+    const cleanNodes = ensureConnectivity(db.entities);
+    showGraphModal(cleanNodes);
+  }
+};
+const initGraphVisualizer = () => {
+  if (keyHandler) return;
+  keyHandler = toggleHandler;
+  document.addEventListener("keydown", keyHandler, true);
+};
+const stopGraphVisualizer = () => {
+  if (keyHandler) {
+    document.removeEventListener("keydown", keyHandler, true);
+    keyHandler = null;
+  }
+  if (animationTimer) {
+    clearTimeout(animationTimer);
+    animationTimer = null;
+  }
+  const modal = document.getElementById("moctale-graph-view");
+  if (modal) {
+    modal.remove();
+    network = null;
+    nodesDataSet = null;
+    edgesDataSet = null;
+  }
+};
+const showGraphModal = (entities) => {
+  if (document.getElementById("moctale-graph-view")) return;
+  const modal = document.createElement("div");
+  modal.id = "moctale-graph-view";
+  modal.className = "fixed inset-0 z-[9999] flex items-center justify-center animate-in fade-in duration-300 font-sans";
+  modal.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+  modal.style.backdropFilter = "blur(4px)";
+  modal.innerHTML = `
+    <div class="relative rounded-xl border border-[#333] shadow-2xl overflow-hidden flex flex-col p-[1px]"
+         style="width: 80vw; height: 90vh; background-color: rgba(0, 0, 0, 0.9);">
+         
+      <div class="absolute top-4 left-4 z-10 flex flex-col gap-1 pointer-events-none">
+        <h3 class="text-white font-bold text-xl tracking-tight opacity-80">Graph View</h3>
+        <p class="text-[#666] text-xs uppercase tracking-widest">
+            <span id="mp-node-count" class="text-white font-mono transition-all duration-300">${entities.length}</span> Nodes
+        </p>
+      </div>
+
+      <button id="mp-graph-close" class="absolute top-4 right-4 z-10 p-2 text-[#666] hover:text-white transition-colors bg-black/50 rounded-full border border-white/10 hover:border-white/40 cursor-pointer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+
+      <div id="mp-network-container" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
+
+      <div class="absolute bottom-4 left-4 z-20 flex flex-col gap-2 w-56">
+
+        <div id="mp-control-panel" class="hidden flex-col gap-4 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg p-4 mb-2 shadow-2xl animate-in slide-in-from-bottom-5 fade-in duration-200">
+            <div class="flex flex-col gap-2">
+                 <div class="flex items-center justify-between">
+                    <h4 class="text-[10px] uppercase tracking-widest text-[#888] font-bold">Physics Engine</h4>
+                    <button id="mp-reset-defaults" title="Reset All Settings" class="text-[#666] hover:text-white transition-colors cursor-pointer p-1 rounded hover:bg-white/10">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+                    </button>
+                </div>
+                <label class="flex flex-col gap-1"><span class="text-[10px] text-[#ccc] flex justify-between">Gravity <span id="val-gravity">${currentConfig.physics.gravitationalConstant}</span></span><input type="range" id="inp-gravity" min="-200" max="0" step="5" value="${currentConfig.physics.gravitationalConstant}" class="accent-white h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"></label>
+                <label class="flex flex-col gap-1"><span class="text-[10px] text-[#ccc] flex justify-between">Spring Length <span id="val-springL">${currentConfig.physics.springLength}</span></span><input type="range" id="inp-springL" min="20" max="300" step="10" value="${currentConfig.physics.springLength}" class="accent-white h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"></label>
+                <label class="flex flex-col gap-1"><span class="text-[10px] text-[#ccc] flex justify-between">Damping <span id="val-damping">${currentConfig.physics.damping}</span></span><input type="range" id="inp-damping" min="0.1" max="1" step="0.05" value="${currentConfig.physics.damping}" class="accent-white h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"></label>
+            </div>
+            <div class="h-[1px] bg-white/10 w-full"></div>
+            <div class="flex flex-col gap-2">
+                <h4 class="text-[10px] uppercase tracking-widest text-[#888] font-bold">Display</h4>
+                <label class="flex flex-col gap-1"><span class="text-[10px] text-[#ccc] flex justify-between">Node Size <span id="val-scale">${currentConfig.display.nodeScale}x</span></span><input type="range" id="inp-scale" min="0.5" max="3" step="0.1" value="${currentConfig.display.nodeScale}" class="accent-white h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"></label>
+                <label class="flex flex-col gap-1"><span class="text-[10px] text-[#ccc] flex justify-between">Font Size <span id="val-font">${currentConfig.display.fontSize}px</span></span><input type="range" id="inp-font" min="8" max="24" step="1" value="${currentConfig.display.fontSize}" class="accent-white h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"></label>
+                <label class="flex flex-col gap-1"><span class="text-[10px] text-[#ccc] flex justify-between">Edge Opacity <span id="val-opacity">${currentConfig.display.edgeOpacity}</span></span><input type="range" id="inp-opacity" min="0.1" max="1" step="0.1" value="${currentConfig.display.edgeOpacity}" class="accent-white h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"></label>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-1 w-full">
+            <button id="mp-toggle-controls" title="Toggle Controls" class="flex-1 h-9 bg-black/40 backdrop-blur-md border border-white/10 rounded-lg text-white/70 hover:text-white hover:border-white/40 transition-all shadow-lg cursor-pointer flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            <button id="mp-graph-replay" title="Replay Animation" class="flex-1 h-9 bg-black/40 backdrop-blur-md border border-white/10 rounded-lg text-white/70 hover:text-white hover:border-white/40 transition-all shadow-lg cursor-pointer flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+            <button id="mp-graph-reset" title="Reset Camera" class="flex-1 h-9 bg-black/40 backdrop-blur-md border border-white/10 rounded-lg text-white/70 hover:text-white hover:border-white/40 transition-all shadow-lg cursor-pointer flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h6v2H5v4H3V3zm18 0h-6v2h4v4h2V3zM3 21h6v-2H5v-4H3v6zm18 0h-6v-2h4v-4h2v6z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></button>
+            <button id="mp-graph-clear" title="Clear All Graph Data" class="flex-1 h-9 bg-black/40 backdrop-blur-md border border-white/10 rounded-lg text-white/70 hover:text-white hover:border-white/40 transition-all shadow-lg cursor-pointer flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></button>
+        </div>
+
+        <div class="relative group w-full">
+           <input type="text" id="mp-graph-search" placeholder="Search node..." 
+               class="w-full bg-black/40 backdrop-blur-md border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all placeholder-white/30 shadow-lg font-mono"
+           />
+           <div id="mp-search-count" class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-gray-500 hidden"></div>
+        </div>
+
+        <div class="text-[10px] text-[#555] font-medium pl-1">
+          Powered by <a href="https://github.com/010101-sans/moctale-plus" target="_blank" class="text-[#777] hover:text-white hover:underline transition-colors">Moctale Plus</a> 
+          by <a href="https://github.com/010101-sans/" target="_blank" class="text-[#777] hover:text-white hover:underline transition-colors">010101-sans</a>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  const container = document.getElementById("mp-network-container");
+  if (container) renderGraph(container, entities);
+  const close = () => stopGraphVisualizer();
+  document.getElementById("mp-graph-close")?.addEventListener("click", close);
+  const panel = document.getElementById("mp-control-panel");
+  const toggleBtn = document.getElementById("mp-toggle-controls");
+  toggleBtn?.addEventListener("click", () => {
+    panel?.classList.toggle("hidden");
+    panel?.classList.toggle("flex");
+    if (panel?.classList.contains("flex")) toggleBtn.classList.add("bg-white/10", "text-white");
+    else toggleBtn.classList.remove("bg-white/10", "text-white");
+  });
+  document.getElementById("mp-graph-reset")?.addEventListener("click", () => {
+    if (network) network.fit({ animation: { duration: 1e3, easingFunction: "easeInOutQuad" } });
+  });
+  document.getElementById("mp-graph-clear")?.addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear the entire Knowledge Graph? This cannot be undone.")) {
+      chrome.storage.local.remove("moctale_knowledge_graph", () => {
+        nodesDataSet?.clear();
+        edgesDataSet?.clear();
+        document.getElementById("mp-node-count").innerText = "0";
+      });
+    }
+  });
+  document.getElementById("mp-graph-replay")?.addEventListener("click", () => {
+    animateGraphBuild(entities);
+  });
+  document.getElementById("mp-reset-defaults")?.addEventListener("click", () => {
+    document.getElementById("inp-gravity").value = DEFAULT_CONFIG.physics.gravitationalConstant.toString();
+    document.getElementById("inp-springL").value = DEFAULT_CONFIG.physics.springLength.toString();
+    document.getElementById("inp-damping").value = DEFAULT_CONFIG.physics.damping.toString();
+    document.getElementById("inp-scale").value = DEFAULT_CONFIG.display.nodeScale.toString();
+    document.getElementById("inp-font").value = DEFAULT_CONFIG.display.fontSize.toString();
+    document.getElementById("inp-opacity").value = DEFAULT_CONFIG.display.edgeOpacity.toString();
+    updatePhysics();
+    updateDisplay();
+  });
+  const updatePhysics = () => {
+    if (!network) return;
+    const gravity = parseFloat(document.getElementById("inp-gravity").value);
+    const springL = parseFloat(document.getElementById("inp-springL").value);
+    const damping = parseFloat(document.getElementById("inp-damping").value);
+    document.getElementById("val-gravity").innerText = gravity.toString();
+    document.getElementById("val-springL").innerText = springL.toString();
+    document.getElementById("val-damping").innerText = damping.toString();
+    saveSetting("graph_gravity", gravity);
+    saveSetting("graph_springLength", springL);
+    saveSetting("graph_damping", damping);
+    network.setOptions({ physics: { forceAtlas2Based: { gravitationalConstant: gravity, springLength: springL, damping } } });
+  };
+  const updateDisplay = () => {
+    if (!nodesDataSet || !edgesDataSet) return;
+    const scale = parseFloat(document.getElementById("inp-scale").value);
+    const fontSize = parseFloat(document.getElementById("inp-font").value);
+    const opacity = parseFloat(document.getElementById("inp-opacity").value);
+    document.getElementById("val-scale").innerText = `${scale}x`;
+    document.getElementById("val-font").innerText = `${fontSize}px`;
+    document.getElementById("val-opacity").innerText = opacity.toString();
+    saveSetting("graph_nodeScale", scale);
+    saveSetting("graph_fontSize", fontSize);
+    saveSetting("graph_edgeOpacity", opacity);
+    currentConfig.display.nodeScale = scale;
+    currentConfig.display.fontSize = fontSize;
+    currentConfig.display.edgeOpacity = opacity;
+    const nodeUpdates = [];
+    nodesDataSet.forEach((node) => {
+      const entity = entities.find((e) => e.id === node.id);
+      if (entity) {
+        nodeUpdates.push({
+          id: node.id,
+          size: getNodeSize(entity.type, entity.visitCount, scale),
+          font: { size: fontSize }
+        });
+      }
+    });
+    nodesDataSet.update(nodeUpdates);
+    const edgeUpdates = [];
+    edgesDataSet.forEach((edge) => {
+      edgeUpdates.push({ id: edge.id, color: { opacity } });
+    });
+    edgesDataSet.update(edgeUpdates);
+  };
+  ["inp-gravity", "inp-springL", "inp-damping"].forEach((id) => document.getElementById(id)?.addEventListener("input", updatePhysics));
+  ["inp-scale", "inp-font", "inp-opacity"].forEach((id) => document.getElementById(id)?.addEventListener("input", updateDisplay));
+  const escListener = (e) => {
+    if (e.key === "Escape") {
+      close();
+      self.removeEventListener("keydown", escListener);
+    }
+  };
+  self.addEventListener("keydown", escListener);
+};
+const animateGraphBuild = (entities) => {
+  if (!nodesDataSet || !edgesDataSet || !network) return;
+  if (animationTimer) clearTimeout(animationTimer);
+  nodesDataSet.clear();
+  edgesDataSet.clear();
+  const countDisplay = document.getElementById("mp-node-count");
+  if (countDisplay) countDisplay.innerText = "0";
+  const incomingMap = /* @__PURE__ */ new Map();
+  entities.forEach((entity) => {
+    if (entity.relatedLinks) {
+      entity.relatedLinks.forEach((target2) => {
+        if (!incomingMap.has(target2)) incomingMap.set(target2, []);
+        incomingMap.get(target2).push(entity.id);
+      });
+    }
+  });
+  const shuffled = [...entities].sort(() => 0.5 - Math.random());
+  const addedNodeIds = /* @__PURE__ */ new Set();
+  const delay = 500;
+  let i = 0;
+  function nextStep() {
+    if (!nodesDataSet) return;
+    if (i >= shuffled.length) {
+      if (countDisplay) countDisplay.innerText = entities.length.toString();
+      return;
+    }
+    const e = shuffled[i];
+    const randX = (Math.random() - 0.5) * 2e3;
+    const randY = (Math.random() - 0.5) * 2e3;
+    const size = getNodeSize(e.type, e.visitCount, currentConfig.display.nodeScale);
+    const color = NODE_COLORS[e.type] || "#666";
+    const nodeData = {
+      id: e.id,
+      label: e.title,
+      size,
+      shape: "dot",
+      x: randX,
+      y: randY,
+      color: { background: color, border: color, highlight: { background: "#fff", border: "#fff" } },
+      font: { color: "#888", size: currentConfig.display.fontSize, face: "Inter", strokeWidth: 3, strokeColor: "#000" }
+    };
+    const newEdges = [];
+    if (e.relatedLinks) {
+      e.relatedLinks.forEach((targetId) => {
+        if (addedNodeIds.has(targetId)) {
+          newEdges.push({
+            from: e.id,
+            to: targetId,
+            color: { color: "#333", opacity: currentConfig.display.edgeOpacity },
+            width: 1,
+            smooth: { enabled: false }
+          });
+        }
+      });
+    }
+    if (incomingMap.has(e.id)) {
+      incomingMap.get(e.id).forEach((sourceId) => {
+        if (addedNodeIds.has(sourceId)) {
+          newEdges.push({
+            from: sourceId,
+            to: e.id,
+            color: { color: "#333", opacity: currentConfig.display.edgeOpacity },
+            width: 1,
+            smooth: { enabled: false }
+          });
+        }
+      });
+    }
+    nodesDataSet.add(nodeData);
+    if (newEdges.length > 0) edgesDataSet?.add(newEdges);
+    addedNodeIds.add(e.id);
+    if (countDisplay) countDisplay.innerText = (i + 1).toString();
+    i++;
+    animationTimer = setTimeout(nextStep, delay);
+  }
+  nextStep();
+};
+const renderGraph = (container, entities) => {
+  nodesDataSet = new DataSet();
+  edgesDataSet = new DataSet();
+  const nodeSet = /* @__PURE__ */ new Set();
+  entities.forEach((e) => {
+    const size = getNodeSize(e.type, e.visitCount, currentConfig.display.nodeScale);
+    const color = NODE_COLORS[e.type] || "#666";
+    nodesDataSet.add({
+      id: e.id,
+      label: e.title,
+      size,
+      shape: "dot",
+      color: { background: color, border: color, highlight: { background: "#fff", border: "#fff" } },
+      font: { color: "#888", size: currentConfig.display.fontSize, face: "Inter", strokeWidth: 3, strokeColor: "#000" }
+    });
+    nodeSet.add(e.id);
+  });
+  entities.forEach((e) => {
+    if (e.relatedLinks) {
+      e.relatedLinks.forEach((targetId) => {
+        if (nodeSet.has(targetId)) {
+          edgesDataSet.add({
+            from: e.id,
+            to: targetId,
+            color: { color: "#333", opacity: currentConfig.display.edgeOpacity },
+            width: 1,
+            smooth: { enabled: false }
+          });
+        }
+      });
+    }
+  });
+  const options = {
+    nodes: { borderWidth: 0, shadow: false },
+    // Ensure dragNodes is true (it's default, but being explicit helps)
+    interaction: { hover: true, tooltipDelay: 100, hideEdgesOnDrag: false, dragNodes: true },
+    edges: { arrows: { to: { enabled: false } }, color: { inherit: false } },
+    physics: {
+      forceAtlas2Based: {
+        gravitationalConstant: currentConfig.physics.gravitationalConstant,
+        centralGravity: 3e-3,
+        springLength: currentConfig.physics.springLength,
+        springConstant: 0.08,
+        damping: currentConfig.physics.damping
+      },
+      maxVelocity: 50,
+      solver: "forceAtlas2Based",
+      timestep: 0.5,
+      stabilization: { enabled: true, iterations: 200 }
+    }
+  };
+  network = new Network(container, { nodes: nodesDataSet, edges: edgesDataSet }, options);
+  let isDragging = false;
+  network.on("dragStart", () => {
+    isDragging = true;
+  });
+  network.on("dragEnd", () => {
+    isDragging = false;
+    network?.unselectAll();
+  });
+  network.on("doubleClick", (params) => {
+    if (params.nodes.length > 0) {
+      const nodeId = params.nodes[0];
+      const url = nodeId.startsWith("http") ? nodeId : `https://www.moctale.in${nodeId}`;
+      if (nodeId.startsWith("/virtual")) {
+        const mapped = VIRTUAL_LINK_MAP[nodeId];
+        if (mapped) self.open(`https://www.moctale.in${mapped}`, "_blank");
+      } else {
+        self.open(url, "_blank");
+      }
+    }
+  });
+  network.on("hoverNode", (params) => {
+    if (isDragging) return;
+    const nodeId = params.node;
+    const connectedNodes = network?.getConnectedNodes(nodeId);
+    const allIds = nodesDataSet?.getIds();
+    const updates = [];
+    allIds?.forEach((id) => {
+      if (id !== nodeId && !connectedNodes.includes(id)) {
+        updates.push({
+          id,
+          color: { background: "#222", border: "#333" },
+          font: { color: "#333" }
+        });
+      }
+    });
+    nodesDataSet?.update(updates);
+  });
+  network.on("blurNode", (_params) => {
+    const updates = [];
+    nodesDataSet?.forEach((node) => {
+      const entity = entities.find((e) => e.id === node.id);
+      if (entity) {
+        const color = NODE_COLORS[entity.type] || "#666";
+        updates.push({
+          id: node.id,
+          color: { background: color, border: color },
+          font: { color: "#888" }
+        });
+      }
+    });
+    nodesDataSet?.update(updates);
+  });
+  const searchInput = document.getElementById("mp-graph-search");
+  const countDisplay = document.getElementById("mp-search-count");
+  let currentMatches = [];
+  let currentMatchIndex = 0;
+  let lastHighlightedId = null;
+  const resetHighlight = () => {
+    if (lastHighlightedId && nodesDataSet) {
+      const original = entities.find((e) => e.id === lastHighlightedId);
+      if (original) {
+        const color = NODE_COLORS[original.type] || "#666";
+        nodesDataSet.update({
+          id: lastHighlightedId,
+          borderWidth: 0,
+          color: { background: color, border: color },
+          shadow: { enabled: false }
+        });
+      }
+    }
+    lastHighlightedId = null;
+  };
+  const highlightNode = (id) => {
+    resetHighlight();
+    if (nodesDataSet) {
+      nodesDataSet.update({
+        id,
+        borderWidth: 2,
+        color: { border: "#4ade80" },
+        shadow: { enabled: true, color: "#4ade80", size: 15, x: 0, y: 0 }
+      });
+    }
+    lastHighlightedId = id;
+    network?.selectNodes([id]);
+    network?.focus(id, { scale: 1.2, animation: { duration: 1e3, easingFunction: "easeInOutQuad" } });
+  };
+  const performSearch = (val) => {
+    if (!val) {
+      resetHighlight();
+      currentMatches = [];
+      if (countDisplay) countDisplay.classList.add("hidden");
+      return;
+    }
+    currentMatches = entities.filter((e) => e.title.toLowerCase().includes(val)).map((e) => e.id);
+    if (currentMatches.length > 0) {
+      currentMatchIndex = 0;
+      highlightNode(currentMatches[0]);
+      if (countDisplay) {
+        countDisplay.innerText = `${currentMatchIndex + 1}/${currentMatches.length}`;
+        countDisplay.classList.remove("hidden");
+      }
+    } else {
+      resetHighlight();
+      if (countDisplay) {
+        countDisplay.innerText = "0/0";
+        countDisplay.classList.remove("hidden");
+      }
+    }
+  };
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const val = e.target.value.toLowerCase();
+      if (searchTimeout) clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => performSearch(val), 300);
+    });
+    searchInput.addEventListener("blur", () => resetHighlight());
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") e.stopPropagation();
+      if (e.key === "Enter" && currentMatches.length > 1) {
+        e.preventDefault();
+        currentMatchIndex = (currentMatchIndex + 1) % currentMatches.length;
+        highlightNode(currentMatches[currentMatchIndex]);
+        if (countDisplay) countDisplay.innerText = `${currentMatchIndex + 1}/${currentMatches.length}`;
+      }
+    });
+  }
+};
+const showToast = (message, isReloading = false) => {
+  const existing = document.getElementById("moctale-toast");
+  if (existing) {
+    existing.style.transform = "translateX(120%)";
+    existing.style.opacity = "0";
+    setTimeout(() => existing.remove(), 300);
+  }
+  const logoUrl = typeof chrome !== "undefined" && chrome.runtime ? chrome.runtime.getURL("assets/react.svg") : "";
+  const toast = document.createElement("div");
+  toast.id = "moctale-toast";
+  toast.className = `
+    fixed right-8 bottom-10 z-[10000]
+    flex items-center gap-4
+    pl-4 pr-6 py-4
+    rounded-xl
+    text-white font-sans
+    bg-[#0B0716]/95 backdrop-blur-xl
+    border border-[#7C3AED]/30
+    shadow-[0_16px_50px_-18px_rgba(124,58,237,0.6)]
+    transform translate-x-[120%] opacity-0
+    transition-transform transition-opacity
+    duration-[420ms]
+    ease-[cubic-bezier(0.22,1,0.36,1)]
+  `;
+  const iconHtml = isReloading ? `<div class="w-10 h-10 flex items-center justify-center border border-[#7C3AED]/40 bg-[#7C3AED]/15 rounded-lg">
+        <svg class="w-5 h-5 text-[#A78BFA] animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+       </div>` : `<div class="w-10 h-10 flex items-center justify-center border border-[#7C3AED]/40 bg-[#7C3AED]/15 rounded-lg">
+        <img src="${logoUrl}" alt="Moctale" class="w-6 h-6 object-contain drop-shadow-[0_0_8px_rgba(124,58,237,0.7)]" 
+        onerror="this.replaceWith(Object.assign(document.createElement('div'), { innerHTML: '<svg width=18 height=18 viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'#A78BFA\\' stroke-width=\\'2.5\\'><path d=\\'M12 2v20M2 12h20\\'/></svg>' }))" />
+       </div>`;
+  toast.innerHTML = `
+    <div class="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-[#A78BFA] via-[#7C3AED] to-[#4C1D95]"></div>
+    ${iconHtml}
+    <div class="flex flex-col gap-1">
+      <span class="text-[13px] font-semibold tracking-wide text-gray-100">${message}</span>
+      <span class="text-[10px] uppercase tracking-widest text-white/45 flex items-center gap-2">
+        ${isReloading ? '<span class="w-1.5 h-1.5 rounded-full bg-[#A78BFA] animate-pulse"></span>Applying Changes' : "Moctale Plus"}
+      </span>
+    </div>
+  `;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.style.transform = "translateX(0)";
+    toast.style.opacity = "1";
+  });
+  if (!isReloading) {
+    setTimeout(() => {
+      const t = document.getElementById("moctale-toast");
+      if (t) {
+        t.style.transform = "translateX(120%)";
+        t.style.opacity = "0";
+        setTimeout(() => t.remove(), 300);
+      }
+    }, 3600);
+  }
+};
+const exportBackup = () => {
+  if (typeof chrome === "undefined" || !chrome.storage) {
+    console.error("Storage API not available");
+    return;
+  }
+  chrome.storage.local.get(null, (items) => {
+    const date = /* @__PURE__ */ new Date();
+    const timestamp = date.toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    const filename = `Moctale_Plus_Backup_${timestamp}.json`;
+    let { episodeTracker, ...otherItems } = items;
+    let formattedTracker = {};
+    if (episodeTracker) {
+      const tracker = episodeTracker;
+      Object.keys(tracker).forEach((key) => {
+        let val = tracker[key];
+        if (typeof val === "string") {
+          val = val.replace(/\n/g, ", ").trim();
+        }
+        formattedTracker[key] = val;
+      });
+    }
+    const orderedData = {
+      ...otherItems,
+      // Only add if it exists, and force it to be the last key
+      ...episodeTracker ? { episodeTracker: formattedTracker } : {}
+    };
+    const backupData = {
+      meta: {
+        version: "2.5.0",
+        exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
+        author: "010101-sans",
+        type: "MoctalePlus_Backup"
+      },
+      data: orderedData
+      // Use the ordered object
+    };
+    const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+};
+const importBackup = (file) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const content = e.target?.result;
+        const parsed = JSON.parse(content);
+        if (!parsed.data || !parsed.meta || parsed.meta.type !== "MoctalePlus_Backup") {
+          throw new Error("Invalid Moctale Plus backup file");
+        }
+        if (chrome && chrome.storage) {
+          chrome.storage.local.clear(() => {
+            chrome.storage.local.set(parsed.data, () => {
+              chrome.storage.local.set({ hasCompletedOnboarding: true });
+              resolve(true);
+            });
+          });
+        } else {
+          reject(new Error("Storage API unavailable"));
+        }
+      } catch (err) {
+        console.error("Import failed:", err);
+        reject(err);
+      }
+    };
+    reader.onerror = () => reject(new Error("Failed to read file"));
+    reader.readAsText(file);
+  });
+};
+const navigate = (path) => {
+  self.location.href = path;
+};
+const toggleExtensionSetting = (key, name) => {
+  if (typeof chrome === "undefined" || !chrome.runtime?.id) {
+    console.warn("[Moctale+] Context Invalidated. Refreshing...");
+    self.location.reload();
+    return;
+  }
+  chrome.storage.local.get([key], (result) => {
+    const current = result[key] === true;
+    const newValue = !current;
+    chrome.storage.local.set({ [key]: newValue }, () => {
+      const needsReload = key === "enableSpoilerShield";
+      showToast(`${name}: ${newValue ? "ON" : "OFF"}`, needsReload);
+      if (needsReload) setTimeout(() => self.location.reload(), 800);
+    });
+  });
+};
+const setExtensionValue = (key, value, message) => {
+  chrome.storage.local.set({ [key]: value }, () => {
+    showToast(message);
+  });
+};
+const triggerRandomPick = () => {
+  const randomBtn = document.querySelector(".moctale-pick-random button");
+  if (randomBtn) randomBtn.click();
+  else showToast("Pick Random not available here", false);
+};
+const clickSearch = () => {
+  const searchBtn = document.querySelector('button[aria-label="Search"]');
+  if (searchBtn) searchBtn.click();
+  else self.location.hash = "#auto_search=";
+};
+const openProfile = () => {
+  const profileTrigger = document.querySelector('button[aria-label="Open profile menu"]');
+  if (profileTrigger) {
+    profileTrigger.click();
+    setTimeout(() => {
+      const dialog = document.querySelector('div[role="dialog"]');
+      if (dialog) {
+        const links = Array.from(dialog.querySelectorAll("a"));
+        const myProfileLink = links.find((a) => a.textContent?.includes("My Profile"));
+        if (myProfileLink) myProfileLink.click();
+        else dialog.querySelector("a")?.click();
+      }
+    }, 50);
+  } else {
+    const avatar = document.querySelector('img[alt="Profile"]');
+    if (avatar) {
+      const btn = avatar.closest("button");
+      if (btn) btn.click();
+    } else {
+      navigate("/accounts/edit?section=settings");
+    }
+  }
+};
+const toggleNotifications = () => {
+  let notifBtn = document.querySelector('button[aria-label="Notifications"]');
+  if (!notifBtn) {
+    const bellIcon = document.querySelector(".lucide-bell");
+    if (bellIcon) notifBtn = bellIcon.closest("button");
+  }
+  if (notifBtn) {
+    const opts = { view: self, bubbles: true, cancelable: true, buttons: 1 };
+    notifBtn.dispatchEvent(new PointerEvent("pointerdown", opts));
+    notifBtn.dispatchEvent(new MouseEvent("mousedown", opts));
+    notifBtn.dispatchEvent(new PointerEvent("pointerup", opts));
+    notifBtn.dispatchEvent(new MouseEvent("mouseup", opts));
+    notifBtn.click();
+  } else {
+    showToast("Notification button not found", false);
+  }
+};
+const triggerImport = () => {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = ".json";
+  input.onchange = async (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      try {
+        await importBackup(file);
+        showToast("Backup imported successfully", true);
+        setTimeout(() => self.location.reload(), 1e3);
+      } catch (err) {
+        showToast("Import failed", false);
+      }
+    }
+  };
+  input.click();
+};
+const scrollToTop = () => self.scrollTo({ top: 0, behavior: "smooth" });
+const scrollToBottom = () => self.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+const THEMES = [
+  { id: "default", label: "Default (Dark)" },
+  { id: "oled", label: "OLED Black" },
+  { id: "midnight", label: "Midnight Blue" },
+  { id: "dracula", label: "Dracula" },
+  { id: "nord", label: "Nord" },
+  { id: "github-dark", label: "GitHub Dark" },
+  { id: "synthwave", label: "Synthwave" },
+  { id: "onedark", label: "One Dark" },
+  { id: "nightowl", label: "Night Owl" },
+  { id: "palenight", label: "Palenight" },
+  { id: "twitter-dim", label: "Twitter Dim" },
+  { id: "discord", label: "Discord" },
+  { id: "whatsapp", label: "WhatsApp" },
+  { id: "instagram", label: "Instagram" },
+  { id: "eva", label: "Eva" },
+  { id: "goku", label: "Goku" },
+  { id: "horror", label: "Horror" },
+  { id: "forest", label: "Forest" },
+  { id: "matrix", label: "Matrix" },
+  { id: "coffee", label: "Coffee" },
+  { id: "ocean", label: "Ocean" },
+  { id: "catppuccin", label: "Catppuccin" },
+  { id: "tokyonight", label: "Tokyo Night" },
+  { id: "rosepine", label: "Rosé Pine" },
+  { id: "kanagawa", label: "Kanagawa" },
+  { id: "cobalt2", label: "Cobalt2" },
+  { id: "shades-purple", label: "Shades of Purple" },
+  { id: "andromeda", label: "Andromeda" },
+  { id: "linear", label: "Linear" },
+  { id: "vercel", label: "Vercel" },
+  { id: "supabase", label: "Supabase" },
+  { id: "raycast", label: "Raycast" },
+  { id: "spotify", label: "Spotify" },
+  { id: "netflix", label: "Netflix" },
+  { id: "disney", label: "Disney+" },
+  { id: "hbo", label: "HBO" },
+  { id: "macos", label: "macOS" },
+  { id: "ubuntu", label: "Ubuntu" }
+];
+const STATIC_COMMANDS = [
+  // ============================
+  // 1. CORE ACTIONS & UI
+  // ============================
+  {
+    id: "act-graph",
+    title: "Open Graph View",
+    subtitle: "Visualize your history in a 3D node graph",
+    type: "action",
+    icon: "Network",
+    keywords: ["graph", "nodes", "view", "map", "visualize"],
+    action: () => {
+      document.dispatchEvent(new KeyboardEvent("keydown", {
+        key: "g",
+        code: "KeyG",
+        altKey: true,
+        shiftKey: true,
+        bubbles: true
+      }));
+    }
+  },
+  {
+    id: "act-settings",
+    title: "Account Settings",
+    subtitle: "Configure layout, backup, and preferences",
+    type: "action",
+    icon: "Settings",
+    keywords: ["config", "options", "preferences"],
+    url: "https://www.moctale.in/accounts/edit?section=settings"
+    // Fallback
+  },
+  {
+    id: "act-profile",
+    title: "My Profile",
+    subtitle: "Open profile menu",
+    type: "action",
+    icon: "UserCog",
+    keywords: ["account", "user", "login", "me"],
+    action: openProfile
+  },
+  {
+    id: "act-search-ui",
+    title: "Moctale Search",
+    subtitle: "Open the native search bar",
+    type: "action",
+    icon: "Search",
+    keywords: ["find", "query", "native"],
+    action: clickSearch
+  },
+  {
+    id: "act-notifications",
+    title: "Show Notifications",
+    subtitle: "Open notification dropdown",
+    type: "action",
+    icon: "Bell",
+    keywords: ["alerts", "notifs", "bell"],
+    action: toggleNotifications
+  },
+  {
+    id: "act-top",
+    title: "Scroll to Top",
+    type: "action",
+    icon: "ArrowUpCircle",
+    keywords: ["up", "start", "scroll"],
+    action: scrollToTop
+  },
+  {
+    id: "act-bottom",
+    title: "Scroll to Bottom",
+    type: "action",
+    icon: "ArrowDownCircle",
+    keywords: ["down", "end", "scroll", "footer"],
+    action: scrollToBottom
+  },
+  {
+    id: "act-random-trigger",
+    title: "Pick Random Content (In Collections)",
+    subtitle: "Shuffle current collection (if available)",
+    type: "action",
+    icon: "Dices",
+    keywords: ["dice", "randomizer", "shuffle"],
+    action: triggerRandomPick
+  },
+  // ============================
+  // 2. DATA & EXTERNAL (NEW)
+  // ============================
+  {
+    id: "data-export",
+    title: "Export Backup",
+    subtitle: "Download settings & history as JSON",
+    type: "action",
+    icon: "FileOutput",
+    keywords: ["save", "data", "json", "backup", "export"],
+    action: () => {
+      try {
+        exportBackup();
+        showToast("Backup download started");
+      } catch (e) {
+        showToast("Export failed", false);
+      }
+    }
+  },
+  {
+    id: "data-import",
+    title: "Import Backup",
+    subtitle: "Restore settings from JSON file",
+    type: "action",
+    icon: "Download",
+    keywords: ["restore", "load", "json", "import"],
+    action: triggerImport
+  },
+  {
+    id: "ext-website",
+    title: "Visit Official Website",
+    subtitle: "Documentation & Features",
+    type: "navigation",
+    icon: "Globe",
+    url: "https://010101-sans.is-a.dev/moctale-plus/",
+    keywords: ["docs", "help", "web", "site"]
+  },
+  {
+    id: "ext-dev",
+    title: "Meet the Developer",
+    subtitle: "010101-sans Portfolio",
+    type: "navigation",
+    icon: "Code",
+    url: "https://010101-sans.is-a.dev",
+    keywords: ["author", "creator", "dev", "contact"]
+  },
+  {
+    id: "ext-github",
+    title: "GitHub Repository",
+    subtitle: "View Source Code",
+    type: "navigation",
+    icon: "Github",
+    url: "https://github.com/010101-sans/moctale-plus",
+    keywords: ["code", "repo", "project", "moctale", "plus", "source", "git"]
+  },
+  {
+    id: "ext-support",
+    title: "Support Moctale Plus",
+    subtitle: "Buy 010101-sans a coffee ☕",
+    type: "navigation",
+    icon: "Heart",
+    url: "https://github.com/sponsors/010101-sans",
+    // Or UPI link if preferred
+    keywords: ["donate", "coffee", "money", "help", "support"]
+  },
+  // ============================
+  // 3. LAYOUT & GRID DENSITY
+  // ============================
+  {
+    id: "layout-default",
+    title: "Layout: Default Grid",
+    subtitle: "Reset poster density",
+    type: "action",
+    icon: "LayoutGrid",
+    keywords: ["reset", "grid", "columns", "normal"],
+    action: () => setExtensionValue("gridColumns", 0, "Layout: Default")
+  },
+  {
+    id: "layout-list",
+    title: "Layout: List View",
+    subtitle: "Vertical list with details",
+    type: "action",
+    icon: "List",
+    keywords: ["rows", "lines", "detailed", "list"],
+    action: () => setExtensionValue("gridColumns", 1, "Layout: List View")
+  },
+  {
+    id: "layout-2col",
+    title: "Layout: 2 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "big", "posters"],
+    action: () => setExtensionValue("gridColumns", 2, "Layout: 2 Columns")
+  },
+  {
+    id: "layout-3col",
+    title: "Layout: 3 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "big", "posters"],
+    action: () => setExtensionValue("gridColumns", 3, "Layout: 3 Columns")
+  },
+  {
+    id: "layout-4col",
+    title: "Layout: 4 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "big", "posters"],
+    action: () => setExtensionValue("gridColumns", 4, "Layout: 4 Columns")
+  },
+  {
+    id: "layout-5col",
+    title: "Layout: 5 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "medium", "posters"],
+    action: () => setExtensionValue("gridColumns", 5, "Layout: 5 Columns")
+  },
+  {
+    id: "layout-6col",
+    title: "Layout: 6 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "small", "posters"],
+    action: () => setExtensionValue("gridColumns", 6, "Layout: 6 Columns")
+  },
+  {
+    id: "layout-7col",
+    title: "Layout: 7 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "tiny", "posters"],
+    action: () => setExtensionValue("gridColumns", 7, "Layout: 7 Columns")
+  },
+  {
+    id: "layout-8col",
+    title: "Layout: 8 Columns",
+    type: "action",
+    icon: "Grid",
+    keywords: ["grid", "tiny", "posters"],
+    action: () => setExtensionValue("gridColumns", 8, "Layout: 8 Columns")
+  },
+  // ============================
+  // 4. FEATURE TOGGLES (ALL)
+  // ============================
+  {
+    id: "tog-spoiler",
+    title: "Toggle Spoiler Shield",
+    subtitle: "Blur descriptions and plots",
+    type: "action",
+    icon: "EyeOff",
+    keywords: ["blur", "hide", "spoilers", "shield"],
+    action: () => toggleExtensionSetting("enableSpoilerShield", "Spoiler Shield")
+  },
+  {
+    id: "tog-linkifier",
+    title: "Toggle Linkifier",
+    subtitle: "Make text links clickable",
+    type: "action",
+    icon: "Link",
+    keywords: ["urls", "clickable", "links", "text"],
+    action: () => toggleExtensionSetting("enableLinkifier", "Linkifier")
+  },
+  {
+    id: "tog-random-btn",
+    title: "Toggle Pick Random Button",
+    subtitle: "Show/Hide the floating dice button",
+    type: "action",
+    icon: "Dices",
+    keywords: ["dice", "randomizer", "shuffle", "ui"],
+    action: () => toggleExtensionSetting("enablePickRandom", "Pick Random Button")
+  },
+  {
+    id: "tog-sidebar",
+    title: "Toggle Sidebar Plus",
+    subtitle: "Show/Hide extra sidebar widgets",
+    type: "action",
+    icon: "PanelRight",
+    keywords: ["widgets", "sidebar", "extras", "platform"],
+    action: () => toggleExtensionSetting("enableSideBar", "Sidebar Plus")
+  },
+  {
+    id: "tog-image-preview",
+    title: "Toggle Image Preview",
+    subtitle: "Hover posters to zoom",
+    type: "action",
+    icon: "Maximize",
+    keywords: ["hover", "zoom", "preview", "images"],
+    action: () => toggleExtensionSetting("enableImagePreview", "Image Preview")
+  },
+  {
+    id: "tog-image-dl",
+    title: "Toggle Image Downloader",
+    subtitle: "Download button on hover",
+    type: "action",
+    icon: "Download",
+    keywords: ["save", "images", "posters", "download"],
+    action: () => toggleExtensionSetting("enableImageDownloader", "Image Downloader")
+  },
+  {
+    id: "tog-private-notes",
+    title: "Toggle Private Notes",
+    subtitle: "Local notepad on content pages",
+    type: "action",
+    icon: "PenTool",
+    keywords: ["notes", "write", "diary", "text"],
+    action: () => toggleExtensionSetting("enablePrivateNotes", "Private Notes")
+  },
+  {
+    id: "tog-dynamic",
+    title: "Toggle Dynamic Theme",
+    subtitle: "Adapt colors to movie poster",
+    type: "action",
+    icon: "Palette",
+    keywords: ["color", "adaptive", "theme", "dynamic"],
+    action: () => toggleExtensionSetting("enableDynamicTheme", "Dynamic Theme")
+  },
+  {
+    id: "tog-watch-status",
+    title: "Toggle Watch Status",
+    subtitle: "Show watched indicators on posters",
+    type: "action",
+    icon: "CheckCircle",
+    keywords: ["seen", "watched", "tick", "status"],
+    action: () => toggleExtensionSetting("enableWatchStatus", "Watch Status")
+  },
+  {
+    id: "tog-perf-max",
+    title: "Toggle Performance Max",
+    subtitle: "Optimizations for speed",
+    type: "action",
+    icon: "Zap",
+    keywords: ["speed", "fast", "optimize", "performance"],
+    action: () => toggleExtensionSetting("enablePerformanceMax", "Performance Max")
+  },
+  {
+    id: "tog-episode",
+    title: "Toggle Episode Tracker",
+    subtitle: "Track watched episodes per season",
+    type: "action",
+    icon: "ListVideo",
+    keywords: ["episodes", "track", "series", "progress"],
+    action: () => toggleExtensionSetting("enableEpisodeTracker", "Episode Tracker")
+  },
+  {
+    id: "tog-review-temp",
+    title: "Toggle Review Templates",
+    subtitle: "Helper dropdown in review box",
+    type: "action",
+    icon: "FileText",
+    keywords: ["reviews", "templates", "writing"],
+    action: () => toggleExtensionSetting("enableReviewTemplates", "Review Templates")
+  },
+  {
+    id: "tog-context",
+    title: "Toggle Context Menu",
+    subtitle: "Right-click to Search on Moctale",
+    type: "action",
+    icon: "MousePointer2",
+    keywords: ["right click", "menu", "search"],
+    action: () => toggleExtensionSetting("enableContextMenu", "Context Menu")
+  },
+  {
+    id: "tog-search-plus",
+    title: "Toggle Search Plus",
+    subtitle: "External search buttons (IMDb, etc)",
+    type: "action",
+    icon: "ExternalLink",
+    keywords: ["external", "google", "imdb", "mal"],
+    action: () => toggleExtensionSetting("enableSearchPlus", "Search Plus")
+  },
+  {
+    id: "tog-export",
+    title: "Toggle Collection Export",
+    subtitle: "CSV Export buttons on lists",
+    type: "action",
+    icon: "FileOutput",
+    keywords: ["csv", "export", "data", "backup"],
+    action: () => toggleExtensionSetting("enableCollectionExport", "Collection Export")
+  },
+  {
+    id: "tog-local-tracker",
+    title: "Toggle Local Tracker",
+    subtitle: "Background history logging",
+    type: "action",
+    icon: "History",
+    keywords: ["log", "track", "history", "database"],
+    action: () => toggleExtensionSetting("enableLocalTracker", "Local Tracker")
+  },
+  // {
+  //   id: 'tog-tier-list',
+  //   title: 'Toggle Tier List Maker',
+  //   subtitle: 'Drag and drop ranker',
+  //   type: 'action',
+  //   icon: 'BarChart',
+  //   keywords: ['rank', 'tier', 'list', 'drag'],
+  //   action: () => toggleExtensionSetting('enableTierList', 'Tier List Maker')
+  // },
+  // ============================
+  // 5. THEME SWITCHER
+  // ============================
+  ...THEMES.map((theme) => ({
+    id: `theme-${theme.id}`,
+    title: `Theme: ${theme.label}`,
+    subtitle: "Apply visual style",
+    type: "action",
+    icon: "PaintBucket",
+    keywords: ["theme", "style", "color", "look", "mode", theme.id, theme.label.toLowerCase()],
+    action: () => setExtensionValue("activeTheme", theme.id, theme.label)
+  })),
+  // ============================
+  // 6. NAVIGATION (Site Map)
+  // ============================
+  // --- Hubs ---
+  { id: "nav-home", title: "Home / Explore", type: "navigation", icon: "Compass", url: "/explore", keywords: ["index", "root"] },
+  { id: "nav-cats", title: "Categories", type: "navigation", icon: "LayoutGrid", url: "/explore/categories", keywords: ["topics", "types"] },
+  { id: "nav-genres", title: "Genres", type: "navigation", icon: "Hash", url: "/explore/genres", keywords: ["tags", "style"] },
+  { id: "nav-countries", title: "Countries", type: "navigation", icon: "Globe", url: "/explore/countries", keywords: ["region", "world"] },
+  { id: "nav-langs", title: "Languages", type: "navigation", icon: "Languages", url: "/explore/languages", keywords: ["audio", "subtitles"] },
+  // --- Lists ---
+  { id: "nav-anime", title: "Anime Hub", type: "navigation", icon: "Ghost", url: "/explore/anime", keywords: ["japan", "animation", "manga"] },
+  { id: "nav-franchise", title: "Franchises", type: "navigation", icon: "Layers", url: "/explore/franchise", keywords: ["universes", "series", "collections"] },
+  { id: "nav-family", title: "Family Friendly", type: "navigation", icon: "Smile", url: "/explore/family-friendly", keywords: ["kids", "children"] },
+  { id: "nav-awards", title: "Award Winners", type: "navigation", icon: "Trophy", url: "/explore/award-winners", keywords: ["oscars", "best"] },
+  { id: "nav-select", title: "Moctale Select", type: "navigation", icon: "Star", url: "/explore/moctale-select", keywords: ["premium", "curated"] },
+  // --- Schedule ---
+  { id: "nav-sched", title: "Schedule", type: "navigation", icon: "Calendar", url: "/schedule", keywords: ["release", "dates", "upcoming"] },
+  { id: "nav-today", title: "Schedule > Releasing Today", type: "navigation", icon: "Clock", url: "/schedule?timeFilter=today", keywords: ["now", "daily"] },
+  { id: "nav-upcoming", title: "Schedule > Upcoming Releases", type: "navigation", icon: "CalendarDays", url: "/schedule?timeFilter=upcoming", keywords: ["future", "soon"] },
+  { id: "nav-announced", title: "Schedule > Announced Titles", type: "navigation", icon: "Megaphone", url: "/schedule?timeFilter=announced", keywords: ["news", "tba"] },
+  // --- Schedule Sub-Filters (Today) ---
+  { id: "nav-today-theatre", title: "Schedule > Today > In Theatres", subtitle: "New movies releasing in cinemas today", type: "navigation", icon: "Film", url: "/schedule?timeFilter=today&contentFilter=NEW_MOVIE_THEATRE", keywords: ["today", "cinema", "release", "movies"] },
+  { id: "nav-today-ott", title: "Schedule > Today > On OTT", subtitle: "New movies streaming today", type: "navigation", icon: "Tv", url: "/schedule?timeFilter=today&contentFilter=NEW_MOVIE_OTT", keywords: ["today", "streaming", "netflix", "prime", "digital"] },
+  { id: "nav-today-shows", title: "Schedule > New Shows", subtitle: "TV Series premiering today", type: "navigation", icon: "Tv", url: "/schedule?timeFilter=today&contentFilter=NEW_SHOW", keywords: ["today", "tv", "series", "premiere"] },
+  { id: "nav-today-seasons", title: "Schedule > New Seasons", subtitle: "Returning TV shows", type: "navigation", icon: "RefreshCw", url: "/schedule?timeFilter=today&contentFilter=NEW_SEASON", keywords: ["today", "return", "season", "episodes"] },
+  // --- Schedule Sub-Filters (Upcoming) ---
+  { id: "nav-up-theatre", title: "Schedule > Upcoming > In Theatres", subtitle: "Future theatrical releases", type: "navigation", icon: "CalendarDays", url: "/schedule?timeFilter=upcoming&contentFilter=NEW_MOVIE_THEATRE", keywords: ["soon", "cinema", "future", "movies"] },
+  { id: "nav-up-ott", title: "Schedule > Upcoming > On OTT", subtitle: "Future digital/streaming releases", type: "navigation", icon: "Tv", url: "/schedule?timeFilter=upcoming&contentFilter=NEW_MOVIE_OTT", keywords: ["soon", "streaming", "digital"] },
+  { id: "nav-up-shows", title: "Schedule > Upcoming > New Shows", subtitle: "Future TV Series premieres", type: "navigation", icon: "Tv", url: "/schedule?timeFilter=upcoming&contentFilter=NEW_SHOW", keywords: ["soon", "tv", "series", "pilot"] },
+  { id: "nav-up-seasons", title: "Schedule > Upcoming > New Seasons", subtitle: "Future returning seasons", type: "navigation", icon: "Layers", url: "/schedule?timeFilter=upcoming&contentFilter=NEW_SEASON", keywords: ["soon", "return", "season"] },
+  // --- Schedule Sub-Filters (Announced) ---
+  { id: "nav-ann-theatre", title: "Schedule > Announced > In Theatres", subtitle: "Movies announced for cinemas", type: "navigation", icon: "Megaphone", url: "/schedule?timeFilter=announced&contentFilter=NEW_MOVIE_THEATRE", keywords: ["tba", "announced", "cinema"] },
+  { id: "nav-ann-ott", title: "Schedule > Announced > On OTT", subtitle: "Movies announced for streaming", type: "navigation", icon: "Megaphone", url: "/schedule?timeFilter=announced&contentFilter=NEW_MOVIE_OTT", keywords: ["tba", "announced", "streaming"] },
+  { id: "nav-ann-shows", title: "Schedule > Announced > New Shows", subtitle: "TV Shows in development", type: "navigation", icon: "Megaphone", url: "/schedule?timeFilter=announced&contentFilter=NEW_SHOW", keywords: ["tba", "announced", "tv", "series"] },
+  { id: "nav-ann-seasons", title: "Schedule > Announced > New Seasons", subtitle: "Renewed shows / Future seasons", type: "navigation", icon: "Megaphone", url: "/schedule?timeFilter=announced&contentFilter=NEW_SEASON", keywords: ["tba", "announced", "renewal"] },
+  // --- Clubs ---
+  { id: "nav-clubs", title: "Clubs Feed", type: "navigation", icon: "Users", url: "/clubs", keywords: ["social", "community", "posts"] },
+  { id: "nav-clubs-follow", title: "Clubs: Following", subtitle: "Posts from clubs you follow", type: "navigation", icon: "Users", url: "/clubs?tab=following", keywords: ["feed", "social", "subscribed"] },
+  { id: "nav-clubs-disc", title: "Discover Clubs", type: "navigation", icon: "Telescope", url: "/clubs?tab=discover", keywords: ["find", "groups"] },
+  // --- Personal ---
+  { id: "nav-my-col", title: "My Collections", type: "navigation", icon: "Library", url: "/my-collections", keywords: ["lists", "watchlists"] },
+  { id: "nav-saved", title: "Saved Collections", type: "navigation", icon: "Bookmark", url: "/saved-collections", keywords: ["favorites", "later"] },
+  { id: "nav-reviews", title: "My Reviews", type: "navigation", icon: "PenTool", url: "/my-reviews", keywords: ["ratings", "opinions"] },
+  { id: "nav-settings", title: "Account Settings", type: "navigation", icon: "UserCog", url: "/accounts/edit?section=settings", keywords: ["profile", "config", "password"] }
+];
+class SearchService {
+  commandFuse;
+  historyFuse = null;
+  lastDbUpdate = 0;
+  constructor() {
+    this.commandFuse = new Fuse(STATIC_COMMANDS, {
+      keys: [
+        { name: "title", weight: 0.7 },
+        { name: "keywords", weight: 0.3 }
+      ],
+      threshold: 0.4,
+      includeScore: true
+    });
+  }
+  async getHistoryFuse() {
+    const db = await LocalDbService.getDB();
+    if (!this.historyFuse || db.lastUpdated !== this.lastDbUpdate) {
+      const entities = Object.values(db.entities);
+      this.historyFuse = new Fuse(entities, {
+        keys: [
+          { name: "title", weight: 0.6 },
+          { name: "type", weight: 0.2 },
+          { name: "genres", weight: 0.2 }
+        ],
+        threshold: 0.4,
+        includeScore: true,
+        ignoreLocation: true
+      });
+      this.lastDbUpdate = db.lastUpdated || Date.now();
+    }
+    return this.historyFuse;
+  }
+  // --- MAIN SEARCH ---
+  async search(query) {
+    if (!query || !query.trim()) {
+      return STATIC_COMMANDS.map((cmd) => ({
+        id: cmd.id,
+        title: cmd.title,
+        subtitle: cmd.subtitle || "Command",
+        type: cmd.type === "action" ? "action" : "navigation",
+        icon: cmd.icon,
+        url: cmd.url,
+        action: cmd.action,
+        score: 1,
+        group: cmd.type === "action" ? "Commands" : "Navigation"
+      })).sort((a, b) => a.title.localeCompare(b.title));
+    }
+    const q = query.toLowerCase();
+    const cmdResults = this.commandFuse.search(q).map((res) => ({
+      item: res.item,
+      score: res.score || 1
+    }));
+    const histFuse = await this.getHistoryFuse();
+    const histResults = histFuse.search(q).map((res) => ({
+      item: res.item,
+      score: res.score || 1
+    }));
+    const combined = [];
+    cmdResults.forEach(({ item, score }) => {
+      let rank = (1 - score) * 100;
+      if (item.title.toLowerCase() === q) rank += 50;
+      combined.push({
+        id: item.id,
+        title: item.title,
+        subtitle: item.subtitle || "Command",
+        type: item.type === "action" ? "action" : "navigation",
+        icon: item.icon,
+        url: item.url,
+        action: item.action,
+        score: rank + 10,
+        group: item.type === "action" ? "Commands" : "Navigation"
+      });
+    });
+    histResults.forEach(({ item, score }) => {
+      let rank = (1 - score) * 100;
+      const daysSinceVisit = (Date.now() - item.lastVisitedAt) / (1e3 * 60 * 60 * 24);
+      if (daysSinceVisit < 1) rank += 20;
+      else if (daysSinceVisit < 7) rank += 10;
+      rank += Math.min(Math.log(item.visitCount + 1) * 5, 20);
+      combined.push({
+        id: item.id,
+        title: item.title,
+        subtitle: item.year ? `${item.type.toUpperCase()} • ${item.year}` : item.type.toUpperCase(),
+        type: "history",
+        icon: this.getIconForType(item.type),
+        url: item.id,
+        score: rank,
+        group: "History"
+      });
+    });
+    return combined.sort((a, b) => b.score - a.score).slice(0, 100);
+  }
+  getIconForType(type) {
+    switch (type) {
+      case "movie":
+        return "Film";
+      case "tv":
+        return "Tv";
+      case "anime":
+        return "Ghost";
+      case "person":
+        return "User";
+      case "genre":
+        return "Hash";
+      case "collection":
+        return "Library";
+      case "club":
+        return "Users";
+      default:
+        return "Link";
+    }
+  }
+}
+const searchService = new SearchService();
+const Icons = {
+  Network: Network$1,
+  Settings,
+  Compass,
+  LayoutGrid,
+  Hash,
+  Globe,
+  Languages,
+  Ghost,
+  Layers,
+  Smile,
+  Trophy,
+  Star,
+  Calendar,
+  Clock,
+  CalendarDays,
+  Megaphone,
+  Users,
+  Telescope,
+  Library,
+  Bookmark,
+  PenTool,
+  UserCog,
+  Film,
+  Tv,
+  User,
+  EyeOff,
+  Link,
+  Dices,
+  Maximize,
+  Search,
+  Download,
+  PanelRight,
+  Palette,
+  CheckCircle: CircleCheckBig,
+  Zap,
+  ListVideo,
+  FileText,
+  MousePointer2,
+  ExternalLink,
+  FileOutput,
+  History,
+  BarChart: ChartNoAxesColumnIncreasing,
+  ArrowUpCircle: CircleArrowUp,
+  ArrowDownCircle: CircleArrowDown,
+  PaintBucket
+};
+const CommandPalette = () => {
+  const [open, setOpen] = reactExports.useState(false);
+  const [query, setQuery] = reactExports.useState("");
+  const [results, setResults] = reactExports.useState([]);
+  const [value, setValue] = reactExports.useState("");
+  const listRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const down = (e) => {
+      if (e.altKey && e.shiftKey && e.code === "KeyK") {
+        e.preventDefault();
+        setOpen((open2) => !open2);
+      }
+      if (e.key === "Escape" && open) setOpen(false);
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, [open]);
+  reactExports.useEffect(() => {
+    if (!open) return;
+    searchService.search(query).then((data) => {
+      setResults(data);
+      if (data.length > 0) {
+        const firstCommand = data.find((i) => i.group === "Commands");
+        const firstNav = data.find((i) => i.group === "Navigation");
+        const firstHistory = data.find((i) => i.group === "History");
+        const firstVisualItem = firstCommand || firstNav || firstHistory || data[0];
+        setValue(firstVisualItem.id);
+      }
+    });
+  }, [query, open]);
+  reactExports.useEffect(() => {
+    if (!open) return;
+    requestAnimationFrame(() => {
+      const selectedElement = document.querySelector(`[cmdk-item][data-selected="true"]`);
+      if (selectedElement) {
+        selectedElement.scrollIntoView({ block: "nearest", behavior: "auto" });
+      }
+    });
+  }, [value, open]);
+  const runCommand = (item) => {
+    setOpen(false);
+    if (item.action) {
+      item.action();
+    } else if (item.url) {
+      const target2 = item.url.startsWith("http") ? item.url : `https://www.moctale.in${item.url}`;
+      self.location.href = target2;
+    }
+  };
+  if (!open) return null;
+  const groups = {
+    Commands: results.filter((r) => r.group === "Commands"),
+    Navigation: results.filter((r) => r.group === "Navigation"),
+    History: results.filter((r) => r.group === "History")
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "fixed inset-0 z-[99999] p-4 animate-in fade-in duration-200 font-sans",
+      style: {
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        backdropFilter: "blur(4px)"
+      },
+      onClick: (e) => {
+        if (e.target === e.currentTarget) setOpen(false);
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          _e,
+          {
+            value,
+            onValueChange: setValue,
+            className: "fixed-command-modal w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden flex flex-col scale-100",
+            style: {
+              backgroundColor: "var(--mp-bg-base, #0d1117)",
+              borderColor: "var(--mp-border, #30363d)",
+              borderWidth: "1px",
+              borderStyle: "solid",
+              color: "var(--mp-text-main, #c9d1d9)"
+            },
+            shouldFilter: false,
+            loop: true,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center px-4 py-4 border-b shrink-0",
+                  style: {
+                    borderColor: "var(--mp-border, #30363d)",
+                    backgroundColor: "var(--mp-bg-base, #0d1117)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "w-5 h-5 mr-3 opacity-50" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      _e.Input,
+                      {
+                        autoFocus: true,
+                        placeholder: "Type a command or search...",
+                        value: query,
+                        onValueChange: setQuery,
+                        className: "flex-1 bg-transparent text-lg placeholder-opacity-50",
+                        style: { color: "var(--mp-text-main, #c9d1d9)" }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2 select-none ml-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "kbd",
+                      {
+                        className: "text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded border",
+                        style: {
+                          backgroundColor: "var(--mp-bg-surface, #161b22)",
+                          borderColor: "var(--mp-border, #30363d)",
+                          color: "var(--mp-text-muted, #8b949e)"
+                        },
+                        children: "Alt + Shift + K"
+                      }
+                    ) })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex-1 overflow-hidden", style: { backgroundColor: "var(--mp-bg-base, #0d1117)" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                _e.List,
+                {
+                  ref: listRef,
+                  className: "overflow-y-auto custom-scrollbar",
+                  style: {
+                    minHeight: "100px",
+                    maxHeight: "400px",
+                    scrollPaddingTop: "40px"
+                  },
+                  children: [
+                    results.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-4 py-12 text-center opacity-50", children: "No results found" }),
+                    Object.entries(groups).map(([name, items], _index) => items.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(_e.Group, { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "px-3 py-2 pb-1 mb-1 text-xs font-semibold uppercase tracking-wider select-none sticky top-0 z-20",
+                          style: {
+                            color: "var(--mp-text-muted, #8b949e)",
+                            backgroundColor: "var(--mp-bg-base, #0d1117)"
+                          },
+                          children: name
+                        }
+                      ),
+                      items.map((item) => {
+                        const Icon = Icons[item.icon] || Command;
+                        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          _e.Item,
+                          {
+                            value: item.id,
+                            onSelect: () => runCommand(item),
+                            className: "group flex items-center justify-between px-3 py-3 rounded-lg cursor-pointer select-none scroll-mt-[60px] data-[selected=true]:bg-opacity-10",
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 overflow-hidden", children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                  "div",
+                                  {
+                                    className: "w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0",
+                                    style: {
+                                      backgroundColor: "var(--mp-bg-layer, #21262d)",
+                                      color: "var(--mp-text-muted, #8b949e)"
+                                    },
+                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { size: 18 })
+                                  }
+                                ),
+                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col overflow-hidden", children: [
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                    "span",
+                                    {
+                                      className: "text-sm font-medium truncate",
+                                      style: { color: "var(--mp-text-main, #c9d1d9)" },
+                                      children: item.title
+                                    }
+                                  ),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                    "span",
+                                    {
+                                      className: "text-xs truncate",
+                                      style: { color: "var(--mp-text-muted, #8b949e)" },
+                                      children: item.subtitle
+                                    }
+                                  )
+                                ] })
+                              ] }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "opacity-0 group-data-[selected=true]:opacity-100 flex items-center gap-2", children: [
+                                item.type === "action" ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium", style: { color: "var(--mp-accent, #58a6ff)" }, children: "Run" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium", style: { color: "var(--mp-accent, #58a6ff)" }, children: "Go" }),
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(CornerDownLeft, { size: 14, style: { color: "var(--mp-accent, #58a6ff)" } })
+                              ] })
+                            ]
+                          },
+                          item.id
+                        );
+                      })
+                    ] }, name))
+                  ]
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "px-4 py-2 border-t flex items-center justify-between text-[10px] select-none shrink-0",
+                  style: {
+                    backgroundColor: "var(--mp-bg-surface, #161b22)",
+                    borderColor: "var(--mp-border, #30363d)",
+                    color: "var(--mp-text-muted, #8b949e)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1.5", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "kbd",
+                          {
+                            className: "px-1 rounded border flex items-center justify-center h-5 min-w-[20px]",
+                            style: { backgroundColor: "var(--mp-bg-layer, #21262d)", borderColor: "var(--mp-border, #30363d)" },
+                            children: "ESC"
+                          }
+                        ),
+                        "Close"
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1.5", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "kbd",
+                          {
+                            className: "px-1 rounded border flex items-center justify-center h-5 min-w-[20px]",
+                            style: { backgroundColor: "var(--mp-bg-layer, #21262d)", borderColor: "var(--mp-border, #30363d)" },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowDown, { size: 10 })
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "kbd",
+                          {
+                            className: "px-1 rounded border flex items-center justify-center h-5 min-w-[20px]",
+                            style: { backgroundColor: "var(--mp-bg-layer, #21262d)", borderColor: "var(--mp-border, #30363d)" },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { size: 10 })
+                          }
+                        ),
+                        "Navigate"
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1.5", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "kbd",
+                          {
+                            className: "px-1 rounded border flex items-center justify-center h-5 min-w-[20px]",
+                            style: { backgroundColor: "var(--mp-bg-layer, #21262d)", borderColor: "var(--mp-border, #30363d)" },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(CornerDownLeft, { size: 10 })
+                          }
+                        ),
+                        "Select"
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "opacity-70", children: "Powered by Moctale Plus by 010101-sans" })
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+        .fixed-command-modal {
+            position: fixed;
+            top: 20vh;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        [cmdk-input] {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+
+        [cmdk-item][data-selected="true"] {
+            background-color: var(--mp-bg-layer, #21262d);
+        }
+        [cmdk-item][data-selected="true"] .w-9 {
+            background-color: color-mix(in srgb, var(--mp-accent, #58a6ff), transparent 85%) !important;
+            color: var(--mp-accent, #58a6ff) !important;
+        }
+        [cmdk-item][data-selected="true"] span {
+            color: var(--mp-text-main, #c9d1d9) !important;
+        }
+      ` })
+      ]
+    }
+  );
 };
 if (self.self !== self.top) {
   throw new Error("[Moctale+] Blocked execution in iframe");
@@ -5390,7 +7262,16 @@ const getSettings = async () => {
       enableImagePreview: true,
       enableWatchStatus: true,
       enablePerformanceMax: true,
-      enableDynamicTheme: false
+      enableDynamicTheme: false,
+      // Graph View
+      enableGraphView: true,
+      graph_gravity: -80,
+      graph_springLength: 80,
+      graph_springConstant: 0.08,
+      graph_damping: 0.9,
+      graph_nodeScale: 1,
+      graph_fontSize: 10,
+      graph_edgeOpacity: 0.3
     };
     if (typeof chrome !== "undefined" && chrome.storage) {
       chrome.storage.local.get(null, (items) => {
@@ -5477,7 +7358,6 @@ const runGlobalFeatures = async () => {
     document.querySelectorAll(".moctale-plus-random-wrapper").forEach((el) => el.remove());
   }
   checkAndPerformSearch();
-  initKeyboardShortcuts(settings.enableShortcuts);
   if (settings.enableSpoilerShield) {
     const keywords = settings.spoilerKeywords ? settings.spoilerKeywords.split(",") : DEFAULT_RISK_KEYWORDS;
     initSpoilerShield(keywords);
@@ -5530,7 +7410,23 @@ const runGlobalFeatures = async () => {
   } else {
     stopDynamicTheme();
   }
+  initFullCastCrew();
+  if (settings.enableLocalTracker) {
+    initLocalTracker();
+  } else {
+    stopLocalTracker();
+  }
+  if (settings.enableGraphView) {
+    initGraphVisualizer();
+  } else {
+    stopGraphVisualizer();
+  }
 };
+const paletteContainer = document.createElement("div");
+paletteContainer.id = "moctale-plus-palette-root";
+document.body.appendChild(paletteContainer);
+const paletteRoot = clientExports.createRoot(paletteContainer);
+paletteRoot.render(/* @__PURE__ */ jsxRuntimeExports.jsx(CommandPalette, {}));
 chrome.storage.onChanged.addListener((changes, namespace) => {
   if (namespace === "local") {
     if (changes.gridColumns) {
@@ -5576,6 +7472,7 @@ const observer = new MutationObserver((mutations) => {
     lastUrl = location.href;
     console.log("[Moctale+] URL Changed");
     setTimeout(runGlobalFeatures, 500);
+    attemptTrack();
     return;
   }
   const isRelevantMutation = mutations.some((mutation) => {
@@ -5597,83 +7494,10 @@ const observer = new MutationObserver((mutations) => {
 });
 const target = document.getElementById("root") || document.body;
 if (target) observer.observe(target, { subtree: true, childList: true });
-setTimeout(runGlobalFeatures, 500);
-const exportBackup = () => {
-  if (typeof chrome === "undefined" || !chrome.storage) {
-    console.error("Storage API not available");
-    return;
-  }
-  chrome.storage.local.get(null, (items) => {
-    const date = /* @__PURE__ */ new Date();
-    const timestamp = date.toISOString().replace(/[:.]/g, "-").slice(0, 19);
-    const filename = `Moctale_Plus_Backup_${timestamp}.json`;
-    let { episodeTracker, ...otherItems } = items;
-    let formattedTracker = {};
-    if (episodeTracker) {
-      const tracker = episodeTracker;
-      Object.keys(tracker).forEach((key) => {
-        let val = tracker[key];
-        if (typeof val === "string") {
-          val = val.replace(/\n/g, ", ").trim();
-        }
-        formattedTracker[key] = val;
-      });
-    }
-    const orderedData = {
-      ...otherItems,
-      // Only add if it exists, and force it to be the last key
-      ...episodeTracker ? { episodeTracker: formattedTracker } : {}
-    };
-    const backupData = {
-      meta: {
-        version: "2.0.0",
-        exportedAt: (/* @__PURE__ */ new Date()).toISOString(),
-        author: "010101-sans",
-        type: "MoctalePlus_Backup"
-      },
-      data: orderedData
-      // Use the ordered object
-    };
-    const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
-};
-const importBackup = (file) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        const content = e.target?.result;
-        const parsed = JSON.parse(content);
-        if (!parsed.data || !parsed.meta || parsed.meta.type !== "MoctalePlus_Backup") {
-          throw new Error("Invalid Moctale Plus backup file");
-        }
-        if (chrome && chrome.storage) {
-          chrome.storage.local.clear(() => {
-            chrome.storage.local.set(parsed.data, () => {
-              chrome.storage.local.set({ hasCompletedOnboarding: true });
-              resolve(true);
-            });
-          });
-        } else {
-          reject(new Error("Storage API unavailable"));
-        }
-      } catch (err) {
-        console.error("Import failed:", err);
-        reject(err);
-      }
-    };
-    reader.onerror = () => reject(new Error("Failed to read file"));
-    reader.readAsText(file);
-  });
-};
+setTimeout(() => {
+  runGlobalFeatures();
+  attemptTrack();
+}, 500);
 const AutoBackupSettings = () => {
   const [isOpen, setIsOpen] = reactExports.useState(false);
   const [frequency, setFrequency] = reactExports.useState("none");

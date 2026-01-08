@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 <!-- 
-## Unreleased - xx/xx/2025 
+## Unreleased - xx/xx/2026
 
 ### Added
 
@@ -15,8 +15,65 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -->
 
+## v2.5.0 - 08/01/2026
 
-## v2.0.0 - 04/01/2025
+### Added
+- **Command Palette:**
+    - A keyboard-centric and blazingly-fast power tool for fast navigation, quick actions & toggling extension features.
+    - Press `Alt + Shift + K` to open the Command Palette.
+    - **Omni-Search:** Instantly search your entire local history (movies, genres, people), site navigation, and extension commands in one unified list.
+    - **Power Actions:** Run commands directly like "Open Graph View", or "Export Backup" without digging through menus.
+    - **Smart Navigation:** Jump to any page on Moctale, even ones you haven't visited yet, using the built-in site map registry.
+
+- **Graph View:**
+    - Visualizes user's unique viewing journey as an interactive & animated, Obsidian inspired galaxy of inter-connected nodes.
+    - User can discover hidden patterns in their taste by exploring relationships between movies, genres, categories, cast, crew, and more in a beautiful, physics-based interface.
+    - Control panel on bottom right corner provides Physics & Display settings with some toolbar buttons.
+    - Interactions:
+        - Press `Alt + Shift + G` to open the graph view.
+        - Hover a node to highlight it's immediate neighbour nodes.
+        - Drag a node within the canvas.
+        - Double-click a node to navigate to its associated page.
+        - Right-click on a node to delete it (not implemented yet)
+    - This feature uses user data stored with "Local Tracker" feature. The Graph View will keep self-expanding as the Local Tracker gathers more user data.
+
+- **Local Tracker:**
+    - Silently builds a private, local and comprehensive database of user's browsing history (movies, series, people, genres, categories,languages, countries, clubs, and collections) by analyzing page visits.
+    - This rich, self-expanding knowledge database serves as the foundation for many upcoming powerful features.
+
+- **Full Cast & Crew:**
+    - Search full on Google, IMDb, IMDbPro, Wikipedia. (I'll probably wikidata as well)
+
+### Improved
+- **Keybindings Update:**
+    - `ALT + SHIFT + G`: Opens the Graph View.
+    - `ALT + SHIFT + K`: Opens the Command Palette.
+    - `ALT + SHIFT + M`: Opens the extension popup.
+- **Page Summary:**
+    - Page Summary button smartly switches text between white and black depending on background color (works well with **Dynamic Theme** feature) 
+    - Now Vibe Chart uses brighter neon colors.
+
+### Fixed
+- **Page Summary:**
+    - Fixed the snappy appearnace of arcs with 0% vote. Now it animates with a fake 100% vote for a smoother animation from 0 degress to 180 degress (or whatever the automatically calucated value would be).
+- **Dynamic Theme:**
+    - It used to require toggeling it off and on for the first time. Now it is off by default and user can toggle it on nicely. No visual bugs.
+
+### Removed
+- **Keyboard Shortcuts:**
+    -  Keyboard Shortcuts feature will be disabled, because it is getting absorbed into the core platform,
+    - Only the above mentioned keybindings will be associated with Moctale Plus, unless changed in the future. 
+        <!-- - `ALT + SHIFT + D`: Unreleased Feature. -->
+
+
+
+
+
+
+
+
+
+## v2.0.0 - 04/01/2026
 
 ### Added
 - **Dynamic Theme:** 
@@ -46,7 +103,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
-## v1.9.8 - 03/01/2025
+## v1.9.8 - 03/01/2026
 
 ### Added
 - **More Themes:** 
@@ -67,7 +124,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Solution: Now the download button will appear only when hovering the target image while pressing `Ctrl` button.
 
 
-## v1.9.5 - 01/01/2025
+## v1.9.5 - 01/01/2026
 
 ### Added
 - **Custom Themes:** Added 25+ beautiful themes
@@ -75,7 +132,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Some themes requires page refresh to apply. I'll try to fix that later.
 
 
-## v1.9.0 - 01/01/2025
+## v1.9.0 - 01/01/2026
 
 ### Added
 - **Annual New Year Celebration:** Adds a Happy New Year Banner with link to visit official newely launched website
