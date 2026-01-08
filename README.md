@@ -152,8 +152,8 @@ Moctale Plus is distributed under a **custom proprietary license**. For full ter
 - [@facebook/react](https://github.com/facebook/react) and [@facebook/react-dom](https://github.com/facebook/react) - powering the core UI of Moctale Plus.
 - [@vitejs/vite](https://github.com/vitejs/vite) and [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) - for the modern, fast build and dev experience.
 - [@microsoft/TypeScript](https://github.com/microsoft/TypeScript) - enabling static typing and robust development.
-- [@FortAwesome/fontawesome-svg-core](https://github.com/FortAwesome/Font-Awesome), [@FortAwesome/free-brands-svg-icons](https://github.com/FortAwesome/Font-Awesome), [@FortAwesome/free-solid-svg-icons](https://github.com/FortAwesome/Font-Awesome) and [@FortAwesome/react-fontawesome](https://github.com/FortAwesome/react-fontawesome) - comprehensive icon support. ([GitHub ZH][2])
-- [@lusaxweb/iconsax-react](https://github.com/lusaxweb/iconsax-react) - for the Iconsax icon pack (React port). ([Yarn][3])
+- [@FortAwesome/fontawesome-svg-core](https://github.com/FortAwesome/Font-Awesome) - comprehensive icon support.
+- [@lusaxweb/iconsax-react](https://github.com/lusaxweb/iconsax-react) - for the Iconsax icon pack (React port).
 - [@lucide-icons/lucide](https://github.com/lucide-icons/lucide) and [react-icons](https://github.com/react-icons/react-icons) - additional modern iconography.
 - [canvas-confetti](https://github.com/catdad/canvas-confetti) - celebratory effects.
 - [cmdk](https://github.com/pacocoursey/cmdk) - command palette primitives.
