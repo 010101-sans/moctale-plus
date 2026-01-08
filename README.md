@@ -32,7 +32,6 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Linkifier**                 | Converts plain-text URLs into clickable links |
 | **SideBar Plus**              | Replaces the previous sections in SideBar with three section containing well-organized platforms and tools |
 | **Right-Click Search**        | Select text anywhere -> Right Click -> Search on Moctale |
-<!-- | **Keyboard Shortcuts**        | For fast navigation, quick actions and toggeling feature. The shortcuts guide can be accessed anytime with `Shift + /` | -->
 | **Advanced Spoiler Shield**   | Automatically blurs spoiler-heavy content |
 | **Restore Scroll on Refresh** | Scroll to the saved scroll position on refresh |
 | **Review Templates**          | Provides a set of pre-built templates for writing reviews, with ability to add custom templates |
