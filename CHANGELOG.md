@@ -23,45 +23,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Press `Alt + Shift + K` to open the Command Palette.
     - **Omni-Search:** Instantly search your entire local history (movies, genres, people), site navigation, and extension commands in one unified list.
     - **Power Actions:** Run commands directly like "Open Graph View", or "Export Backup" without digging through menus.
-    - **Smart Navigation:** Jump to any page on Moctale, even ones you haven't visited yet, using the built-in site map registry.
+    - **Smart Navigation:** Jump to any page on Moctale, even ones you haven't visited yet, using the built-in site map registry and Local Tracker.
 
 - **Graph View:**
-    - Visualizes user's unique viewing journey as an interactive & animated, Obsidian inspired galaxy of inter-connected nodes.
-    - User can discover hidden patterns in their taste by exploring relationships between movies, genres, categories, cast, crew, and more in a beautiful, physics-based interface.
-    - Control panel on bottom right corner provides Physics & Display settings with some toolbar buttons.
+    - Visualizes user's unique viewing journey as an interactive & animated, Obsidian-inspired galaxy of inter-connected nodes.
+    - Users can discover hidden patterns in their taste by exploring relationships between movies, genres, categories, cast, and more in a beautiful, physics-based interface.
+    - Control panel on bottom left corner provides Physics & Display settings with toolbar buttons and a search bar.
     - Interactions:
         - Press `Alt + Shift + G` to open the graph view.
         - Hover a node to highlight it's immediate neighbour nodes.
         - Drag a node within the canvas.
         - Double-click a node to navigate to its associated page.
         - Right-click on a node to delete it (not implemented yet)
-    - This feature uses user data stored with "Local Tracker" feature. The Graph View will keep self-expanding as the Local Tracker gathers more user data.
+    - This feature uses user's data stored with "Local Tracker" feature. The Graph View will keep self-expanding as the Local Tracker gathers more user data.
 
 - **Local Tracker:**
-    - Silently builds a private, local and comprehensive database of user's browsing history (movies, series, people, genres, categories,languages, countries, clubs, and collections) by analyzing page visits.
+    - Silently builds a private, local and comprehensive database of user's browsing history (movies, series, people, genres, categories, languages, countries, clubs, and collections) by analyzing page visits.
     - This rich, self-expanding knowledge database serves as the foundation for many upcoming powerful features.
 
 - **Full Cast & Crew:**
-    - Search full on Google, IMDb, IMDbPro, Wikipedia. (I'll probably wikidata as well)
+    - Search on Google, IMDb, IMDbPro, Wikipedia. <!-- (I'll probably add wikidata as well) -->
 
 ### Improved
 - **Keybindings Update:**
     - `ALT + SHIFT + G`: Opens the Graph View.
     - `ALT + SHIFT + K`: Opens the Command Palette.
-    - `ALT + SHIFT + M`: Opens the extension popup.
+    - `ALT + SHIFT + M`: Opens the Extension Popup.
 - **Page Summary:**
-    - Page Summary button smartly switches text between white and black depending on background color (works well with **Dynamic Theme** feature) 
+    - Page Summary button smartly switches text color between white and black depending on brightness of background color (works well with **Dynamic Theme** feature) 
     - Now Vibe Chart uses brighter neon colors.
 
 ### Fixed
 - **Page Summary:**
-    - Fixed the snappy appearnace of arcs with 0% vote. Now it animates with a fake 100% vote for a smoother animation from 0 degress to 180 degress (or whatever the automatically calucated value would be).
+    - Fixed the snappy appearance of arcs with 0% vote. Now it animates with a fake 100% vote for a smoother animation from 0 degress to 180 degrees (or whatever the automatically calculated value would be).
 - **Dynamic Theme:**
-    - It used to require toggeling it off and on for the first time. Now it is off by default and user can toggle it on nicely. No visual bugs.
+    - It used to require toggling it off and on for the first time. Now it is off by default and user can toggle it on with no visual bugs.
 
 ### Removed
 - **Keyboard Shortcuts:**
-    -  Keyboard Shortcuts feature will be disabled, because it is getting absorbed into the core platform,
+    - Because it is getting absorbed into the core platform,
     - Only the above mentioned keybindings will be associated with Moctale Plus, unless changed in the future. 
         <!-- - `ALT + SHIFT + D`: Unreleased Feature. -->
 
