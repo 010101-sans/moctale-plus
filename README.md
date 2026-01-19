@@ -45,6 +45,7 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Poster Layouts** | Default View, List View (1 Column), 2-8 Column View |
 | **Sticker Studio** | Add persistant images in the website's UI |
 | **Dynamic Theme**  | Extracts color palette from currently opened Title's Poster and generates a new dynamic theme based on Poster's Artwork |
+| **Theme Painter**  | Users create your own theme by simply adjusting the values of UI element. |
 
 
 <!-- ### 3. Stats & Data -->
@@ -65,11 +66,15 @@ A feature-rich Chrome Extension designed to supercharge your experience on [Moct
 | **Image Preview**        | Hovering an image while pressing `Ctrl + Shift` opens an enlarged high-quality preview |
 | **Image Downloader**     | Click the download button on an image appearing while pressing `Ctrl` and hovering the image |
 | **Watch Status**         | Shows a Watch Status Indicator on Posters with a toggle button appearing while hovering Posters |
+| **Watch Sync**           | Syncs Watch Status and Season's Episode Progress between Local and Native trackers for Movies and Series |
 | **Page Summary**         | Generates a visually & aesthetically beautiful, interactive & animated summary for currently opened title |
 | **Full Cast & Crew**     | Search on Google, IMDb, IMDbPro, Wikipedia |
 | **Local Tracker**        | Silently builds a private, local and comprehensive database of user's vieweing history. This rich, self-expanding knowledge database serves as the foundation for many other powerful features |
 | **Graph View**           | Visualizes user's unique viewing journey as an interactive & animated, Obsidian inspired galaxy of inter-connected nodes. Access the Graph View with `Alt + Shift + G` |
 | **Command Palette**      | A keyboard-centric and blazingly-fast power tool for fast navigation, quick actions & toggeling extension features. Access the Command Palette with `Alt + Shift + K` |
+| **Familiar Faces**       | Displays a circular ring with a numeric badge around known cast and crew, indicating visited movies and series. |
+| **Cinema World**         | Visualizes your watch history on an interactive 3D World Map. |
+
 
 
  

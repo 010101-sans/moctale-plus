@@ -15,6 +15,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -->
 
+## v2.8.0 - 19/01/2026
+
+### Added
+- **Cinema World:** 
+    - Visualizes your watch history on an interactive 3D World Map.
+    - Explore global cinema trends, discover patterns in your viewing habits, and see how your watch history spans across countries and continents.
+- **Theme Painter:** Users create your own theme by simply adjusting the values of UI element.
+- **Watch Sync:** Syncs Watch Status and Season's Episode Progress between Local and Native trackers for Movies and Series.
+- **Familiar Faces:**
+    - Displays a circular ring with a numeric badge around known cast and crew, indicating visited movies and series.
+    - Hovering over their image reveals the list of visited titles.
+
+### Improved
+- **Notification Toast:** Improved the notification toast with better UI and error handling.
+- **Graph View:** Added filters for graph nodes and node connections.
+
+### Fixed
+- **Application error:** Some injection logic used to aggressively fight with the DOM causing client-side error.
+
+
 ## v2.5.0 - 08/01/2026
 
 ### Added
